@@ -1,0 +1,2 @@
+# labmlai_annotated_deeplearning_paper_implementation
+KOREAN Translation of labmlai/annotated_deep_learning_paper_implementations
