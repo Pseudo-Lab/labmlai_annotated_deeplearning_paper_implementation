@@ -70,8 +70,8 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Adam Optimizer with Warmup and Cosine Decay</h1>
-<p>This extends <a href="adam.html">AMSGrad optimizer</a> and adds a warmup stage.</p>
+            <h1>워밍업과 코사인 감소를 사용한 아담 옵티마이저(Adam Optimizer)</h1>
+<p> <a href="adam.html">AMSGrad optimizer</a> 를 상속받아 워밍업 단계를 추가하였습니다.</p>
 
         </div>
         <div class='code'>
@@ -88,9 +88,8 @@
                 <a href='#section-1'>#</a>
             </div>
             <p> <a id="EmbeddingsWithPositionalEncoding"></a></p>
-<h2>Adam Optimizer with Warmup and Cosine Decay</h2>
-<p>This class extends from AMSGrad optimizer defined in <a href="amsgrad.html"><code  class="highlight"><span></span><span class="n">amsgrad</span><span class="o">.</span><span class="n">py</span></code>
-</a>.</p>
+<h2>워밍업과 코사인 감소를 사용한 아담 옵티마이저</h2>
+<p>해당 클래스는 <a href="amsgrad.html"><code  class="highlight"><span></span><span class="n">amsgrad</span><span class="o">.</span><span class="n">py</span></code></a>에 정의된 AMSGrad 옵티마이저를 상속받았습니다.</p>
 
         </div>
         <div class='code'>
@@ -102,31 +101,30 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <h3>Initialize the optimizer</h3>
+            <h3>옵티마이저 초기화</h3>
 <ul><li><code  class="highlight"><span></span><span class="n">params</span></code>
- is the list of parameters </li>
+ 는 파라미터 리스트입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">lr</span></code>
- is the learning rate <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span></span></span></span></span></span> </li>
+ 은 learning rate <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span></span></span></span></span></span> 입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">betas</span></code>
- is a tuple of (<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>, <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>) </li>
+ 는 (<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>, <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>) 튜플입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">eps</span></code>
- is <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">ϵ</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span></span> or <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span> based on <code  class="highlight"><span></span><span class="n">optimized_update</span></code>
+ 는 <code  class="highlight"><span></span><span class="n">optimized_update</span></code> 에 기반한 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">ϵ</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span></span> 또는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span> 입니다.
  </li>
 <li><code  class="highlight"><span></span><span class="n">weight_decay</span></code>
- is an instance of class <code  class="highlight"><span></span><span class="n">WeightDecay</span></code>
- defined in <a href="index.html"><code  class="highlight"><span></span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span></code>
-</a> </li>
-<li>&#x27;optimized_update&#x27; is a flag whether to optimize the bias correction of the second moment  by doing it after adding <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span> </li>
+ 는 <a href="index.html"><code  class="highlight"><span></span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span></code>
+</a> 에 정의된  <code  class="highlight"><span></span><span class="n">WeightDecay</span></code> 클래스 객체입니다. </li>
+<li>&#x27;optimized_update&#x27; 는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span>를 추가한 후 두번째 모멘트에서 경향값(bias) 최적화 여부를 나타내는 플래그입니다.  </li>
 <li><code  class="highlight"><span></span><span class="n">amsgrad</span></code>
- is a flag indicating whether to use AMSGrad or fallback to plain Adam </li>
+ 는 Amsgrad를 사용할지 일반적인 Adam을 사용할지 여부를 나타내는 플래그입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">warmup</span></code>
- number of warmup steps </li>
+ 워밍업 스텝 횟수입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">total_steps</span></code>
- total number of steps. Cosine decay reaches 0 at this, but stays at 10% of <code  class="highlight"><span></span><span class="n">lr</span></code>
- because we take <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">(</span><span class="mord coloredeq eqh" style=""><span class="mord" style="">0</span></span><span class="mord">.1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">ec</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span></span> </li>
+ 전체 스텝의 횟수입니다. 코사인 감소는 0에 도달하지만, <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">(</span><span class="mord coloredeq eqh" style=""><span class="mord" style="">0</span></span><span class="mord">.1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">ec</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span></span> 때문에 </li><code  class="highlight"><span></span><span class="n">lr</span></code>의 10퍼센트 값을 유지합니다.
+ 
 <li><code  class="highlight"><span></span><span class="n">defaults</span></code>
- is a dictionary of default for group values.  This is useful when you want to extend the class <code  class="highlight"><span></span><span class="n">AdamWarmup</span></code>
-.</li></ul>
+ 는 그룹 값들의 초기값의 딕셔너리 입니다. 이는  <code  class="highlight"><span></span><span class="n">AdamWarmup</span></code> 클래스를 상속받으려 할 때 유용합니다.  
+</li></ul>
 
         </div>
         <div class='code'>
@@ -154,8 +152,8 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <h3>Get learning-rate</h3>
-<p><span ><span class="katex-display"><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">min</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="delimsizing size3">(</span></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.29208em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="delimsizing size3">)</span></span></span></span></span></span></span> where <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span></span></span> is the number of warmup steps.</p>
+            <h3>learning-rate 계산</h3>
+<p><span ><span class="katex-display"><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">min</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="delimsizing size3">(</span></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.29208em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="delimsizing size3">)</span></span></span></span></span></span></span> 여기서 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span></span></span> 는 워밍업 스텝의 개수입니다.</p>
 
         </div>
         <div class='code'>
@@ -167,7 +165,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>If we are in warmup stage </p>
+            <p>워밍업 단계에 있는 경우 </p>
 
         </div>
         <div class='code'>
@@ -179,7 +177,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>A linearly increasing learning rate from <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">0</span></span></span></span></span></span> to <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span></span></span></span></span></span> </p>
+            <p> <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">0</span></span></span></span></span></span> 에서 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span></span></span></span></span></span> 로 learning rate이 선형적으로 증가 
 
         </div>
         <div class='code'>
@@ -192,7 +190,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Constant learning rate <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span></span></span></span></span></span> </p>
+            <p>일정한 learning rate <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span></span></span></span></span></span> </p>
 
         </div>
         <div class='code'>
@@ -205,7 +203,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <h3>Plot learning rate for different warmups and model sizes</h3>
+            <h3>워밍업과 모델 사이즈에 따른 learning rate 도표</h3>
 <p><img alt="Plot of learning rate" src="noam_lr.png"></p>
 
         </div>
