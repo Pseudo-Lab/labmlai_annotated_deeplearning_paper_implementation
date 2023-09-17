@@ -71,11 +71,11 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1><a href="index.html">StyleGAN 2</a> Model Training</h1>
-<p>This is the training code for <a href="index.html">StyleGAN 2</a> model.</p>
+            <h1><a href="index.html">StyleGAN 2</a> 모델 훈련</h1>
+<p>이 문서는 <a href="index.html">StyleGAN 2</a> 모델의 훈련 코드에 관한 내용입니다.</p>
 <p><img alt="Generated Images" src="generated_64.png"></p>
-<p><small><em>These are <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mord coloredeq eqm" style=""><span class="mord" style="">4</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord coloredeq eqm" style=""><span class="mord" style="">4</span></span></span></span></span></span> images generated after training for about 80K steps.</em></small></p>
-<p><em>Our implementation is a minimalistic StyleGAN 2 model training code. Only single GPU training is supported to keep the implementation simple. We managed to shrink it to keep it at less than 500 lines of code, including the training loop.</em></p>
+<p><small><em>이 이미지는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mord coloredeq eqm" style=""><span class="mord" style="">4</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord coloredeq eqm" style=""><span class="mord" style="">4</span></span></span></span></span></span> 80K 스텝 동안 훈련한 후, 생성된 이미지들입니다.</em></small></p>
+<p><em>이 구현은 간소화된 StyleGAN 2 모델 훈련 코드입니다. 편의를 위해 단일 GPU만으로도 충분합니다. 훈련 루프를 포함하여 코드가 500 줄 미만으로 작동하도록 줄였습니다.</em></p>
 <p><em>Without DDP (distributed data parallel) and multi-gpu training it will not be possible to train the model for large resolutions (128+). If you want training code with fp16 and DDP take a look at <a href="https://github.com/lucidrains/stylegan2-pytorch">lucidrains/stylegan2-pytorch</a>.</em></p>
 <p>We trained this on <a href="https://github.com/tkarras/progressive_growing_of_gans">CelebA-HQ dataset</a>. You can find the download instruction in this <a href="https://forums.fast.ai/t/download-celeba-hq-dataset/45873/3">discussion on fast.ai</a>. Save the images inside <a href="#dataset_path"><code  class="highlight"><span></span><span class="n">data</span><span class="o">/</span><span class="n">stylegan</span></code>
  folder</a>.</p>
@@ -105,8 +105,8 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>Dataset</h2>
-<p>This loads the training dataset and resize it to the give image size.</p>
+            <h2>데이터셋</h2>
+<p>이 코드는 훈련 데이터셋을 불러오고 지정된 이미지 크기로 조정합니다.</p>
 
         </div>
         <div class='code'>
@@ -118,10 +118,8 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <ul><li><code  class="highlight"><span></span><span class="n">path</span></code>
- path to the folder containing the images </li>
-<li><code  class="highlight"><span></span><span class="n">image_size</span></code>
- size of the image</li></ul>
+            <ul><li><code  class="highlight"><span></span><span class="n">path</span></code>는 이미지가 포함된 폴더의 경로입니다. </li>
+<li><code  class="highlight"><span></span><span class="n">image_size</span></code>는 이미지 사이즈입니다. </li></ul>
 
         </div>
         <div class='code'>
@@ -144,8 +142,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Get the paths of all <code  class="highlight"><span></span><span class="n">jpg</span></code>
- files </p>
+            <p><code  class="highlight"><span></span><span class="n">jpg</span></code> 파일의 경로를 모두 읽어옵니다.</p>
 
         </div>
         <div class='code'>
@@ -157,7 +154,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>Transformation </p>
+            <p>torchvision의 transforms 모듈로 데이터 변환을 합니다. </p>
 
         </div>
         <div class='code'>
@@ -169,7 +166,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Resize the image </p>
+            <p>이미지를 리사이즈합니다. </p>
 
         </div>
         <div class='code'>
@@ -181,7 +178,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Convert to PyTorch tensor </p>
+            <p>파이토치 텐서로 변환합니다. </p>
 
         </div>
         <div class='code'>
@@ -194,7 +191,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Number of images </p>
+            <p>경로의 갯수로 이미지 데이터 수를 리턴할 수 있습니다. </p>
 
         </div>
         <div class='code'>
@@ -217,8 +214,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Get the the <code  class="highlight"><span></span><span class="n">index</span></code>
--th image </p>
+            <p><code  class="highlight"><span></span><span class="n">index</span></code>를 매개변수로 배치 데이터를 받습니다.</p>
 
         </div>
         <div class='code'>
@@ -243,7 +239,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <h2>Configurations</h2>
+            <h2>설정값</h2>
 
         </div>
         <div class='code'>
@@ -255,8 +251,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>Device to train the model on. <a href="https://docs.labml.ai/api/helpers.html#labml_helpers.device.DeviceConfigs"><code  class="highlight"><span></span><span class="n">DeviceConfigs</span></code>
-</a>  picks up an available CUDA device or defaults to CPU. </p>
+            <p><a href="https://docs.labml.ai/api/helpers.html#labml_helpers.device.DeviceConfigs"><code  class="highlight"><span></span><span class="n">DeviceConfigs</span></code></a>는 사용 가능한 CUDA 디바이스를 선택하거나 CPU로 기본 설정됩니다.</p>
 
         </div>
         <div class='code'>
@@ -268,7 +263,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p><a href="index.html#discriminator">StyleGAN2 Discriminator</a> </p>
+            <p><a href="index.html#discriminator">StyleGAN2 판별자입니다.</a> </p>
 
         </div>
         <div class='code'>
@@ -280,7 +275,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p><a href="index.html#generator">StyleGAN2 Generator</a> </p>
+            <p><a href="index.html#generator">StyleGAN2 생성자입니다.</a> </p>
 
         </div>
         <div class='code'>
@@ -292,7 +287,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p><a href="index.html#mapping_network">Mapping network</a> </p>
+            <p><a href="index.html#mapping_network">매핑 네트워크입니다.</a> </p>
 
         </div>
         <div class='code'>
@@ -304,7 +299,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Discriminator and generator loss functions. We use <a href="../wasserstein/index.html">Wasserstein loss</a> </p>
+            <p>판별자와 생성자는 <a href="../wasserstein/index.html">Wasserstein loss</a>를 손실 함수로 사용합니다.</p>
 
         </div>
         <div class='code'>
@@ -317,7 +312,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Optimizers </p>
+            <p>모듈 별 옵티마이저는 아래와 같습니다.</p>
 
         </div>
         <div class='code'>
@@ -331,7 +326,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p><a href="index.html#gradient_penalty">Gradient Penalty Regularization Loss</a> </p>
+            <p><a href="index.html#gradient_penalty">Gradient 패널티를 손실 함수의 규제화로 사용합니다.</a> </p>
 
         </div>
         <div class='code'>
@@ -343,7 +338,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Gradient penalty coefficient <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span></span></span></span></span> </p>
+            <p>Gradient penalty 계수 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span></span></span></span></span>입니다.</p>
 
         </div>
         <div class='code'>
@@ -355,7 +350,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p><a href="index.html#path_length_penalty">Path length penalty</a> </p>
+            <p><a href="index.html#path_length_penalty">Path length 패널티도 적용합니다.</a> </p>
 
         </div>
         <div class='code'>
@@ -367,7 +362,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p>Data loader </p>
+            <p>데이터 로더입니다. </p>
 
         </div>
         <div class='code'>
@@ -379,7 +374,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p>Batch size </p>
+            <p>배치 사이즈입니다. </p>
 
         </div>
         <div class='code'>
@@ -391,7 +386,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>Dimensionality of <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqo" style=""><span class="mord mathnormal" style="margin-right:0.04398em">z</span></span></span></span></span></span> and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span></span></span> </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqo" style=""><span class="mord mathnormal" style="margin-right:0.04398em">z</span></span></span></span></span></span> 와 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span></span></span>의 차원 수를 설정합니다.</p>
 
         </div>
         <div class='code'>
@@ -403,7 +398,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>Height/width of the image </p>
+            <p>이미지의 세로 및 가로 크기입니다. </p>
 
         </div>
         <div class='code'>
@@ -415,7 +410,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <p>Number of layers in the mapping network </p>
+            <p>매핑 네트워크의 레이어 수를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -427,7 +422,7 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <p>Generator &amp; Discriminator learning rate </p>
+            <p>생성자 &amp; 판별자의 학습률입니다.</p>
 
         </div>
         <div class='code'>
@@ -439,7 +434,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Mapping network learning rate (<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">100</span><span class="mord">×</span></span></span></span></span> lower than the others) </p>
+            <p>매핑 네트워크의 학습률입니다. (<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">100배 작음) </p>
 
         </div>
         <div class='code'>
@@ -451,7 +446,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p>Number of steps to accumulate gradients on. Use this to increase the effective batch size. </p>
+            <p>그래디언트 누적 수입니다. 배치 사이즈 증가의 효과를 얻으려면 이 값을 사용합니다.</p>
 
         </div>
         <div class='code'>
@@ -463,7 +458,7 @@
             <div class='section-link'>
                 <a href='#section-30'>#</a>
             </div>
-            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> for Adam optimizer </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> 와 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>는 Adam 옵티마이저를 위한 파라미터입니다. </p>
 
         </div>
         <div class='code'>
@@ -475,7 +470,7 @@
             <div class='section-link'>
                 <a href='#section-31'>#</a>
             </div>
-            <p>Probability of mixing styles </p>
+            <p>스타일이 혼합될 확률입니다. </p>
 
         </div>
         <div class='code'>
@@ -487,7 +482,7 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>Total number of training steps </p>
+            <p>총 훈련 스텝 수입니다. </p>
 
         </div>
         <div class='code'>
@@ -499,7 +494,7 @@
             <div class='section-link'>
                 <a href='#section-33'>#</a>
             </div>
-            <p>Number of blocks in the generator (calculated based on image resolution) </p>
+            <p>이미지 해상도에 기반하여, 생성자의 블록 수도 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -511,8 +506,8 @@
             <div class='section-link'>
                 <a href='#section-34'>#</a>
             </div>
-            <h3>Lazy regularization</h3>
-<p>Instead of calculating the regularization losses, the paper proposes lazy regularization where the regularization terms are calculated once in a while. This improves the training efficiency a lot. </p>
+            <h3>Lazy 규제</h3>
+<p>이 논문에서는 정규화 손실을 계산하는 대신 정규화 조건을 한 번씩 계산하는 Lazy 규제를 제안합니다. 이를 통해 학습 효율이 크게 향상됩니다. </p>
 
         </div>
         <div class='code'>
@@ -524,7 +519,7 @@
             <div class='section-link'>
                 <a href='#section-35'>#</a>
             </div>
-            <p>The interval at which to compute gradient penalty </p>
+            <p>그래디언트 패널티를 계산하는 간격입니다. </p>
 
         </div>
         <div class='code'>
@@ -536,7 +531,7 @@
             <div class='section-link'>
                 <a href='#section-36'>#</a>
             </div>
-            <p>Path length penalty calculation interval </p>
+            <p>Path length 패널티를 계산하는 간격입니다. </p>
 
         </div>
         <div class='code'>
@@ -548,7 +543,7 @@
             <div class='section-link'>
                 <a href='#section-37'>#</a>
             </div>
-            <p>Skip calculating path length penalty during the initial phase of training </p>
+            <p>훈련 초기 단계에서 Path Length 패널티를 건너뜁니다. </p>
 
         </div>
         <div class='code'>
@@ -560,7 +555,7 @@
             <div class='section-link'>
                 <a href='#section-38'>#</a>
             </div>
-            <p>How often to log generated images </p>
+            <p>생성된 이미지를 기록하는 빈도입니다. </p>
 
         </div>
         <div class='code'>
@@ -572,7 +567,7 @@
             <div class='section-link'>
                 <a href='#section-39'>#</a>
             </div>
-            <p>How often to save model checkpoints </p>
+            <p>체크포인트 모델을 저장하는 빈도입니다. </p>
 
         </div>
         <div class='code'>
@@ -596,7 +591,7 @@
             <div class='section-link'>
                 <a href='#section-41'>#</a>
             </div>
-            <p>Whether to log model layer outputs </p>
+            <p>모델 레이어 출력의 로깅 여부입니다. </p>
 
         </div>
         <div class='code'>
@@ -608,8 +603,9 @@
             <div class='section-link'>
                 <a href='#section-42'>#</a>
             </div>
-            <p><a id="dataset_path"></a> We trained this on <a href="https://github.com/tkarras/progressive_growing_of_gans">CelebA-HQ dataset</a>. You can find the download instruction in this <a href="https://forums.fast.ai/t/download-celeba-hq-dataset/45873/3">discussion on fast.ai</a>. Save the images inside <code  class="highlight"><span></span><span class="n">data</span><span class="o">/</span><span class="n">stylegan</span></code>
- folder. </p>
+            <p><a id="dataset_path"></a> 이 모델은 <a href="https://github.com/tkarras/progressive_growing_of_gans">CelebA-HQ dataset</a>으로 학습하였습니다. 
+                <a href="https://forums.fast.ai/t/download-celeba-hq-dataset/45873/3">discussion on fast.ai</a>에서 데이터셋 다운로드의 가이드를 볼 수 있습니다. 
+                다운받은 이미지 데이터를 <code  class="highlight"><span></span><span class="n">data</span><span class="o">/</span><span class="n">stylegan</span></code> 폴더에 저장합니다.</p>
 
         </div>
         <div class='code'>
@@ -621,7 +617,7 @@
             <div class='section-link'>
                 <a href='#section-43'>#</a>
             </div>
-            <h3>Initialize</h3>
+            <h3>초기화</h3>
 
         </div>
         <div class='code'>
@@ -633,7 +629,7 @@
             <div class='section-link'>
                 <a href='#section-44'>#</a>
             </div>
-            <p>Create dataset </p>
+            <p>데이터셋 인스턴스 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -645,7 +641,7 @@
             <div class='section-link'>
                 <a href='#section-45'>#</a>
             </div>
-            <p>Create data loader </p>
+            <p>데이터로더 인스턴스 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -682,7 +678,7 @@
             <div class='section-link'>
                 <a href='#section-48'>#</a>
             </div>
-            <p>Create discriminator and generator </p>
+            <p>판별자 및 생성자를 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -695,7 +691,7 @@
             <div class='section-link'>
                 <a href='#section-49'>#</a>
             </div>
-            <p>Get number of generator blocks for creating style and noise inputs </p>
+            <p>스타일 및 노이즈 입력을 생성하기 위한 생성자 블록 수를 가져옵니다. </p>
 
         </div>
         <div class='code'>
@@ -707,7 +703,7 @@
             <div class='section-link'>
                 <a href='#section-50'>#</a>
             </div>
-            <p>Create mapping network </p>
+            <p>매핑 네트워크를 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -719,7 +715,7 @@
             <div class='section-link'>
                 <a href='#section-51'>#</a>
             </div>
-            <p>Create path length penalty loss </p>
+            <p>Path Length 패널티 로스를 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -731,7 +727,7 @@
             <div class='section-link'>
                 <a href='#section-52'>#</a>
             </div>
-            <p>Add model hooks to monitor layer outputs </p>
+            <p>레이어 출력을 모니터링하기 위한 모델 후크를 추가합니다. </p>
 
         </div>
         <div class='code'>
@@ -746,7 +742,7 @@
             <div class='section-link'>
                 <a href='#section-53'>#</a>
             </div>
-            <p>Discriminator and generator losses </p>
+            <p>판별쟈와 생성자 손실 함수를 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -759,7 +755,7 @@
             <div class='section-link'>
                 <a href='#section-54'>#</a>
             </div>
-            <p>Create optimizers </p>
+            <p>마지막으로 옵티마이저를 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -782,7 +778,7 @@
             <div class='section-link'>
                 <a href='#section-55'>#</a>
             </div>
-            <p>Set tracker configurations </p>
+            <p>트래커 설정값을 세팅합니다. </p>
 
         </div>
         <div class='code'>
@@ -794,8 +790,8 @@
             <div class='section-link'>
                 <a href='#section-56'>#</a>
             </div>
-            <h3>Sample <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span></span></span></h3>
-<p>This samples <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqo" style=""><span class="mord mathnormal" style="margin-right:0.04398em">z</span></span></span></span></span></span> randomly and get <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span></span></span> from the mapping network.</p>
+            <h3>샘플링 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span></span></span></h3>
+<p>무작위로 <span><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqo" style=""><span class="mord mathnormal" style="margin-right:0.04398em">z</span></span></span></span></span></span>를 샘플링하여, 매핑 네트워크로부터 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span></span></span>를 얻습니다. </p>
 <p>We also apply style mixing sometimes where we generate two latent variables <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqk" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqo" style="margin-right:0.04398em">z</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eql" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqo" style="margin-right:0.04398em">z</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> and get corresponding <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="margin-right:0.02691em">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqj" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="margin-right:0.02691em">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span>. Then we randomly sample a cross-over point and apply <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="margin-right:0.02691em">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> to the generator blocks before the cross-over point and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqj" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="margin-right:0.02691em">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> to the blocks after.</p>
 
         </div>
@@ -808,7 +804,7 @@
             <div class='section-link'>
                 <a href='#section-57'>#</a>
             </div>
-            <p>Mix styles </p>
+            <p>스타일을 섞어줍니다. </p>
 
         </div>
         <div class='code'>
@@ -832,7 +828,7 @@
             <div class='section-link'>
                 <a href='#section-59'>#</a>
             </div>
-            <p>Sample <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqk" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqo" style="margin-right:0.04398em">z</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eql" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqo" style="margin-right:0.04398em">z</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqk" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqo" style="margin-right:0.04398em">z</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span>과 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eql" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqo" style="margin-right:0.04398em">z</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span>를 샘플링합니다. </p>
 
         </div>
         <div class='code'>
@@ -845,7 +841,7 @@
             <div class='section-link'>
                 <a href='#section-60'>#</a>
             </div>
-            <p>Get <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="margin-right:0.02691em">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqj" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="margin-right:0.02691em">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="margin-right:0.02691em">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span>과 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqj" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="margin-right:0.02691em">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span>를 얻습니다. </p>
 
         </div>
         <div class='code'>
@@ -858,7 +854,7 @@
             <div class='section-link'>
                 <a href='#section-61'>#</a>
             </div>
-            <p>Expand <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="margin-right:0.02691em">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqj" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="margin-right:0.02691em">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> for the generator blocks and concatenate </p>
+            <p>생성자 블록 포맷에 맞게 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="margin-right:0.02691em">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span>과 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqj" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="margin-right:0.02691em">w</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span>의 텐서 크기를 확장해주고, concatenate합니다. </p>
 
         </div>
         <div class='code'>
@@ -872,7 +868,7 @@
             <div class='section-link'>
                 <a href='#section-62'>#</a>
             </div>
-            <p>Without mixing </p>
+            <p>스타일을 섞지 않는다면 else를 걸어줍니다. </p>
 
         </div>
         <div class='code'>
@@ -908,7 +904,7 @@
             <div class='section-link'>
                 <a href='#section-65'>#</a>
             </div>
-            <p>Expand <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span></span></span> for the generator blocks </p>
+            <p>생성자 블록의 포맷에 맞게 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span></span></span>의 텐서 크기를 확장합니다. </p>
 
         </div>
         <div class='code'>
@@ -920,8 +916,8 @@
             <div class='section-link'>
                 <a href='#section-66'>#</a>
             </div>
-            <h3>Generate noise</h3>
-<p>This generates noise for each <a href="index.html#generator_block">generator block</a></p>
+            <h3>노이즈 생성</h3>
+<p>각 <a href="index.html#generator_block">생성자 블록</a>을 위한 랜덤 노이즈를 얻는 함수입니다. </p>
 
         </div>
         <div class='code'>
@@ -933,7 +929,7 @@
             <div class='section-link'>
                 <a href='#section-67'>#</a>
             </div>
-            <p>List to store noise </p>
+            <p>생성된 노이즈를 append할 리스트입니다. </p>
 
         </div>
         <div class='code'>
@@ -945,7 +941,7 @@
             <div class='section-link'>
                 <a href='#section-68'>#</a>
             </div>
-            <p>Noise resolution starts from <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqm" style=""><span class="mord" style="">4</span></span></span></span></span></span> </p>
+            <p>노이즈 해상도는 최소 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqm" style=""><span class="mord" style="">4</span></span></span></span></span></span>보다 큰 값으로 설정합니다.</p>
 
         </div>
         <div class='code'>
@@ -957,7 +953,7 @@
             <div class='section-link'>
                 <a href='#section-69'>#</a>
             </div>
-            <p>Generate noise for each generator block </p>
+            <p>아래 반복문처럼 각 생성자 블록에 맞게 노이즈를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -969,7 +965,7 @@
             <div class='section-link'>
                 <a href='#section-70'>#</a>
             </div>
-            <p>The first block has only one <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></span> convolution </p>
+            <p>이 중 첫 번째 블록만 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></span> 컨볼루션을 사용합니다.</p>
 
         </div>
         <div class='code'>
@@ -982,7 +978,7 @@
             <div class='section-link'>
                 <a href='#section-71'>#</a>
             </div>
-            <p>Generate noise to add after the first convolution layer </p>
+            <p>첫 번째 컨볼루션 뒤에 추가할 노이즈를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -995,7 +991,7 @@
             <div class='section-link'>
                 <a href='#section-72'>#</a>
             </div>
-            <p>Generate noise to add after the second convolution layer </p>
+            <p>두 번째 컨볼루션 뒤에 추가할 노이즈를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -1007,7 +1003,7 @@
             <div class='section-link'>
                 <a href='#section-73'>#</a>
             </div>
-            <p>Add noise tensors to the list </p>
+            <p>노이즈 텐서들을 리스트에 추가합니다. </p>
 
         </div>
         <div class='code'>
@@ -1019,7 +1015,7 @@
             <div class='section-link'>
                 <a href='#section-74'>#</a>
             </div>
-            <p>Next block has <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord">×</span></span></span></span></span> resolution </p>
+            <p>다음 블록은 해상도를 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord">×</span></span></span></span></span> 늘려줍니다. </p>
 
         </div>
         <div class='code'>
@@ -1031,7 +1027,7 @@
             <div class='section-link'>
                 <a href='#section-75'>#</a>
             </div>
-            <p>Return noise tensors </p>
+            <p>노이즈 텐서를 반환합니다. </p>
 
         </div>
         <div class='code'>
@@ -1043,8 +1039,8 @@
             <div class='section-link'>
                 <a href='#section-76'>#</a>
             </div>
-            <h3>Generate images</h3>
-<p>This generate images using the generator</p>
+            <h3>이미지 생성</h3>
+<p>이 목차에서는 생성자를 이용하여 이미지를 만들어봅니다.</p>
 
         </div>
         <div class='code'>
@@ -1056,7 +1052,7 @@
             <div class='section-link'>
                 <a href='#section-77'>#</a>
             </div>
-            <p>Get <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span></span></span> </p>
+            <p>먼저 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span></span></span>를 얻습니다.</p>
 
         </div>
         <div class='code'>
@@ -1068,7 +1064,7 @@
             <div class='section-link'>
                 <a href='#section-78'>#</a>
             </div>
-            <p>Get noise </p>
+            <p>그리고 노이즈를 얻습니다. </p>
 
         </div>
         <div class='code'>
@@ -1080,7 +1076,7 @@
             <div class='section-link'>
                 <a href='#section-79'>#</a>
             </div>
-            <p>Generate images </p>
+            <p>이미지를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -1092,7 +1088,7 @@
             <div class='section-link'>
                 <a href='#section-80'>#</a>
             </div>
-            <p>Return images and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span></span></span> </p>
+            <p>이미지와 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="margin-right:0.02691em">w</span></span></span></span></span></span>를 반환합니다. </p>
 
         </div>
         <div class='code'>
@@ -1104,7 +1100,7 @@
             <div class='section-link'>
                 <a href='#section-81'>#</a>
             </div>
-            <h3>Training Step</h3>
+            <h3>훈련 스텝</h3>
 
         </div>
         <div class='code'>
@@ -1116,7 +1112,7 @@
             <div class='section-link'>
                 <a href='#section-82'>#</a>
             </div>
-            <p>Train the discriminator </p>
+            <p>판별자를 훈련합니다. </p>
 
         </div>
         <div class='code'>
@@ -1128,7 +1124,7 @@
             <div class='section-link'>
                 <a href='#section-83'>#</a>
             </div>
-            <p>Reset gradients </p>
+            <p>그래디언트를 zero_grad()로 초기화합니다. </p>
 
         </div>
         <div class='code'>
@@ -1140,8 +1136,7 @@
             <div class='section-link'>
                 <a href='#section-84'>#</a>
             </div>
-            <p>Accumulate gradients for <code  class="highlight"><span></span><span class="n">gradient_accumulate_steps</span></code>
- </p>
+            <p><code  class="highlight"><span></span><span class="n">gradient_accumulate_steps</span></code>로 그래디언트를 누적합니다. </p>
 
         </div>
         <div class='code'>
@@ -1153,8 +1148,7 @@
             <div class='section-link'>
                 <a href='#section-85'>#</a>
             </div>
-            <p>Update <code  class="highlight"><span></span><span class="n">mode</span></code>
-. Set whether to log activation </p>
+            <p>Update <code  class="highlight"><span></span><span class="n">mode</span></code>. Set whether to log activation </p>
 
         </div>
         <div class='code'>
@@ -1166,7 +1160,7 @@
             <div class='section-link'>
                 <a href='#section-86'>#</a>
             </div>
-            <p>Sample images from generator </p>
+            <p>생성자로부터 이미지를 샘플링합니다. </p>
 
         </div>
         <div class='code'>
@@ -1178,7 +1172,7 @@
             <div class='section-link'>
                 <a href='#section-87'>#</a>
             </div>
-            <p>Discriminator classification for generated images </p>
+            <p>생성된 이미지를 판별자로 진짜/가짜 여부를 판단합니다. </p>
 
         </div>
         <div class='code'>
@@ -1190,7 +1184,7 @@
             <div class='section-link'>
                 <a href='#section-88'>#</a>
             </div>
-            <p>Get real images from the data loader </p>
+            <p>앞서 설정한 데이터 로더로부터 실제 이미지를 얻습니다. </p>
 
         </div>
         <div class='code'>
@@ -1202,7 +1196,7 @@
             <div class='section-link'>
                 <a href='#section-89'>#</a>
             </div>
-            <p>We need to calculate gradients w.r.t. real images for gradient penalty </p>
+            <p>그라디언트 페널티를 위해 실제 이미지에 대한 그라디언트를 계산해야 합니다. </p>
 
         </div>
         <div class='code'>
@@ -1215,7 +1209,7 @@
             <div class='section-link'>
                 <a href='#section-90'>#</a>
             </div>
-            <p>Discriminator classification for real images </p>
+            <p>실제 이미지를 판별자로 진짜/가짜 여부를 판단합니다. </p>
 
         </div>
         <div class='code'>
@@ -1227,7 +1221,7 @@
             <div class='section-link'>
                 <a href='#section-91'>#</a>
             </div>
-            <p>Get discriminator loss </p>
+            <p>판별자 손실 함수를 계산합니다. </p>
 
         </div>
         <div class='code'>
@@ -1240,7 +1234,7 @@
             <div class='section-link'>
                 <a href='#section-92'>#</a>
             </div>
-            <p>Add gradient penalty </p>
+            <p>그래디언트 패널티를 추가합니다. </p>
 
         </div>
         <div class='code'>
@@ -1252,7 +1246,7 @@
             <div class='section-link'>
                 <a href='#section-93'>#</a>
             </div>
-            <p>Calculate and log gradient penalty </p>
+            <p>그래디언트 패널티를 계산하고 기록합니다. </p>
 
         </div>
         <div class='code'>
@@ -1265,7 +1259,7 @@
             <div class='section-link'>
                 <a href='#section-94'>#</a>
             </div>
-            <p>Multiply by coefficient and add gradient penalty </p>
+            <p>계수를 곱하고 그래티언트 패널티를 더합니다. </p>
 
         </div>
         <div class='code'>
@@ -1277,7 +1271,7 @@
             <div class='section-link'>
                 <a href='#section-95'>#</a>
             </div>
-            <p>Compute gradients </p>
+            <p>그래디언트를 계산합니다. </p>
 
         </div>
         <div class='code'>
@@ -1289,7 +1283,7 @@
             <div class='section-link'>
                 <a href='#section-96'>#</a>
             </div>
-            <p>Log discriminator loss </p>
+            <p>판별자 손실을 기록합니다. </p>
 
         </div>
         <div class='code'>
@@ -1303,7 +1297,7 @@
             <div class='section-link'>
                 <a href='#section-97'>#</a>
             </div>
-            <p>Log discriminator model parameters occasionally </p>
+            <p>판별자 모델 파라미터 또한 기록합니다. </p>
 
         </div>
         <div class='code'>
@@ -1315,7 +1309,7 @@
             <div class='section-link'>
                 <a href='#section-98'>#</a>
             </div>
-            <p>Clip gradients for stabilization </p>
+            <p>훈련의 안정성을 위해 그래디언트 클리핑을 적용합니다. </p>
 
         </div>
         <div class='code'>
@@ -1327,7 +1321,7 @@
             <div class='section-link'>
                 <a href='#section-99'>#</a>
             </div>
-            <p>Take optimizer step </p>
+            <p>옵티마이저 스텝을 적용합니다. </p>
 
         </div>
         <div class='code'>
@@ -1339,7 +1333,7 @@
             <div class='section-link'>
                 <a href='#section-100'>#</a>
             </div>
-            <p>Train the generator </p>
+            <p>생성자를 훈련합니다. </p>
 
         </div>
         <div class='code'>
@@ -1351,7 +1345,7 @@
             <div class='section-link'>
                 <a href='#section-101'>#</a>
             </div>
-            <p>Reset gradients </p>
+            <p>생성자와 매핑 네트워크의 그래디언트를 초기화합니다. </p>
 
         </div>
         <div class='code'>
@@ -1364,8 +1358,7 @@
             <div class='section-link'>
                 <a href='#section-102'>#</a>
             </div>
-            <p>Accumulate gradients for <code  class="highlight"><span></span><span class="n">gradient_accumulate_steps</span></code>
- </p>
+            <p><code  class="highlight"><span></span><span class="n">gradient_accumulate_steps</span></code>을 통해 그래디언트를 누적합니다. </p>
 
         </div>
         <div class='code'>
@@ -1377,7 +1370,7 @@
             <div class='section-link'>
                 <a href='#section-103'>#</a>
             </div>
-            <p>Sample images from generator </p>
+            <p>생성자로부터 이미지를 샘플링합니다. </p>
 
         </div>
         <div class='code'>
@@ -1389,7 +1382,7 @@
             <div class='section-link'>
                 <a href='#section-104'>#</a>
             </div>
-            <p>Discriminator classification for generated images </p>
+            <p>생성된 이미지를 판별자를 통해 분류합니다. </p>
 
         </div>
         <div class='code'>
@@ -1401,7 +1394,7 @@
             <div class='section-link'>
                 <a href='#section-105'>#</a>
             </div>
-            <p>Get generator loss </p>
+            <p>생성자 손실을 계산합니다. </p>
 
         </div>
         <div class='code'>
@@ -1413,7 +1406,7 @@
             <div class='section-link'>
                 <a href='#section-106'>#</a>
             </div>
-            <p>Add path length penalty </p>
+            <p>또한 Path Length 패널티를 더합니다. </p>
 
         </div>
         <div class='code'>
@@ -1425,7 +1418,7 @@
             <div class='section-link'>
                 <a href='#section-107'>#</a>
             </div>
-            <p>Calculate path length penalty </p>
+            <p>위 패널티를 계산합니다.  </p>
 
         </div>
         <div class='code'>
@@ -1437,8 +1430,7 @@
             <div class='section-link'>
                 <a href='#section-108'>#</a>
             </div>
-            <p>Ignore if <code  class="highlight"><span></span><span class="n">nan</span></code>
- </p>
+            <p>만약 <code  class="highlight"><span></span><span class="n">nan</span></code> 이라면 무시합니다. </p>
 
         </div>
         <div class='code'>
@@ -1452,7 +1444,7 @@
             <div class='section-link'>
                 <a href='#section-109'>#</a>
             </div>
-            <p>Calculate gradients </p>
+            <p>그래디언트를 계산합니다. </p>
 
         </div>
         <div class='code'>
@@ -1464,7 +1456,7 @@
             <div class='section-link'>
                 <a href='#section-110'>#</a>
             </div>
-            <p>Log generator loss </p>
+            <p>생성자 손실을 기록합니다. </p>
 
         </div>
         <div class='code'>
@@ -1478,7 +1470,7 @@
             <div class='section-link'>
                 <a href='#section-111'>#</a>
             </div>
-            <p>Log discriminator model parameters occasionally </p>
+            <p>생성자와 매핑 네트워크 모델 파라미터 또한 기록합니다. </p>
 
         </div>
         <div class='code'>
@@ -1491,7 +1483,7 @@
             <div class='section-link'>
                 <a href='#section-112'>#</a>
             </div>
-            <p>Clip gradients for stabilization </p>
+            <p>위에서와 마찬가지로 훈련 안정성을 위해 그래디언트를 클리핑합니다. </p>
 
         </div>
         <div class='code'>
@@ -1504,7 +1496,7 @@
             <div class='section-link'>
                 <a href='#section-113'>#</a>
             </div>
-            <p>Take optimizer step </p>
+            <p>옵티마이저 스텝을 걸어줍니다. </p>
 
         </div>
         <div class='code'>
@@ -1517,7 +1509,7 @@
             <div class='section-link'>
                 <a href='#section-114'>#</a>
             </div>
-            <p>Log generated images </p>
+            <p>생성된 이미지를 기록합니다. </p>
 
         </div>
         <div class='code'>
@@ -1530,7 +1522,7 @@
             <div class='section-link'>
                 <a href='#section-115'>#</a>
             </div>
-            <p>Save model checkpoints </p>
+            <p>모델의 체크포인트를 저장합니다. </p>
 
         </div>
         <div class='code'>
@@ -1543,7 +1535,7 @@
             <div class='section-link'>
                 <a href='#section-116'>#</a>
             </div>
-            <p>Flush tracker </p>
+            <p>로깅한 정보들을 저장합니다. </p>
 
         </div>
         <div class='code'>
@@ -1555,7 +1547,7 @@
             <div class='section-link'>
                 <a href='#section-117'>#</a>
             </div>
-            <h2>Train model</h2>
+            <h2>훈련 모델</h2>
 
         </div>
         <div class='code'>
@@ -1563,12 +1555,11 @@
         </div>
     </div>
     <div class='section' id='section-118'>
-        <div class='docs'>
+        <div class='docs'> 
             <div class='section-link'>
                 <a href='#section-118'>#</a>
             </div>
-            <p>Loop for <code  class="highlight"><span></span><span class="n">training_steps</span></code>
- </p>
+            <p>다음의 <code  class="highlight"><span></span><span class="n">training_steps</span></code> 반복문으로 훈련을 진행합니다. </p>
 
         </div>
         <div class='code'>
@@ -1580,7 +1571,7 @@
             <div class='section-link'>
                 <a href='#section-119'>#</a>
             </div>
-            <p>Take a training step </p>
+            <p>아래 코드를 통해 훈련 과정을 경험해봅니다. </p>
 
         </div>
         <div class='code'>
@@ -1605,7 +1596,7 @@
             <div class='section-link'>
                 <a href='#section-121'>#</a>
             </div>
-            <h3>Train StyleGAN2</h3>
+            <h3>StyleGAN2 훈련 과정</h3>
 
         </div>
         <div class='code'>
@@ -1617,7 +1608,7 @@
             <div class='section-link'>
                 <a href='#section-122'>#</a>
             </div>
-            <p>Create an experiment </p>
+            <p>실험을 준비합니다. </p>
 
         </div>
         <div class='code'>
@@ -1629,7 +1620,7 @@
             <div class='section-link'>
                 <a href='#section-123'>#</a>
             </div>
-            <p>Create configurations object </p>
+            <p>설정값 오브젝트를 만듭니다. </p>
 
         </div>
         <div class='code'>
@@ -1641,7 +1632,7 @@
             <div class='section-link'>
                 <a href='#section-124'>#</a>
             </div>
-            <p>Set configurations and override some </p>
+            <p>설정값의 일부를 재정의할 수 있습니다. </p>
 
         </div>
         <div class='code'>
@@ -1657,7 +1648,7 @@
             <div class='section-link'>
                 <a href='#section-125'>#</a>
             </div>
-            <p>Initialize </p>
+            <p>설정값을 초기화합니다. </p>
 
         </div>
         <div class='code'>
@@ -1669,7 +1660,7 @@
             <div class='section-link'>
                 <a href='#section-126'>#</a>
             </div>
-            <p>Set models for saving and loading </p>
+            <p>불러오기와 저장하기를 위한 모델을 준비합니다. </p>
 
         </div>
         <div class='code'>
@@ -1683,7 +1674,7 @@
             <div class='section-link'>
                 <a href='#section-127'>#</a>
             </div>
-            <p>Start the experiment </p>
+            <p>실험을 시작합니다. </p>
 
         </div>
         <div class='code'>
@@ -1695,7 +1686,7 @@
             <div class='section-link'>
                 <a href='#section-128'>#</a>
             </div>
-            <p>Run the training loop </p>
+            <p>훈련 루프를 실행합니다. </p>
 
         </div>
         <div class='code'>

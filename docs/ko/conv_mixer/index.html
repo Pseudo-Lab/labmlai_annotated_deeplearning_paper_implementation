@@ -28,8 +28,7 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4V3HC8HBLH"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+    <script>window.dataLayer = window.dataLayer || [];
 
         function gtag() {
             dataLayer.push(arguments);
@@ -71,12 +70,13 @@
                 <a href='#section-0'>#</a>
             </div>
             <h1>Patches Are All You Need? (ConvMixer)</h1>
-<p>This is a <a href="https://pytorch.org">PyTorch</a> implementation of the paper <a href="https://papers.labml.ai/paper/2201.09792">Patches Are All You Need?</a>.</p>
+<p>이 문서는 <a href="https://papers.labml.ai/paper/2201.09792">Patches Are All You Need?</a> 논문의 <a href="https://pytorch.org">PyTorch</a> 공식 구현입니다.</p>
 <p><img alt="ConvMixer diagram from the paper" src="conv_mixer.png"></p>
-<p>ConvMixer is Similar to <a href="../transformers/mlp_mixer/index.html">MLP-Mixer</a>. MLP-Mixer separates mixing of spatial and channel dimensions, by applying an MLP across spatial dimension and then an MLP across the channel dimension (spatial MLP replaces the <a href="../transformers/vit/index.html">ViT</a> attention and channel MLP is the <a href="../transformers/feed_forward.html">FFN</a> of ViT).</p>
-<p>ConvMixer uses a <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqa" style=""><span class="mord" style="">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">1</span></span></span></span></span></span> convolution for channel mixing and a depth-wise convolution for spatial mixing. Since it&#x27;s a convolution instead of a full MLP across the space, it mixes only the nearby batches in contrast to ViT or MLP-Mixer. Also, the MLP-mixer uses MLPs of two layers for each mixing and ConvMixer uses a single layer for each mixing.</p>
-<p>The paper recommends removing the residual connection across the channel mixing (point-wise convolution) and having only a residual connection over the spatial mixing (depth-wise convolution). They also use <a href="../normalization/batch_norm/index.html">Batch normalization</a> instead of <a href="../normalization/layer_norm/index.html">Layer normalization</a>.</p>
-<p>Here&#x27;s <a href="experiment.html">an experiment</a> that trains ConvMixer on CIFAR-10.</p>
+<p>ConvMixer는 <a href="../transformers/mlp_mixer/index.html">MLP-Mixer</a>와 유사합니다. 먼저 MLP-Mixer는 MLP 자체에 섞여 있는 공간과 채널 정보를 각각 분리합니다. 
+   (공간 MLP는 <a href="../transformers/vit/index.html">ViT</a>의 어텐션을 대체하고, 채널 MLP는 <a href="../transformers/feed_forward.html">FFN</a> 역할을 합니다.).</p>
+<p>마찬가지로 ConvMixer는 MLP-Mixer like하게 공간 정보 믹싱으로 depth-wise 컨볼루션을 사용하고, 채널 정보 믹싱으로 1x1 컨볼루션을 사용합니다.</p>
+<p>이 논문은 채널 믹싱 (point-wise convolution)에서 잔차 연결을 없애고, 공간 정보 믹싱 (depth-wise convolution)에서만 residual 연결을 권장합니다. 또한 <a href="../normalization/layer_norm/index.html">Layer normalization</a> 대신 <a href="../normalization/batch_norm/index.html">Batch normalization</a> 사용을 권장합니다.</p>
+<p>여기서 CIFAR-10으로 훈련한 ConvMixer의 <a href="experiment.html">실험 결과</a>를 볼수 있습니디.</p>
 
         </div>
         <div class='code'>
@@ -93,8 +93,8 @@
                 <a href='#section-1'>#</a>
             </div>
             <p> <a id="ConvMixerLayer"></a></p>
-<h2>ConvMixer layer</h2>
-<p>This is a single ConvMixer layer. The model will have a series of these.</p>
+<h2>ConvMixer 레이어</h2>
+<p>이 파트는 ConMixer의 단위 레이어 하나를 살펴봅니다. 전체 모델은 이러한 레이어의 조합들로 구성됩니다.</p>
 
         </div>
         <div class='code'>
@@ -132,7 +132,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Depth-wise convolution is separate convolution for each channel. We do this with a convolution layer with the number of groups equal to the number of channels. So that each channel is it&#x27;s own group. </p>
+            <p>Depth-wise 컨볼루션은 각 채널마다 각각 컨볼루션을 수행합니다. 이를 위해 채널 수와 동일한 그룹 수를 갖는 컨볼루션 레이어를 사용합니다. 따라서 각 채널은 그 자체로 그룹이 됩니다.</p>
 
         </div>
         <div class='code'>
@@ -147,7 +147,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>Activation after depth-wise convolution </p>
+            <p>활성함수 레이어를 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -159,7 +159,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Normalization after depth-wise convolution </p>
+            <p>배치 정규화 레이어를 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -171,7 +171,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Point-wise convolution is a <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqa" style=""><span class="mord" style="">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">1</span></span></span></span></span></span> convolution. i.e. a linear transformation of patch embeddings </p>
+            <p>Point-wise 컨볼루션은 1x1 컨볼루션으로 선언합니다. (이 연산은 선형 변환과 의미가 같다.)</p>
 
         </div>
         <div class='code'>
@@ -183,7 +183,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Activation after point-wise convolution </p>
+            <p>두 번째 활성함수 레이어를 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -195,7 +195,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>Normalization after point-wise convolution </p>
+            <p>마찬가지로 두 번재 배치 정규화 레이어를 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -218,11 +218,11 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>For the residual connection around the depth-wise convolution </p>
+            <p>Depth-wise 컨볼루션 연산과 함께 잔차 연결을 구현합니다. </p>
 
         </div>
         <div class='code'>
-            <div class="highlight"><pre><span class="lineno">80</span>        <span class="n">residual</span> <span class="o">=</span> <span class="n">x</span></pre></div>
+            <div class="highlight"><pre><span class="lineno">80</span>        <span class="n">잔차</span> <span class="o">=</span> <span class="n">x</span></pre></div>
         </div>
     </div>
     <div class='section' id='section-12'>
@@ -230,7 +230,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Depth-wise convolution, activation and normalization </p>
+            <p>1. depth-wise 컨볼루션 후에, 활성함수와 배치 정규화를 포워드합니다. </p>
 
         </div>
         <div class='code'>
@@ -244,11 +244,11 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>Add residual connection </p>
+            <p>2. 그리고 그 결과에 depth-wise 컨볼루션을 통과하기 전의 텐서를 더합니다. </p>
 
         </div>
         <div class='code'>
-            <div class="highlight"><pre><span class="lineno">88</span>        <span class="n">x</span> <span class="o">+=</span> <span class="n">residual</span></pre></div>
+            <div class="highlight"><pre><span class="lineno">88</span>        <span class="n">x</span> <span class="o">+=</span> <span class="n">잔차</span></pre></div>
         </div>
     </div>
     <div class='section' id='section-14'>
@@ -256,7 +256,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>Point-wise convolution, activation and normalization </p>
+            <p>Point-wise 컨볼루션 단계에서도 위와 같이 활성함수 - 배치 정규화 순서로 포워드합니다. </p>
 
         </div>
         <div class='code'>
@@ -283,8 +283,8 @@
                 <a href='#section-16'>#</a>
             </div>
             <p> <a id="PatchEmbeddings"></a></p>
-<h2>Get patch embeddings</h2>
-<p>This splits the image into patches of size <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqf" style=""><span class="mord mathnormal" style="">p</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqf" style=""><span class="mord mathnormal" style="">p</span></span></span></span></span></span> and gives an embedding for each patch.</p>
+<h2>패치 임베딩을 얻기</h2>
+<p>패치 임베딩은 이미지를 크기가 각각 p×p인 패치로 분할하고, 각 패치의 임베딩을 연산합니다.</p>
 
         </div>
         <div class='code'>
@@ -324,7 +324,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>We create a convolution layer with a kernel size and and stride length equal to patch size. This is equivalent to splitting the image into patches and doing a linear transformation on each patch. </p>
+            <p>커널 크기와 스트라이드를 패치 크기와 동일하게 설정한 컨볼루션은 이는 이미지를 패치로 나누고 각 패치에 대해 선형 변환을 연산한 것과 동일합니다. </p>
 
         </div>
         <div class='code'>
@@ -336,7 +336,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Activation function </p>
+            <p>활성함수 레이어를 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -348,7 +348,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>Batch normalization </p>
+            <p>또한 배치 정규화 레이어를 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -360,8 +360,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
- is the input image of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">]</span></code>
+            <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>는 이미지 텐서로 그 크기가 [B, C, H, W] 형태입니다.</span></code>
 </li></ul>
 
         </div>
@@ -374,7 +373,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p>Apply convolution layer </p>
+            <p>1. 이제 컨볼루션 연산을 수행합니다. </p>
 
         </div>
         <div class='code'>
@@ -386,7 +385,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>Activation and normalization </p>
+            <p>2. 그리고 활성함수와 배치 정규화를 순서대로 포워드합니다. </p>
 
         </div>
         <div class='code'>
@@ -412,8 +411,8 @@
                 <a href='#section-26'>#</a>
             </div>
             <p> <a id="ClassificationHead"></a></p>
-<h2>Classification Head</h2>
-<p>They do average pooling (taking the mean of all patch embeddings) and a final linear transformation to predict the log-probabilities of the image classes.</p>
+<h2>끝단의 분류 레이어</h2>
+<p>모든 이미지 패치에 대하여 평균 풀링을 수행하고, 최종적으로 클래스의 로그 확률을 예측하기 위한 마지막 선형 변환을 연산합니다.</p>
 
         </div>
         <div class='code'>
@@ -451,7 +450,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p>Average Pool </p>
+            <p>평균 풀링을 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -463,7 +462,7 @@
             <div class='section-link'>
                 <a href='#section-30'>#</a>
             </div>
-            <p>Linear layer </p>
+            <p>선형 레이어을 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -486,7 +485,7 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>Average pooling </p>
+            <p>1. 그리고 텐서에 평균 풀링을 적용합니다. </p>
 
         </div>
         <div class='code'>
@@ -498,9 +497,7 @@
             <div class='section-link'>
                 <a href='#section-33'>#</a>
             </div>
-            <p>Get the embedding, <code  class="highlight"><span></span><span class="n">x</span></code>
- will have shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">d_model</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span></code>
- </p>
+            <p>2. 일부 크기의 텐서만 추출합니다. 이때 x의 크기는 [batch_size, d_model, 1, 1]이고, 아래 코드처럼 [:, :, 0, 0]으로 [batch_size, d_model] 텐서만 취합니다. 이는 선형 레이어로 포워드하기 위해서입니다.</p>
 
         </div>
         <div class='code'>
@@ -512,7 +509,7 @@
             <div class='section-link'>
                 <a href='#section-34'>#</a>
             </div>
-            <p>Linear layer </p>
+            <p>3. 마지막으로 선형 레이어를 포워드합니다. </p>
 
         </div>
         <div class='code'>
@@ -537,7 +534,7 @@
                 <a href='#section-36'>#</a>
             </div>
             <h2>ConvMixer</h2>
-<p>This combines the patch embeddings block, a number of ConvMixer layers and a classification head.</p>
+<p>위에서 구현한 패치 임베딩 블록, N개의 ConMixer 레이어, 끝단의 분류 헤드까지 결합하여 전체를 구성합니다.</p>
 
         </div>
         <div class='code'>
@@ -582,7 +579,7 @@
             <div class='section-link'>
                 <a href='#section-39'>#</a>
             </div>
-            <p>Patch embeddings </p>
+            <p>패치 임베딩 레이어를 선언합니다. </p>
 
         </div>
         <div class='code'>
@@ -594,7 +591,7 @@
             <div class='section-link'>
                 <a href='#section-40'>#</a>
             </div>
-            <p>Classification head </p>
+            <p>분류 헤드 레이어를 선언합니다.</p>
 
         </div>
         <div class='code'>
@@ -606,7 +603,7 @@
             <div class='section-link'>
                 <a href='#section-41'>#</a>
             </div>
-            <p>Make copies of the <a href="#ConvMixerLayer">ConvMixer layer</a> </p>
+            <p><a href="#ConvMixerLayer">ConvMixer layer</a>의 연결을 N번 반복하여 메인 신경망을 구성합니다.</p>
 
         </div>
         <div class='code'>
@@ -618,8 +615,7 @@
             <div class='section-link'>
                 <a href='#section-42'>#</a>
             </div>
-            <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
- is the input image of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">]</span></code>
+            <ul>이때 초기 x는 이미지 텐서이고, 그 크기는 [배치, 채널, 세로, 가로] 입니다.</span></code>
 </li></ul>
 
         </div>
@@ -632,8 +628,7 @@
             <div class='section-link'>
                 <a href='#section-43'>#</a>
             </div>
-            <p>Get patch embeddings. This gives a tensor of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">d_model</span><span class="p">,</span> <span class="n">height</span> <span class="o">/</span> <span class="n">patch_size</span><span class="p">,</span> <span class="n">width</span> <span class="o">/</span> <span class="n">patch_size</span><span class="p">]</span></code>
-. </p>
+            <p>1. 패치 임베딩을 얻습니다. 먼저 이미지의 각 가로, 세로를 앞서 설정한 패치 사이즈로 쪼갭니다. 패치의 크기는 [배치, 채널, 세로 / p, 가로 / p] 입니다. </p>
 
         </div>
         <div class='code'>
@@ -645,7 +640,7 @@
             <div class='section-link'>
                 <a href='#section-44'>#</a>
             </div>
-            <p>Pass through <a href="#ConvMixerLayer">ConvMixer layers</a> </p>
+            <p>2. 그리고 <a href="#ConvMixerLayer">ConvMixer layers</a>를 포워드합니다.</p>
 
         </div>
         <div class='code'>
@@ -658,7 +653,7 @@
             <div class='section-link'>
                 <a href='#section-45'>#</a>
             </div>
-            <p>Classification head, to get logits </p>
+            <p>3. 마지막으로 분류 헤드를 포워드하고, 로짓을 얻습니다. </p>
 
         </div>
         <div class='code'>
