@@ -71,8 +71,8 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>BERT Embeddings of chunks of text</h1>
-<p>This is the code to get BERT embeddings of chunks for <a href="index.html">RETRO model</a>.</p>
+            <h1>텍스트 청크의 BERT 임베딩</h1>
+<p>이 문서는 <a href="index.html">RETRO 모델</a>을 위한 BERT 임베딩을 얻는 설명과 코드입니다.</p>
 
         </div>
         <div class='code'>
@@ -89,8 +89,10 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>BERT Embeddings</h2>
-<p>For a given chunk of text <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord coloredeq eqb" style=""><span class="mord mathnormal" style="margin-right:0.10903em">N</span></span></span></span></span></span> this class generates BERT embeddings <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqa" style=""><span class="mord text" style=""><span class="mord" style="">B</span><span class="mord sizing reset-size6 size5" style=""><span class="mord" style="">ERT</span></span></span><span class="mopen" style="">(</span><span class="mord" style=""><span class="mord mathnormal coloredeq eqb" style="margin-right:0.10903em">N</span></span><span class="mclose" style="">)</span></span></span></span></span></span>. <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqa" style=""><span class="mord text" style=""><span class="mord" style="">B</span><span class="mord sizing reset-size6 size5" style=""><span class="mord" style="">ERT</span></span></span><span class="mopen" style="">(</span><span class="mord" style=""><span class="mord mathnormal coloredeq eqb" style="margin-right:0.10903em">N</span></span><span class="mclose" style="">)</span></span></span></span></span></span> is the average of BERT embeddings of all the tokens in <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord coloredeq eqb" style=""><span class="mord mathnormal" style="margin-right:0.10903em">N</span></span></span></span></span></span>.</p>
+            <h2>BERT 임베딩</h2>
+<p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord coloredeq eqb" style=""><span class="mord mathnormal" style="margin-right:0.10903em">N</span></span></span></span></span></span>개의 텍스트 청크가 주어졌다고 합시다.
+    이를 이용해 이 클래스는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqa" style=""><span class="mord text" style=""><span class="mord" style="">B</span><span class="mord sizing reset-size6 size5" style=""><span class="mord" style="">ERT</span></span></span><span class="mopen" style="">(</span><span class="mord" style=""><span class="mord mathnormal coloredeq eqb" style="margin-right:0.10903em">N</span></span><span class="mclose" style="">)</span></span></span></span></span></span>의 임베딩을 출력합니다. 
+    <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqa" style=""><span class="mord text" style=""><span class="mord" style="">B</span><span class="mord sizing reset-size6 size5" style=""><span class="mord" style="">ERT</span></span></span><span class="mopen" style="">(</span><span class="mord" style=""><span class="mord mathnormal coloredeq eqb" style="margin-right:0.10903em">N</span></span><span class="mclose" style="">)</span></span></span></span></span></span> 는 모든 토큰 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord coloredeq eqb" style=""><span class="mord mathnormal" style="margin-right:0.10903em">N</span></span></span></span></span></span>에 대하여 BERT 임베딩의 평균입니다.</p>
 
         </div>
         <div class='code'>
@@ -114,7 +116,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <p>Load the BERT tokenizer from <a href="https://huggingface.co/bert-base-uncased">HuggingFace</a> </p>
+            <p><a href="https://huggingface.co/bert-base-uncased">HuggingFace</a>에서 BERT 토크나이저를 로드합니다. </p>
 
         </div>
         <div class='code'>
@@ -129,7 +131,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Load the BERT model from <a href="https://huggingface.co/bert-base-uncased">HuggingFace</a> </p>
+            <p><a href="https://huggingface.co/bert-base-uncased">HuggingFace</a>에서 BERT 모델을 로드합니다.</p>
 
         </div>
         <div class='code'>
@@ -143,7 +145,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>Move the model to <code  class="highlight"><span></span><span class="n">device</span></code>
+            <p>모델에 <code  class="highlight"><span></span><span class="n">device</span>을 적용하여 적절한 하드웨어를 물립니다.</code>
  </p>
 
         </div>
@@ -156,10 +158,9 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p> In this implementation, we do not make chunks with a fixed number of tokens. One of the reasons is that this implementation uses character-level tokens and BERT uses its sub-word tokenizer.</p>
-<p>So this method will truncate the text to make sure there are no partial tokens.</p>
-<p>For instance, a chunk could be like <code  class="highlight"><span></span><span class="n">s</span> <span class="n">a</span> <span class="n">popular</span> <span class="n">programming</span> <span class="n">la</span></code>
-, with partial words (partial sub-word tokens) on the ends. We strip them off to get better BERT embeddings. As mentioned earlier this is not necessary if we broke chunks after tokenizing.</p>
+            <p> 이 구현에서는 고정된 수의 토큰으로 청크를 만들지 않습니다. 그 이유 중 하나는 이 구현이 문자 수준 토큰을 사용하고 BERT가 하위 단어 토큰화기를 사용하기 때문입니다.</p>
+            <p>예를 들어, 청크는 끝 부분에 부분 단어(부분 하위 단어 토큰)가 있는 <code  class="highlight"><span></span><span class="n">s</span> <span class="n">a</span> <span class="n">popular</span> <span class="n">programming</span> <span class="n">la</span></code> 와 같은 형태일 수 있습니다. 
+            더 나은 BERT 임베딩을 위해 이를 제거합니다. 앞서 언급했듯이 토큰화 후 청크를 분리하는 경우에는 이러한 작업이 필요하지 않습니다.</p>
 
         </div>
         <div class='code'>
@@ -172,7 +173,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Strip whitespace </p>
+            <p>Strip으로 공백을 제거합니다. </p>
 
         </div>
         <div class='code'>
@@ -184,7 +185,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Break words </p>
+            <p>단어들을 분리합니다. </p>
 
         </div>
         <div class='code'>
@@ -196,7 +197,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>Remove first and last pieces </p>
+            <p>첫 번째와 마지막 부분은 제거합니다. </p>
 
         </div>
         <div class='code'>
@@ -208,7 +209,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Remove whitespace </p>
+            <p>공백을 다시 제거합니다. </p>
 
         </div>
         <div class='code'>
@@ -220,7 +221,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>If empty return original string </p>
+            <p>만약 비어있다면 본래의 청크를 반환합니다. </p>
 
         </div>
         <div class='code'>
@@ -233,7 +234,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Otherwise, return the stripped string </p>
+            <p>그 외의 경우에는 stripped를 반환합니다. </p>
 
         </div>
         <div class='code'>
@@ -246,7 +247,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <h3>Get <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqa" style=""><span class="mord text" style=""><span class="mord" style="">B</span><span class="mord sizing reset-size6 size5" style=""><span class="mord" style="">ERT</span></span></span><span class="mopen" style="">(</span><span class="mord" style=""><span class="mord mathnormal coloredeq eqb" style="margin-right:0.10903em">N</span></span><span class="mclose" style="">)</span></span></span></span></span></span> for a list of chunks.</h3>
+            <h3>청크 리스트를 위한 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqa" style=""><span class="mord text" style=""><span class="mord" style="">B</span><span class="mord sizing reset-size6 size5" style=""><span class="mord" style="">ERT</span></span></span><span class="mopen" style="">(</span><span class="mord" style=""><span class="mord mathnormal coloredeq eqb" style="margin-right:0.10903em">N</span></span><span class="mclose" style="">)</span></span></span></span></span></span></h3>
 
         </div>
         <div class='code'>
@@ -258,7 +259,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>We don&#x27;t need to compute gradients </p>
+            <p>우리는 그래디언트를 계산할 필요가 없습니다. </p>
 
         </div>
         <div class='code'>
@@ -270,7 +271,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Trim the chunks </p>
+            <p>청크를 트리밍합니다. </p>
 
         </div>
         <div class='code'>
@@ -282,7 +283,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Tokenize the chunks with BERT tokenizer </p>
+            <p>BERT 토크나이저로 청크를 토큰화합니다. </p>
 
         </div>
         <div class='code'>
@@ -294,7 +295,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Move token ids, attention mask and token types to the device </p>
+            <p>토큰 ids, 어텐션 마스크와 토큰 타입을 device로 물려줍니다. </p>
 
         </div>
         <div class='code'>
@@ -308,7 +309,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Evaluate the model </p>
+            <p>모델을 평가합니다. </p>
 
         </div>
         <div class='code'>
@@ -322,7 +323,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Get the token embeddings </p>
+            <p>토큰 임베딩을 얻습니다. </p>
 
         </div>
         <div class='code'>
@@ -334,8 +335,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Calculate the average token embeddings. Note that the attention mask is <code  class="highlight"><span></span><span class="mi">0</span></code>
- if the token is empty padded. We get empty tokens because the chunks are of different lengths. </p>
+            <p>평균 토큰 임베딩 수를 계산합니다. 토큰이 비어 있는 경우 주의 마스크는 0입니다. 청크의 길이가 다르기 때문에 빈 토큰을 얻게 됩니다. </p>
 
         </div>
         <div class='code'>
@@ -359,7 +359,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <h3>Code to test BERT embeddings</h3>
+            <h3>BERT 임베딩을 테스트하는 코드입니다. </h3>
 
         </div>
         <div class='code'>
@@ -382,7 +382,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>Initialize </p>
+            <p>초기 상태입니다. </p>
 
         </div>
         <div class='code'>
@@ -395,7 +395,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>Sample </p>
+            <p>예시를 입력합니다. </p>
 
         </div>
         <div class='code'>
@@ -408,7 +408,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <p>Check BERT tokenizer </p>
+            <p>BERT 토크나이저를 확인합니다. </p>
 
         </div>
         <div class='code'>
@@ -422,7 +422,7 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <p>Check BERT model outputs </p>
+            <p>BERT 모델 출력을 확인합니다. </p>
 
         </div>
         <div class='code'>
@@ -440,7 +440,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Check recreating text from token ids </p>
+            <p>token ids에서 생성된 토큰을 확인합니다. </p>
 
         </div>
         <div class='code'>
@@ -453,7 +453,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p>Get chunk embeddings </p>
+            <p>청크 임베딩을 얻습니다. </p>
 
         </div>
         <div class='code'>
