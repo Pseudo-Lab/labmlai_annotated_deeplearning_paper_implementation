@@ -70,7 +70,7 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Transformer Encoder and Decoder Models</h1>
+            <h1>트랜스포머 인코더와 디코더 모델</h1>
 <p><a href="https://colab.research.google.com/github/labmlai/annotated_deep_learning_paper_implementations/blob/master/labml_nn/transformers/basic/autoregressive_experiment.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"></a></p>
 
         </div>
@@ -92,7 +92,7 @@
                 <a href='#section-1'>#</a>
             </div>
             <p> <a id="EmbeddingsWithPositionalEncoding"></a></p>
-<h2>Embed tokens and add <a href="positional_encoding.html">fixed positional encoding</a></h2>
+<h2>임베딩된 토큰과 <a href="positional_encoding.html">고정된 위치 인코딩</a> 추가</h2>
 
         </div>
         <div class='code'>
@@ -133,7 +133,7 @@
                 <a href='#section-4'>#</a>
             </div>
             <p> <a id="EmbeddingsWithLearnedPositionalEncoding"></a></p>
-<h2>Embed tokens and add parameterized positional encodings</h2>
+<h2>임베딩된 토큰과 파라미터화된 위치 인코딩 추가</h2>
 
         </div>
         <div class='code'>
@@ -174,9 +174,9 @@
                 <a href='#section-7'>#</a>
             </div>
             <p> <a id="TransformerLayer"></a></p>
-<h2>Transformer Layer</h2>
-<p>This can act as an encoder layer or a decoder layer.</p>
-<p>🗒 Some implementations, including the paper seem to have differences in where the layer-normalization is done. Here we do a layer normalization before attention and feed-forward networks, and add the original residual vectors. Alternative is to do a layer normalization after adding the residuals. But we found this to be less stable when training. We found a detailed discussion about this in the paper  <a href="https://papers.labml.ai/paper/2002.04745">On Layer Normalization in the Transformer Architecture</a>.</p>
+<h2>트랜스포머 레이어</h2>
+<p>이것은 인코더 레이어 또는 디코더 레이어 역할을 할 수 있습니다.</p>
+<p>🗒 일부 구현들은 논문을 포함하여 레이어 정규화(layer normalization)가 어디에서 수행되는지에 차이가 있는 것으로 보입니다. 여기서는 어텐션(attention)과 피드포워드 네트워크(feed-forward networks) 이전에 레이어 정규화를 수행하고, 원래의 잔차 벡터를 추가합니다. 대안으로는 잔차를 더한 후에 레이어 정규화를 수행하는 방법이 있습니다. 그러나 우리는 이 방법이 훈련 중에 덜 안정적이라고 판단했습니다. 이에 대한 자세한 논의는 <a href="https://papers.labml.ai/paper/2002.04745">On Layer Normalization in the Transformer Architecture</a> 논문에서 찾을 수 있습니다.
 
         </div>
         <div class='code'>
@@ -189,15 +189,15 @@
                 <a href='#section-8'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">d_model</span></code>
- is the token embedding size </li>
+ 는 토큰 임베딩 크기입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">self_attn</span></code>
- is the self attention module </li>
+ 는 셀프 어텐션 모듈입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">src_attn</span></code>
- is the source attention module (when this is used in a decoder) </li>
+ 는 디코더에서 사용될 때의 소스 어텐션 모듈입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">feed_forward</span></code>
- is the feed forward module </li>
+ 는 피트 포워드 모듈입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">dropout_prob</span></code>
- is the probability of dropping out after self attention and FFN</li></ul>
+ 는 셀프 어텐션과 FFN 후에 드롭 아웃할 확률입니다.</li></ul>
 
         </div>
         <div class='code'>
@@ -234,7 +234,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Whether to save input to the feed forward layer </p>
+            <p>피드 포워드 레이어에 입력을 저장할지 여부 </p>
 
         </div>
         <div class='code'>
@@ -261,7 +261,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Normalize the vectors before doing self attention </p>
+            <p>셀프 어텐션을 수행하기 전에 벡터를 정규화합니다. </p>
 
         </div>
         <div class='code'>
@@ -273,7 +273,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>Run through self attention, i.e. keys and values are from self </p>
+            <p>셀프 어텐션을 통해 실행합니다. 즉, 키와 값은 자기 자신에게서 나옵니다.</p>
 
         </div>
         <div class='code'>
@@ -285,7 +285,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>Add the self attention results </p>
+            <p>셀프 어텐션 결과를 추가</p>
 
         </div>
         <div class='code'>
@@ -297,7 +297,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>If a source is provided, get results from attention to source. This is when you have a decoder layer that pays attention to encoder outputs </p>
+            <p>만약 소스(source)가 제공된다면, 소스에 대한 어텐션 결과를 가져옵니다. 이는 인코더 출력에 어텐션를 기울이는 디코더 레이어를 가지고 있을 때의 경우입니다.</p>
 
         </div>
         <div class='code'>
@@ -309,7 +309,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Normalize vectors </p>
+            <p>벡터들을 정규화 </p>
 
         </div>
         <div class='code'>
@@ -321,7 +321,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Attention to source. i.e. keys and values are from source </p>
+            <p>소스에 어텐션. 즉 키와 값은 소스에서 가져온 것입니다. </p>
 
         </div>
         <div class='code'>
@@ -333,7 +333,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Add the source attention results </p>
+            <p>소스 어텐션 결과를 추가합니다 </p>
 
         </div>
         <div class='code'>
@@ -345,7 +345,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Normalize for feed-forward </p>
+            <p>피트 포워드에 대해 정규화</p>
 
         </div>
         <div class='code'>
@@ -357,7 +357,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Save the input to the feed forward layer if specified </p>
+            <p>만약 지정된 경우, 입력을 피드 포워드 레이어로 저장합니다.</p>
 
         </div>
         <div class='code'>
@@ -370,7 +370,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>Pass through the feed-forward network </p>
+            <p>피드 포워드 네트워크를 통과 </p>
 
         </div>
         <div class='code'>
@@ -382,7 +382,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p>Add the feed-forward results back </p>
+            <p>피드 포워드 결과를 다시 추가 </p>
 
         </div>
         <div class='code'>
@@ -397,7 +397,7 @@
                 <a href='#section-23'>#</a>
             </div>
             <p> <a id="Encoder"></a></p>
-<h2>Transformer Encoder</h2>
+<h2>트랜스포머 인코더</h2>
 
         </div>
         <div class='code'>
@@ -421,7 +421,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>Make copies of the transformer layer </p>
+            <p>트랜스포머 레이어의 복사본 만들기</p>
 
         </div>
         <div class='code'>
@@ -433,7 +433,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <p>Final normalization layer </p>
+            <p>최종 정규화 레이어</p>
 
         </div>
         <div class='code'>
@@ -456,7 +456,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Run through each transformer layer </p>
+            <p>각 트랜스포머 레이어를 통해 실행</p>
 
         </div>
         <div class='code'>
@@ -469,7 +469,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p>Finally, normalize the vectors </p>
+            <p>최종적으로, 벡터를 정규화해라 </p>
 
         </div>
         <div class='code'>
@@ -482,7 +482,7 @@
                 <a href='#section-30'>#</a>
             </div>
             <p> <a id="Decoder"></a></p>
-<h2>Transformer Decoder</h2>
+<h2>트랜스포머 디코더</h2>
 
         </div>
         <div class='code'>
@@ -506,7 +506,7 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>Make copies of the transformer layer </p>
+            <p>트랜스포머 레이어의 복사본을 만들기</p>
 
         </div>
         <div class='code'>
@@ -518,7 +518,7 @@
             <div class='section-link'>
                 <a href='#section-33'>#</a>
             </div>
-            <p>Final normalization layer </p>
+            <p>최종 정규화 레이어</p>
 
         </div>
         <div class='code'>
@@ -541,7 +541,7 @@
             <div class='section-link'>
                 <a href='#section-35'>#</a>
             </div>
-            <p>Run through each transformer layer </p>
+            <p>각 트랜스포머 레이어를 통해 실행</p>
 
         </div>
         <div class='code'>
@@ -554,7 +554,7 @@
             <div class='section-link'>
                 <a href='#section-36'>#</a>
             </div>
-            <p>Finally, normalize the vectors </p>
+            <p>최종적으로 벡터들을 정규화</p>
 
         </div>
         <div class='code'>
@@ -567,9 +567,8 @@
                 <a href='#section-37'>#</a>
             </div>
             <p> <a id="Generator"></a></p>
-<h2>Generator</h2>
-<p>This predicts the tokens and gives the lof softmax of those. You don&#x27;t need this if you are using <code  class="highlight"><span></span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span></code>
-.</p>
+<h2>생성기</h2>
+<p>이는 토큰을 예측하고 해당 토큰의 소프트맥스를 제공합니다.<code  class="highlight"><span></span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span></code>을 사용하는 경우에는 이것이 필요하지 않습니다.</p>
 
         </div>
         <div class='code'>
@@ -607,7 +606,7 @@
                 <a href='#section-40'>#</a>
             </div>
             <p> <a id="EncoderDecoder"></a></p>
-<h2>Combined Encoder-Decoder</h2>
+<h2>결합된 인코더와 디코더</h2>
 
         </div>
         <div class='code'>
@@ -636,7 +635,7 @@
             <div class='section-link'>
                 <a href='#section-42'>#</a>
             </div>
-            <p>This was important from their code. Initialize parameters with Glorot / fan_avg. </p>
+            <p>이것은 그들의 코드에서 중요합니다. Glorot / fan_avg로 파라미터를 초기화합니다. </p>
 
         </div>
         <div class='code'>
@@ -661,7 +660,7 @@
             <div class='section-link'>
                 <a href='#section-44'>#</a>
             </div>
-            <p>Run the source through encoder </p>
+            <p>인코더를 통해 소스 실행 </p>
 
         </div>
         <div class='code'>
@@ -673,7 +672,7 @@
             <div class='section-link'>
                 <a href='#section-45'>#</a>
             </div>
-            <p>Run encodings and targets through decoder </p>
+            <p>디코더를 통해 인코딩 및 목표 실행</p>
 
         </div>
         <div class='code'>
