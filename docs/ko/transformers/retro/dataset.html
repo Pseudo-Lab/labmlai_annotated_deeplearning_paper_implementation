@@ -72,7 +72,7 @@
                 <a href='#section-0'>#</a>
             </div>
             <h1>RETRO 훈련 데이터셋</h1>
-<p>이 문서는  <a href="database.html">key-value database</a>에서 가장 가까운 이웃을 미리 검색하고 데이터셋을 생성하여 <a href="index.html">RETRO</a>  <a href="model.html">model</a>를 학습시킵니다.</p>
+<p>이 문서는  <a href="database.html">key-value database</a>에서 최근접 이웃을 미리 검색하고 데이터셋을 생성하여 <a href="index.html">RETRO</a>  <a href="model.html">model</a>를 학습시킵니다.</p>
         </div>
         <div class='code'>
             <div class="highlight"><pre><span class="lineno">15</span><span></span><span class="kn">import</span> <span class="nn">json</span>
@@ -257,7 +257,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>입력입니다. </p>
+            <p>실제 입력할 소스입니다. </p>
 
         </div>
         <div class='code'>
@@ -269,7 +269,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>위 입력을 청크로 나눕니다. </p>
+            <p>위 입력 소스를 청크로 나눕니다. </p>
 
         </div>
         <div class='code'>
@@ -343,7 +343,7 @@
                 <a href='#section-21'>#</a>
             </div>
             <h2>데이터셋</h2>
-                <p><code  class="highlight"><span></span><span class="n">build_dataset</span></code>에서 생성한 데이터셋을 로드하는 Pytorch 데이터셋입니다.</p>
+                <p><code  class="highlight"><span></span><span class="n">build_dataset</span></code>에서 데이터로더를 만들 파이토치데이터셋 클래스입니다.</p>
 
         </div>
         <div class='code'>
@@ -379,7 +379,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>샘플을 로드합니다. </p>
+            <p>JSON 데이터를 로드합니다. </p>
 
         </div>
         <div class='code'>
@@ -392,7 +392,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>샘플의 수입니다. </p>
+            <p>전체 데이터셋의 길이를 반환합니다. </p>
 
         </div>
         <div class='code'>
@@ -415,7 +415,7 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <p> Get a sample</p>
+            <p> <code  class="highlight"><span></span><span class="n">def __getitem__</span></code>은 데이터로더 이터레이션에서 자동 호출됩니다. </p>
 
         </div>
         <div class='code'>
@@ -427,7 +427,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Get the sample </p>
+            <p>인덱스로부터 배치 데이터를 샘플링합니다. </p>
 
         </div>
         <div class='code'>

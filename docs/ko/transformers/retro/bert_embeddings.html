@@ -145,8 +145,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>모델에 <code  class="highlight"><span></span><span class="n">device</span>을 적용하여 적절한 하드웨어를 물립니다.</code>
- </p>
+            <p>모델에 <code  class="highlight"><span></span><span class="n">.to(device)</span></code>으로 적절한 하드웨어에 할당합니다.</p>
 
         </div>
         <div class='code'>
@@ -158,7 +157,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p> 이 구현에서는 고정된 수의 토큰으로 청크를 만들지 않습니다. 그 이유 중 하나는 이 구현이 문자 수준 토큰을 사용하고 BERT가 하위 단어 토큰화기를 사용하기 때문입니다.</p>
+            <p> 이 구현에서는 고정된 수의 토큰으로 청크를 만들지 않습니다. 그 이유 중 하나는 이 구현이 문자 수준 토큰을 사용하고 BERT가 하위 단어 토크나이저를 사용하기 때문입니다.</p>
             <p>예를 들어, 청크는 끝 부분에 부분 단어(부분 하위 단어 토큰)가 있는 <code  class="highlight"><span></span><span class="n">s</span> <span class="n">a</span> <span class="n">popular</span> <span class="n">programming</span> <span class="n">la</span></code> 와 같은 형태일 수 있습니다. 
             더 나은 BERT 임베딩을 위해 이를 제거합니다. 앞서 언급했듯이 토큰화 후 청크를 분리하는 경우에는 이러한 작업이 필요하지 않습니다.</p>
 
@@ -173,7 +172,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Strip으로 공백을 제거합니다. </p>
+            <p><code  class="highlight"><span></span><span class="n">.strip()</span></code>으로 공백을 제거합니다. </p>
 
         </div>
         <div class='code'>
@@ -259,7 +258,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>우리는 그래디언트를 계산할 필요가 없습니다. </p>
+            <p>여기서는 아직 그래디언트를 계산할 필요가 없습니다. </p>
 
         </div>
         <div class='code'>
@@ -295,7 +294,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>토큰 ids, 어텐션 마스크와 토큰 타입을 device로 물려줍니다. </p>
+            <p>토큰 ids, 어텐션 마스크와 토큰 타입을 device를 통해 할당합니다. </p>
 
         </div>
         <div class='code'>
@@ -335,7 +334,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>평균 토큰 임베딩 수를 계산합니다. 토큰이 비어 있는 경우 주의 마스크는 0입니다. 청크의 길이가 다르기 때문에 빈 토큰을 얻게 됩니다. </p>
+            <p>평균 토큰 임베딩 수를 계산합니다. 토큰이 비어 있는 경우 어텐션 마스크는 0입니다. 청크의 길이가 다르기 때문에 빈 토큰을 얻게 됩니다. </p>
 
         </div>
         <div class='code'>
@@ -395,7 +394,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>예시를 입력합니다. </p>
+            <p>프롬프트를 입력합니다. </p>
 
         </div>
         <div class='code'>
