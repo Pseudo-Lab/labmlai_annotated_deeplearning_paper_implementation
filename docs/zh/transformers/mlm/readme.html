@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
+    <meta name="twitter:title" content="屏蔽语言模型 (MLM)"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:site" content="@labmlai"/>
+    <meta name="twitter:creator" content="@labmlai"/>
+
+    <meta property="og:url" content="https://nn.labml.ai/transformers/mlm/readme.html"/>
+    <meta property="og:title" content="屏蔽语言模型 (MLM)"/>
+    <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
+    <meta property="og:site_name" content="屏蔽语言模型 (MLM)"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="屏蔽语言模型 (MLM)"/>
+    <meta property="og:description" content=""/>
+
+    <title>屏蔽语言模型 (MLM)</title>
+    <link rel="shortcut icon" href="/icon.png"/>
+    <link rel="stylesheet" href="../../pylit.css?v=1">
+    <link rel="canonical" href="https://nn.labml.ai/transformers/mlm/readme.html"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4V3HC8HBLH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-4V3HC8HBLH');
+    </script>
+</head>
+<body>
+<div id='container'>
+    <div id="background"></div>
+    <div class='section'>
+        <div class='docs'>
+            <p>
+                <a class="parent" href="/">home</a>
+                <a class="parent" href="../index.html">transformers</a>
+                <a class="parent" href="index.html">mlm</a>
+            </p>
+            <p>
+                <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations" target="_blank">
+                    <img alt="Github"
+                         src="https://img.shields.io/github/stars/labmlai/annotated_deep_learning_paper_implementations?style=social"
+                         style="max-width:100%;"/></a>
+                <a href="https://twitter.com/labmlai" rel="nofollow" target="_blank">
+                    <img alt="Twitter"
+                         src="https://img.shields.io/twitter/follow/labmlai?style=social"
+                         style="max-width:100%;"/></a>
+            </p>
+            <p>
+                <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations/tree/master/labml_nn/transformers/mlm/readme.md" target="_blank">
+                    View code on Github</a>
+            </p>
+        </div>
+    </div>
+    <div class='section' id='section-0'>
+        <div class='docs'>
+            <div class='section-link'>
+                <a href='#section-0'>#</a>
+            </div>
+            <h1><a href="https://nn.labml.ai/transformers/mlm/index.html">蒙面语言模型 (MLM)</a></h1>
+<p>这是掩码语言模型 (MLM) 的 <a href="https://pytorch.org">PyTorch</a> 实现，用于预训白文《BERT<a href="https://papers.labml.ai/paper/1810.04805">：预训练深度双向转换器以促进语言理解》中介绍的 BER</a> T 模型。</p>
+<h2>BERT 预训练</h2>
+<p>BERT 模型是变压器模型。本文使用 MLM 和下一句预测对模型进行了预训练。我们只在这里实施了传销。</p>
+<h3>下一句预测</h3>
+<p>在<em>下一个句子预测</em>中，给出两个句子，<code  class="highlight"><span></span><span class="n">A</span></code>
+<code  class="highlight"><span></span><span class="n">B</span></code>
+然后模型对实际文本<code  class="highlight"><span></span><span class="n">A</span></code>
+中后面的句子是否<code  class="highlight"><span></span><span class="n">B</span></code>
+是后面的句子进行二进制预测。该模型有 50% 的时间为实际句子对，50% 的时间为随机句对。这种分类是在应用传销时完成的。<em>我们还没有在这里实现这一点。</em></p>
+<h2>Masked LM</h2>
+<p>这会随机掩盖一定比例的代币，并训练模型预测被掩码的代币。他们通过用特殊<strong>代币替换15％的代<code  class="highlight"><span></span><span class="p">[</span><span class="n">MASK</span><span class="p">]</span></code>
+币来掩盖</strong>它们。</p>
+<p>损失仅通过预测被掩码的代币来计算。这在微调和实际使用过程中会导致问题，因为当时没有<code  class="highlight"><span></span><span class="p">[</span><span class="n">MASK</span><span class="p">]</span></code>
+令牌。因此，我们可能得不到任何有意义的陈述。</p>
+<p>为了克服这个问题<strong>，10％的蒙面代币被替换为原始代币</strong>，另外 <strong>10％的蒙面代币被随机代币所取代</strong>。无论该位置的输入代币是否为，这都会训练模型给出有关实际代币的表现形式<code  class="highlight"><span></span><span class="p">[</span><span class="n">MASK</span><span class="p">]</span></code>
+。用随机代币替换会使它给出的表现形式也包含来自上下文的信息；因为它必须使用上下文来修复随机替换的标记。</p>
+<h2>训练</h2>
+<p>MLM 比自回归模型更难训练，因为它们的训练信号较小。也就是说，每个样本只训练了一小部分的预测。</p>
+<p>另一个问题是，由于该模型是双向的，因此任何代币都可以看到任何其他代币。这使得 “信用分配” 变得更加困难。假设你有角色等级模型想要预测<code  class="highlight"><span></span><span class="n">home</span> <span class="o">*</span><span class="n">s</span> <span class="n">where</span> <span class="n">i</span> <span class="n">want</span> <span class="n">to</span> <span class="n">be</span></code>
+。至少在训练的早期阶段，很难弄清楚为什么要用<code  class="highlight"><span></span><span class="o">*</span></code>
+它来代替<code  class="highlight"><span></span><span class="n">i</span></code>
+，可能是整句话中的任何东西。而在自回归环境中，模型只<code  class="highlight"><span></span><span class="n">h</span></code>
+需要用于预测<code  class="highlight"><span></span><span class="n">o</span></code>
+<code  class="highlight"><span></span><span class="n">e</span></code>
+和<code  class="highlight"><span></span><span class="n">hom</span></code>
+预测等等。因此，该模型最初将首先在较短的上下文中开始预测，然后学会使用较长的上下文进行预测。由于 MLM 有这个问题，如果你一开始使用较小的序列长度，然后再使用更长的序列长度，那么训练速度会快得多。</p>
+<p>这是简单 MLM 模型的<a href="https://nn.labml.ai/transformers/mlm/experiment.html">训练代码</a>。</p>
+
+        </div>
+        <div class='code'>
+            
+        </div>
+    </div>
+    <div class='footer'>
+        <a href="https://papers.labml.ai">Trending Research Papers</a>
+        <a href="https://labml.ai">labml.ai</a>
+    </div>
+</div>
+<script src=../../interactive.js?v=1"></script>
+<script>
+    function handleImages() {
+        var images = document.querySelectorAll('p>img')
+
+        for (var i = 0; i < images.length; ++i) {
+            handleImage(images[i])
+        }
+    }
+
+    function handleImage(img) {
+        img.parentElement.style.textAlign = 'center'
+
+        var modal = document.createElement('div')
+        modal.id = 'modal'
+
+        var modalContent = document.createElement('div')
+        modal.appendChild(modalContent)
+
+        var modalImage = document.createElement('img')
+        modalContent.appendChild(modalImage)
+
+        var span = document.createElement('span')
+        span.classList.add('close')
+        span.textContent = 'x'
+        modal.appendChild(span)
+
+        img.onclick = function () {
+            console.log('clicked')
+            document.body.appendChild(modal)
+            modalImage.src = img.src
+        }
+
+        span.onclick = function () {
+            document.body.removeChild(modal)
+        }
+    }
+
+    handleImages()
+</script>
+</body>
+</html>
