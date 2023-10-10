@@ -20,7 +20,7 @@
     <meta property="og:title" content="MNIST Experiment to try Batch Normalization"/>
     <meta property="og:description" content="This trains is a simple convolutional neural network that uses batch normalization to classify MNIST digits."/>
 
-    <title>MNIST Experiment to try Batch Normalization</title>
+    <title>Batch Normalization(배치 정규화)을 위한 MNIST 실습</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/normalization/batch_norm/mnist.html"/>
@@ -71,7 +71,7 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>MNIST Experiment for Batch Normalization</h1>
+            <h1>Batch Normalization(배치 정규화)을 위한 MNIST 실습</h1>
 
         </div>
         <div class='code'>
@@ -91,7 +91,7 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h3>Model definition</h3>
+            <h3>Model definition - 모델 정의</h3>
 
         </div>
         <div class='code'>
@@ -115,7 +115,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <p>Note that we omit the bias parameter </p>
+            <p>편향 매개변수(bias parameters)를 생략한다는 점을 명심하세요 </p>
 
         </div>
         <div class='code'>
@@ -127,7 +127,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Batch normalization with 20 channels (output of convolution layer). The input to this layer will have shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">height</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span> <span class="n">width</span><span class="p">(</span><span class="mi">24</span><span class="p">)]</span></code>
+            <p> 20개의 채널을 가진 <em>배치 정규화(Batch Normalization)</em> (합성곱 계층의 출력). 이 계층의 입력은 다음과 같은 형태를 가질 것입니다. <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">height</span><span class="p">(</span><span class="mi">24</span><span class="p">),</span> <span class="n">width</span><span class="p">(</span><span class="mi">24</span><span class="p">)]</span></code>
  </p>
 
         </div>
@@ -152,7 +152,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Batch normalization with 50 channels. The input to this layer will have shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">height</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span> <span class="n">width</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span></code>
+            <p>50개의 채널을 가진 <em>배치 정규화(Batch Normalization)</em> 입니다. 이 레이어의 입력은 다음과 같은 형태를 가질 것입니다.<code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">height</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span> <span class="n">width</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span></code>
  </p>
 
         </div>
@@ -177,7 +177,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Batch normalization with 500 channels (output of fully connected layer). The input to this layer will have shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">500</span><span class="p">]</span></code>
+            <p>500개의 채널을 가진 <em>배치 정규화(Batch Normalization)</em>  (완전 연결 계층의 출력). 이 계층의 입력은 다음과 같은 형태를 가질 것입니다<code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">500</span><span class="p">]</span></code>
  </p>
 
         </div>
@@ -220,9 +220,9 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <h3>Create model</h3>
-<p>We use <a href="../../experiments/mnist.html#MNISTConfigs"><code  class="highlight"><span></span><span class="n">MNISTConfigs</span></code>
-</a> configurations and set a new function to calculate the model.</p>
+            <h3>Create model - 모델 생성</h3>
+<p> 우리는 <a href="../../experiments/mnist.html#MNISTConfigs"><code  class="highlight"><span></span><span class="n">MNISTConfigs</span></code>
+</a> 설정을 사용하고 모델을 계산하기 위해 새로운 함수를 설정할 것입니다.</p>
 
         </div>
         <div class='code'>
@@ -257,7 +257,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>Create experiment </p>
+            <p>Create experiment - 실험 생성 </p>
 
         </div>
         <div class='code'>
@@ -269,7 +269,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Create configurations </p>
+            <p>Create configurations - 설정 생성 </p>
 
         </div>
         <div class='code'>
@@ -281,7 +281,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Load configurations </p>
+            <p>Load configurations - 설정 불러오기 </p>
 
         </div>
         <div class='code'>
@@ -296,7 +296,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Start the experiment and run the training loop </p>
+            <p>실험을 시작하고 훈련 루프를 실행</p>
 
         </div>
         <div class='code'>

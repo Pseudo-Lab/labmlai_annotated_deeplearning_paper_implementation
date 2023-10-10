@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,20 +7,20 @@
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Masked Language Model (MLM)"/>
+    <meta name="twitter:title" content="마스크드 언어 모델 (MLM)"/>
     <meta name="twitter:description" content=""/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/transformers/mlm/readme.html"/>
-    <meta property="og:title" content="Masked Language Model (MLM)"/>
+    <meta property="og:title" content="마스크드 언어 모델 (MLM)"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Masked Language Model (MLM)"/>
+    <meta property="og:site_name" content="마스크드 언어 모델 (MLM)"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Masked Language Model (MLM)"/>
+    <meta property="og:title" content="마스크드 언어 모델 (MLM)"/>
     <meta property="og:description" content=""/>
 
-    <title>Masked Language Model (MLM)</title>
+    <title>마스크드 언어 모델 (MLM)</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/transformers/mlm/readme.html"/>
@@ -71,34 +71,26 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1><a href="https://nn.labml.ai/transformers/mlm/index.html">Masked Language Model (MLM)</a></h1>
-<p>This is a <a href="https://pytorch.org">PyTorch</a> implementation of Masked Language Model (MLM)  used to pre-train the BERT model introduced in the paper <a href="https://papers.labml.ai/paper/1810.04805">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a>.</p>
-<h2>BERT Pretraining</h2>
-<p>BERT model is a transformer model. The paper pre-trains the model using MLM and with next sentence prediction. We have only implemented MLM here.</p>
-<h3>Next sentence prediction</h3>
-<p>In <em>next sentence prediction</em>, the model is given two sentences <code  class="highlight"><span></span><span class="n">A</span></code>
- and <code  class="highlight"><span></span><span class="n">B</span></code>
- and the model makes a binary prediction whether <code  class="highlight"><span></span><span class="n">B</span></code>
- is the sentence that follows <code  class="highlight"><span></span><span class="n">A</span></code>
- in the actual text. The model is fed with actual sentence pairs 50% of the time and random pairs 50% of the time. This classification is done while applying MLM. <em>We haven&#x27;t implemented this here.</em></p>
-<h2>Masked LM</h2>
-<p>This masks a percentage of tokens at random and trains the model to predict the masked tokens. They <strong>mask 15% of the tokens</strong> by replacing them with a special <code  class="highlight"><span></span><span class="p">[</span><span class="n">MASK</span><span class="p">]</span></code>
- token.</p>
-<p>The loss is computed on predicting the masked tokens only. This causes a problem during fine-tuning and actual usage since there are no <code  class="highlight"><span></span><span class="p">[</span><span class="n">MASK</span><span class="p">]</span></code>
- tokens  at that time. Therefore we might not get any meaningful representations.</p>
-<p>To overcome this <strong>10% of the masked tokens are replaced with the original token</strong>, and another <strong>10% of the masked tokens are replaced with a random token</strong>. This trains the model to give representations about the actual token whether or not the input token at that position is a <code  class="highlight"><span></span><span class="p">[</span><span class="n">MASK</span><span class="p">]</span></code>
-. And replacing with a random token causes it to give a representation that has information from the context as well; because it has to use the context to fix randomly replaced tokens.</p>
-<h2>Training</h2>
-<p>MLMs are harder to train than autoregressive models because they have a smaller training signal. i.e. only a small percentage of predictions are trained per sample.</p>
-<p>Another problem is since the model is bidirectional, any token can see any other token. This makes the &quot;credit assignment&quot; harder. Let&#x27;s say you have the character level model trying to predict <code  class="highlight"><span></span><span class="n">home</span> <span class="o">*</span><span class="n">s</span> <span class="n">where</span> <span class="n">i</span> <span class="n">want</span> <span class="n">to</span> <span class="n">be</span></code>
-. At least during the early stages of the training, it&#x27;ll be super hard to figure out why the replacement for <code  class="highlight"><span></span><span class="o">*</span></code>
- should be <code  class="highlight"><span></span><span class="n">i</span></code>
-, it could be anything from the whole sentence. Whilst, in an autoregressive setting the model will only have to use <code  class="highlight"><span></span><span class="n">h</span></code>
- to predict <code  class="highlight"><span></span><span class="n">o</span></code>
- and <code  class="highlight"><span></span><span class="n">hom</span></code>
- to predict <code  class="highlight"><span></span><span class="n">e</span></code>
- and so on. So the model will initially start predicting with a shorter context first and then learn to use longer contexts later. Since MLMs have this problem it&#x27;s a lot faster to train if you start with a smaller sequence length initially and then use a longer sequence length later.</p>
-<p>Here is <a href="https://nn.labml.ai/transformers/mlm/experiment.html">the training code</a> for a simple MLM model. </p>
+            <h1><a href="https://nn.labml.ai/transformers/mlm/index.html"> 마스크드 언어 모델 (MLM)</a></h1>
+<p>다음은 <a href="https://papers.labml.ai/paper/1810.04805">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a>에 소개된 BERT 모델을 사전 훈련 시키기 위해 사용된 마스크드 언어 모델 (MLM)을 <a href="https://pytorch.org">파이토치</a> 로 구현한 것입니다.</p>
+<h2>BERT 사전 훈련</h2>
+<p>BERT 모델은 트랜스포머 모델입니다.BERT 모델은 MLM을 사용하여 다음 문장을 예측하는 방식으로 사전 훈련 되었습니다. 여기서는 MLM을 구현하는 것에 대해서만 소개하였습니다. </p>
+<h3>다음 문장 예측</h3>
+<p> <em>다음 문장을 예측하는 과제</em>에서는, 모델은 두 개의 문장 <code  class="highlight"><span></span><span class="n">A</span></code>와 <code  class="highlight"><span></span><span class="n">B</span></code>를
+입력받아 실제 텍스트에서 <code  class="highlight"><span></span><span class="n">B</span></code>가 <code  class="highlight"><span></span><span class="n">A</span></code>의 다음 문장인지 아닌지의 여부를 예측합니다.
+학습 데이터의 50%는 실제 이어지는 두 개의 문장으로 구성되어있으며 나머지 50%는 랜덤으로 이어붙인 두 개의 문장으로 구성되어있습니다. 다음 문장인지의 여부를 판단하는 분류 작업은 MLM을 학습하는 과정에서 완료되었으나 여기서는 아직 이 부분을 구현하지는 않았습니다. </em></p>
+<h2>마스크드 언어 모델</h2>
+<p>마스크드 언어 모델에서는 랜덤하게 일부의 토큰을 마스킹하고 마스킹된 토큰들을 예측하는 훈련을 합니다. 전체 토큰 중 <strong>15%의 토큰</strong>들을 <code  class="highlight"><span></span><span class="p">[</span><span class="n">MASK</span><span class="p">]</span></code> 토큰으로 마스킹하게 됩니다.</p>
+<p>손실은 마스킹된 토큰들을 예측하는 부분에서만 계산됩니다. 이로 인해 파인 튜닝 과정과 실제 활용 시에는  <code  class="highlight"><span></span><span class="p">[</span><span class="n">MASK</span><span class="p">]</span></code> 토큰이 없으므로 문제가 발생하게 되므로, 유의미한 표현을 얻기가 어려울 수 있습니다. </p>
+<p>이 문제를 해결하기 위해 <strong>마스킹된 토큰 중 10%는 원래 토큰으로, </strong> 또 다른 <strong>10%의 마스킹된 토큰은 랜덤한 토큰으로 교체합니다</strong>. 이를 통해 해당 위치의 입력 토큰이 <code  class="highlight"><span></span><span class="p">[</span><span class="n">MASK</span><span class="p">]</span></code>인지 여부에 관계없이 실제 토큰에 대한 표현을 학습할 수 있습니다.  
+   또한, 랜덤하게 교체된 토큰을 처리해야 하므로 문맥적 정보도 학습할 수 있게 됩니다.</p>
+<h2>훈련</h2>
+<p>MLM은 학습 신호가 작기 때문에 자기회귀모형보다 훈련하기가 힘듭니다. (즉, 각 훈련 샘플 당 적은 비율에 대해서만 예측을 수행합니다.)</p>
+<p>또한, 모델이 양방향이기 때문에 어떤 토큰이라도 다른 토큰에 영향을 미칠 수 있다는 문제점이 있습니다. 이로 인해 &quot;의미 관계 파악&quot;이 어렵습니다. 글자 단위의 모델이 <code  class="highlight"><span></span><span class="n">home</span> <span class="o">*</span><span class="n">s</span> <span class="n">where</span> <span class="n">i</span> <span class="n">want</span> <span class="n">to</span> <span class="n">be</span></code> 이라는 문장을 예측하는 상황을 생각해보겠습니다.
+훈련의 초기 단계에서는 <code  class="highlight"><span></span><span class="o">*</span></code>가 <code  class="highlight"><span></span><span class="n">i</span></code>가 되어야 한다는 것을 파악하기 어렵습니다.
+반면에 자귀회귀모형에서 모델에서는 <code  class="highlight"><span></span><span class="n">o</span></code>를 예측하기 위해 <code  class="highlight"><span></span><span class="n">h</span></code>를, 
+<code  class="highlight"><span></span><span class="n">e</span></code>를 예측하기 위해 <code  class="highlight"><span></span><span class="n">hom</span></code>를 이용하면 됩니다. 따라서, 모델은 결국 짧은 문장을 먼저 학습한 후 긴 문장을 학습하게 됩니다. 이러한 문제때문에 MLM에서는 짧은 길이의 시퀀스에서 학습을 한 후 긴 길이의 시퀀스의 학습을 진행하는 경우 더 빠르게 학습시킬 수 있습니다. </p>
+<p>간단한 MLM 모델에 대한 <a href="https://nn.labml.ai/transformers/mlm/experiment.html"> 훈련 코드 </a> 입니다. </p>
 
         </div>
         <div class='code'>
