@@ -72,7 +72,7 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>WGAN-GP experiment with MNIST</h1>
+            <h1>MNIST를 사용한 WGAN-GP 실험</h1>
 
         </div>
         <div class='code'>
@@ -86,7 +86,7 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <p>Import configurations from <a href="../experiment.html">Wasserstein experiment</a> </p>
+            <p><a href="../experiment.html">Wasserstein 실험</a>에서 설정을 가져옵니다.</p>
 
         </div>
         <div class='code'>
@@ -110,8 +110,8 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <h2>Configuration class</h2>
-<p>We extend <a href="../../original/experiment.html">original GAN implementation</a> and override the discriminator (critic) loss calculation to include gradient penalty.</p>
+            <h2>설정 클래스</h2>
+            <p>우리는 <a href="../../original/experiment.html"> GAN 구현</a>을 확장하고, 그래디언트 패널티를 포함하여 판별자(discriminator) 손실 계산을 재정의합니다.</p>
 
         </div>
         <div class='code'>
@@ -123,7 +123,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Gradient penalty coefficient <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">λ</span></span></span></span></span> </p>
+            <p>그래디언트 패널티 계수 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">λ</span></span></span></span></span> </p>
 
         </div>
         <div class='code'>
@@ -147,7 +147,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p> This overrides the original discriminator loss calculation and includes gradient penalty.</p>
+            <p>이것은 원래의 판별자(discriminator) 손실 계산을 재정의하고 그래디언트 패널티를 포함합니다.</p>
 
         </div>
         <div class='code'>
@@ -159,7 +159,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Require gradients on <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqe" style=""><span class="mord mathnormal" style="">x</span></span></span></span></span></span> to calculate gradient penalty </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqe" style=""><span class="mord mathnormal" style="">x</span></span></span></span></span></span> 에 대한 그래디언트를 필요로 하여 그래디언트 패널티를 계산합니다.</p>
 
         </div>
         <div class='code'>
@@ -171,7 +171,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Sample <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">p</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span></span></span></span></span> </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span>를<span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">p</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span></span></span></span></span> 에서 샘플링합니다.</p>
 
         </div>
         <div class='code'>
@@ -207,7 +207,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Get discriminator losses </p>
+            <p>판별자(discriminator) 손실 값을 가져옵니다.</p>
 
         </div>
         <div class='code'>
@@ -219,7 +219,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Calculate gradient penalties in training mode </p>
+            <p> 훈련 모드에서 그래디언트 패널티를 계산합니다. </p>
 
         </div>
         <div class='code'>
@@ -234,7 +234,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>Skip gradient penalty otherwise </p>
+            <p>그렇지 않으면 그래디언트 패널티를 건너뛰세요.</p>
 
         </div>
         <div class='code'>
@@ -247,7 +247,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>Log stuff </p>
+            <p>Log stuff - 로그하기 </p>
 
         </div>
         <div class='code'>
@@ -274,7 +274,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Create configs object </p>
+            <p>설정 객체를 생성하세요. </p>
 
         </div>
         <div class='code'>
@@ -286,7 +286,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Create experiment </p>
+            <p>실험을 생성하세요. </p>
 
         </div>
         <div class='code'>
@@ -298,7 +298,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Override configurations </p>
+            <p>설정을 재정의하세요.</p>
 
         </div>
         <div class='code'>
@@ -318,7 +318,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Start the experiment and run training loop </p>
+            <p>실험을 시작하고 훈련 루프를 실행하세요.</p>
 
         </div>
         <div class='code'>

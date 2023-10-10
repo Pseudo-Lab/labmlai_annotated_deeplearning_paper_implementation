@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="This experiment generates MNIST images using multi-layer perceptron."/>
+    <meta name="description" content="이 실험은 다층 퍼셉트론을 가지고 MNIST 이미지를 생성한다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Generative Adversarial Networks experiment with MNIST"/>
-    <meta name="twitter:description" content="This experiment generates MNIST images using multi-layer perceptron."/>
+    <meta name="twitter:title" content="MNIST 데이터를 활용한 생성적 대립 신경망"/>
+    <meta name="twitter:description" content="이 실험은 다층 퍼셉트론을 가지고 MNIST 이미지를 생성한다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/gan/original/experiment.html"/>
-    <meta property="og:title" content="Generative Adversarial Networks experiment with MNIST"/>
+    <meta property="og:title" content="MNIST 데이터를 활용한 생성적 대립 신경망"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Generative Adversarial Networks experiment with MNIST"/>
+    <meta property="og:site_name" content="MNIST 데이터를 활용한 생성적 대립 신경망"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Generative Adversarial Networks experiment with MNIST"/>
-    <meta property="og:description" content="This experiment generates MNIST images using multi-layer perceptron."/>
+    <meta property="og:title" content="MNIST 데이터를 활용한 생성적 대립 신경망"/>
+    <meta property="og:description" content="이 실험은 다층 퍼셉트론을 가지고 MNIST 이미지를 생성한다."/>
 
-    <title>Generative Adversarial Networks experiment with MNIST</title>
+    <title>MNIST 데이터를 활용한 생성적 대립 신경망</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/gan/original/experiment.html"/>
@@ -62,7 +62,7 @@
             </p>
             <p>
                 <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations/tree/master/labml_nn/gan/original/experiment.py" target="_blank">
-                    View code on Github</a>
+                    Github에서 코드 보기</a>
             </p>
         </div>
     </div>
@@ -71,7 +71,7 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Generative Adversarial Networks experiment with MNIST</h1>
+            <h1>MNIST 데이터를 활용한 생성적 대립 신경망</h1>
 
         </div>
         <div class='code'>
@@ -114,9 +114,9 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <h3>Simple MLP Generator</h3>
-<p>This has three linear layers of increasing size with <code  class="highlight"><span></span><span class="n">LeakyReLU</span></code>
- activations. The final layer has a <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">anh</span></span></span></span></span> activation.</p>
+            <h3>간단한 다층 퍼셉트론 생성자</h3>
+<p>이것은 <code  class="highlight"><span></span><span class="n">LeakyReLU</span></code>
+ 활성화 함수를 가진 세 개의 선형 레이어로 구성되어 있고, 각각의 레이어의 크기는 증가한다. 마지막 레이어는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">anh</span></span></span></span></span> 활성화 함수를 가지고 있다.</p>
 
         </div>
         <div class='code'>
@@ -162,9 +162,9 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <h3>Simple MLP Discriminator</h3>
-<p>This has three linear layers of decreasing size with <code  class="highlight"><span></span><span class="n">LeakyReLU</span></code>
- activations. The final layer has a single output that gives the logit of whether input is real or fake. You can get the probability by calculating the sigmoid of it.</p>
+            <h3>간단한 다층 퍼셉트론 판별자 </h3>
+<p>이것은 <code  class="highlight"><span></span><span class="n">LeakyReLU</span></code>
+활성화 함수를 가진 세 개의 선형 레이어로 구성되어 있고, 각각의 레이어의 크기는 감소한다. 마지막 레이어는 입력이 진짜인지 가짜인지를 알려주는 logit를 하나의 출력으로 준다. 여기에 sigmoid 연산을 계산함으로써 확률값을 얻을 수 있다.</p>
 
         </div>
         <div class='code'>
@@ -209,8 +209,8 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <h2>Configurations</h2>
-<p>This extends MNIST configurations to get the data loaders and Training and validation loop configurations to simplify our implementation.</p>
+            <h2>설정값</h2>
+<p>이것은 구현을 단순화하기 위해 데이터 로더와 학습, validation 순회 설정값들을 얻어오기 위해 MNIST 설정값을 확장한다.</p>
 
         </div>
         <div class='code'>
@@ -245,7 +245,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p> Initializations</p>
+            <p> 초기화</p>
 
         </div>
         <div class='code'>
@@ -297,7 +297,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p> Take a training step</p>
+            <p> 학습 스텝 진행</p>
 
         </div>
         <div class='code'>
@@ -309,7 +309,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Set model states </p>
+            <p>모델 상태 지정 </p>
 
         </div>
         <div class='code'>
@@ -322,7 +322,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Get MNIST images </p>
+            <p>MNIST 이미지 불러오기 </p>
 
         </div>
         <div class='code'>
@@ -334,7 +334,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Increment step in training mode </p>
+            <p>학습 모드에서 스텝 증가 </p>
 
         </div>
         <div class='code'>
@@ -347,7 +347,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Train the discriminator </p>
+            <p>판별자 학습 </p>
 
         </div>
         <div class='code'>
@@ -359,7 +359,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Get discriminator loss </p>
+            <p>판별자 로스 계산 </p>
 
         </div>
         <div class='code'>
@@ -371,7 +371,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Train </p>
+            <p>학습 </p>
 
         </div>
         <div class='code'>
@@ -388,7 +388,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>Train the generator once in every <code  class="highlight"><span></span><span class="n">discriminator_k</span></code>
+            <p>모든 <code  class="highlight"><span></span><span class="n">discriminator_k</span> 마다 생성자를 한 번 학습</code>
  </p>
 
         </div>
@@ -403,7 +403,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p>Train </p>
+            <p>학습 </p>
 
         </div>
         <div class='code'>
@@ -422,7 +422,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p> Calculate discriminator loss</p>
+            <p> 판별자 로스 계산</p>
 
         </div>
         <div class='code'>
@@ -491,7 +491,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Log stuff </p>
+            <p>나머지 정보 로깅 </p>
 
         </div>
         <div class='code'>
@@ -530,9 +530,9 @@
             <div class='section-link'>
                 <a href='#section-30'>#</a>
             </div>
-            <p>Setting exponent decay rate for first moment of gradient, <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqb" style=""><span class="mord" style=""><span class="mord mathnormal" style="margin-right:0.05278em">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> to <code  class="highlight"><span></span><span class="mf">0.5</span></code>
- is important. Default of <code  class="highlight"><span></span><span class="mf">0.9</span></code>
- fails. </p>
+            <p>첫 번째 그래디언트 값의 지수 붕괴 비율 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqb" style=""><span class="mord" style=""><span class="mord mathnormal" style="margin-right:0.05278em">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> 를 <code  class="highlight"><span></span><span class="mf">0.5</span> 로 </code>
+ 설정하는 것은 중요하다. default 값인 <code  class="highlight"><span></span><span class="mf">0.9</span></code>
+ 는 실패한다. </p>
 
         </div>
         <div class='code'>
@@ -561,9 +561,9 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>Setting exponent decay rate for first moment of gradient, <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqb" style=""><span class="mord" style=""><span class="mord mathnormal" style="margin-right:0.05278em">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> to <code  class="highlight"><span></span><span class="mf">0.5</span></code>
- is important. Default of <code  class="highlight"><span></span><span class="mf">0.9</span></code>
- fails. </p>
+            <p>첫 번째 그래디언트 값의 지수 붕괴 비율 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqb" style=""><span class="mord" style=""><span class="mord mathnormal" style="margin-right:0.05278em">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> 를 <code  class="highlight"><span></span><span class="mf">0.5</span> 로 </code>
+ 설정하는 것은 중요하다. default 값인 <code  class="highlight"><span></span><span class="mf">0.9</span></code>
+ 는 실패한다. </p>
 
         </div>
         <div class='code'>
