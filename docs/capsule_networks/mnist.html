@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="캡슐 네트워크에서 MNIST 데이터셋을 훈련하기 위한 코드"/>
+    <meta name="description" content="Code for training Capsule Networks on MNIST dataset"/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="캡슐 네트워크로 MNIST 숫자 분류"/>
-    <meta name="twitter:description" content="캡슐 네트워크에서 MNIST 데이터셋을 훈련하기 위한 코드"/>
+    <meta name="twitter:title" content="Classify MNIST digits with Capsule Networks"/>
+    <meta name="twitter:description" content="Code for training Capsule Networks on MNIST dataset"/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/capsule_networks/mnist.html"/>
-    <meta property="og:title" content="캡슐 네트워크로 MNIST 숫자 분류"/>
+    <meta property="og:title" content="Classify MNIST digits with Capsule Networks"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="캡슐 네트워크로 MNIST 숫자 분류"/>
+    <meta property="og:site_name" content="Classify MNIST digits with Capsule Networks"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="캡슐 네트워크로 MNIST 숫자 분류"/>
-    <meta property="og:description" content="캡슐 네트워크에서 MNIST 데이터셋을 훈련하기 위한 코드"/>
+    <meta property="og:title" content="Classify MNIST digits with Capsule Networks"/>
+    <meta property="og:description" content="Code for training Capsule Networks on MNIST dataset"/>
 
-    <title>캡슐 네트워크로 MNIST 숫자 분류</title>
+    <title>Classify MNIST digits with Capsule Networks</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/capsule_networks/mnist.html"/>
@@ -70,9 +70,9 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>캡슐 네트워크로 MNIST 숫자 분류</h1>
-<p>파이토치로 MNIST 숫자를 분류하기 위한 튜토리얼 코드입니다.</p>
-<p>이 논문은 캡슐 간 <a href="https://papers.labml.ai/paper/1710.09829">Dynamic Routing Between Capsules</a>에서 설명한 실험을 구현합니다.</p>
+            <h1>Classify MNIST digits with Capsule Networks</h1>
+<p>This is an annotated PyTorch code to classify MNIST digits with PyTorch.</p>
+<p>This paper implements the experiment described in paper <a href="https://papers.labml.ai/paper/1710.09829">Dynamic Routing Between Capsules</a>.</p>
 
         </div>
         <div class='code'>
@@ -96,7 +96,7 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>MNIST 숫자를 분류하기 위한 모델</h2>
+            <h2>Model for classifying MNIST digits</h2>
 
         </div>
         <div class='code'>
@@ -120,7 +120,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <p>첫 번째 컨볼루션 레이어에는 256개의 9×9 커널이 있습니다.</p>
+            <p>First convolution layer has <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eql" style=""><span class="mord" style="">2</span></span><span class="mord">56</span></span></span></span></span>, <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">9</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">9</span></span></span></span></span> convolution kernels </p>
 
         </div>
         <div class='code'>
@@ -132,7 +132,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>두 번째 레이어(1차 캡슐)는 32채널의 컨볼루션 8D 캡슐(캡슐당 8개의 특징)이 있는 컨볼루션 캡슐 레이어입니다. 즉, 각 1차 캡슐에는 9×9 커널과 2 스트라이드의 컨볼루션 유닛 8개가 포함됩니다. 이를 구현하기 위해 32×8 채널의 컨볼루션 레이어를 생성하고 출력을 재구성 및 순열하여 각각 8개의 피처 캡슐을 얻습니다.</p>
+            <p>The second layer (Primary Capsules) s a convolutional capsule layer with <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqj" style=""><span class="mord" style=""><span class="mord coloredeq eqm" style="">3</span></span><span class="mord" style=""><span class="mord coloredeq eql" style="">2</span></span></span></span></span></span></span> channels of convolutional <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord" style="">8</span></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span></span> capsules (<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord" style="">8</span></span></span></span></span></span> features per capsule). That is, each primary capsule contains 8 convolutional units with a 9 × 9 kernel and a stride of 2. In order to implement this we create a convolutional layer with <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqj" style=""><span class="mord" style=""><span class="mord coloredeq eqm" style="">3</span></span><span class="mord" style=""><span class="mord coloredeq eql" style="">2</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord" style="">8</span></span></span></span></span></span> channels and reshape and permutate its output to get the capsules of <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord" style="">8</span></span></span></span></span></span> features each. </p>
 
         </div>
         <div class='code'>
@@ -145,7 +145,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>라우팅 레이어는 32×6×6 기본 캡슐을 가져와서 10개의 캡슐을 생성합니다. 각 기본 캡슐에는 8개의 기능이 있고 출력 캡슐(숫자 캡슐)에는 16개의 기능이 있습니다. 라우팅 알고리즘은 3번 반복됩니다.</p>
+            <p>Routing layer gets the <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqj" style=""><span class="mord" style=""><span class="mord coloredeq eqm" style="">3</span></span><span class="mord" style=""><span class="mord coloredeq eql" style="">2</span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span></span> primary capsules and produces <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">10</span></span></span></span></span></span> capsules. Each of the primary capsules have <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord" style="">8</span></span></span></span></span></span> features, while output capsules (Digit Capsules) have <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqi" style=""><span class="mord" style="">16</span></span></span></span></span></span> features. The routing algorithm iterates <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqm" style=""><span class="mord" style="">3</span></span></span></span></span></span> times. </p>
 
         </div>
         <div class='code'>
@@ -157,7 +157,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>논문에서 언급된 디코더입니다. 이 디코더는 각각 16개의 특징을 가진 10차원 캡슐의 출력을 받아 이미지를 재현합니다. 이 디코더는 512 및 1024 크기의 선형 레이어를 거쳐 ReLU를 통과합니다.</p>
+            <p>This is the decoder mentioned in the paper. It takes the outputs of the <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">10</span></span></span></span></span></span> digit capsules, each with <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqi" style=""><span class="mord" style="">16</span></span></span></span></span></span> features to reproduce the image. It goes through linear layers of sizes <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">51</span><span class="mord coloredeq eql" style=""><span class="mord" style="">2</span></span></span></span></span></span> and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">10</span></span><span class="mord coloredeq eql" style=""><span class="mord" style="">2</span></span><span class="mord">4</span></span></span></span></span> with <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.10903em;">LU</span></span></span></span></span> activations. </p>
 
         </div>
         <div class='code'>
@@ -176,7 +176,9 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>데이터는 텐서 크기가 [배치, 1, 28, 28]인 MNIST 이미지입니다.</p>
+            <p> <code  class="highlight"><span></span><span class="n">data</span></code>
+ are the MNIST images, with shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">]</span></code>
+</p>
 
         </div>
         <div class='code'>
@@ -188,7 +190,8 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>첫 번째 컨볼루션 레이어를 통과합니다. 출력 텐서 크기는 [배치, 256, 20, 20]입니다.</p>
+            <p>Pass through the first convolution layer. Output of this layer has shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span></code>
+ </p>
 
         </div>
         <div class='code'>
@@ -200,7 +203,8 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>두 번째 컨볼루션 레이어를 통과합니다. 출력 크는 [배치, 32 * 8, 6, 6] 입니다. 이 레이어의 스트라이드는 2입니다.</p>
+            <p>Pass through the second convolution layer. Output of this has shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">32</span> <span class="o">*</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span></code>
+. <em>Note that this layer has a stride length of <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eql" style=""><span class="mord" style="">2</span></span></span></span></span></span></em>. </p>
 
         </div>
         <div class='code'>
@@ -212,7 +216,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>마스크를 생성하여 다른 모든 캡슐을 가릴 수 있습니다. </p>
+            <p>Resize and permutate to get the capsules </p>
 
         </div>
         <div class='code'>
@@ -224,7 +228,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>캡슐 쪼개기 </p>
+            <p>Squash the capsules </p>
 
         </div>
         <div class='code'>
@@ -236,7 +240,8 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>라우터를 통해 숫자 캡슐을 가져옵니다. 크기가 [배치, 10, 16] 입니다. </p>
+            <p>Take them through the router to get digit capsules. This has shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span></code>
+. </p>
 
         </div>
         <div class='code'>
@@ -248,7 +253,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>복원을 위한 마스크를 얻습니다. </p>
+            <p>Get masks for reconstructioon </p>
 
         </div>
         <div class='code'>
@@ -260,7 +265,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>캡슐 네트워크에 의한 예측은 길이가 가장 긴 캡슐입니다. </p>
+            <p>The prediction by the capsule network is the capsule with longest length </p>
 
         </div>
         <div class='code'>
@@ -272,7 +277,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>마스크를 생성하여 다른 모든 캡슐을 가릴 수 있습니다. </p>
+            <p>Create a mask to maskout all the other capsules </p>
 
         </div>
         <div class='code'>
@@ -284,7 +289,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>숫자 캡슐을 마스킹하여 예측을 수행한 캡슐만 가져와 디코더를 통해 재구성합니다. </p>
+            <p>Mask the digit capsules to get only the capsule that made the prediction and take it through decoder to get reconstruction </p>
 
         </div>
         <div class='code'>
@@ -296,7 +301,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>이미지 크기에 맞게 재구성 모양을 변경합니다. </p>
+            <p>Reshape the reconstruction to match the image dimensions </p>
 
         </div>
         <div class='code'>
@@ -310,7 +315,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>MNIST 데이터 및 훈련 및 검증 설정을 사용한 구성 </p>
+            <p> Configurations with MNIST data and Train &amp; Validation setup</p>
 
         </div>
         <div class='code'>
@@ -348,7 +353,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>화면에 손실과 정확도를 출력합니다. </p>
+            <p>Print losses and accuracy to screen </p>
 
         </div>
         <div class='code'>
@@ -361,7 +366,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p>트레이닝 및 검증을 위해 해당 에포크에서의 메트릭을 계산하도록 설정합니다. </p>
+            <p>We need to set the metrics to calculate them for the epoch for training and validation </p>
 
         </div>
         <div class='code'>
@@ -373,7 +378,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p>이 메서드는 트레이너가 호출합니다. </p>
+            <p> This method gets called by the trainer</p>
 
         </div>
         <div class='code'>
@@ -385,7 +390,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>모델 모드로 세팅합니다. </p>
+            <p>Set the model mode </p>
 
         </div>
         <div class='code'>
@@ -397,7 +402,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>이미지와 레이블을 가져와서 모델의 디바이스에 할당합니다. </p>
+            <p>Get the images and labels and move them to the model&#x27;s device </p>
 
         </div>
         <div class='code'>
@@ -409,7 +414,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <p>훈련 모드에서 스텝을 늘려갑니다. </p>
+            <p>Increment step in training mode </p>
 
         </div>
         <div class='code'>
@@ -422,7 +427,7 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <p>기록 여부를 선택합니다. </p>
+            <p>Whether to log activations </p>
 
         </div>
         <div class='code'>
@@ -434,7 +439,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>전체 모델을 포워드합니다. </p>
+            <p>Run the model </p>
 
         </div>
         <div class='code'>
@@ -446,7 +451,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p>전체 손실을 계산합니다. </p>
+            <p>Calculate the total loss </p>
 
         </div>
         <div class='code'>
@@ -459,7 +464,7 @@
             <div class='section-link'>
                 <a href='#section-30'>#</a>
             </div>
-            <p>정확도를 계산합니다. </p>
+            <p>Call accuracy metric </p>
 
         </div>
         <div class='code'>
@@ -476,7 +481,7 @@
             <div class='section-link'>
                 <a href='#section-31'>#</a>
             </div>
-            <p>파라미터와 그래디언트를 기록합니다. </p>
+            <p>Log parameters and gradients </p>
 
         </div>
         <div class='code'>
@@ -492,7 +497,7 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>모델을 세팅합니다. </p>
+            <p>Set the model </p>
 
         </div>
         <div class='code'>
@@ -516,7 +521,7 @@
             <div class='section-link'>
                 <a href='#section-34'>#</a>
             </div>
-            <p>실험을 진행합니다. </p>
+            <p> Run the experiment</p>
 
         </div>
         <div class='code'>
