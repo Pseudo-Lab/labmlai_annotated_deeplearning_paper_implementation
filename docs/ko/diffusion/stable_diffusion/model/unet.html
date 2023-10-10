@@ -46,10 +46,10 @@
     <div class='section'>
         <div class='docs'>
             <p>
-                <a class="parent" href="/">home</a>
-                <a class="parent" href="../../index.html">diffusion</a>
-                <a class="parent" href="../index.html">stable_diffusion</a>
-                <a class="parent" href="index.html">model</a>
+                <a class="parent" href="/">홈</a>
+                <a class="parent" href="../../index.html">디퓨전</a>
+                <a class="parent" href="../index.html">스테이블 디퓨전</a>
+                <a class="parent" href="index.html">모델</a>
             </p>
             <p>
                 <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations" target="_blank">
@@ -63,7 +63,7 @@
             </p>
             <p>
                 <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations/tree/master/labml_nn/diffusion/stable_diffusion/model/unet.py" target="_blank">
-                    View code on Github</a>
+                    Github에서 코드보기</a>
             </p>
         </div>
     </div>
@@ -72,9 +72,9 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>U-Net for <a href="../index.html">Stable Diffusion</a></h1>
-<p>This implements the U-Net that  gives <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord text mtight"><span class="mord mtight">cond</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span></span></span></span></span></p>
-<p>We have kept to the model definition and naming unchanged from <a href="https://github.com/CompVis/stable-diffusion">CompVis/stable-diffusion</a> so that we can load the checkpoints directly.</p>
+            <h1><a href="../index.html">스테이블 디퓨전</a>을 위한 U-Net</h1>
+<p>이는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord text mtight"><span class="mord mtight">cond</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span></span></span></span></span>를 제공하는 U-Net을 구현합니다.</p>
+<p>우리는 <a href="https://github.com/CompVis/stable-diffusion">CompVis/stable-diffusion</a>로부터 모델 정의와 이름을 그대로 유지했습니다. 그래서 체크포인트로 직접 로드할 수 있습니다.</p>
 
         </div>
         <div class='code'>
@@ -94,7 +94,7 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>U-Net model</h2>
+            <h2>U-Net 모델</h2>
 
         </div>
         <div class='code'>
@@ -107,23 +107,23 @@
                 <a href='#section-2'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">in_channels</span></code>
-  is the number of channels in the input feature map </li>
+  은 입력 피쳐 맵의 채널 수입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">out_channels</span></code>
-  is the number of channels in the output feature map </li>
+  은 출력 피쳐 맵의 채널 수입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">channels</span></code>
-  is the base channel count for the model </li>
+  은 모델의 기본 채널 수 입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">n_res_blocks</span></code>
-  number of residual blocks at each level </li>
+  은 각 층의 잔여 블록 수 </li>
 <li><code  class="highlight"><span></span><span class="n">attention_levels</span></code>
-  are the levels at which attention should be performed </li>
+  은 어텐션을 수행해야하는 레벨입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">channel_multipliers</span></code>
-  are the multiplicative factors for number of channels for each level </li>
+  은 각 레벨의 채널 수에 대한 곱셈 요소입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">n_heads</span></code>
-  is the number of attention heads in the transformers </li>
+  은 트랜스포머의 어텐션 헤드 수입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">tf_layers</span></code>
-  is the number of transformer layers in the transformers </li>
+  은 트랜스포머의 트랜스포머 층 수 </li>
 <li><code  class="highlight"><span></span><span class="n">d_cond</span></code>
-  is the size of the conditional embedding in the transformers</li></ul>
+  은 트랜스포머의 조건부 임베딩 크기입니다.</li></ul>
 
         </div>
         <div class='code'>
@@ -157,7 +157,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Number of levels </p>
+            <p>레벨의 수 </p>
 
         </div>
         <div class='code'>
@@ -169,7 +169,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>Size time embeddings </p>
+            <p>시간 임베딩의 크기 </p>
 
         </div>
         <div class='code'>
@@ -186,7 +186,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Input half of the U-Net </p>
+            <p>U-Net의 절반을 입력 </p>
 
         </div>
         <div class='code'>
@@ -198,10 +198,10 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Initial <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqg" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> convolution that maps the input to <code  class="highlight"><span></span><span class="n">channels</span></code>
-. The blocks are wrapped in <code  class="highlight"><span></span><span class="n">TimestepEmbedSequential</span></code>
- module because different modules have different forward function signatures; for example, convolution only accepts the feature map and residual blocks accept the feature map and time embedding. <code  class="highlight"><span></span><span class="n">TimestepEmbedSequential</span></code>
- calls them accordingly. </p>
+            <p>입력을 <code  class="highlight"><span></span><span class="n">채널</span></code>에 매핑하는 초기 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqg" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> 컨볼루션입니다. 
+ 모듈마다 순방향 기능 시그니처가 다르기 때문에 블록은 <code  class="highlight"><span></span><span class="n">TimestepEmbedSequential</span></code>
+ 모듈로 감싸집니다; 예를 들어, 컨볼루션은 피쳐 맵만 허용하고 잔차 블록은 피쳐 맵과 시간 임베딩을 허용합니다.  <code  class="highlight"><span></span><span class="n">TimestepEmbedSequential</span></code>
+ 은 그에 따라 그들을 호출합니다. </p>
 
         </div>
         <div class='code'>
@@ -214,7 +214,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Number of channels at each block in the input half of U-Net </p>
+            <p>U-Net 입력 절반의 각 블록에 있는 채널 수 </p>
 
         </div>
         <div class='code'>
@@ -226,7 +226,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>Number of channels at each level </p>
+            <p>각 레벨의 채널 수 </p>
 
         </div>
         <div class='code'>
@@ -238,7 +238,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Prepare levels </p>
+            <p>레벨 준비 </p>
 
         </div>
         <div class='code'>
@@ -250,7 +250,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Add the residual blocks and attentions </p>
+            <p>잔차 블록 및 어텐션 추가 </p>
 
         </div>
         <div class='code'>
@@ -262,7 +262,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Residual block maps from previous number of channels to the number of channels in the current level </p>
+            <p>잔차 블록은 이전 채널 수에서 현재 레벨의 채널 수로 매핑됩니다. </p>
 
         </div>
         <div class='code'>
@@ -275,7 +275,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>Add transformer </p>
+            <p>트랜스포머 추가 </p>
 
         </div>
         <div class='code'>
@@ -288,7 +288,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>Add them to the input half of the U-Net and keep track of the number of channels of its output </p>
+            <p>이를 U-Net의 입력 절반에 추가하고 출력 채널 수를 추적합니다. </p>
 
         </div>
         <div class='code'>
@@ -301,7 +301,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Down sample at all levels except last </p>
+            <p>마지막을 제외한 모든 레벨에서 다운샘플링 </p>
 
         </div>
         <div class='code'>
@@ -315,7 +315,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>The middle of the U-Net </p>
+            <p>U-Net의 중간 </p>
 
         </div>
         <div class='code'>
@@ -331,7 +331,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Second half of the U-Net </p>
+            <p>U-Net의 후반부 </p>
 
         </div>
         <div class='code'>
@@ -343,7 +343,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Prepare levels in reverse order </p>
+            <p>레벨을 역순으로 준비 </p>
 
         </div>
         <div class='code'>
@@ -355,7 +355,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Add the residual blocks and attentions </p>
+            <p>잔차 블록 및 어텐션을 추가 </p>
 
         </div>
         <div class='code'>
@@ -367,7 +367,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Residual block maps from previous number of channels plus the skip connections from the input half of U-Net to the number of channels in the current level. </p>
+            <p>이전 채널 개수의 잔차 블록에 U-Net의 입력 절반에서 현재 레벨의 채널 개수로 스킵 연결을 더한 값을 매핑합니다.</p>
 
         </div>
         <div class='code'>
@@ -380,7 +380,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>Add transformer </p>
+            <p>트랜스포머를 추가 </p>
 
         </div>
         <div class='code'>
@@ -393,8 +393,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p>Up-sample at every level after last residual block except the last one. Note that we are iterating in reverse; i.e. <code  class="highlight"><span></span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span></code>
- is the last. </p>
+            <p>마지막 남은 블록을 제외한 모든 수준에서 업샘플링합니다. 역으로 반복합니다. 즉, == 0이 마지막입니다. </p>
 
         </div>
         <div class='code'>
@@ -407,7 +406,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p>Add to the output half of the U-Net </p>
+            <p>U-Net의 출력 절반에 추가 </p>
 
         </div>
         <div class='code'>
@@ -419,7 +418,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>Final normalization and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqg" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> convolution </p>
+            <p>최종 정규화와 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqg" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> 컨볼루션 </p>
 
         </div>
         <div class='code'>
@@ -435,12 +434,12 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <h2>Create sinusoidal time step embeddings</h2>
+            <h2>정현파 타임 스텝 임베딩 생성</h2>
 <ul><li><code  class="highlight"><span></span><span class="n">time_steps</span></code>
-  are the time steps of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">]</span></code>
+  은 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">]</span></code>크기의 타임 스텝이다.
  </li>
 <li><code  class="highlight"><span></span><span class="n">max_period</span></code>
-  controls the minimum frequency of the embeddings.</li></ul>
+  은 임베딩의 최소 빈도를 제어합니다.</li></ul>
 
         </div>
         <div class='code'>
@@ -452,7 +451,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.040392em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight coloredeq eqh" style=""><span class="mord mtight" style="">2</span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span>; half the channels are sin and the other half is cos, </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.040392em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight coloredeq eqh" style=""><span class="mord mtight" style="">2</span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span>; 채널의 절반은 sin이고, 다른 절반은 cos입니다. </p>
 
         </div>
         <div class='code'>
@@ -490,7 +489,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:3.0000299999999998em;vertical-align:-1.25003em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="delimsizing size4">(</span></span><span class="mord coloredeq eqd" style=""><span class="mord" style=""><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.824556em;"><span style="top:-2.325315em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">1000</span><span class="mord mtight" style=""><span class="mord mtight" style="">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.2352642857142857em;"><span style="top:-3.48775em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mopen nulldelimiter sizing reset-size1 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0465200000000001em;"><span style="top:-2.468em;"><span class="pstrut" style="height:3em;"></span><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="">c</span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em"></span></span><span style="top:-3.387em;"><span class="pstrut" style="height:3em;"></span><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mord mtight coloredeq eqh" style="">2</span></span><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.532em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size1 size6"></span></span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.674685em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="delimsizing size4">)</span></span></span></span></span></span> and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:3.0000299999999998em;vertical-align:-1.25003em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="delimsizing size4">(</span></span><span class="mord coloredeq eqd" style=""><span class="mord" style=""><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.824556em;"><span style="top:-2.325315em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">1000</span><span class="mord mtight" style=""><span class="mord mtight" style="">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.2352642857142857em;"><span style="top:-3.48775em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mopen nulldelimiter sizing reset-size1 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0465200000000001em;"><span style="top:-2.468em;"><span class="pstrut" style="height:3em;"></span><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="">c</span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em"></span></span><span style="top:-3.387em;"><span class="pstrut" style="height:3em;"></span><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mord mtight coloredeq eqh" style="">2</span></span><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.532em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size1 size6"></span></span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.674685em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="delimsizing size4">)</span></span></span></span></span></span> </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:3.0000299999999998em;vertical-align:-1.25003em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="delimsizing size4">(</span></span><span class="mord coloredeq eqd" style=""><span class="mord" style=""><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.824556em;"><span style="top:-2.325315em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">1000</span><span class="mord mtight" style=""><span class="mord mtight" style="">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.2352642857142857em;"><span style="top:-3.48775em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mopen nulldelimiter sizing reset-size1 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0465200000000001em;"><span style="top:-2.468em;"><span class="pstrut" style="height:3em;"></span><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="">c</span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em"></span></span><span style="top:-3.387em;"><span class="pstrut" style="height:3em;"></span><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mord mtight coloredeq eqh" style="">2</span></span><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.532em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size1 size6"></span></span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.674685em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="delimsizing size4">)</span></span></span></span></span></span> 와 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:3.0000299999999998em;vertical-align:-1.25003em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="delimsizing size4">(</span></span><span class="mord coloredeq eqd" style=""><span class="mord" style=""><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.824556em;"><span style="top:-2.325315em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">1000</span><span class="mord mtight" style=""><span class="mord mtight" style="">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.2352642857142857em;"><span style="top:-3.48775em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mopen nulldelimiter sizing reset-size1 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0465200000000001em;"><span style="top:-2.468em;"><span class="pstrut" style="height:3em;"></span><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="">c</span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em"></span></span><span style="top:-3.387em;"><span class="pstrut" style="height:3em;"></span><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mord mtight coloredeq eqh" style="">2</span></span><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.532em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size1 size6"></span></span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.674685em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord"><span class="delimsizing size4">)</span></span></span></span></span></span> </p>
 
         </div>
         <div class='code'>
@@ -503,13 +502,13 @@
                 <a href='#section-30'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
-  is the input feature map of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">]</span></code>
+  는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">]</span></code> 크기의 입력 피쳐 맵입니다.
  </li>
 <li><code  class="highlight"><span></span><span class="n">time_steps</span></code>
-  are the time steps of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">]</span></code>
+ 은 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">]</span></code>크기의 타임 스텝입니다.
  </li>
 <li><code  class="highlight"><span></span><span class="n">cond</span></code>
-  conditioning of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">n_cond</span><span class="p">,</span> <span class="n">d_cond</span><span class="p">]</span></code>
+  는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">n_cond</span><span class="p">,</span> <span class="n">d_cond</span><span class="p">]</span></code>크기의 조건.
 </li></ul>
 
         </div>
@@ -522,7 +521,7 @@
             <div class='section-link'>
                 <a href='#section-31'>#</a>
             </div>
-            <p>To store the input half outputs for skip connections </p>
+            <p>스킵 연결을 위한 입력 절반 출력을 저장하려면 </p>
 
         </div>
         <div class='code'>
@@ -534,7 +533,7 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>Get time step embeddings </p>
+            <p>시간 단계 임베딩 가져오기 </p>
 
         </div>
         <div class='code'>
@@ -547,7 +546,7 @@
             <div class='section-link'>
                 <a href='#section-33'>#</a>
             </div>
-            <p>Input half of the U-Net </p>
+            <p>U-Net의 절반을 입력 </p>
 
         </div>
         <div class='code'>
@@ -561,7 +560,7 @@
             <div class='section-link'>
                 <a href='#section-34'>#</a>
             </div>
-            <p>Middle of the U-Net </p>
+            <p>U-Net의 중간 </p>
 
         </div>
         <div class='code'>
@@ -573,7 +572,7 @@
             <div class='section-link'>
                 <a href='#section-35'>#</a>
             </div>
-            <p>Output half of the U-Net </p>
+            <p>U-Net의 출력 절반 </p>
 
         </div>
         <div class='code'>
@@ -587,7 +586,7 @@
             <div class='section-link'>
                 <a href='#section-36'>#</a>
             </div>
-            <p>Final normalization and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqg" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> convolution </p>
+            <p>최종 정규화와 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqg" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> 컨볼루션</p>
 
         </div>
         <div class='code'>
@@ -599,11 +598,11 @@
             <div class='section-link'>
                 <a href='#section-37'>#</a>
             </div>
-            <h3>Sequential block for modules with different inputs</h3>
-<p>This sequential module can compose of different modules such as <code  class="highlight"><span></span><span class="n">ResBlock</span></code>
+            <h3>입력이 다른 모듈을 위한 순차 블록</h3>
+<p>이 순차 모듈은 <code  class="highlight"><span></span><span class="n">ResBlock</span></code>
 , <code  class="highlight"><span></span><span class="n">nn</span><span class="o">.</span><span class="n">Conv</span></code>
- and <code  class="highlight"><span></span><span class="n">SpatialTransformer</span></code>
- and calls them with the matching signatures</p>
+ 및 <code  class="highlight"><span></span><span class="n">SpatialTransformer</span></code>
+ 와 같은 다양한 모듈로 구성될 수 있으며 일치하는 서명으로 호출 할 수 있습니다.</p>
 
         </div>
         <div class='code'>
@@ -634,7 +633,7 @@
             <div class='section-link'>
                 <a href='#section-39'>#</a>
             </div>
-            <h3>Up-sampling layer</h3>
+            <h3>업-샘플링 레이어</h3>
 
         </div>
         <div class='code'>
@@ -647,7 +646,7 @@
                 <a href='#section-40'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">channels</span></code>
-  is the number of channels</li></ul>
+  은 채널의 수이다.</li></ul>
 
         </div>
         <div class='code'>
@@ -670,7 +669,7 @@
             <div class='section-link'>
                 <a href='#section-42'>#</a>
             </div>
-            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqg" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> convolution mapping </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqg" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> 컨볼루션 매핑 </p>
 
         </div>
         <div class='code'>
@@ -683,7 +682,7 @@
                 <a href='#section-43'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
-  is the input feature map with shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">]</span></code>
+  는<code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">]</span></code>크기의 입력 피쳐맵입니다.
 </li></ul>
 
         </div>
@@ -696,7 +695,7 @@
             <div class='section-link'>
                 <a href='#section-44'>#</a>
             </div>
-            <p>Up-sample by a factor of <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">2</span></span></span></span></span></span> </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">2</span></span></span></span></span></span>배로 업샘플링 </p>
 
         </div>
         <div class='code'>
@@ -708,7 +707,7 @@
             <div class='section-link'>
                 <a href='#section-45'>#</a>
             </div>
-            <p>Apply convolution </p>
+            <p>컨볼루션 적용 </p>
 
         </div>
         <div class='code'>
@@ -720,7 +719,7 @@
             <div class='section-link'>
                 <a href='#section-46'>#</a>
             </div>
-            <h2>Down-sampling layer</h2>
+            <h2>다운샘플링 레이어</h2>
 
         </div>
         <div class='code'>
@@ -733,7 +732,7 @@
                 <a href='#section-47'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">channels</span></code>
-  is the number of channels</li></ul>
+  은 채널의 수이다.</li></ul>
 
         </div>
         <div class='code'>
@@ -756,7 +755,7 @@
             <div class='section-link'>
                 <a href='#section-49'>#</a>
             </div>
-            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqg" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> convolution with stride length of <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">2</span></span></span></span></span></span> to down-sample by a factor of <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">2</span></span></span></span></span></span> </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">2</span></span></span></span></span></span>배로 다운 샘플링하기 위해 스트라이드가 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">2</span></span></span></span></span></span>인 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqg" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> 컨볼루션입니다.</p>
 
         </div>
         <div class='code'>
@@ -769,7 +768,7 @@
                 <a href='#section-50'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
-  is the input feature map with shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">]</span></code>
+  은 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">]</span></code> 크기의 입력 피쳐 맵입니다.
 </li></ul>
 
         </div>
@@ -782,7 +781,7 @@
             <div class='section-link'>
                 <a href='#section-51'>#</a>
             </div>
-            <p>Apply convolution </p>
+            <p>컨볼루션 적용 </p>
 
         </div>
         <div class='code'>
@@ -794,7 +793,7 @@
             <div class='section-link'>
                 <a href='#section-52'>#</a>
             </div>
-            <h2>ResNet Block</h2>
+            <h2>ResNet 블럭</h2>
 
         </div>
         <div class='code'>
@@ -807,11 +806,11 @@
                 <a href='#section-53'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">channels</span></code>
-  the number of input channels </li>
+  입력 채널의 수</li>
 <li><code  class="highlight"><span></span><span class="n">d_t_emb</span></code>
-  the size of timestep embeddings </li>
+  타임스텝 임베딩의 크기</li>
 <li><code  class="highlight"><span></span><span class="n">out_channels</span></code>
-  is the number of out channels. defaults to `channels.</li></ul>
+  은 출력 채널의 수이다. 디폴트는 `channels입니다.</li></ul>
 
         </div>
         <div class='code'>
@@ -835,7 +834,7 @@
                 <a href='#section-55'>#</a>
             </div>
             <p><code  class="highlight"><span></span><span class="n">out_channels</span></code>
- not specified </p>
+ 은 명시되지 않았다. </p>
 
         </div>
         <div class='code'>
@@ -848,7 +847,7 @@
             <div class='section-link'>
                 <a href='#section-56'>#</a>
             </div>
-            <p>First normalization and convolution </p>
+            <p>첫번째 정규화와 컨볼루션</p>
 
         </div>
         <div class='code'>
@@ -864,7 +863,7 @@
             <div class='section-link'>
                 <a href='#section-57'>#</a>
             </div>
-            <p>Time step embeddings </p>
+            <p>타임 스텝 임베딩 </p>
 
         </div>
         <div class='code'>
@@ -879,7 +878,7 @@
             <div class='section-link'>
                 <a href='#section-58'>#</a>
             </div>
-            <p>Final convolution layer </p>
+            <p>마지막 컨볼루션 레이어 </p>
 
         </div>
         <div class='code'>
@@ -896,9 +895,9 @@
             <div class='section-link'>
                 <a href='#section-59'>#</a>
             </div>
-            <p><code  class="highlight"><span></span><span class="n">channels</span></code>
- to <code  class="highlight"><span></span><span class="n">out_channels</span></code>
- mapping layer for residual connection </p>
+            <p>잔차 연결을 위해 <code  class="highlight"><span></span><span class="n">channels</span></code>
+ 을 <code  class="highlight"><span></span><span class="n">out_channels</span></code>
+ 로 매핑하는 레이어</p>
 
         </div>
         <div class='code'>
@@ -914,10 +913,10 @@
                 <a href='#section-60'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
-  is the input feature map with shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">]</span></code>
+  는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">]</span></code>크기를 가지는 입력 피쳐맵입니다.
  </li>
 <li><code  class="highlight"><span></span><span class="n">t_emb</span></code>
-  is the time step embeddings of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">d_t_emb</span><span class="p">]</span></code>
+  는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">d_t_emb</span><span class="p">]</span></code>크기의 시간 단계 임베딩입니다.
 </li></ul>
 
         </div>
@@ -930,7 +929,7 @@
             <div class='section-link'>
                 <a href='#section-61'>#</a>
             </div>
-            <p>Initial convolution </p>
+            <p>초기 컨볼루션 </p>
 
         </div>
         <div class='code'>
@@ -942,7 +941,7 @@
             <div class='section-link'>
                 <a href='#section-62'>#</a>
             </div>
-            <p>Time step embeddings </p>
+            <p>타임 스텝 임베딩 </p>
 
         </div>
         <div class='code'>
@@ -954,7 +953,7 @@
             <div class='section-link'>
                 <a href='#section-63'>#</a>
             </div>
-            <p>Add time step embeddings </p>
+            <p>타임 스텝 임베딩 추가 </p>
 
         </div>
         <div class='code'>
@@ -966,7 +965,7 @@
             <div class='section-link'>
                 <a href='#section-64'>#</a>
             </div>
-            <p>Final convolution </p>
+            <p>마지막 컨볼루션 </p>
 
         </div>
         <div class='code'>
@@ -978,7 +977,7 @@
             <div class='section-link'>
                 <a href='#section-65'>#</a>
             </div>
-            <p>Add skip connection </p>
+            <p>스킵 연결 추가 </p>
 
         </div>
         <div class='code'>
@@ -990,7 +989,7 @@
             <div class='section-link'>
                 <a href='#section-66'>#</a>
             </div>
-            <h3>Group normalization with float32 casting</h3>
+            <h3>float32 변환하는 그룹 정규화</h3>
 
         </div>
         <div class='code'>
@@ -1014,8 +1013,8 @@
             <div class='section-link'>
                 <a href='#section-68'>#</a>
             </div>
-            <h3>Group normalization</h3>
-<p>This is a helper function, with fixed number of groups..</p>
+            <h3>그룹 정규화</h3>
+<p>이는 그룹 수가 고정된 도우미 함수입니다.</p>
 
         </div>
         <div class='code'>
@@ -1038,7 +1037,7 @@
             <div class='section-link'>
                 <a href='#section-70'>#</a>
             </div>
-            <p> Test sinusoidal time step embeddings</p>
+            <p> 정현파 시간 단계 임베딩 테스트</p>
 
         </div>
         <div class='code'>
