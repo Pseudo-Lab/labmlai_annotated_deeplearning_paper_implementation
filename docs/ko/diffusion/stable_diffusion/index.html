@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Annotated PyTorch implementation/tutorial of stable diffusion."/>
+    <meta name="description" content="다음은 스테이블 디퓨전을 파이토치로 구현한 것입니다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Stable Diffusion"/>
-    <meta name="twitter:description" content="Annotated PyTorch implementation/tutorial of stable diffusion."/>
+    <meta name="twitter:title" content="스테이블 디퓨전"/>
+    <meta name="twitter:description" content="다음은 스테이블 디퓨전을 파이토치로 구현한 것입니다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/diffusion/stable_diffusion/index.html"/>
-    <meta property="og:title" content="Stable Diffusion"/>
+    <meta property="og:title" content="스테이블 디퓨전"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Stable Diffusion"/>
+    <meta property="og:site_name" content="스테이블 디퓨전"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Stable Diffusion"/>
-    <meta property="og:description" content="Annotated PyTorch implementation/tutorial of stable diffusion."/>
+    <meta property="og:title" content="스테이블 디퓨전"/>
+    <meta property="og:description" content="다음은 스테이블 디퓨전을 파이토치로 구현한 것입니다."/>
 
-    <title>Stable Diffusion</title>
+    <title>스테이블 디퓨전</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/diffusion/stable_diffusion/index.html"/>
@@ -71,29 +71,29 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Stable Diffusion</h1>
-<p>This is based on official stable diffusion repository  <a href="https://github.com/CompVis/stable-diffusion">CompVis/stable-diffusion</a>. We have kept the model structure same so that open sourced weights could be directly loaded. Our implementation does not contain training code.</p>
-<h3><a href="https://promptart.labml.ai">PromptArt</a></h3>
+            <h1>스테이블 디퓨전</h1>
+<p>본 내용은 공식 스테이블 디퓨전 리포지토리인 <a href="https://github.com/CompVis/stable-diffusion">CompVis/stable-diffusion</a>을 기반으로 합니다. 공개되어있는 가중치들을 바로 이용할 수 있도록 동일한 모델 구조를 사용하였습니다. 본 구현 코드는 모델 훈련 코드를 포함하고 있지 않습니다. </p>
+<h3><a href="https://promptart.labml.ai">프롬프트 아트</a></h3>
 <p><img alt="PromptArt" src="https://labml.ai/images/promptart-feed.webp"></p>
-<p>We have deployed a stable diffusion based image generation service at <a href="https://promptart.labml.ai">promptart.labml.ai</a></p>
-<h3><a href="latent_diffusion.html">Latent Diffusion Model</a></h3>
-<p>The core is the <a href="latent_diffusion.html">Latent Diffusion Model</a>. It consists of:</p>
-<ul><li><a href="model/autoencoder.html">AutoEncoder</a> </li>
-<li><a href="model/unet.html">U-Net</a> with <a href="model/unet_attention.html">attention</a></li></ul>
-<p>We have also (optionally) integrated <a href="https://github.com/HazyResearch/flash-attention">Flash Attention</a> into our <a href="model/unet_attention.html">U-Net attention</a> which lets you speed up the performance by close to 50% on an RTX A6000 GPU.</p>
-<p>The diffusion is conditioned based on <a href="model/clip_embedder.html">CLIP embeddings</a>.</p>
-<h3><a href="sampler/index.html">Sampling Algorithms</a></h3>
-<p>We have implemented the following <a href="sampler/index.html">sampling algorithms</a>:</p>
+<p><a href="https://promptart.labml.ai">promptart.labml.ai</a>에서 스테이블 디퓨전 기반의 이미지 생성 서비스를 이용해볼 수 있습니다. </p>
+<h3><a href="latent_diffusion.html">잠재 디퓨전 모델</a></h3>
+<p><a href="latent_diffusion.html">잠재 디퓨전 모델</a>은 핵심 요소로, 다음으로 구성되어있습니다: </p>
+<ul><li><a href="model/autoencoder.html">오토 인코더</a> </li>
+<li><a href="model/unet_attention.html">attention</a>을 사용하는 <a href="model/unet.html"> U-Net</a></li></ul>
+<p> <a href="model/unet_attention.html">U-Net attention</a> 구조에 (선택적으로) <a href="https://github.com/HazyResearch/flash-attention">Flash Attention</a>을 적용하여 RTX A6000 GPU 환경 하에서 약 50%의 성능 향상을 달성할 수 있습니다. </p>
+<p>디퓨전은 <a href="model/clip_embedder.html">CLIP 임베딩</a> 기반으로 조정됩니다.</p>
+<h3><a href="sampler/index.html">샘플링 알고리즘</a></h3>
+<p>여기서는 다음 <a href="sampler/index.html">샘플링 알고리즘</a>을 구현하였습니다:</p>
 <ul><li><a href="sampler/ddpm.html">Denoising Diffusion Probabilistic Models (DDPM) Sampling</a> </li>
 <li><a href="sampler/ddim.html">Denoising Diffusion Implicit Models (DDIM) Sampling</a></li></ul>
-<h3><a href="scripts/index.html">Example Scripts</a></h3>
-<p>Here are the image generation scripts:</p>
-<ul><li><a href="scripts/text_to_image.html">Generate images from text prompts</a> </li>
-<li><a href="scripts/image_to_image.html">Generate images based on a given image, guided by a prompt</a> </li>
-<li><a href="scripts/in_paint.html">Modify parts of a given image based on a text prompt</a></li></ul>
-<h4><a href="util.html">Utilities</a></h4>
+<h3><a href="scripts/index.html">예제 스크립트</a></h3>
+<p>다음은 이미지를 생성하는 스크립트 입니다:</p>
+<ul><li><a href="scripts/text_to_image.html">텍스트 프롬프트로부터 이미지를 생성합니다.</a> </li>
+<li><a href="scripts/image_to_image.html">프롬프트의 안내에 따라 주어진 이미지를 기반으로 이미지 생성합니다.</a> </li>
+<li><a href="scripts/in_paint.html">텍스트 프롬프트 기반으로 주어진 이미지의 일부분을 변경합니다.</a></li></ul>
+<h4><a href="util.html">유틸리티</a></h4>
 <p><a href="util.html"><code  class="highlight"><span></span><span class="n">util</span><span class="o">.</span><span class="n">py</span></code>
-</a> defines the utility functions.</p>
+</a> 에서 유틸리티 함수들을 정의합니다.</p>
 
         </div>
         <div class='code'>

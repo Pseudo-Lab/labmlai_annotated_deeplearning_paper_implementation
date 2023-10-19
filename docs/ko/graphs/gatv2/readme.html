@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,20 +7,20 @@
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Graph Attention Networks v2 (GATv2)"/>
+    <meta name="twitter:title" content="그래프 어텐션 네트워크 v2 (GATv2)"/>
     <meta name="twitter:description" content=""/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/graphs/gatv2/readme.html"/>
-    <meta property="og:title" content="Graph Attention Networks v2 (GATv2)"/>
+    <meta property="og:title" content="그래프 어텐션 네트워크 v2 (GATv2)"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Graph Attention Networks v2 (GATv2)"/>
+    <meta property="og:site_name" content="그래프 어텐션 네트워크 v2 (GATv2)"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Graph Attention Networks v2 (GATv2)"/>
+    <meta property="og:title" content="그래프 어텐션 네트워크 v2 (GATv2)"/>
     <meta property="og:description" content=""/>
 
-    <title>Graph Attention Networks v2 (GATv2)</title>
+    <title>그래프 어텐션 네트워크 v2 (GATv2)</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/graphs/gatv2/readme.html"/>
@@ -71,11 +71,11 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1><a href="https://nn.labml.ai/graphs/gatv2/index.html">Graph Attention Networks v2 (GATv2)</a></h1>
-<p>This is a <a href="https://pytorch.org">PyTorch</a> implementation of the GATv2 operator from the paper <a href="https://papers.labml.ai/paper/2105.14491">How Attentive are Graph Attention Networks?</a>.</p>
-<p>GATv2s work on graph data. A graph consists of nodes and edges connecting nodes. For example, in Cora dataset the nodes are research papers and the edges are citations that connect the papers.</p>
-<p>The GATv2 operator fixes the static attention problem of the standard GAT: since the linear layers in the standard GAT are applied right after each other, the ranking of attended nodes is unconditioned on the query node. In contrast, in GATv2, every node can attend to any other node.</p>
-<p>Here is <a href="https://nn.labml.ai/graphs/gatv2/experiment.html">the training code</a> for training a two-layer GATv2 on Cora dataset. </p>
+            <h1><a href="https://nn.labml.ai/graphs/gatv2/index.html">그래프 어텐션 네트워크 v2 (GATv2)</a></h1>
+<p>다음은 <a href="https://papers.labml.ai/paper/2105.14491">How Attentive are Graph Attention Networks?</a>논문의 GATv2 오퍼레이터를 <a href="https://pytorch.org">파이토치</a>로 구현한 것입니다.</p>
+<p>GATv2는 그래프 데이터를 다룹니다. 그래프는 노드와 노드들을 연결하는 엣지로 구성되어 있습니다. 예를 들어, Cora 데이터셋에서는 노드는 연구 논문에 대응하고 엣지는 논문과 연계된 인용횟수에 대응합니다.</p>
+<p>GATv2 오퍼레이터는 기존 GAT의 정적 어텐션 문제를 해결하였습니다: 기존 GAT의 선형 레이어들이 연속해서 적용되기 때문에, 어텐션을 계산할 때 이용되는 노드들의 랭킹이 쿼리 노드와 무관합니다. 반면, GATv2에서는 모든 노드가 다른 노드에 영향을 줄 수 있는 구조입니다.</p>
+<p>다음은 Cora 데이터셋에 대한 두 계층의 GATv2 <a href="https://nn.labml.ai/graphs/gatv2/experiment.html"> 훈련 코드</a> 입니다.</p>
 
         </div>
         <div class='code'>
