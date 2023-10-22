@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="This experiment trains a hourglass model on Tiny Shakespeare dataset."/>
+    <meta name="description" content="이 문서는 소규모 셰익스피어 데이터셋을 활용한 아워글래스 모델을 훈련하는 실험 코드입니다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
     <meta name="twitter:title" content="Hierarchical Transformers Are More Efficient Language Models Experiment"/>
-    <meta name="twitter:description" content="This experiment trains a hourglass model on Tiny Shakespeare dataset."/>
+    <meta name="twitter:description" content="이 문서는 소규모 셰익스피어 데이터셋을 활용한 아워글래스 모델을 훈련하는 실험 코드입니다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
@@ -18,7 +18,7 @@
     <meta property="og:site_name" content="Hierarchical Transformers Are More Efficient Language Models Experiment"/>
     <meta property="og:type" content="object"/>
     <meta property="og:title" content="Hierarchical Transformers Are More Efficient Language Models Experiment"/>
-    <meta property="og:description" content="This experiment trains a hourglass model on Tiny Shakespeare dataset."/>
+    <meta property="og:description" content="이 문서는 소규모 셰익스피어 데이터셋을 활용한 아워글래스 모델을 훈련하는 실험 코드입니다."/>
 
     <title>Hierarchical Transformers Are More Efficient Language Models Experiment</title>
     <link rel="shortcut icon" href="/icon.png"/>
@@ -71,9 +71,9 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1><a href="index.html">Hierarchical Transformers Are More Efficient Language Models</a> Experiment</h1>
-<p>This is an annotated PyTorch experiment to train a <a href="index.html">hourglass</a>.</p>
-<p>This is based on <a href="../basic/autoregressive_experiment.html">training loop and configurations for a simple transformer auto-regressive NLP task</a>.</p>
+            <h1><a href="index.html">Hierarchical Transformers Are More Efficient Language Models</a> 실험</h1>
+<p>이 문서는 <a href="index.html">아워글래스</a> 모델을 훈련하기 위해 주석이 달린 파이토치 실험입니다.</p>
+<p>이 실험은 <a href="../basic/autoregressive_experiment.html">자동회귀 NLP 태스크를 위해 단순한 트랜스포머 훈련 및 구조</a>에 기반합니다. </p>
 
         </div>
         <div class='code'>
@@ -96,7 +96,7 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>Autoregressive language model</h2>
+            <h2>자동회귀 언어 모델</h2>
 
         </div>
         <div class='code'>
@@ -108,14 +108,10 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <ul><li><code  class="highlight"><span></span><span class="n">n_tokens</span></code>
- is the vocabulary size </li>
-<li><code  class="highlight"><span></span><span class="n">d_model</span></code>
- is the size of the token embeddings </li>
-<li><code  class="highlight"><span></span><span class="n">dropout</span></code>
- is the dropout probability </li>
-<li><code  class="highlight"><span></span><span class="n">hour_glass</span></code>
- is the <a href="index.html">hourglass model</a></li></ul>
+            <ul><li><code  class="highlight"><span></span><span class="n">n_tokens</span></code>는 단어 크기입니다. </li>
+<li><code  class="highlight"><span></span><span class="n">d_model</span></code>는 토큰 임베딩 크기입니다. </li>
+<li><code  class="highlight"><span></span><span class="n">dropout</span></code>는 드롭아웃 확률입니다. </li>
+<li><code  class="highlight"><span></span><span class="n">hour_glass</span></code>는 <a href="index.html">아워글래스</a> 모델입니다. </li></ul>
 
         </div>
         <div class='code'>
@@ -138,7 +134,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Token embeddings </p>
+            <p>토큰을 임베딩합니다. </p>
 
         </div>
         <div class='code'>
@@ -150,8 +146,8 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p><a href="../positional_encoding.html">Fixed positional embeddings</a>.</p>
-<p>📝 The <a href="https://github.com/google/trax/blob/master/trax/models/research/hourglass.py">official paper implementation</a> use <a href="../xl/relative_mha.html">relative attention</a> </p>
+            <p><a href="../positional_encoding.html">고정된 포지셔널 임베딩</a>.</p>
+<p>📝 <a href="https://github.com/google/trax/blob/master/trax/models/research/hourglass.py">공식 논문 구현</a>은 <a href="../xl/relative_mha.html">상대적 어텐션</a>을 사용하였습니다. </p>
 
         </div>
         <div class='code'>
@@ -163,7 +159,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p><a href="index.html">hourglass model</a> </p>
+            <p><a href="index.html">아워글래스</a> 모델입니다. </p>
 
         </div>
         <div class='code'>
@@ -175,7 +171,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>To normalize the final embeddings </p>
+            <p>마지막 임베딩을 정규화하기 위해 레이어 노름을 사용합니다. </p>
 
         </div>
         <div class='code'>
@@ -187,7 +183,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Embedding size </p>
+            <p>임베딩 크기입니다. </p>
 
         </div>
         <div class='code'>
@@ -199,7 +195,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>Final linear layer to predict the logits </p>
+            <p>로짓을 예측하기 위해 마지막 선형 레이어입니다. </p>
 
         </div>
         <div class='code'>
@@ -211,9 +207,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
- is the tensor with token indexes of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">seq_len</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">]</span></code>
-</li></ul>
+            <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">seq_len</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">]</span></code> 크기의 토큰 인덱스를 가진 텐서입니다. </li></ul>
 
         </div>
         <div class='code'>
@@ -225,7 +219,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Get embeddings </p>
+            <p>임베딩을 얻습니다. </p>
 
         </div>
         <div class='code'>
@@ -237,7 +231,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Add <a href="../positional_encoding.html">positional embeddings</a> </p>
+            <p><a href="../positional_encoding.html">포지셔널 임베딩</a>을 추가합니다. </p>
 
         </div>
         <div class='code'>
@@ -250,7 +244,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>Hourglass </p>
+            <p>아워글래스 모델에 포워드합니다. </p>
 
         </div>
         <div class='code'>
@@ -262,7 +256,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>Get logits </p>
+            <p>로짓을 얻습니다. </p>
 
         </div>
         <div class='code'>
@@ -274,7 +268,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Return the logits </p>
+            <p>로짓을 반환합니다. </p>
 
         </div>
         <div class='code'>
@@ -286,8 +280,8 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <h2>Configurations</h2>
-<p>This inherits from <a href="../basic/autoregressive_transformer.html">training loop and configurations for a simple transformer auto-regressive NLP task</a>.</p>
+            <h2>설정값</h2>
+<p><a href="../basic/autoregressive_transformer.html">자동회귀 NLP 태스크를 위해 단순한 트랜스포머의 훈련 루프 및 설정값</a>을 상속합니다. </p>
 
         </div>
         <div class='code'>
@@ -299,7 +293,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Model </p>
+            <p>모델입니다. </p>
 
         </div>
         <div class='code'>
@@ -311,7 +305,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Number of attention heads </p>
+            <p>어텐션 헤드의 수입니다. </p>
 
         </div>
         <div class='code'>
@@ -323,7 +317,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Dropout probability </p>
+            <p>드롭아웃 확률입니다. </p>
 
         </div>
         <div class='code'>
@@ -335,7 +329,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Size of feed-forward hidden layer </p>
+            <p>피드 포워드 레이어의 히든 레이어 차원입니다. </p>
 
         </div>
         <div class='code'>
@@ -347,7 +341,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>Token embedding size </p>
+            <p>토큰 임베딩 크기입니다. </p>
 
         </div>
         <div class='code'>
@@ -359,7 +353,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p>Shortening factors </p>
+            <p>단축 팩터입니다. </p>
 
         </div>
         <div class='code'>
@@ -371,7 +365,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p> Create the model</p>
+            <p>모델 생성 함수입니다. </p>
 
         </div>
         <div class='code'>
@@ -384,7 +378,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>Create hourglass model </p>
+            <p>아워글래스 모델을 인스턴스를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -396,7 +390,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>Create the auto-regressive wrapper </p>
+            <p>자동회귀 래퍼를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -431,7 +425,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Create experiment </p>
+            <p>실험 함수를 호출합니다. </p>
 
         </div>
         <div class='code'>
@@ -443,7 +437,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p>Create configs </p>
+            <p>설정값 인스턴스를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -455,7 +449,7 @@
             <div class='section-link'>
                 <a href='#section-30'>#</a>
             </div>
-            <p>Override configurations </p>
+            <p>설정값을 오버라이드합니다. </p>
 
         </div>
         <div class='code'>
@@ -467,7 +461,7 @@
             <div class='section-link'>
                 <a href='#section-31'>#</a>
             </div>
-            <p>Use character level tokenizer </p>
+            <p>문자 레벨 토크나이저를 사용합니다. </p>
 
         </div>
         <div class='code'>
@@ -479,7 +473,7 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>Prompt separator is blank </p>
+            <p>프롬프트 분리자는 빈 칸입니다. </p>
 
         </div>
         <div class='code'>
@@ -491,7 +485,7 @@
             <div class='section-link'>
                 <a href='#section-33'>#</a>
             </div>
-            <p>Starting prompt for sampling </p>
+            <p>샘플링을 위하 프롬프팅을 시작합니다. </p>
 
         </div>
         <div class='code'>
@@ -503,7 +497,7 @@
             <div class='section-link'>
                 <a href='#section-34'>#</a>
             </div>
-            <p>Use Tiny Shakespeare dataset </p>
+            <p>소규모 셰익스피어 데이터셋을 사용합니다. </p>
 
         </div>
         <div class='code'>
@@ -515,7 +509,7 @@
             <div class='section-link'>
                 <a href='#section-35'>#</a>
             </div>
-            <p>Use a context size of <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">256</span></span></span></span></span> </p>
+            <p>컨텍스트 크기는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">256</span></span></span></span></span>을 사용합니다. </p>
 
         </div>
         <div class='code'>
@@ -527,7 +521,7 @@
             <div class='section-link'>
                 <a href='#section-36'>#</a>
             </div>
-            <p>Train for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">128</span></span></span></span></span> epochs </p>
+            <p>훈련은 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">128</span></span></span></span></span> 에포크를 수행합니다. </p>
 
         </div>
         <div class='code'>
@@ -539,7 +533,7 @@
             <div class='section-link'>
                 <a href='#section-37'>#</a>
             </div>
-            <p>Batch size <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">32</span></span></span></span></span> </p>
+            <p>배치 크기는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">32</span></span></span></span></span>입니다. </p>
 
         </div>
         <div class='code'>
@@ -551,7 +545,7 @@
             <div class='section-link'>
                 <a href='#section-38'>#</a>
             </div>
-            <p>Switch between training and validation for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">10</span></span></span></span></span> times per epoch </p>
+            <p>에포크마다 10회 씩 훈련/검증을 전환합니다. </p>
 
         </div>
         <div class='code'>
@@ -563,7 +557,7 @@
             <div class='section-link'>
                 <a href='#section-39'>#</a>
             </div>
-            <p>Use <a href="../../optimizers/noam.html">Noam optimizer</a> </p>
+            <p><a href="../../optimizers/noam.html">Noam 옵티마이저</a>를 사용합니다. </p>
 
         </div>
         <div class='code'>
@@ -588,7 +582,7 @@
             <div class='section-link'>
                 <a href='#section-41'>#</a>
             </div>
-            <p>Set models for saving and loading </p>
+            <p>저장 및 로딩을 위해 모델을 세팅합니다. </p>
 
         </div>
         <div class='code'>
@@ -600,7 +594,7 @@
             <div class='section-link'>
                 <a href='#section-42'>#</a>
             </div>
-            <p>Start the experiment </p>
+            <p>실험을 시작합니다. </p>
 
         </div>
         <div class='code'>
@@ -612,7 +606,7 @@
             <div class='section-link'>
                 <a href='#section-43'>#</a>
             </div>
-            <p>Run training </p>
+            <p>훈련을 실행합니다. </p>
 
         </div>
         <div class='code'>
