@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="A simple PyTorch implementation/tutorial of Deep Convolutional Generative Adversarial Networks (DCGAN)."/>
+    <meta name="description" content="심층 합성곱 생성적 적대 신경망(DCGAN)의 간단한 파이토치 구현/튜토리얼"/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Deep Convolutional Generative Adversarial Networks (DCGAN)"/>
-    <meta name="twitter:description" content="A simple PyTorch implementation/tutorial of Deep Convolutional Generative Adversarial Networks (DCGAN)."/>
+    <meta name="twitter:title" content="심층 합성곱 생성적 적대 신경망(DCGAN)"/>
+    <meta name="twitter:description" content="심층 합성곱 생성적 적대 신경망(DCGAN)의 간단한 파이토치 구현/튜토리얼"/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/gan/dcgan/index.html"/>
-    <meta property="og:title" content="Deep Convolutional Generative Adversarial Networks (DCGAN)"/>
+    <meta property="og:title" content="심층 합성곱 생성적 적대 신경망(DCGAN)"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Deep Convolutional Generative Adversarial Networks (DCGAN)"/>
+    <meta property="og:site_name" content="심층 합성곱 생성적 적대 신경망(DCGAN)"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Deep Convolutional Generative Adversarial Networks (DCGAN)"/>
-    <meta property="og:description" content="A simple PyTorch implementation/tutorial of Deep Convolutional Generative Adversarial Networks (DCGAN)."/>
+    <meta property="og:title" content="심층 합성곱 생성적 적대 신경망(DCGAN)"/>
+    <meta property="og:description" content="심층 합성곱 생성적 적대 신경망(DCGAN)의 간단한 파이토치 구현/튜토리얼"/>
 
-    <title>Deep Convolutional Generative Adversarial Networks (DCGAN)</title>
+    <title>심층 합성곱 생성적 적대 신경망(DCGAN)</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/gan/dcgan/index.html"/>
@@ -71,9 +71,9 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Deep Convolutional Generative Adversarial Networks (DCGAN)</h1>
-<p>This is a <a href="https://pytorch.org">PyTorch</a> implementation of paper <a href="https://papers.labml.ai/paper/1511.06434">Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks</a>.</p>
-<p>This implementation is based on the <a href="https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html">PyTorch DCGAN Tutorial</a>.</p>
+            <h1>심층 합성곱 생성적 적대 신경망(DCGAN)</h1>
+<p>해당 페이지는 <a href="https://papers.labml.ai/paper/1511.06434">Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks</a> 논문을 <a href="https://pytorch.org">PyTorch</a> 로 구현한 내용입니다.</p>
+<p>아래의 구현은 <a href="https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html">PyTorch DCGAN Tutorial</a> 기반으로 작성되었습니다.</p>
 
         </div>
         <div class='code'>
@@ -90,8 +90,8 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h3>Convolutional Generator Network</h3>
-<p>This is similar to the de-convolutional network used for CelebA faces, but modified for MNIST images.</p>
+            <h3>합성곱 생성 신경망 (Convolutional Generator Network)</h3>
+<p>CelebA faces 데이터에 사용된 de-convolutional 신경망 모델과 유사하지만, MNIST 이미지를 위해 수정되었습니다.</p>
 <p><img alt="DCGan Architecture" src="https://pytorch.org/tutorials/_images/dcgan_generator.png"></p>
 
         </div>
@@ -116,7 +116,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <p>The input is <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqc" style=""><span class="mord" style="">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">1</span></span></span></span></span></span> with 100 channels </p>
+            <p>입력 데이터는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqc" style=""><span class="mord" style="">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">1</span></span></span></span></span></span>의 크기를 갖고 100개의 채널로 되어있습니다.</p>
 
         </div>
         <div class='code'>
@@ -128,7 +128,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>This gives <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqd" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> output </p>
+            <p>다음은 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqd" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span>  크기의 결과값을 반환합니다.</p>
 
         </div>
         <div class='code'>
@@ -142,7 +142,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>This gives <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqe" style=""><span class="mord" style="">7</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">7</span></span></span></span></span></span> </p>
+            <p>다음은 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqe" style=""><span class="mord" style="">7</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">7</span></span></span></span></span></span> 크기의 결과값을 반환합니다. </p>
 
         </div>
         <div class='code'>
@@ -156,7 +156,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>This gives <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqa" style=""><span class="mord" style="">14</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">14</span></span></span></span></span></span> </p>
+            <p>다음은 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqa" style=""><span class="mord" style="">14</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">14</span></span></span></span></span></span> 크기의 결과값을 반환합니다. </p>
 
         </div>
         <div class='code'>
@@ -170,7 +170,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>This gives <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqb" style=""><span class="mord" style="">28</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">28</span></span></span></span></span></span> </p>
+            <p>다음은 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqb" style=""><span class="mord" style="">28</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">28</span></span></span></span></span></span> 크기의 결과값을 반환합니다. </p>
 
         </div>
         <div class='code'>
@@ -197,9 +197,9 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>Change from shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span></code>
- to <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span></code>
- </p>
+            <p>다음은 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span></code> 크기를 
+ <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span></code>
+ 크기로 바꿔줍니다.</p>
 
         </div>
         <div class='code'>
@@ -213,7 +213,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <h3>Convolutional Discriminator Network</h3>
+            <h3>합성곱 판별 신경망 (Convolutional Discriminator Network)</h3>
 
         </div>
         <div class='code'>
@@ -237,7 +237,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>The input is <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqb" style=""><span class="mord" style="">28</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">28</span></span></span></span></span></span> with one channel </p>
+            <p>입력 데이터는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqb" style=""><span class="mord" style="">28</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">28</span></span></span></span></span></span> 크기를 갖고 1 개의 채널로 되어있습니다.</p>
 
         </div>
         <div class='code'>
@@ -249,7 +249,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>This gives <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqa" style=""><span class="mord" style="">14</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">14</span></span></span></span></span></span> </p>
+            <p>다음은 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqa" style=""><span class="mord" style="">14</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">14</span></span></span></span></span></span> 크기의 결과값을 반환합니다.</p>
 
         </div>
         <div class='code'>
@@ -262,7 +262,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>This gives <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqe" style=""><span class="mord" style="">7</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">7</span></span></span></span></span></span> </p>
+            <p>다음은 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqe" style=""><span class="mord" style="">7</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">7</span></span></span></span></span></span> 크기의 결과값을 반환합니다. </p>
 
         </div>
         <div class='code'>
@@ -276,7 +276,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>This gives <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqd" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> </p>
+            <p>다음은 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqd" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> 크기의 결과값을 반환합니다.</p>
 
         </div>
         <div class='code'>
@@ -290,7 +290,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>This gives <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqc" style=""><span class="mord" style="">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">1</span></span></span></span></span></span> </p>
+            <p>다음은 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqc" style=""><span class="mord" style="">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">1</span></span></span></span></span></span> 크기의 결과값을 반환합니다.</p>
 
         </div>
         <div class='code'>
@@ -334,7 +334,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>We import the <a href="../original/experiment.html">simple gan experiment</a> and change the generator and discriminator networks </p>
+            <p>우리는 <a href="../original/experiment.html">simple gan experiment</a> 를 불러와서 생성 신경망과 판별 신경망을 수정하였습니다.</p>
 
         </div>
         <div class='code'>

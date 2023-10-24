@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Create a dataset for RETRO model training"/>
+    <meta name="description" content="RETRO 모델 훈련을 위한 데이터셋 생성"/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Training dataset for RETRO"/>
-    <meta name="twitter:description" content="Create a dataset for RETRO model training"/>
+    <meta name="twitter:title" content="RETRO를 위한 훈련 데이터셋"/>
+    <meta name="twitter:description" content="RETRO 모델 훈련을 위한 데이터셋 생성"/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/transformers/retro/dataset.html"/>
-    <meta property="og:title" content="Training dataset for RETRO"/>
+    <meta property="og:title" content="RETRO를 위한 훈련 데이터셋"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Training dataset for RETRO"/>
+    <meta property="og:site_name" content="RETRO를 위한 훈련 데이터셋"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Training dataset for RETRO"/>
-    <meta property="og:description" content="Create a dataset for RETRO model training"/>
+    <meta property="og:title" content="RETRO를 위한 훈련 데이터셋"/>
+    <meta property="og:description" content="RETRO 모델 훈련을 위한 데이터셋 생성"/>
 
-    <title>Training dataset for RETRO</title>
+    <title>RETRO를 위한 훈련 데이터셋</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/transformers/retro/dataset.html"/>
@@ -71,9 +71,8 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>RETRO training dataset</h1>
-<p>We pre-retrieve nearest neighbors from the <a href="database.html">key-value database</a>  and create the dataset to train the <a href="index.html">RETRO</a>  <a href="model.html">model</a>.</p>
-
+            <h1>RETRO 훈련 데이터셋</h1>
+<p>이 문서는  <a href="database.html">key-value database</a>에서 최근접 이웃을 미리 검색하고 데이터셋을 생성하여 <a href="index.html">RETRO</a>  <a href="model.html">model</a>를 학습시킵니다.</p>
         </div>
         <div class='code'>
             <div class="highlight"><pre><span class="lineno">15</span><span></span><span class="kn">import</span> <span class="nn">json</span>
@@ -93,13 +92,10 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>Build the dataset</h2>
-<ul><li><code  class="highlight"><span></span><span class="n">chunk_len</span></code>
- is the chunk length </li>
-<li><code  class="highlight"><span></span><span class="n">chunks_per_sample</span></code>
- is the number of chunks per training sample </li>
-<li><code  class="highlight"><span></span><span class="n">skip_range</span></code>
- is the maximum number of characters to skip between two samples.  We skip a few characters between samples to make sure the samples  aren&#x27;t aligned perfectly with the chunks in the <a href="database.html">database</a></li></ul>
+            <h2>데이터셋을 빌드합니다. </h2>
+<ul><li><code  class="highlight"><span></span><span class="n">chunk_len</span></code>는 청크 길이입니다. </li>
+<li><code  class="highlight"><span></span><span class="n">chunks_per_sample</span></code>는 각 훈련 샘플의 청크 수입니다. </li>
+<li><code  class="highlight"><span></span><span class="n">skip_range</span></code>는 두 샘플 사이에서 건너뛸 수 있는 최대 문자 수입니다. 샘플이 <a href="database.html">database</a>의 청크와 완벽하게 정렬되지 않도록 샘플 사이에 몇 문자를 건너뜁니다. </li></ul>
 
         </div>
         <div class='code'>
@@ -111,7 +107,7 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <p>Load the text file </p>
+            <p>텍스트 파일을 로드합니다. </p>
 
         </div>
         <div class='code'>
@@ -126,7 +122,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <p>Training portion of it </p>
+            <p>데이터의 학습 부분입니다. </p>
 
         </div>
         <div class='code'>
@@ -138,7 +134,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Load the index for retrieving neighbors </p>
+            <p>이웃 검색을 위한 인덱스를 로드합니다. </p>
 
         </div>
         <div class='code'>
@@ -150,7 +146,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>The input sample offsets </p>
+            <p>입력 샘플 오프셋입니다. </p>
 
         </div>
         <div class='code'>
@@ -162,7 +158,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Cursor for the text </p>
+            <p>텍스트 커서입니다. </p>
 
         </div>
         <div class='code'>
@@ -175,7 +171,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Skip a few characters to make sure it&#x27;s not aligned with the neighbors </p>
+            <p>이웃과 정렬되지 않도록 몇 글자를 건너뜁니다. </p>
 
         </div>
         <div class='code'>
@@ -188,7 +184,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Stop if we&#x27;ve reached the end of the text </p>
+            <p>만약 텍스트 끝에 도달한다면 멈춥니다. </p>
 
         </div>
         <div class='code'>
@@ -201,7 +197,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>Collect the offset </p>
+            <p>오프셋을 수집합니다. </p>
 
         </div>
         <div class='code'>
@@ -213,7 +209,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Increment the cursor </p>
+            <p>커서를 늘려나갑니다. </p>
 
         </div>
         <div class='code'>
@@ -225,7 +221,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>For samples </p>
+            <p>샘플 리스트입니다. </p>
 
         </div>
         <div class='code'>
@@ -237,7 +233,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Iterate through sample offsets </p>
+            <p>샘플 오프셋을 반복합니다. </p>
 
         </div>
         <div class='code'>
@@ -249,7 +245,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>Get the sample including an extra character (for prediction) </p>
+            <p>예측을 위해 추가 문자을 포함하여 샘플을 가져옵니다. </p>
 
         </div>
         <div class='code'>
@@ -261,7 +257,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>The input </p>
+            <p>실제 입력할 소스입니다. </p>
 
         </div>
         <div class='code'>
@@ -273,7 +269,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Break it into chunks </p>
+            <p>위 입력 소스를 청크로 나눕니다. </p>
 
         </div>
         <div class='code'>
@@ -285,7 +281,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>The chunk offsets </p>
+            <p>청크 오프셋입니다. </p>
 
         </div>
         <div class='code'>
@@ -297,7 +293,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Retrieve nearest neighbors </p>
+            <p>최근접 이웃을 검색합니다. </p>
 
         </div>
         <div class='code'>
@@ -309,8 +305,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Get neighbor texts. The neighbor length is twice the <code  class="highlight"><span></span><span class="n">chunk_len</span></code>
- </p>
+            <p>이웃 텍스트를 가져옵니다. 이웃 길이는 <code  class="highlight"><span></span><span class="n">chunk_len</span></code>의 두 배입니다. </p>
 
         </div>
         <div class='code'>
@@ -322,7 +317,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Add to list of samples </p>
+            <p>샘플 목록에 추가합니다. </p>
 
         </div>
         <div class='code'>
@@ -334,7 +329,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Save the samples in JSON. We don&#x27;t need to use complex dataset storage mechanisms or pre-tokenize since our dataset is small. </p>
+            <p>샘플을 JSON으로 저장합니다. 데이터 세트가 작기 때문에 복잡한 데이터 세트 저장 메커니즘을 사용하거나 사전 토큰화할 필요가 없습니다. </p>
 
         </div>
         <div class='code'>
@@ -347,9 +342,8 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <h2>Dataset</h2>
-<p>This is the PyTorch dataset that loads the dataset created by <code  class="highlight"><span></span><span class="n">build_dataset</span></code>
-.</p>
+            <h2>데이터셋</h2>
+                <p><code  class="highlight"><span></span><span class="n">build_dataset</span></code>에서 데이터로더를 만들 파이토치데이터셋 클래스입니다.</p>
 
         </div>
         <div class='code'>
@@ -361,11 +355,8 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <ul><li><code  class="highlight"><span></span><span class="n">file_path</span></code>
- is the path of the saved JSON file </li>
-<li><code  class="highlight"><span></span><span class="n">tds</span></code>
- is the <code  class="highlight"><span></span><span class="n">TextDataset</span></code>
-</li></ul>
+            <ul><li><code  class="highlight"><span></span><span class="n">file_path</span></code>는 JSON 파일이 저장된 경로입니다. </li>
+<li><code  class="highlight"><span></span><span class="n">tds</span></code>는 <code  class="highlight"><span></span><span class="n">TextDataset</span></code>입니다. </li></ul>
 
         </div>
         <div class='code'>
@@ -388,7 +379,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>Load the samples </p>
+            <p>JSON 데이터를 로드합니다. </p>
 
         </div>
         <div class='code'>
@@ -401,7 +392,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p> Number of samples</p>
+            <p>전체 데이터셋의 길이를 반환합니다. </p>
 
         </div>
         <div class='code'>
@@ -424,7 +415,7 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <p> Get a sample</p>
+            <p> <code  class="highlight"><span></span><span class="n">def __getitem__</span></code>은 데이터로더 이터레이션에서 자동 호출됩니다. </p>
 
         </div>
         <div class='code'>
@@ -436,7 +427,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Get the sample </p>
+            <p>인덱스로부터 배치 데이터를 샘플링합니다. </p>
 
         </div>
         <div class='code'>
@@ -448,7 +439,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p>Tokenize </p>
+            <p>토크나이징 과정입니다. </p>
 
         </div>
         <div class='code'>

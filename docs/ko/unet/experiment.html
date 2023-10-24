@@ -70,12 +70,12 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Training <a href="index.html">U-Net</a></h1>
-<p>This trains a <a href="index.html">U-Net</a> model on <a href="carvana.html">Carvana dataset</a>. You can find the download instructions <a href="https://www.kaggle.com/competitions/carvana-image-masking-challenge/data">on Kaggle</a>.</p>
-<p>Save the training images inside <code  class="highlight"><span></span><span class="n">carvana</span><span class="o">/</span><span class="n">train</span></code>
- folder and the masks in <code  class="highlight"><span></span><span class="n">carvana</span><span class="o">/</span><span class="n">train_masks</span></code>
- folder.</p>
-<p>For simplicity, we do not do a training and validation split.</p>
+            <h1><a href="index.html">U-Net</a> 을 훈련시켜 봅시다.</h1>
+<p>이것은 <a href="carvana.html">Carvana 데이터셋</a>을 사용하여 <a href="index.html">U-Net</a> 모델을 학습시킵니다. 데이터셋은 <a href="https://www.kaggle.com/competitions/carvana-image-masking-challenge/data">Kaggle</a> 에서 확인하실 수 있습니다.</p>
+<p> 학습 이미지는 <code  class="highlight"><span></span><span class="n">carvana</span><span class="o">/</span><span class="n">train</span></code>
+ 폴더 안에, 마스크 데이터는 <code  class="highlight"><span></span><span class="n">carvana</span><span class="o">/</span><span class="n">train_masks</span></code>
+ 폴더 안에 저장하세요.</p>
+<p>간단한 실습을 위해 학습과 검증 분할을 진행하지 않습니다.</p>
 
         </div>
         <div class='code'>
@@ -97,7 +97,7 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>Configurations</h2>
+            <h2>Configurations - 설정</h2>
 
         </div>
         <div class='code'>
@@ -109,8 +109,8 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <p>Device to train the model on. <a href="https://docs.labml.ai/api/helpers.html#labml_helpers.device.DeviceConfigs"><code  class="highlight"><span></span><span class="n">DeviceConfigs</span></code>
-</a>  picks up an available CUDA device or defaults to CPU. </p>
+            <p> 모델을 학습시킬 장치를 설정합니다. <a href="https://docs.labml.ai/api/helpers.html#labml_helpers.device.DeviceConfigs"><code  class="highlight"><span></span><span class="n">DeviceConfigs</span></code>
+</a> 는 사용 가능한 CUDA 장치를 선택할 수 있고, 기본적으로 CPU를 사용하여 학습합니다. </p>
 
         </div>
         <div class='code'>
@@ -122,7 +122,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <p><a href="index.html">U-Net</a> model </p>
+            <p><a href="index.html">U-Net</a> 모델 정의 </p>
 
         </div>
         <div class='code'>
@@ -134,7 +134,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Number of channels in the image. <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></span> for RGB. </p>
+            <p>이미지의 채널 수. <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">(RGB의 경우 3)</span></span></span></span></span> </p>
 
         </div>
         <div class='code'>
@@ -146,7 +146,8 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>Number of channels in the output mask. <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span> for binary mask. </p>
+            <p> 
+                출력 마스크의 채널 수. 이진 마스크의 경우 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span>개.</p>
 
         </div>
         <div class='code'>
@@ -158,7 +159,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Batch size </p>
+            <p>Batch size - 배치 사이즈 </p>
 
         </div>
         <div class='code'>
@@ -170,7 +171,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Learning rate </p>
+            <p>Learning rate - 학습률 </p>
 
         </div>
         <div class='code'>
@@ -182,7 +183,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Number of training epochs </p>
+            <p> 학습 에포크의 수 </p>
 
         </div>
         <div class='code'>
@@ -194,7 +195,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>Dataset </p>
+            <p>Dataset 정의 </p>
 
         </div>
         <div class='code'>
@@ -206,7 +207,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Dataloader </p>
+            <p>Dataloader 정의 </p>
 
         </div>
         <div class='code'>
@@ -218,7 +219,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Loss function </p>
+            <p>손실 함수 </p>
 
         </div>
         <div class='code'>
@@ -230,7 +231,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Sigmoid function for binary classification </p>
+            <p>이진 분류를 위한 시그모이드 함수 정의</p>
 
         </div>
         <div class='code'>
@@ -242,11 +243,11 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>Adam optimizer </p>
+            <p>Adam 옵티마이저 - Adam 최적화 </p>
 
         </div>
         <div class='code'>
-            <div class="highlight"><pre><span class="lineno">68</span>    <span class="n">optimizer</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span></pre></div>
+            <div class="highlight"><pre><span class="lineno">68</span>    <span class="n">옵티마이저</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span></pre></div>
         </div>
     </div>
     <div class='section' id='section-14'>
@@ -265,7 +266,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Initialize the <a href="carvana.html">Carvana dataset</a> </p>
+            <p><a href="carvana.html">Carvana dataset</a> 초기화 </p>
 
         </div>
         <div class='code'>
@@ -278,7 +279,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Initialize the model </p>
+            <p>모델 초기화</p>
 
         </div>
         <div class='code'>
@@ -290,7 +291,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Create dataloader </p>
+            <p>dataloader 생성 </p>
 
         </div>
         <div class='code'>
@@ -303,11 +304,11 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Create optimizer </p>
+            <p>옵티마이저 생성</p>
 
         </div>
         <div class='code'>
-            <div class="highlight"><pre><span class="lineno">81</span>        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">learning_rate</span><span class="p">)</span></pre></div>
+            <div class="highlight"><pre><span class="lineno">81</span>        <span class="bp">self</span><span class="o">.</span><span class="n">옵티마이저</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">learning_rate</span><span class="p">)</span></pre></div>
         </div>
     </div>
     <div class='section' id='section-19'>
@@ -315,7 +316,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Image logging </p>
+            <p>이미지 로깅 </p>
 
         </div>
         <div class='code'>
@@ -327,7 +328,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <h3>Sample images</h3>
+            <h3>샘플 이미지</h3>
 
         </div>
         <div class='code'>
@@ -340,7 +341,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>Get a random sample </p>
+            <p>랜덤한 샘플 얻기 </p>
 
         </div>
         <div class='code'>
@@ -352,7 +353,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p>Move data to device </p>
+            <p>device로 데이터 이동</p>
 
         </div>
         <div class='code'>
@@ -364,7 +365,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p>Get predicted mask </p>
+            <p>예측된 마스크를 얻습니다.</p>
 
         </div>
         <div class='code'>
@@ -376,7 +377,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>Crop the image to the size of the mask </p>
+            <p>이미지를 마스크의 크기로 자르기</p>
 
         </div>
         <div class='code'>
@@ -388,7 +389,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>Log samples </p>
+            <p>Log 샘플 </p>
 
         </div>
         <div class='code'>
@@ -400,7 +401,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <h3>Train for an epoch</h3>
+            <h3>훈련을 위한 에포크</h3>
 
         </div>
         <div class='code'>
@@ -412,8 +413,8 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <p>Iterate through the dataset. Use <a href="https://docs.labml.ai/api/monit.html#labml.monit.mix"><code  class="highlight"><span></span><span class="n">mix</span></code>
-</a> to sample <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">50</span></span></span></span></span> times per epoch. </p>
+            <p>데이터셋을 순회합니다. 에포크 당 50번 샘플링하기 위해 <a href="https://docs.labml.ai/api/monit.html#labml.monit.mix"><code  class="highlight"><span></span><span class="n">mix</span></code>
+</a>를 사용합니다.<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord"></span></span></span></span></span></p>
 
         </div>
         <div class='code'>
@@ -425,7 +426,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Increment global step </p>
+            <p>글로벌 스텝 증가</p>
 
         </div>
         <div class='code'>
@@ -437,7 +438,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p>Move data to device </p>
+            <p>데이터를 device로 이동합니다.</p>
 
         </div>
         <div class='code'>
@@ -449,11 +450,11 @@
             <div class='section-link'>
                 <a href='#section-30'>#</a>
             </div>
-            <p>Make the gradients zero </p>
+            <p>그레디언트를 0으로 만들기 </p>
 
         </div>
         <div class='code'>
-            <div class="highlight"><pre><span class="lineno">119</span>            <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span></pre></div>
+            <div class="highlight"><pre><span class="lineno">119</span>            <span class="bp">self</span><span class="o">.</span><span class="n">옵티마이저</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span></pre></div>
         </div>
     </div>
     <div class='section' id='section-31'>
@@ -461,7 +462,7 @@
             <div class='section-link'>
                 <a href='#section-31'>#</a>
             </div>
-            <p>Get predicted mask logits </p>
+            <p>마스크 logits 얻기</p>
 
         </div>
         <div class='code'>
@@ -473,7 +474,7 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>Crop the target mask to the size of the logits. Size of the logits will be smaller if we don&#x27;t use padding in convolutional layers in the U-Net. </p>
+            <p>타겟 mask를 logits의 크기로 자르십시오. U-Net의 합성곱 계층에서 패딩을 사용하지 않으면 logits의 크기가 더 작아집니다.</p>
 
         </div>
         <div class='code'>
@@ -485,7 +486,7 @@
             <div class='section-link'>
                 <a href='#section-33'>#</a>
             </div>
-            <p>Calculate loss </p>
+            <p> loss을 계산합니다 </p>
 
         </div>
         <div class='code'>
@@ -497,7 +498,7 @@
             <div class='section-link'>
                 <a href='#section-34'>#</a>
             </div>
-            <p>Compute gradients </p>
+            <p>gradients를 계산합니다.</p>
 
         </div>
         <div class='code'>
@@ -509,11 +510,11 @@
             <div class='section-link'>
                 <a href='#section-35'>#</a>
             </div>
-            <p>Take an optimization step </p>
+            <p> 최적화 단계를 수행합니다. </p>
 
         </div>
         <div class='code'>
-            <div class="highlight"><pre><span class="lineno">130</span>            <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span></pre></div>
+            <div class="highlight"><pre><span class="lineno">130</span>            <span class="bp">self</span><span class="o">.</span><span class="n">옵티마이저</span><span class="o">.</span><span class="n">step</span><span class="p">()</span></pre></div>
         </div>
     </div>
     <div class='section' id='section-36'>
@@ -521,7 +522,7 @@
             <div class='section-link'>
                 <a href='#section-36'>#</a>
             </div>
-            <p>Track the loss </p>
+            <p>손실을 추적하십시오. </p>
 
         </div>
         <div class='code'>
@@ -533,7 +534,7 @@
             <div class='section-link'>
                 <a href='#section-37'>#</a>
             </div>
-            <h3>Training loop</h3>
+            <h3>훈련 루프</h3>
 
         </div>
         <div class='code'>
@@ -556,7 +557,7 @@
             <div class='section-link'>
                 <a href='#section-39'>#</a>
             </div>
-            <p>Train the model </p>
+            <p> model 훈련 </p>
 
         </div>
         <div class='code'>
@@ -568,7 +569,7 @@
             <div class='section-link'>
                 <a href='#section-40'>#</a>
             </div>
-            <p>New line in the console </p>
+            <p> 콘솔에서의 새로운 라인 </p>
 
         </div>
         <div class='code'>
@@ -580,7 +581,7 @@
             <div class='section-link'>
                 <a href='#section-41'>#</a>
             </div>
-            <p>Save the model </p>
+            <p> model 생성 </p>
 
         </div>
         <div class='code'>
@@ -603,7 +604,7 @@
             <div class='section-link'>
                 <a href='#section-43'>#</a>
             </div>
-            <p>Create experiment </p>
+            <p>실험 생성</p>
 
         </div>
         <div class='code'>
@@ -615,7 +616,7 @@
             <div class='section-link'>
                 <a href='#section-44'>#</a>
             </div>
-            <p>Create configurations </p>
+            <p> 설정 생성 </p>
 
         </div>
         <div class='code'>
@@ -627,7 +628,7 @@
             <div class='section-link'>
                 <a href='#section-45'>#</a>
             </div>
-            <p>Set configurations. You can override the defaults by passing the values in the dictionary. </p>
+            <p>설정을 지정하십시오. 사전에 값을 전달함으로써 기본값을 재정의할 수 있습니다.</p>
 
         </div>
         <div class='code'>
@@ -639,7 +640,7 @@
             <div class='section-link'>
                 <a href='#section-46'>#</a>
             </div>
-            <p>Initialize </p>
+            <p>초기화 </p>
 
         </div>
         <div class='code'>
@@ -651,7 +652,8 @@
             <div class='section-link'>
                 <a href='#section-47'>#</a>
             </div>
-            <p>Set models for saving and loading </p>
+            <p>
+                모델 저장 및 로딩을 위한 설정을 하십시오.</p>
 
         </div>
         <div class='code'>
@@ -663,7 +665,7 @@
             <div class='section-link'>
                 <a href='#section-48'>#</a>
             </div>
-            <p>Start and run the training loop </p>
+            <p> 훈련 루프를 실행하세요. </p>
 
         </div>
         <div class='code'>
