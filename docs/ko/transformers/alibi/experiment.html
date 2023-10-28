@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="This experiment trains an Attention with Linear Biases (ALiBi) based model on Tiny Shakespeare dataset."/>
+    <meta name="description" content="다음은 Tiny Shakespeare 데이터셋에 대해서 선형 편향이 존재하는 어텐션(ALiBi)을 훈련하는 실험입니다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Attention with Linear Biases (ALiBi) Experiment"/>
-    <meta name="twitter:description" content="This experiment trains an Attention with Linear Biases (ALiBi) based model on Tiny Shakespeare dataset."/>
+    <meta name="twitter:title" content="선형 편향이 존재하는 어텐션(ALiBi) 실험"/>
+    <meta name="twitter:description" content="다음은 Tiny Shakespeare 데이터셋에 대해서 선형 편향이 존재하는 어텐션(ALiBi)을 훈련하는 실험입니다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/transformers/alibi/experiment.html"/>
-    <meta property="og:title" content="Attention with Linear Biases (ALiBi) Experiment"/>
+    <meta property="og:title" content="선형 편향이 존재하는 어텐션(ALiBi) 실험"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Attention with Linear Biases (ALiBi) Experiment"/>
+    <meta property="og:site_name" content="선형 편향이 존재하는 어텐션(ALiBi) 실험"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Attention with Linear Biases (ALiBi) Experiment"/>
-    <meta property="og:description" content="This experiment trains an Attention with Linear Biases (ALiBi) based model on Tiny Shakespeare dataset."/>
+    <meta property="og:title" content="선형 편향이 존재하는 어텐션(ALiBi) 실험"/>
+    <meta property="og:description" content="다음은 Tiny Shakespeare 데이터셋에 대해서 선형 편향이 존재하는 어텐션(ALiBi)을 훈련하는 실험입니다."/>
 
-    <title>Attention with Linear Biases (ALiBi) Experiment</title>
+    <title>선형 편향이 존재하는 어텐션(ALiBi) 실험</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/transformers/alibi/experiment.html"/>
@@ -71,9 +71,9 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1><a href="index.html">Attention with Linear Biases (ALiBi)</a> Experiment</h1>
-<p>This is an annotated PyTorch experiment to train a <a href="index.html">ALiBi model</a>.</p>
-<p>This is based on <a href="../gpt/index.html">our GPT model</a>.</p>
+            <h1><a href="index.html">선형 편향이 존재하는 어텐션(ALiBi) </a> 실험</h1>
+<p><a href="index.html">ALiBi 모델</a>을 훈련하는 것을 파이토치로 구현한 것입니다.</p>
+<p>다음은 <a href="../gpt/index.html">우리의 GPT 모델</a>을 기반으로 하고 있습니다.</p>
 
         </div>
         <div class='code'>
@@ -94,8 +94,8 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>Configurations</h2>
-<p>We extend <a href="../gpt/index.html">GPT configurations</a> and change the attention mechanism.</p>
+            <h2>설정</h2>
+<p><a href="../gpt/index.html">GPT 설정</a>을 확장하였으며 어텐션 메커니즘을 변경하였습니다. </p>
 
         </div>
         <div class='code'>
@@ -107,7 +107,7 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <p>ALiBi based transformer (defined below) </p>
+            <p>ALiBi 기반 트랜스포머</p>
 
         </div>
         <div class='code'>
@@ -119,7 +119,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <p>Longer validation set </p>
+            <p>더 긴 검증 세트를 설정합니다.</p>
 
         </div>
         <div class='code'>
@@ -132,7 +132,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p> Log losses at the initial and final tokens</p>
+            <p> 첫번쨰와 마지막 토큰에 대해 로그 로스를 계산합니다.</p>
 
         </div>
         <div class='code'>
@@ -144,7 +144,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>If there are more tokens that the training sequence length (during validation), </p>
+            <p>만일 (검증하는 동안) 훈련 시퀀스 길이보다 많은 토큰이 있다면, </p>
 
         </div>
         <div class='code'>
@@ -156,7 +156,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Log the loss at training sequence length </p>
+            <p>훈련 시퀀스 길이에서 로그 로스를 구합니다. </p>
 
         </div>
         <div class='code'>
@@ -168,7 +168,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Log the loss at the first token </p>
+            <p>첫번째 토큰에 대해 로그 로스를 구합니다. </p>
 
         </div>
         <div class='code'>
@@ -180,7 +180,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Log the loss at the final token </p>
+            <p>마지막 토큰에 대해 로그 로스를 구합니다.  </p>
 
         </div>
         <div class='code'>
@@ -192,7 +192,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p> Create an ALiBi attention module</p>
+            <p>ALiBi 어텐션 모듈을 생성합니다.</p>
 
         </div>
         <div class='code'>
@@ -215,7 +215,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Set all attention mechanisms to ALiBi </p>
+            <p>ALiBi에 대해 모든 어텐션 메커니즘을 설정합니다.</p>
 
         </div>
         <div class='code'>
@@ -229,8 +229,8 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p> Shuffled validation data loader with <code  class="highlight"><span></span><span class="n">valid_seq_len</span></code>
- sequence length</p>
+            <p><code  class="highlight"><span></span><span class="n">valid_seq_len</span></code>
+  시퀀스 길이의 검증 데이터 로더를 셔플합니다.</p>
 
         </div>
         <div class='code'>
@@ -259,7 +259,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <h3>ALiBi based Transformer configurations</h3>
+            <h3>ALiBi 기반 트랜스포머 설정</h3>
 
         </div>
         <div class='code'>
@@ -272,7 +272,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>We use our <a href="../configs.html#TransformerConfigs">configurable transformer implementation</a> </p>
+            <p><a href="../configs.html#TransformerConfigs">설정 가능한 트랜스포머 구현체</a>를 사용합니다. </p>
 
         </div>
         <div class='code'>
@@ -284,7 +284,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Set the vocabulary sizes for embeddings and generating logits </p>
+            <p>임베딩에 대한 단어(vocabulary) 사이즈를 설정하고 로짓을 생성합니다.</p>
 
         </div>
         <div class='code'>
@@ -297,7 +297,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>GPT uses GELU activation for position wise feedforward </p>
+            <p>위치 기반의 피드포워드에 대해 GPT는 GELU 활성화함수를 사용합니다.</p>
 
         </div>
         <div class='code'>
@@ -309,7 +309,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>ALiBi doesn&#x27;t use positional embeddings </p>
+            <p>ALiBi는 위치 임베딩을 사용하지 않습니다. </p>
 
         </div>
         <div class='code'>
@@ -322,7 +322,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Set all attention mechanisms to ALiBi </p>
+            <p>ALiBi에 대해 모든 어텐션 메커니즘을 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -359,7 +359,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p>Create experiment </p>
+            <p>실험을 생성합니다.</p>
 
         </div>
         <div class='code'>
@@ -371,7 +371,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p>Create configs </p>
+            <p>설정파일을 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -383,7 +383,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>Override configurations </p>
+            <p>설정파일을 오버라이드합니다.</p>
 
         </div>
         <div class='code'>
@@ -395,7 +395,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>Use character level tokenizer </p>
+            <p>글자 단위의 토크나이저를 이용합니다.</p>
 
         </div>
         <div class='code'>
@@ -407,7 +407,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <p>Prompt separator is blank </p>
+            <p>프롬프트 구분자는 빈칸입니다. </p>
 
         </div>
         <div class='code'>
@@ -419,7 +419,7 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <p>Starting prompt for sampling </p>
+            <p>샘플링을 위한 프롬프트를 시작합니다. </p>
 
         </div>
         <div class='code'>
@@ -431,7 +431,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Use Tiny Shakespeare dataset </p>
+            <p>Tiny Shakespeare 데이터셋을 사용합니다.</p>
 
         </div>
         <div class='code'>
@@ -455,7 +455,7 @@
             <div class='section-link'>
                 <a href='#section-30'>#</a>
             </div>
-            <p>Use a context size of <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqa" style=""><span class="mord" style="">128</span></span></span></span></span></span> </p>
+            <p>컨텍스트(context) 크기는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqa" style=""><span class="mord" style="">128</span></span></span></span></span>을 사용합니다.</span> </p>
 
         </div>
         <div class='code'>
@@ -467,7 +467,7 @@
             <div class='section-link'>
                 <a href='#section-31'>#</a>
             </div>
-            <p>Use a context size of <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqa" style=""><span class="mord" style="">128</span></span></span></span></span></span> </p>
+            <p>컨텍스트(context) 크기는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqa" style=""><span class="mord" style="">128</span></span></span></span></span>을 사용합니다.</span> </p>
 
         </div>
         <div class='code'>
@@ -479,7 +479,7 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>Train for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">32</span></span></span></span></span> epochs </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">32</span></span></span></span></span>에폭을 사용합니다.</p>
 
         </div>
         <div class='code'>
@@ -491,7 +491,7 @@
             <div class='section-link'>
                 <a href='#section-33'>#</a>
             </div>
-            <p>Batch size <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqa" style=""><span class="mord" style="">128</span></span></span></span></span></span> </p>
+            <p>배치 크기는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqa" style=""><span class="mord" style="">128</span></span></span></span></span>입니다.</span> </p>
 
         </div>
         <div class='code'>
@@ -503,7 +503,7 @@
             <div class='section-link'>
                 <a href='#section-34'>#</a>
             </div>
-            <p>Switch between training and validation for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">10</span></span></span></span></span> times per epoch </p>
+            <p>에폭당 훈련과 검증을 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">10</span></span></span></span></span>번 전환합니다.</p>
 
         </div>
         <div class='code'>
@@ -515,7 +515,7 @@
             <div class='section-link'>
                 <a href='#section-35'>#</a>
             </div>
-            <p>Transformer configurations </p>
+            <p>다음과 같이 트랜스포머를 설정합니다.</p>
 
         </div>
         <div class='code'>
@@ -532,7 +532,7 @@
             <div class='section-link'>
                 <a href='#section-36'>#</a>
             </div>
-            <p>Set models for saving and loading </p>
+            <p>모델을 저장하고 로드하기 위한 설정을 수행합니다. </p>
 
         </div>
         <div class='code'>
@@ -544,7 +544,7 @@
             <div class='section-link'>
                 <a href='#section-37'>#</a>
             </div>
-            <p>Start the experiment </p>
+            <p>실험을 시작합니다.</p>
 
         </div>
         <div class='code'>
@@ -556,7 +556,7 @@
             <div class='section-link'>
                 <a href='#section-38'>#</a>
             </div>
-            <p>Run training </p>
+            <p>훈련을 수행합니다. </p>
 
         </div>
         <div class='code'>
