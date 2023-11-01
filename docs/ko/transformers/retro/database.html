@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Nearest neighbor retrieval and creation of the database"/>
+    <meta name="description" content="최근접 이웃 검색과 데이터베이스 생성"/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Database for nearest neighbor retrieval"/>
-    <meta name="twitter:description" content="Nearest neighbor retrieval and creation of the database"/>
+    <meta name="twitter:title" content="최근접 이웃 검색을 위한 데이터베이스"/>
+    <meta name="twitter:description" content="최근접 이웃 검색과 데이터베이스 생성"/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/transformers/retro/database.html"/>
-    <meta property="og:title" content="Database for nearest neighbor retrieval"/>
+    <meta property="og:title" content="최근접 이웃 검색을 위한 데이터베이스"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Database for nearest neighbor retrieval"/>
+    <meta property="og:site_name" content="최근접 이웃 검색을 위한 데이터베이스"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Database for nearest neighbor retrieval"/>
-    <meta property="og:description" content="Nearest neighbor retrieval and creation of the database"/>
+    <meta property="og:title" content="최근접 이웃 검색을 위한 데이터베이스"/>
+    <meta property="og:description" content="최근접 이웃 검색과 데이터베이스 생성"/>
 
-    <title>Database for nearest neighbor retrieval</title>
+    <title>최근접 이웃 검색을 위한 데이터베이스</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/transformers/retro/database.html"/>
@@ -71,8 +71,8 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>가장 가까운 이웃 검색을 위한 데이터베이스 </h1>
-<p>이 문서는 데이터베이스를 구축하고 <a href="index.html">RETRO model</a>에 가장 가까운 이웃을 검색하는 작업입니다. </p>
+            <h1>최근접 이웃 검색을 위한 데이터베이스 </h1>
+<p>이 문서는 데이터베이스를 구축하고 <a href="index.html">RETRO model</a>에 최근접 이웃을 검색하는 작업입니다. </p>
 <p>데이터베이스로 <a href="https://faiss.ai/">FAISS library</a>를 사용하고, SCaNN 라이브러리를 사용합니다. </p>
 
         </div>
@@ -164,7 +164,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>청크의 수입니다. </p>
+            <p>청크의 길이입니다. </p>
 
         </div>
         <div class='code'>
@@ -291,7 +291,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <h2>가장 가까운 이웃을 검색하기 위한 인덱스 </h2>
+            <h2>최근접 이웃을 검색하기 위한 인덱스 </h2>
 
         </div>
         <div class='code'>
@@ -387,7 +387,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <h3>가장 가까운 이웃들을 복원합니다. </h3>
+            <h3>최근접 이웃들을 복원합니다. </h3>
 
         </div>
         <div class='code'>
@@ -399,7 +399,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>쿼리 청크의 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqa" style=""><span class="mord text" style=""><span class="mord" style="">B</span><span class="mord sizing reset-size6 size5" style=""><span class="mord" style="">ERT</span></span></span><span class="mopen" style="">(</span><span class="mord mathnormal" style="margin-right:0.10903em">N</span><span class="mclose" style="">)</span></span></span></span></span></span>를 얻습니다. </p>
+            <p>쿼리 청크로부터 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqa" style=""><span class="mord text" style=""><span class="mord" style="">B</span><span class="mord sizing reset-size6 size5" style=""><span class="mord" style="">ERT</span></span></span><span class="mopen" style="">(</span><span class="mord mathnormal" style="margin-right:0.10903em">N</span><span class="mclose" style="">)</span></span></span></span></span></span>를 얻습니다. </p>
 
         </div>
         <div class='code'>
@@ -411,7 +411,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>데이터베이스에서 <code  class="highlight"><span></span><span class="n">n_neighbors</span> <span class="o">+</span> <span class="n">n_extra</span></code>의 가장 가까운 이웃을 가져옵니다. </p>
+            <p>데이터베이스에서 <code  class="highlight"><span></span><span class="n">n_neighbors</span> <span class="o">+</span> <span class="n">n_extra</span></code>의 최근접 이웃을 가져옵니다. </p>
 
         </div>
         <div class='code'>
@@ -423,7 +423,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <p>쿼리 청크 오프셋이 주어진 경우 중복되는 청크를 필터링합니다. </p>
+            <p>오프셋이 주어진 경우, 중복되는 청크를 필터링합니다. </p>
 
         </div>
         <div class='code'>

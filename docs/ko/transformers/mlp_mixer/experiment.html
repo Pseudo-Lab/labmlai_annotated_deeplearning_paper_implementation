@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="This experiment trains MLP Mixer on Tiny Shakespeare dataset."/>
+    <meta name="description" content="이 실험은 작은 셰익스피어 데이터세트에서 MLP 믹서를 훈련합니다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="MLP Mixer experiment"/>
-    <meta name="twitter:description" content="This experiment trains MLP Mixer on Tiny Shakespeare dataset."/>
+    <meta name="twitter:title" content="MLP Mixer 실험"/>
+    <meta name="twitter:description" content="이 실험은 작은 셰익스피어 데이터세트에서 MLP 믹서를 훈련합니다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/transformers/mlp_mixer/experiment.html"/>
-    <meta property="og:title" content="MLP Mixer experiment"/>
+    <meta property="og:title" content="MLP Mixer 실험"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="MLP Mixer experiment"/>
+    <meta property="og:site_name" content="MLP Mixer 실험"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="MLP Mixer experiment"/>
-    <meta property="og:description" content="This experiment trains MLP Mixer on Tiny Shakespeare dataset."/>
+    <meta property="og:title" content="MLP Mixer 실험"/>
+    <meta property="og:description" content="이 실험은 작은 셰익스피어 데이터세트에서 MLP 믹서를 훈련합니다."/>
 
     <title>MLP Mixer experiment</title>
     <link rel="shortcut icon" href="/icon.png"/>
@@ -46,7 +46,7 @@
     <div class='section'>
         <div class='docs'>
             <p>
-                <a class="parent" href="/">home</a>
+                <a class="parent" href="/">홈</a>
                 <a class="parent" href="../index.html">transformers</a>
                 <a class="parent" href="index.html">mlp_mixer</a>
             </p>
@@ -62,7 +62,7 @@
             </p>
             <p>
                 <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations/tree/master/labml_nn/transformers/mlp_mixer/experiment.py" target="_blank">
-                    View code on Github</a>
+                    Github에서 코드 보기</a>
             </p>
         </div>
     </div>
@@ -71,8 +71,8 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1><a href="index.html">MLP Mixer</a> Experiment</h1>
-<p>This is an annotated PyTorch experiment to train a <a href="index.html">MLP Mixer Model</a>.</p>
+            <h1><a href="index.html">MLP Mixer</a> 실험</h1>
+<p>이것은 <a href="index.html">MLP Mixer 모델</a>을 훈련하기 위한 주석이 달린 PyTorch 실험입니다.</p>
 
         </div>
         <div class='code'>
@@ -88,9 +88,9 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>Configurations</h2>
-<p>This inherits from <a href="../mlm/experiment.html"><code  class="highlight"><span></span><span class="n">MLMConfigs</span></code>
-</a> where we define an experiment for <a href="../mlm.index.html">Masked Language Models</a>.</p>
+            <h2>구성</h2>
+<p>이는 <a href="../mlm.index.html">마스크된 언어 모델</a>에 대한 실험을 정의하는 <a href="../mlm/experiment.html"><code  class="highlight"><span></span><span class="n">MLMConfigs</span></code>
+</a>에서 상속됩니다.</p>
 
         </div>
         <div class='code'>
@@ -102,7 +102,7 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <p>Configurable <a href="../feed_forward.html">Feed-Forward Network</a> for the MLP </p>
+            <p>MLP를 위한 구성 가능한 <a href="../feed_forward.html">피드 포워드 네트워크</a></p>
 
         </div>
         <div class='code'>
@@ -114,7 +114,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <p> The mixing MLP configurations</p>
+            <p> 혼합한 MLP 구성</p>
 
         </div>
         <div class='code'>
@@ -138,7 +138,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>Size of the MLP is the sequence length, because it is applied across tokens </p>
+            <p>MLP의 크기는 토큰 전체에 적용되므로 시퀀스 길이입니다. </p>
 
         </div>
         <div class='code'>
@@ -150,7 +150,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>The paper suggests <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">GE</span><span class="mord mathnormal" style="margin-right:0.10903em;">LU</span></span></span></span></span> activation </p>
+            <p>이 논문은 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">GE</span><span class="mord mathnormal" style="margin-right:0.10903em;">LU</span></span></span></span></span> 활성화함수를 제안합니다. </p>
 
         </div>
         <div class='code'>
@@ -174,7 +174,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <h3>Transformer configurations</h3>
+            <h3>트랜스포머 구성</h3>
 
         </div>
         <div class='code'>
@@ -187,7 +187,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>We use our <a href="../configs.html#TransformerConfigs">configurable transformer implementation</a> </p>
+            <p>우리는 <a href="../configs.html#TransformerConfigs">구성 가능한 트랜스포머 구현</a>을 사용합니다.</p>
 
         </div>
         <div class='code'>
@@ -199,7 +199,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Set the vocabulary sizes for embeddings and generating logits </p>
+            <p>임베딩 및 로짓 생성을 위한 어휘 크기 설정 </p>
 
         </div>
         <div class='code'>
@@ -212,7 +212,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Embedding size </p>
+            <p>임베딩 크기 </p>
 
         </div>
         <div class='code'>
@@ -224,7 +224,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Change attention module to <a href="index.html">MLPMixer</a> </p>
+            <p>어텐션 모듈을 <a href="index.html">MLPMixer</a>로 변경하세요.</a> </p>
 
         </div>
         <div class='code'>
@@ -260,7 +260,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Create experiment </p>
+            <p>실험을 만드세요. </p>
 
         </div>
         <div class='code'>
@@ -272,7 +272,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Create configs </p>
+            <p>구성 만들기 </p>
 
         </div>
         <div class='code'>
@@ -284,7 +284,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Override configurations </p>
+            <p>구성 재정의 </p>
 
         </div>
         <div class='code'>
@@ -296,7 +296,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Batch size </p>
+            <p>배치 크기 </p>
 
         </div>
         <div class='code'>
@@ -308,7 +308,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Sequence length of <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">32</span></span></span></span></span>. We use a short sequence length to train faster. Otherwise MLM models take forever to train. </p>
+            <p>시퀀스의 길이는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">32</span></span></span></span></span>입니다. 더 빠르게 학습하기 위해 짧은 시퀀스 길이를 사용합니다. 그렇지 않으면 MLM 모델을 훈련하는 데 시간이 오래 걸립니다. </p>
 
         </div>
         <div class='code'>
@@ -320,7 +320,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Train for 1024 epochs. </p>
+            <p>1024 에포크동안 학습합니다. </p>
 
         </div>
         <div class='code'>
@@ -332,7 +332,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>Switch between training and validation for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span> times per epoch </p>
+            <p>에포크당 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span> 회 훈련과 검증 사이를 전환합니다. </p>
 
         </div>
         <div class='code'>
@@ -344,7 +344,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p>Transformer configurations </p>
+            <p>트랜스포머 구성 </p>
 
         </div>
         <div class='code'>
@@ -360,7 +360,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p>Mixer MLP hidden layer size </p>
+            <p>Mixer MLP 히든 레이어 크기 </p>
 
         </div>
         <div class='code'>
@@ -372,7 +372,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>Use <a href="../../optimizers/noam.html">Noam optimizer</a> </p>
+            <p><a href="../../optimizers/noam.html">Noam 옵티마이저</a>를 사용하세요. </p>
 
         </div>
         <div class='code'>
@@ -386,7 +386,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>Set models for saving and loading </p>
+            <p>저장 및 로드할 모델 설정 </p>
 
         </div>
         <div class='code'>
@@ -398,7 +398,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <p>Start the experiment </p>
+            <p>실험 시작 </p>
 
         </div>
         <div class='code'>
@@ -410,7 +410,7 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <p>Run training </p>
+            <p>훈련 실행 </p>
 
         </div>
         <div class='code'>

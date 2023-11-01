@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,20 +7,20 @@
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="MLP-Mixer: An all-MLP Architecture for Vision"/>
+    <meta name="twitter:title" content="MLP-Mixer: 비전을 위한 모든 MLP 아키텍처"/>
     <meta name="twitter:description" content=""/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/transformers/mlp_mixer/readme.html"/>
-    <meta property="og:title" content="MLP-Mixer: An all-MLP Architecture for Vision"/>
+    <meta property="og:title" content="MLP-Mixer: 비전을 위한 모든 MLP 아키텍처"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="MLP-Mixer: An all-MLP Architecture for Vision"/>
+    <meta property="og:site_name" content="MLP-Mixer: 비전을 위한 모든 MLP 아키텍처"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="MLP-Mixer: An all-MLP Architecture for Vision"/>
+    <meta property="og:title" content="MLP-Mixer: 비전을 위한 모든 MLP 아키텍처"/>
     <meta property="og:description" content=""/>
 
-    <title>MLP-Mixer: An all-MLP Architecture for Vision</title>
+    <title>MLP-Mixer: 비전을 위한 모든 MLP 아키텍처</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/transformers/mlp_mixer/readme.html"/>
@@ -46,7 +46,7 @@
     <div class='section'>
         <div class='docs'>
             <p>
-                <a class="parent" href="/">home</a>
+                <a class="parent" href="/">홈</a>
                 <a class="parent" href="../index.html">transformers</a>
                 <a class="parent" href="index.html">mlp_mixer</a>
             </p>
@@ -62,7 +62,7 @@
             </p>
             <p>
                 <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations/tree/master/labml_nn/transformers/mlp_mixer/readme.md" target="_blank">
-                    View code on Github</a>
+                    Github에서 코드 보기</a>
             </p>
         </div>
     </div>
@@ -72,10 +72,10 @@
                 <a href='#section-0'>#</a>
             </div>
             <h1><a href="https://nn.labml.ai/transformers/mlp_mixer/index.html">MLP-Mixer: An all-MLP Architecture for Vision</a></h1>
-<p>This is a <a href="https://pytorch.org">PyTorch</a> implementation of the paper <a href="https://papers.labml.ai/paper/2105.01601">MLP-Mixer: An all-MLP Architecture for Vision</a>.</p>
-<p>This paper applies the model on vision tasks. The model is similar to a transformer with attention layer being replaced by a MLP that is applied across the patches (or tokens in case of a NLP task).</p>
-<p>Our implementation of MLP Mixer is a drop in replacement for the <a href="https://nn.labml.ai/transformers/mha.html">self-attention layer</a> in <a href="https://nn.labml.ai/transformers/models.html">our transformer implementation</a>. So it&#x27;s just a couple of lines of code, transposing the tensor to apply the MLP across the sequence dimension.</p>
-<p>Although the paper applied MLP Mixer on vision tasks, we tried it on a <a href="https://nn.labml.ai/transformers/mlm/index.html">masked language model</a>. <a href="https://nn.labml.ai/transformers/mlp_mixer/experiment.html">Here is the experiment code</a>. </p>
+<p>이것은 <a href="https://papers.labml.ai/paper/2105.01601">MLP-Mixer: An all-MLP Architecture for Vision</a>논문의 <a href="https://pytorch.org">PyTorch</a> 구현입니다..</p>
+<p>이 논문은 비전 작업에 모델을 적용합니다. 이 모델은 패치(또는 NLP 작업의 경우 토큰)에 걸쳐 적용되는 MLP로 대체되는 어텐션 층이 있는 트랜스포머와 유사합니다.</p>
+<p>MLP 믹서 구현은 <a href="https://nn.labml.ai/transformers/models.html">트랜스포머 구현</a>의 <a href="https://nn.labml.ai/transformers/mha.html">self-attention 레이어</a>를 대체하는 것입니다. 따라서 시퀀스 차원에 걸쳐 MLP를 적용하기 위해 텐서를 전치하는 코드 몇 줄이면 됩니다.</p>
+<p>논문에서는 비전 작업에 MLP Mixer를 적용했지만, <a href="https://nn.labml.ai/transformers/mlm/index.html">마스크된 언어 모델</a>에서 이를 시도했습니다. <a href="https://nn.labml.ai/transformers/mlp_mixer/experiment.html">여기 실험 코드가 있습니다</a>. </p>
 
         </div>
         <div class='code'>

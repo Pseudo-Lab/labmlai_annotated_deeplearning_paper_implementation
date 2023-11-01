@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Implementation/tutorial of GPT model and training code."/>
+    <meta name="description" content="GPT모델의 구현/튜토리얼 및 훈련 코드."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
     <meta name="twitter:title" content="GPT"/>
-    <meta name="twitter:description" content="Implementation/tutorial of GPT model and training code."/>
+    <meta name="twitter:description" content="GPT모델의 구현/튜토리얼 및 훈련 코드."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
@@ -18,7 +18,7 @@
     <meta property="og:site_name" content="GPT"/>
     <meta property="og:type" content="object"/>
     <meta property="og:title" content="GPT"/>
-    <meta property="og:description" content="Implementation/tutorial of GPT model and training code."/>
+    <meta property="og:description" content="GPT모델의 구현/튜토리얼 및 훈련 코드."/>
 
     <title>GPT</title>
     <link rel="shortcut icon" href="/icon.png"/>
@@ -46,8 +46,8 @@
     <div class='section'>
         <div class='docs'>
             <p>
-                <a class="parent" href="/">home</a>
-                <a class="parent" href="../index.html">transformers</a>
+                <a class="parent" href="/">홈</a>
+                <a class="parent" href="../index.html">트랜스포머</a>
                 <a class="parent" href="index.html">gpt</a>
             </p>
             <p>
@@ -62,7 +62,7 @@
             </p>
             <p>
                 <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations/tree/master/labml_nn/transformers/gpt/__init__.py" target="_blank">
-                    View code on Github</a>
+                    Github에서 코드 보기</a>
             </p>
         </div>
     </div>
@@ -72,10 +72,10 @@
                 <a href='#section-0'>#</a>
             </div>
             <h1>GPT</h1>
-<p>This is a tutorial/implementation of <a href="https://openai.com/blog/better-language-models/">OpenAI GPT architecture</a> in <a href="https://pytorch.org">PyTorch</a>. We got a bunch of implementation details from <a href="https://github.com/karpathy/minGPT">minGPT</a> by <a href="https://twitter.com/karpathy">@karpathy</a>. This implementation also uses character tiny shakespeare dataset.</p>
-<p>GPT model is essentially a standard transformer with a few tweaks. GPT-2 and especially GPT-3 models are quite large and won&#x27;t fit on a single GPU and will need model parallelism. This implementation doesn&#x27;t even use data parallelism and is intended to be more of a tutorial.</p>
-<p>Main differences of this compared to a simple autoregressive transformer are the parameter initialization, weight decay, and learning rate schedule. For the transformer we reuse the <a href="../transformers/index.html">existing labml/nn transformer implementation</a>.</p>
-<p>Here&#x27;s a notebook for training a GPT model on Tiny Shakespeare dataset.</p>
+<p>이 것은 <a href="https://openai.com/blog/better-language-models/">OpenAI GPT 아키텍쳐</a>의 <a href="https://pytorch.org">PyTorch</a>의 튜토리얼/구현입니다. 이 구현은 <a href="https://twitter.com/karpathy">@karpathy</a>의 <a href="https://github.com/karpathy/minGPT">minGPT</a>에서 많은 세부사항을 얻었습니다. 또한, 이 구현은 문자열 형태의 작은 셰익스피어 데이터셋을 사용합니다.</p>
+<p>GPT 모델은 몇 가지 조정을 가한 표준 트랜스포머입니다. 특히 GPT-2와 GPT-3 모델은 매우 크기 때문에 단일 GPU에 맞지 않고 모델 병렬화가 필요합니다. 이 구현은 심지어 데이터 병렬성을 사용하지 않으며 주로 튜토리얼로 사용될 것을 목적으로 합니다.</p>
+<p>이 구현과 간단한 자기 회귀 트랜스포머와의 주요 차이점은 매개변수 초기화, 가중치 감쇠(weight decay) 및 학습률 스케줄입니다. 트랜스포머에 대해서는 <a href="../transformers/index.html">기존의 labml/nn 트랜스포머 구현</a>을 재사용합니다..</p>
+<p>여기에 작은 셰익스피어 데이터셋으로 GPT모델로 훈련한 노트북이 있습니다.</p>
 <p><a href="https://colab.research.google.com/github/labmlai/annotated_deep_learning_paper_implementations/blob/master/labml_nn/transformers/gpt/experiment.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"></a></p>
 
         </div>
@@ -98,7 +98,7 @@
                 <a href='#section-1'>#</a>
             </div>
             <h2>GPT model</h2>
-<p>This consists of a token embedding layer, transformer encoder, and a final linear layer that gives token logits.</p>
+<p>이 모델은 토큰 임베딩 레이어, 트랜스포머 인코더 및 토큰 로짓을 출력하는 최종 선형 레이어로 구성됩니다.</p>
 
         </div>
         <div class='code'>
@@ -111,11 +111,11 @@
                 <a href='#section-2'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">encoder</span></code>
- is the transformer <a href="../models.html#Encoder">Encoder</a> </li>
+ 는 트랜스포머 <a href="../models.html#Encoder">인코더입니다.</a> </li>
 <li><code  class="highlight"><span></span><span class="n">src_embed</span></code>
- is the token <a href="../models.html#EmbeddingsWithLearnedPositionalEncoding">embedding module (with positional encodings)</a> </li>
+ 는 토큰 <a href="../models.html#EmbeddingsWithLearnedPositionalEncoding">임베딩 모듈 (positional encodings을 가지는)</a>입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">generator</span></code>
- is the <a href="../models.html#Generator">final fully connected layer</a> that gives the logits.</li></ul>
+ 는 로짓(logits)을 출력하는 <a href="../models.html#Generator">최종 완전 연결 레이어</a>입니다..</li></ul>
 
         </div>
         <div class='code'>
@@ -141,7 +141,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>The mask will be initialized on the first call </p>
+            <p>마스크는 첫 번째 호출에서 초기화됩니다. </p>
 
         </div>
         <div class='code'>
@@ -164,7 +164,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Create subsequent mask if mask is not initialized or if the size of the mask is different </p>
+            <p>마스크가 초기화되지 않았거나 마스크의 크기가 다른 경우 후속 마스크를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -176,7 +176,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Subsequent mask, will mask out tokens from seeing future tokens </p>
+            <p>후속 마스크는 토큰이 미래의 토큰을 볼 수 없도록 마스킹합니다. </p>
 
         </div>
         <div class='code'>
@@ -188,7 +188,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Get the token embeddings with positional encodings </p>
+            <p>포지셔널 인코딩이 포함된 토큰 임베딩 가져오기. </p>
 
         </div>
         <div class='code'>
@@ -200,7 +200,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>Transformer encoder </p>
+            <p>트랜스포머 인코더 </p>
 
         </div>
         <div class='code'>
@@ -212,7 +212,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Get logits </p>
+            <p>로짓 가져오기 </p>
 
         </div>
         <div class='code'>
@@ -224,7 +224,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Return results (second value is for state, since our trainer is used with RNNs also) </p>
+            <p>반환 결과 (두 번째 값은 상태에 대한 값으로, 트레이너가 RNN과 함께 사용되기 때문에) </p>
 
         </div>
         <div class='code'>
@@ -237,8 +237,8 @@
                 <a href='#section-12'>#</a>
             </div>
             <h2>Configurations</h2>
-<p>This inherits from <a href="../../experiments/nlp_autoregression.html#NLPAutoRegressionConfigs"><code  class="highlight"><span></span><span class="n">NLPAutoRegressionConfigs</span></code>
-</a></p>
+<p>이것은 <a href="../../experiments/nlp_autoregression.html#NLPAutoRegressionConfigs"><code  class="highlight"><span></span><span class="n">NLPAutoRegressionConfigs</span></code>
+</a>로부터 상속됩니다.</p>
 
         </div>
         <div class='code'>
@@ -250,7 +250,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>GPT model </p>
+            <p>GPT 모델 </p>
 
         </div>
         <div class='code'>
@@ -262,7 +262,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>Transformer </p>
+            <p>트랜스포머 </p>
 
         </div>
         <div class='code'>
@@ -274,7 +274,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Weight decay </p>
+            <p>가중치 감쇠(Weight decay) </p>
 
         </div>
         <div class='code'>
@@ -286,7 +286,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Number of tokens for wamup </p>
+            <p>wamup을 위한 토큰 수 </p>
 
         </div>
         <div class='code'>
@@ -298,7 +298,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Custom optimizer </p>
+            <p>커스텀 옵티마이저 </p>
 
         </div>
         <div class='code'>
@@ -310,7 +310,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <h3>Transformer configurations</h3>
+            <h3>트랜스포머 configurations</h3>
 
         </div>
         <div class='code'>
@@ -323,7 +323,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>We use our <a href="../configs.html#TransformerConfigs">configurable transformer implementation</a> </p>
+            <p>우리는 우리의 <a href="../configs.html#TransformerConfigs">구성가능한 트랜스포머 구현</a>을 사용합니다. </p>
 
         </div>
         <div class='code'>
@@ -335,7 +335,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Set the vocabulary sizes for embeddings and generating logits </p>
+            <p>임베딩 및 로짓 생성을 위한 어휘 크기 설정 </p>
 
         </div>
         <div class='code'>
@@ -348,7 +348,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>GPT uses GELU activation for position wise feedforward </p>
+            <p>GPT는 position wise feedforward을 위해 GELU activation을 사용합니다. </p>
 
         </div>
         <div class='code'>
@@ -372,8 +372,8 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <h3>Initialize weights</h3>
-<p>Weights of linear layers and embedding layers are initialized to <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.14736em;">N</span><span class="mopen">(</span><span class="mord coloredeq eqh" style=""><span class="mord" style="">0</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">0</span></span><span class="mord">.</span><span class="mord coloredeq eqh" style=""><span class="mord" style="">0</span></span><span class="mord">2</span><span class="mclose">)</span></span></span></span></span> instead of the default Xavier initialzation.</p>
+            <h3>가중치 초기화</h3>
+<p>선형 레이어 및 임베딩 레이어의 가중치는 기본 Xavier초기화 대신 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.14736em;">N</span><span class="mopen">(</span><span class="mord coloredeq eqh" style=""><span class="mord" style="">0</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">0</span></span><span class="mord">.</span><span class="mord coloredeq eqh" style=""><span class="mord" style="">0</span></span><span class="mord">2</span><span class="mclose">)</span></span></span></span></span>으로 초기화됩니다.</p>
 
         </div>
         <div class='code'>
@@ -399,7 +399,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>Initialize biases to <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">0</span></span></span></span></span></span> </p>
+            <p>편향을 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">0</span></span></span></span></span></span>으로 초기화 합니다.</p>
 
         </div>
         <div class='code'>
@@ -412,7 +412,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <p> Create GPT model and initialize weights</p>
+            <p>GPT 모델 생성 및 가중치 초기화</p>
 
         </div>
         <div class='code'>
@@ -438,7 +438,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Apply custom weight initialization </p>
+            <p>커스텀 가중치 초기화를 적용합니다.</p>
 
         </div>
         <div class='code'>
@@ -452,8 +452,8 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <h3>Create custom optimizer with weight decay</h3>
-<p>This code is taken from <a href="https://github.com/karpathy/minGPT">minGPT</a>. This applies weight decay only to weights of linear layers.</p>
+            <h3>가중치 감쇠를 가지는 커스텀 옵티마이저를 만들어라</h3>
+<p>이 코드는 <a href="https://github.com/karpathy/minGPT">minGPT</a>로부터 만들어집니다. 이것은 선형 레이어의 가중치에만 가중치 감쇠를 적용합니다.</p>
 
         </div>
         <div class='code'>
@@ -466,7 +466,7 @@
             <div class='section-link'>
                 <a href='#section-30'>#</a>
             </div>
-            <p>Collect names of parameters to apply weight decay </p>
+            <p>가중치 감쇠를 적용할 파라미터의 이름을 가져옵니다. </p>
 
         </div>
         <div class='code'>
@@ -484,7 +484,7 @@
             <div class='section-link'>
                 <a href='#section-31'>#</a>
             </div>
-            <p>Get all the parameters </p>
+            <p>모든 파라미터를 가져옵니다. </p>
 
         </div>
         <div class='code'>
@@ -496,7 +496,7 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>Parameters that are not decayed </p>
+            <p>감쇠되지 않은 파라미터 </p>
 
         </div>
         <div class='code'>
@@ -508,7 +508,7 @@
             <div class='section-link'>
                 <a href='#section-33'>#</a>
             </div>
-            <p>create the pytorch optimizer object </p>
+            <p>파이토치 옵티마이저 객체를 생성해라 </p>
 
         </div>
         <div class='code'>
@@ -523,7 +523,7 @@
             <div class='section-link'>
                 <a href='#section-34'>#</a>
             </div>
-            <p>Create a <a href="../optimizers/configs.html#OptimizerConfigs">configurable optimizer</a>, so that we can change these simply by passing a config dictionary. </p>
+            <p> <a href="../optimizers/configs.html#OptimizerConfigs">구성가능한 옵티마이저</a>를 생성해라, 그래서 config사전을 통과하는 것만으로 이를 변경할 수 있습니다.</p>
 
         </div>
         <div class='code'>
@@ -535,7 +535,7 @@
             <div class='section-link'>
                 <a href='#section-35'>#</a>
             </div>
-            <p>Set parameter groups for optimization. </p>
+            <p>최적화할 파라미터 그룹을 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -547,7 +547,7 @@
             <div class='section-link'>
                 <a href='#section-36'>#</a>
             </div>
-            <p>Use <a href="../optimizers/adam_warmup_cosine_decay.html">cosine decay optimizer</a>. This is what GPT uses. </p>
+            <p><a href="../optimizers/adam_warmup_cosine_decay.html">코사인 감쇠 옵티마이저</a>를 사용해라. 이것이 GPT가 사용하는 것입니다. </p>
 
         </div>
         <div class='code'>
@@ -559,7 +559,7 @@
             <div class='section-link'>
                 <a href='#section-37'>#</a>
             </div>
-            <p>Set model embedding size, required if we use <a href="../optimizers/noam.html">Noam optimizer</a> which has an exponential decay. </p>
+            <p>지수 감쇠를 가지는 <a href="../optimizers/noam.html">Noam 옵티마이저</a>를 사용하는 경우 필요한 모델 임베딩 크기를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -571,7 +571,7 @@
             <div class='section-link'>
                 <a href='#section-38'>#</a>
             </div>
-            <p>Set default weight decay. This is not required since we set the weight decay in the parameter groups. </p>
+            <p>기본 가중치 감쇠를 설정합니다. 파라미터 그룹에서 가중치 감쇠를 설정하므로 필요하지 않습니다. </p>
 
         </div>
         <div class='code'>
@@ -583,7 +583,7 @@
             <div class='section-link'>
                 <a href='#section-39'>#</a>
             </div>
-            <p>GPT uses a maximum learning rate of <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.848448em;vertical-align:0em;"></span><span class="mord"><span class="mord coloredeq eqf" style=""><span class="mord" style="">1</span><span class="mord" style=""><span class="mord coloredeq eqh" style="">0</span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.848448em;"><span style="top:-3.09734em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span></span></span>. </p>
+            <p>GPT는 최대 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.848448em;vertical-align:0em;"></span><span class="mord"><span class="mord coloredeq eqf" style=""><span class="mord" style="">1</span><span class="mord" style=""><span class="mord coloredeq eqh" style="">0</span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.848448em;"><span style="top:-3.09734em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span></span></span>의 학습률을 사용합니다.. </p>
 
         </div>
         <div class='code'>
@@ -619,7 +619,7 @@
             <div class='section-link'>
                 <a href='#section-42'>#</a>
             </div>
-            <p>Weight decay is decoupled from gradients </p>
+            <p>가중치 감쇠가 그라디언트에서 분리되었다.</p>
 
         </div>
         <div class='code'>
@@ -631,7 +631,7 @@
             <div class='section-link'>
                 <a href='#section-43'>#</a>
             </div>
-            <p>Total number of optimization steps for learning rate cosine decay </p>
+            <p>학습률 코사인 붕괴에 대한 총 옵티마이저 스텝의 전체 수 </p>
 
         </div>
         <div class='code'>
@@ -643,7 +643,7 @@
             <div class='section-link'>
                 <a href='#section-44'>#</a>
             </div>
-            <p>Number of warmup optimization steps </p>
+            <p>warmup 옵티마이저 스텝의 수</p>
 
         </div>
         <div class='code'>
@@ -668,7 +668,7 @@
             <div class='section-link'>
                 <a href='#section-46'>#</a>
             </div>
-            <p>Create experiment </p>
+            <p>실험을 만들어라 </p>
 
         </div>
         <div class='code'>
@@ -680,7 +680,7 @@
             <div class='section-link'>
                 <a href='#section-47'>#</a>
             </div>
-            <p>Create configs </p>
+            <p>configs을 만들어라 </p>
 
         </div>
         <div class='code'>
@@ -692,7 +692,7 @@
             <div class='section-link'>
                 <a href='#section-48'>#</a>
             </div>
-            <p>Override configurations </p>
+            <p>구성(configurations)을 재정의합니다. </p>
 
         </div>
         <div class='code'>
@@ -704,7 +704,7 @@
             <div class='section-link'>
                 <a href='#section-49'>#</a>
             </div>
-            <p>Use character level tokenizer </p>
+            <p>문자 수준 토큰화 사용</p>
 
         </div>
         <div class='code'>
@@ -716,7 +716,7 @@
             <div class='section-link'>
                 <a href='#section-50'>#</a>
             </div>
-            <p>Prompt separator is blank </p>
+            <p>프롬프트 구분자가 비어 있습니다. </p>
 
         </div>
         <div class='code'>
@@ -728,7 +728,7 @@
             <div class='section-link'>
                 <a href='#section-51'>#</a>
             </div>
-            <p>Starting prompt for sampling </p>
+            <p>샘플링에 대한 시작 프롬프트 </p>
 
         </div>
         <div class='code'>
@@ -739,8 +739,8 @@
         <div class='docs'>
             <div class='section-link'>
                 <a href='#section-52'>#</a>
-            </div>
-            <p>Use Tiny Shakespeare dataset </p>
+            </div> 
+            <p>작은 셰익스피어 데이터셋 사용 </p>
 
         </div>
         <div class='code'>
@@ -752,7 +752,7 @@
             <div class='section-link'>
                 <a href='#section-53'>#</a>
             </div>
-            <p>Use a context size of <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqe" style=""><span class="mord" style="">128</span></span></span></span></span></span> </p>
+            <p> <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqe" style=""><span class="mord" style="">128</span></span></span></span></span></span>의 문맥길이를 사용</p>
 
         </div>
         <div class='code'>
@@ -764,7 +764,7 @@
             <div class='section-link'>
                 <a href='#section-54'>#</a>
             </div>
-            <p>Train for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">32</span></span></span></span></span> epochs </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">32</span></span></span></span></span> 에폭에 대해 훈련 </p>
 
         </div>
         <div class='code'>
@@ -776,7 +776,7 @@
             <div class='section-link'>
                 <a href='#section-55'>#</a>
             </div>
-            <p>Batch size <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqe" style=""><span class="mord" style="">128</span></span></span></span></span></span> </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqe" style=""><span class="mord" style="">128</span></span></span></span></span></span> 배치 사이즈</p>
 
         </div>
         <div class='code'>
@@ -788,7 +788,7 @@
             <div class='section-link'>
                 <a href='#section-56'>#</a>
             </div>
-            <p>Switch between training and validation for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqf" style=""><span class="mord" style="">1</span><span class="mord" style=""><span class="mord coloredeq eqh" style="">0</span></span></span></span></span></span></span> times per epoch </p>
+            <p>에포크당 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqf" style=""><span class="mord" style="">1</span><span class="mord" style=""><span class="mord coloredeq eqh" style="">0</span></span></span></span></span></span></span>회씩 훈련과 검증을 전환할 수 있습니다. </p>
 
         </div>
         <div class='code'>
@@ -800,7 +800,7 @@
             <div class='section-link'>
                 <a href='#section-57'>#</a>
             </div>
-            <p>Transformer configurations </p>
+            <p>트랜스포머 configurations </p>
 
         </div>
         <div class='code'>
@@ -816,7 +816,7 @@
             <div class='section-link'>
                 <a href='#section-58'>#</a>
             </div>
-            <p>Set models for saving and loading </p>
+            <p>저장 및 로드할 모델을 설정 </p>
 
         </div>
         <div class='code'>
@@ -828,7 +828,7 @@
             <div class='section-link'>
                 <a href='#section-59'>#</a>
             </div>
-            <p>Start the experiment </p>
+            <p>실험을 시작 </p>
 
         </div>
         <div class='code'>
@@ -840,7 +840,7 @@
             <div class='section-link'>
                 <a href='#section-60'>#</a>
             </div>
-            <p>Run training </p>
+            <p>훈련을 실행 </p>
 
         </div>
         <div class='code'>

@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="This is an annotated implementation/tutorial of MLP-Mixer: An all-MLP Architecture for Vision in PyTorch."/>
+    <meta name="description" content="이것은 MLP-Mixer: PyTorch의 Vision을 위한 모든 MLP 아키텍처의 주석이 달린 구현/튜토리얼입니다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="MLP-Mixer: An all-MLP Architecture for Vision"/>
-    <meta name="twitter:description" content="This is an annotated implementation/tutorial of MLP-Mixer: An all-MLP Architecture for Vision in PyTorch."/>
+    <meta name="twitter:title" content="MLP-Mixer: 비전을 위한 모든 MLP 아키텍처"/>
+    <meta name="twitter:description" content="이것은 MLP-Mixer: PyTorch의 Vision을 위한 모든 MLP 아키텍처의 주석이 달린 구현/튜토리얼입니다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/transformers/mlp_mixer/index.html"/>
-    <meta property="og:title" content="MLP-Mixer: An all-MLP Architecture for Vision"/>
+    <meta property="og:title" content="MLP-Mixer: 비전을 위한 모든 MLP 아키텍처"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="MLP-Mixer: An all-MLP Architecture for Vision"/>
+    <meta property="og:site_name" content="MLP-Mixer: 비전을 위한 모든 MLP 아키텍처"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="MLP-Mixer: An all-MLP Architecture for Vision"/>
-    <meta property="og:description" content="This is an annotated implementation/tutorial of MLP-Mixer: An all-MLP Architecture for Vision in PyTorch."/>
+    <meta property="og:title" content="MLP-Mixer: 비전을 위한 모든 MLP 아키텍처"/>
+    <meta property="og:description" content="이것은 MLP-Mixer: PyTorch의 Vision을 위한 모든 MLP 아키텍처의 주석이 달린 구현/튜토리얼입니다."/>
 
-    <title>MLP-Mixer: An all-MLP Architecture for Vision</title>
+    <title>MLP-Mixer: 비전을 위한 모든 MLP 아키텍처</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/transformers/mlp_mixer/index.html"/>
@@ -46,7 +46,7 @@
     <div class='section'>
         <div class='docs'>
             <p>
-                <a class="parent" href="/">home</a>
+                <a class="parent" href="/">홈</a>
                 <a class="parent" href="../index.html">transformers</a>
                 <a class="parent" href="index.html">mlp_mixer</a>
             </p>
@@ -62,7 +62,7 @@
             </p>
             <p>
                 <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations/tree/master/labml_nn/transformers/mlp_mixer/__init__.py" target="_blank">
-                    View code on Github</a>
+                    Github에서 코드 보기</a>
             </p>
         </div>
     </div>
@@ -71,11 +71,11 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>MLP-Mixer: An all-MLP Architecture for Vision</h1>
-<p>This is a <a href="https://pytorch.org">PyTorch</a> implementation of the paper <a href="https://papers.labml.ai/paper/2105.01601">MLP-Mixer: An all-MLP Architecture for Vision</a>.</p>
-<p>This paper applies the model on vision tasks. The model is similar to a transformer with attention layer being replaced by a MLP that is applied across the patches (or tokens in case of a NLP task).</p>
-<p>Our implementation of MLP Mixer is a drop in replacement for the <a href="../mha.html">self-attention layer</a> in <a href="../models.html">our transformer implementation</a>. So it&#x27;s just a couple of lines of code, transposing the tensor to apply the MLP across the sequence dimension.</p>
-<p>Although the paper applied MLP Mixer on vision tasks, we tried it on a <a href="../mlm/index.html">masked language model</a>. <a href="experiment.html">Here is the experiment code</a>.</p>
+            <h1>MLP-Mixer: 비전을 위한 모든 MLP 아키텍처</h1>
+<p>이것은 <a href="https://papers.labml.ai/paper/2105.01601">MLP-Mixer: An all-MLP Architecture for Vision</a>논문의 <a href="https://pytorch.org">PyTorch</a> 구현이다.</p>
+<p>이 논문은 비전 작업에 모델을 적용합니다. 이 모델은 패치(또는 NLP 작업의 경우 토큰)에 걸쳐 적용되는 MLP로 대체되는 어텐션층이 있는 트랜스포머와 유사합니다..</p>
+<p>MLP 믹서 구현은 <a href="../models.html">우리의 트랜스포머 구현</a>의 <a href="../mha.html">self-attention 레이어</a>를 대체하는 것입니다. 따라서 시퀀스 차원에 걸쳐 MLP를 적용하기 위해 텐서를 전치하는 코드 몇 줄이면 됩니다.</p>
+<p>논문에서는 비전 작업에 MLP Mixer를 적용했지만 <a href="../mlm/index.html">마스크된 언어 모델</a>에서 시도했습니다. 다음은 실험 코드입니다. <a href="experiment.html">실험 코드는 다음과 같습니다.</a>.</p>
 
         </div>
         <div class='code'>
@@ -91,7 +91,7 @@
                 <a href='#section-1'>#</a>
             </div>
             <h2>MLP Mixer</h2>
-<p>This module is a drop-in replacement for <a href="../mha.html">self-attention layer</a>. It transposes the input tensor before feeding it to the MLP and transposes back, so that the MLP is applied across the sequence dimension (across tokens or image patches) instead of the feature dimension.</p>
+<p>이 모듈은 <a href="../mha.html">self-attention 층</a>을 즉시 대체합니다. 입력 텐서를 MLP에 공급하기 전에 전치하고 다시 전치하여 MLP가 기능 차원 대신 시퀀스 차원(토큰 또는 이미지 패치 전체)에 적용되도록 합니다.</p>
 
         </div>
         <div class='code'>
@@ -104,7 +104,7 @@
                 <a href='#section-2'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">ffn</span></code>
- is the MLP module.</li></ul>
+ 은 MLP모듈입니다.</li></ul>
 
         </div>
         <div class='code'>
@@ -128,12 +128,12 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p> The <a href="../mha.html">normal attention module</a> can be fed with different token embeddings for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqb" style=""><span class="mord text" style=""><span class="mord" style="">query</span></span></span></span></span></span></span>,<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqd" style=""><span class="mord text" style=""><span class="mord" style="">key</span></span></span></span></span></span></span>, and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord coloredeq eqc" style=""><span class="mord text" style=""><span class="mord" style="">value</span></span></span></span></span></span></span> and a mask.</p>
-<p>We follow the same function signature so that we can replace it directly.</p>
-<p>For MLP mixing, <span ><span class="katex-display"><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqb" style=""><span class="mord text" style=""><span class="mord" style="">query</span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqd" style=""><span class="mord text" style=""><span class="mord" style="">key</span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord coloredeq eqc" style=""><span class="mord text" style=""><span class="mord" style="">value</span></span></span></span></span></span></span></span> and masking is not possible. Shape of <code  class="highlight"><span></span><span class="n">query</span></code>
- (and <code  class="highlight"><span></span><span class="n">key</span></code>
- and <code  class="highlight"><span></span><span class="n">value</span></code>
-) is <code  class="highlight"><span></span><span class="p">[</span><span class="n">seq_len</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">d_model</span><span class="p">]</span></code>
+            <p><a href="../mha.html">보통 어텐션 모듈</a>에는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqb" style=""><span class="mord text" style=""><span class="mord" style="">query</span></span></span></span></span></span></span>,<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqd" style=""><span class="mord text" style=""><span class="mord" style="">key</span></span></span></span></span></span></span> 및 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord coloredeq eqc" style=""><span class="mord text" style=""><span class="mord" style="">value</span></span></span></span></span></span></span>  마스크에 대한 다양한 토큰 임베딩이 제공될 수 있습니다.</p>
+<p>우리는 이를 직접 교체할 수 있도록 동일한 함수 서명을 따릅니다.</p>
+<p>MLP 믹싱의 경우, <span ><span class="katex-display"><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqb" style=""><span class="mord text" style=""><span class="mord" style="">query</span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqd" style=""><span class="mord text" style=""><span class="mord" style="">key</span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord coloredeq eqc" style=""><span class="mord text" style=""><span class="mord" style="">value</span></span></span></span></span></span></span></span> 그리고 마스킹이 불가능합니다. <code  class="highlight"><span></span><span class="n">query</span></code>
+ (그리고 <code  class="highlight"><span></span><span class="n">key</span></code>
+ 및 <code  class="highlight"><span></span><span class="n">value</span></code>
+) 의 크기는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">seq_len</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">d_model</span><span class="p">]</span></code>
 .</p>
 
         </div>
@@ -146,7 +146,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqb" style=""><span class="mord text" style=""><span class="mord" style="">query</span></span></span></span></span></span></span>,<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqd" style=""><span class="mord text" style=""><span class="mord" style="">key</span></span></span></span></span></span></span>, and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord coloredeq eqc" style=""><span class="mord text" style=""><span class="mord" style="">value</span></span></span></span></span></span></span> all should be the same </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqb" style=""><span class="mord text" style=""><span class="mord" style="">query</span></span></span></span></span></span></span>,<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqd" style=""><span class="mord text" style=""><span class="mord" style="">key</span></span></span></span></span></span></span>, and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord coloredeq eqc" style=""><span class="mord text" style=""><span class="mord" style="">value</span></span></span></span></span></span></span> 모두 똑같아야 해야합니다. </p>
 
         </div>
         <div class='code'>
@@ -158,7 +158,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>MLP mixer doesn&#x27;t support masking. i.e. all tokens will see all other token embeddings. </p>
+            <p>MLP 믹서는 마스킹을 지원하지 않습니다. i.e. 모든 토큰에는 다른 모든 토큰 임베딩이 표시됩니다.. </p>
 
         </div>
         <div class='code'>
@@ -170,8 +170,8 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Assign to <code  class="highlight"><span></span><span class="n">x</span></code>
- for clarity </p>
+            <p>명확성을 위해 <code  class="highlight"><span></span><span class="n">x</span></code>
+ 할당하세요. </p>
 
         </div>
         <div class='code'>
@@ -183,7 +183,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Transpose so that the last dimension is the sequence dimension. New shape is <code  class="highlight"><span></span><span class="p">[</span><span class="n">d_model</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">]</span></code>
+            <p>마지막 차원이 시퀀스 차원이 되도록 전치합니다. 새로운 크기는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">d_model</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">]</span></code>입니다.
  </p>
 
         </div>
@@ -196,7 +196,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>Apply the MLP across tokens </p>
+            <p>토큰 전체에 MLP 적용하세요. </p>
 
         </div>
         <div class='code'>
@@ -208,7 +208,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Transpose back into original form </p>
+            <p>다시 원래 형태로 전환합니다. </p>
 
         </div>
         <div class='code'>
