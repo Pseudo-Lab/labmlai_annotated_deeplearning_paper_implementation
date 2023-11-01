@@ -71,7 +71,7 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>선형 편향이 존재하는 어텐션 (ALiBi)</h1>
+            <h1>선형 편향이 존재하는 어텐션(ALiBi)</h1>
 <p>다음은 <a href="https://papers.labml.ai/paper/2108.12409">Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation</a> 논문에서 제안한 선형 편향이 존재하는 어텐션(ALiBi)을 구현한 것입니다.</p>
 <p>이것은 어텐션 점수(소프트 맥스 함수를 적용하기 전의 어텐션 로짓)에 더해진 편향이 있는 위치 인코딩을 대체합니다. 이것은 자기회귀 문제에서 테스트되는 상대적인 스키마이며 가까이있는 토큰들에서는 높은 편향성을, 멀리 떨어져있는 토큰들에서는 낮은 편향성을 가집니다. 편향성은 (소프트맥스를 적용하기 전이기 때문에) 로그 스케일로 점차 선형적으로 감소하며 각각의 헤드는 다른 기울기를 가집니다.</p>
 <p>다음은 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord coloredeq equ" style=""><span class="mord mathnormal" style="">i</span></span></span></span></span></span>번째 토큰에 대한 어텐션 공식입니다,</p>

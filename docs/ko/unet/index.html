@@ -72,8 +72,8 @@
             </div>
             <h1>U-Net</h1>
 <p>다음은  <a href="https://papers.labml.ai/paper/1505.04597">U-Net: Convolutional Networks for Biomedical Image Segmentation</a> 논문을 코드로 구현한 것입니다.</p>
-<p>U-Net은 컨트랙팅 패스(contracting path)와 익스팬시브 패스(expansive path)로 구성되어 있습니다. 컨트랙팅 패스(contracting path)는 컨볼루션 레이어와 풀링 레이어들이 이어져있는 구조이며, 특성 맵의 해상도가 점진적으로 줄어듭니다. 익스팬시브 패스(expansive path)는 업샘플링 레이어와 컨볼루션 레이어들이 이어져있는 구조로 특성 맵의 해상도가 점진적으로 증가합니다. </p>
-<p>익스팬시브 패스(expansive path)의 각 step에서는, 대응하는 컨트랙팅 패스(contracting path)에서의 특성 맵과 익스팬시브 패스(expansive path)의 특성 맵을 이어붙입니다. </p>
+<p>U-Net은 contracting path와 expansive path로 구성되어 있습니다. contracting path는 컨볼루션 레이어와 풀링 레이어들이 이어져있는 구조이며, 특성 맵의 해상도가 점진적으로 줄어듭니다. expansive path는 업샘플링 레이어와 컨볼루션 레이어들이 이어져있는 구조로 특성 맵의 해상도가 점진적으로 증가합니다. </p>
+<p>expansive path의 각 step에서는, 대응하는 contracting path에서의 특성 맵과 expansive path의 특성 맵을 이어붙입니다. </p>
 <p><img alt="U-Net diagram from paper" src="unet.png"></p>
 <p> U-Net을 <a href="carvana.html">Carvana 데이터셋</a>으로 <a href="experiment.html">훈련하는 코드</a> 입니다.</p>
 
@@ -90,7 +90,7 @@
                 <a href='#section-1'>#</a>
             </div>
             <h3>두 개의 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqc" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> 컨볼루션 레이어</h3>
-<p>contraction path와 익스팬시브 패스(expansive path)의 각 단계에는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqc" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> ReLU 활성화 함수 레이어를 포함하는 두 개의 컨볼루션 레이어가 있습니다.</p>
+<p>contraction path와 expansive path의 각 단계에는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqc" style=""><span class="mord" style="">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">3</span></span></span></span></span></span> ReLU 활성화 함수 레이어를 포함하는 두 개의 컨볼루션 레이어가 있습니다.</p>
 <p>U-Net 논문에서는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></span> 패딩을 사용하였으나 여기서는 특성 맵이 크롭되지 않도록 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqf" style=""><span class="mord" style="">1</span></span></span></span></span></span> 패딩을 사용합니다.</p>
 
         </div>
@@ -182,7 +182,7 @@
                 <a href='#section-8'>#</a>
             </div>
             <h3>다운 샘플</h3>
-<p>컨트랙팅 패스(contracting path)의 각 단계에서는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqb" style=""><span class="mord" style="">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">2</span></span></span></span></span></span> 최대 풀링 레이어를 이용하여 특성 맵을 다운 샘플링합니다.</p>
+<p>contracting path의 각 단계에서는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqb" style=""><span class="mord" style="">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">2</span></span></span></span></span></span> 최대 풀링 레이어를 이용하여 특성 맵을 다운 샘플링합니다.</p>
 
         </div>
         <div class='code'>
@@ -231,7 +231,7 @@
                 <a href='#section-12'>#</a>
             </div>
             <h3>업 샘플</h3>
-<p>익스팬시브 패스(expansive path)의 각 단계에서는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqb" style=""><span class="mord" style="">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">2</span></span></span></span></span></span> 업 컨볼루션을 사용하여 특성 맵을 업샘플링 합니다.</p>
+<p>expansive path의 각 단계에서는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqb" style=""><span class="mord" style="">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">2</span></span></span></span></span></span> 업 컨볼루션을 사용하여 특성 맵을 업샘플링 합니다.</p>
 
         </div>
         <div class='code'>
@@ -280,7 +280,7 @@
                 <a href='#section-16'>#</a>
             </div>
             <h3>특성 맵 크롭하고 이어붙이기</h3>
-<p>익스팬시브 패스(expansive path)의 각 단계에서는 대응하는 컨트랙팅 패스(contracting path)에서의 특성 맵과 익스팬시브 패스(expansive path)의 특성 맵을 이어붙입니다.</p>
+<p>expansive path의 각 단계에서는 대응하는 contracting path에서의 특성 맵과 expansive path의 특성 맵을 이어붙입니다.</p>
 
         </div>
         <div class='code'>
@@ -293,9 +293,9 @@
                 <a href='#section-17'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
-  : 익스팬시브 패스(expansive path)에서의 현재 특성 맵</li>
+  : expansive path에서의 현재 특성 맵</li>
 <li><code  class="highlight"><span></span><span class="n">contracting_x</span></code>
-  : 컨트랙팅 패스(contracting path)에서의 현재 특성 맵</li></ul>
+  : contracting path에서의 현재 특성 맵</li></ul>
 
         </div>
         <div class='code'>
@@ -307,7 +307,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>컨트랙팅 패스(contracting path)에서 현재 특성 맵의 사이즈에 맞춰 특성 맵을 크롭합니다. </p>
+            <p>contracting path에서 현재 특성 맵의 사이즈에 맞춰 특성 맵을 크롭합니다. </p>
 
         </div>
         <div class='code'>
@@ -381,7 +381,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>컨트랙팅 패스(contracting path)를 위한 더블 컨볼루션 레이어입니다. 특성의 갯수는 64개에서 시작해 각 단계를 거칠때마다 2배가 됩니다. <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">64</span></span></span></span></span>. </p>
+            <p>contracting path를 위한 더블 컨볼루션 레이어입니다. 특성의 갯수는 64개에서 시작해 각 단계를 거칠때마다 2배가 됩니다. <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">64</span></span></span></span></span>. </p>
 
         </div>
         <div class='code'>
@@ -394,7 +394,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>컨트랙팅 패스(contracting path)를 위한 다운 샘플링 레이어 </p>
+            <p>contracting path를 위한 다운 샘플링 레이어 </p>
 
         </div>
         <div class='code'>
@@ -418,7 +418,7 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <p>익스팬시브 패스(expansive path)를 위한 업샘플링 레이어. 업샘플링을 거쳐 특성 채널의 개수는 절반으로 줄게됩니다.</p>
+            <p>expansive path를 위한 업샘플링 레이어. 업샘플링을 거쳐 특성 채널의 개수는 절반으로 줄게됩니다.</p>
 
         </div>
         <div class='code'>
@@ -431,7 +431,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>익스팬시브 패스(expansive path)를 위한 더블 컨볼루션 레이어. 더블 컨볼루션 레이어의 입력은 현재 특성 맵과 컨트랙팅 패스(contracting path)의 특성 맵을 이어붙인 것입니다. 따라서, 입력 특성의 개수는 업샘플링을 거친 특성 수의 2배입니다.  </p>
+            <p>expansive path를 위한 더블 컨볼루션 레이어. 더블 컨볼루션 레이어의 입력은 현재 특성 맵과 contracting path의 특성 맵을 이어붙인 것입니다. 따라서, 입력 특성의 개수는 업샘플링을 거친 특성 수의 2배입니다.  </p>
 
         </div>
         <div class='code'>
@@ -444,7 +444,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p>익스팬시브 패스(expansive path)에서 크롭과 이어붙이기 작업을 수행하는 레이어 </p>
+            <p>expansive path에서 크롭과 이어붙이기 작업을 수행하는 레이어 </p>
 
         </div>
         <div class='code'>
@@ -481,7 +481,7 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>추후 익스팬시브 패스(expansive path)에서의 결과물과 컨트랙팅 패스(contracting path)의 결과물을 이어붙이는 작업을 하기 위하여 컨트랙팅 패스(contracting path)의 결과물들을 저장합니다. </p>
+            <p>추후 expansive path에서의 결과물과 contracting path의 결과물을 이어붙이는 작업을 하기 위하여 contracting path의 결과물들을 저장합니다. </p>
 
         </div>
         <div class='code'>
@@ -577,7 +577,7 @@
             <div class='section-link'>
                 <a href='#section-40'>#</a>
             </div>
-            <p>컨트랙팅 패스(contracting path)의 결과물을 이어붙입니다.</p>
+            <p>contracting path의 결과물을 이어붙입니다.</p>
 
         </div>
         <div class='code'>
