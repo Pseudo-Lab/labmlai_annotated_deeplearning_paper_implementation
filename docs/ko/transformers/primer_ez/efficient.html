@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -88,8 +88,8 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>Spatial Depth Wise Convolution</h2>
-<p>This is actually slower</p>
+            <h2>공간 깊이별 합성곱</h2>
+<p>다음은 느리게 동작할 수 있습니다.</p>
 
         </div>
         <div class='code'>
@@ -102,7 +102,7 @@
                 <a href='#section-2'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">d_k</span></code>
- is the number of channels in each head</li></ul>
+ 는 각 헤드의 채널 수입니다.</li></ul>
 
         </div>
         <div class='code'>
@@ -126,9 +126,9 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>We use PyTorch&#x27;s <code  class="highlight"><span></span><span class="n">Conv1d</span></code>
- module. We set the number of groups to be equal to the number of channels so that it does a separate convolution (with different kernels) for each channel. We add padding to both sides and later crop the right most <code  class="highlight"><span></span><span class="n">kernel_size</span> <span class="o">-</span> <span class="mi">1</span></code>
- results </p>
+            <p>우리는 파이토치의 <code  class="highlight"><span></span><span class="n">Conv1d</span></code> 모듈을 사용합니다.
+                우리는 그룹의 수를 채널의 수와 동일하게 설정하여 각 채널에 대해 별도의 (다른 커널을 사용한)컨볼루션을 수행하도록 합니다. 우리는 양쪽에 패딩을 추가하고 후에 가장 오른쪽의 <code  class="highlight"><span></span><span class="n">kernel_size</span> <span class="o">-</span> <span class="mi">1</span></code>
+ 결과값을 가져옵니다. </p>
 
         </div>
         <div class='code'>
@@ -142,7 +142,8 @@
                 <a href='#section-5'>#</a>
             </div>
             <p> <code  class="highlight"><span></span><span class="n">x</span></code>
- has shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">seq_len</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">heads</span><span class="p">,</span> <span class="n">d_k</span><span class="p">]</span></code>
+ 는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">seq_len</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">heads</span><span class="p">,</span> <span class="n">d_k</span><span class="p">]</span></code>
+ 의 크기를 가집니다.
 </p>
 
         </div>
@@ -171,8 +172,8 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <h2>Multi-DConv-Head Attention (MDHA)</h2>
-<p>We extend our original implementation of <a href="../mha.html#MHA">Multi-Head Attention</a> and add the spatial depth-wise convolution to query, key and value projections.</p>
+            <h2>다중-DConv-헤드 어텐션 (MDHA)</h2>
+<p>우리는  <a href="../mha.html#MHA">Multi-Head Attention</a> 의 기본 구현을 확장하였고 쿼리, 키, 값 프로젝션에 공간 깊이별 합성곱을 추가합니다.</p>
 
         </div>
         <div class='code'>
@@ -196,14 +197,14 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p><a href="../mha.html#MHA">Multi-Head Attention</a> will create query, key and value projection modules <code  class="highlight"><span></span><span class="bp">self</span><span class="o">.</span><span class="n">query</span></code>
+            <p><a href="../mha.html#MHA">Multi-Head Attention</a> 은 쿼리, 키, 값 프로젝션 <code  class="highlight"><span></span><span class="bp">self</span><span class="o">.</span><span class="n">query</span></code>
 , <code  class="highlight"><span></span><span class="bp">self</span><span class="o">.</span><span class="n">key</span></code>
 , and <code  class="highlight"><span></span><span class="bp">self</span><span class="o">.</span><span class="n">value</span></code>
-.</p>
-<p>We combine a spatial depth-wise convolution layer to each of them and replace <code  class="highlight"><span></span><span class="bp">self</span><span class="o">.</span><span class="n">query</span></code>
+모듈을 생성합니다.</p>
+<p>우리는 각각에 공간 깊이별 합성곱 레이어를 결합하고 <code  class="highlight"><span></span><span class="bp">self</span><span class="o">.</span><span class="n">query</span></code>
 , <code  class="highlight"><span></span><span class="bp">self</span><span class="o">.</span><span class="n">key</span></code>
-, and <code  class="highlight"><span></span><span class="bp">self</span><span class="o">.</span><span class="n">value</span></code>
-. </p>
+, <code  class="highlight"><span></span><span class="bp">self</span><span class="o">.</span><span class="n">value</span></code>
+를 대체합니다. </p>
 
         </div>
         <div class='code'>
