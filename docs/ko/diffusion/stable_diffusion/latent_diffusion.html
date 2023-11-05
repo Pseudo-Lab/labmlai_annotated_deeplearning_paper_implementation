@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Annotated PyTorch implementation/tutorial of latent diffusion models from paper High-Resolution Image Synthesis with Latent Diffusion Models"/>
+    <meta name="description" content="High-Resolution Image Synthesis with Latent Diffusion Models 논문의 latent diffustion model의 Pytorch 구현"/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
     <meta name="twitter:title" content="Latent Diffusion Models"/>
-    <meta name="twitter:description" content="Annotated PyTorch implementation/tutorial of latent diffusion models from paper High-Resolution Image Synthesis with Latent Diffusion Models"/>
+    <meta name="twitter:description" content="High-Resolution Image Synthesis with Latent Diffusion Models 논문의 latent diffustion model의 Pytorch 구현"/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
@@ -18,7 +18,7 @@
     <meta property="og:site_name" content="Latent Diffusion Models"/>
     <meta property="og:type" content="object"/>
     <meta property="og:title" content="Latent Diffusion Models"/>
-    <meta property="og:description" content="Annotated PyTorch implementation/tutorial of latent diffusion models from paper High-Resolution Image Synthesis with Latent Diffusion Models"/>
+    <meta property="og:description" content="High-Resolution Image Synthesis with Latent Diffusion Models 논문의 latent diffustion model의 Pytorch 구현"/>
 
     <title>Latent Diffusion Models</title>
     <link rel="shortcut icon" href="/icon.png"/>
@@ -72,9 +72,9 @@
                 <a href='#section-0'>#</a>
             </div>
             <h1>Latent Diffusion Models</h1>
-<p>Latent diffusion models use an auto-encoder to map between image space and latent space. The diffusion model works on the latent space, which makes it a lot easier to train. It is based on paper <a href="https://papers.labml.ai/paper/2112.10752">High-Resolution Image Synthesis with Latent Diffusion Models</a>.</p>
-<p>They use a pre-trained auto-encoder and train the diffusion U-Net on the latent space of the pre-trained auto-encoder.</p>
-<p>For a simpler diffusion implementation refer to our <a href="../ddpm/index.html">DDPM implementation</a>. We use same notations for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqd" style=""><span class="mord" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight coloredeq eqj" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span>, <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqe" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqf" style="margin-right:0.05278em">β</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight coloredeq eqj" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> schedules, etc.</p>
+<p>latent diffusion 모델은 오토 인코더를 사용하여 이미지 공간과 잠재 공간 사이를 매핑합니다. diffusion 모델은 잠재 공간에서 작동하므로 훨씬 쉽게 학습할 수 있습니다. 이는 latent diffusion 모델을 사용한 <a href="https://papers.labml.ai/paper/2112.10752">High-Resolution Image Synthesis with Latent Diffusion Models</a> 논문을 기반으로 합니다.</p>
+<p>사전 훈련된 오토 인코더를 사용하고 이 오토 인코더의 잠재 공간에서 diffusiton U-Net을 학습합니다.</p>
+<p>더 간단한 diffusion 구현은 <a href="../ddpm/index.html">DDPM 구현</a>을 참조하세요. <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqd" style=""><span class="mord" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight coloredeq eqj" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span>, <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqe" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqf" style="margin-right:0.05278em">β</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight coloredeq eqj" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> 등 동일한 표기법을 사용합니다.</p>
 
         </div>
         <div class='code'>
@@ -93,7 +93,7 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <p> <em>This is an empty wrapper class around the <a href="model/unet.html">U-Net</a>. We keep this to have the same model structure as <a href="https://github.com/CompVis/stable-diffusion">CompVis/stable-diffusion</a> so that we do not have to map the checkpoint weights explicitly</em>.</p>
+            <p> <em><a href="model/unet.html">U-Net</a></em>을 둘러싼 빈 래퍼 클래스입니다. 체크포인트 가중치를 명시적으로 매핑할 필요가 없도록 <em><a href="https://github.com/CompVis/stable-diffusion">CompVis/stable-diffusion</a>과 동일한 모델 구조를 유지합니다.</p>
 
         </div>
         <div class='code'>
@@ -131,7 +131,7 @@
                 <a href='#section-4'>#</a>
             </div>
             <h2>Latent diffusion model</h2>
-<p>This contains following components:</p>
+<p>아래의 구성요소를 포함하고 있습니다:</p>
 <ul><li><a href="model/autoencoder.html">AutoEncoder</a> </li>
 <li><a href="model/unet.html">U-Net</a> with <a href="model/unet_attention.html">attention</a> </li>
 <li><a href="model/clip_embedder.html">CLIP embeddings generator</a></li></ul>
@@ -160,19 +160,19 @@
                 <a href='#section-6'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">unet_model</span></code>
-  is the <a href="model/unet.html">U-Net</a> that predicts noise  <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqb" style=""><span class="mord" style=""><span class="mord mathnormal" style="">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord text mtight" style=""><span class="mord mtight" style=""><span class="mord mtight coloredeq eqi" style="">c</span></span><span class="mord mtight" style="">ond</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen" style="">(</span><span class="mord" style=""><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight coloredeq eqj" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mpunct" style="">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqi" style="">c</span></span><span class="mclose" style="">)</span></span></span></span></span></span>, in latent space </li>
+  은 노이즈 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqb" style=""><span class="mord" style=""><span class="mord mathnormal" style="">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord text mtight" style=""><span class="mord mtight" style=""><span class="mord mtight coloredeq eqi" style="">c</span></span><span class="mord mtight" style="">ond</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen" style="">(</span><span class="mord" style=""><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight coloredeq eqj" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mpunct" style="">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqi" style="">c</span></span><span class="mclose" style="">)</span></span></span></span></span></span> 을 예측하는 <a href="model/unet.html">U-Net</a>입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">autoencoder</span></code>
-  is the <a href="model/autoencoder.html">AutoEncoder</a> </li>
+  는 <a href="model/autoencoder.html">AutoEncoder</a> 입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">clip_embedder</span></code>
-  is the <a href="model/clip_embedder.html">CLIP embeddings generator</a> </li>
+ 는 <a href="model/clip_embedder.html">CLIP embeddings generator</a> 입니다.  </li>
 <li><code  class="highlight"><span></span><span class="n">latent_scaling_factor</span></code>
-  is the scaling factor for the latent space. The encodings of  the autoencoder are scaled by this before feeding into the U-Net. </li>
+  는 잠재 공간의 스케일링 계수입니다. 오토 인코더의 인코딩을 U-Net에 날리기 전에 이 값으로 스케일링합니다. </li>
 <li><code  class="highlight"><span></span><span class="n">n_steps</span></code>
-  is the number of diffusion steps <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord mathnormal" style="margin-right:0.13889em">T</span></span></span></span></span></span>. </li>
+  은 확산 스텝의 수 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord mathnormal" style="margin-right:0.13889em">T</span></span></span></span></span></span>입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">linear_start</span></code>
-  is the start of the <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqf" style=""><span class="mord mathnormal" style="margin-right:0.05278em">β</span></span></span></span></span></span> schedule. </li>
+  는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqf" style=""><span class="mord mathnormal" style="margin-right:0.05278em">β</span></span></span></span></span></span> 스케쥴의 시작입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">linear_end</span></code>
-  is the end of the <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqf" style=""><span class="mord mathnormal" style="margin-right:0.05278em">β</span></span></span></span></span></span> schedule.</li></ul>
+  는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqf" style=""><span class="mord mathnormal" style="margin-right:0.05278em">β</span></span></span></span></span></span> 스케쥴의 끝입니다.</li></ul>
 
         </div>
         <div class='code'>
@@ -203,7 +203,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Wrap the <a href="model/unet.html">U-Net</a> to keep the same model structure as <a href="https://github.com/CompVis/stable-diffusion">CompVis/stable-diffusion</a>. </p>
+            <p><a href="model/unet.html">U-Net</a> 을 래핑하여 <a href="https://github.com/CompVis/stable-diffusion">CompVis/stable-diffusion</a>과 동일한 구조를 유지합니다. </p>
 
         </div>
         <div class='code'>
@@ -215,7 +215,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>Auto-encoder and scaling factor </p>
+            <p>오토 인코더와 스케일링 계수 </p>
 
         </div>
         <div class='code'>
@@ -240,7 +240,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Number of steps <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord mathnormal" style="margin-right:0.13889em">T</span></span></span></span></span></span> </p>
+            <p>스텝의 수 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord mathnormal" style="margin-right:0.13889em">T</span></span></span></span></span></span> </p>
 
         </div>
         <div class='code'>
@@ -252,7 +252,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqf" style=""><span class="mord mathnormal" style="margin-right:0.05278em">β</span></span></span></span></span></span> schedule </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqf" style=""><span class="mord mathnormal" style="margin-right:0.05278em">β</span></span></span></span></span></span> 스케쥴 </p>
 
         </div>
         <div class='code'>
@@ -290,7 +290,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <h3>Get model device</h3>
+            <h3>모델 장치 가져오기</h3>
 
         </div>
         <div class='code'>
@@ -314,7 +314,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <h3>Get <a href="model/clip_embedder.html">CLIP embeddings</a> for a list of text prompts</h3>
+            <h3>텍스트 프롬프트 목록에 대한 <a href="model/clip_embedder.html">클립 임베딩</a>을 가져옵니다</h3>
 
         </div>
         <div class='code'>
@@ -337,8 +337,8 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <h3>Get scaled latent space representation of the image</h3>
-<p>The encoder output is a distribution. We sample from that and multiply by the scaling factor.</p>
+            <h3>이미지의 스케일링된 잠재 공간 표현 가져오기</h3>
+<p>인코더 출력은 분포입니다. 이 분포에서 샘플을 추출하고 배율을 곱합니다.</p>
 
         </div>
         <div class='code'>
@@ -361,8 +361,8 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <h3>Get image from the latent representation</h3>
-<p>We scale down by the scaling factor and then decode.</p>
+            <h3>잠재 표현에서 이미지 가져오기</h3>
+<p>스케일링 계수에 따라 축소한 다음 디코딩합니다.</p>
 
         </div>
         <div class='code'>
@@ -385,8 +385,8 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <h3>Predict noise</h3>
-<p>Predict noise given the latent representation <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqg" style=""><span class="mord" style=""><span class="mord mathnormal" style="">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight coloredeq eqj" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span>, time step <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span></span></span></span></span>, and the conditioning context <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="">c</span></span></span></span></span></span>.</p>
+            <h3>노이즈 예측</h3>
+<p>주어진 잠재표현 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqg" style=""><span class="mord" style=""><span class="mord mathnormal" style="">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight coloredeq eqj" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span>, 타임 스텝 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span></span></span></span></span>, 컨디션 컨텍스트 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="">c</span></span></span></span></span></span>를 이용해 노이즈를 예측합니다.</p>
 <p><span ><span class="katex-display"><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqb" style=""><span class="mord" style=""><span class="mord mathnormal" style="">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord text mtight" style=""><span class="mord mtight" style=""><span class="mord mtight coloredeq eqi" style="">c</span></span><span class="mord mtight" style="">ond</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen" style="">(</span><span class="mord" style=""><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight coloredeq eqj" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mpunct" style="">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqi" style="">c</span></span><span class="mclose" style="">)</span></span></span></span></span></span></span></p>
 
         </div>
