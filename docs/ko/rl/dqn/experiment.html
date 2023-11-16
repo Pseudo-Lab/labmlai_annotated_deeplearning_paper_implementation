@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Implementation of DQN experiment with Atari Breakout"/>
+    <meta name="description" content="다음은 아타리 탈출 게임(Atari Breakout)을 이용하여 DQN 실험을 구현한 것입니다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="DQN Experiment with Atari Breakout"/>
-    <meta name="twitter:description" content="Implementation of DQN experiment with Atari Breakout"/>
+    <meta name="twitter:title" content="아타리 탈출 게임(Atari Breakout)을 이용한 DQN 실험"/>
+    <meta name="twitter:description" content="다음은 아타리 탈출 게임(Atari Breakout)을 이용하여 DQN 실험을 구현한 것입니다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/rl/dqn/experiment.html"/>
-    <meta property="og:title" content="DQN Experiment with Atari Breakout"/>
+    <meta property="og:title" content="아타리 탈출 게임(Atari Breakout)을 이용한 DQN 실험"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="DQN Experiment with Atari Breakout"/>
+    <meta property="og:site_name" content="아타리 탈출 게임(Atari Breakout)을 이용한 DQN 실험"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="DQN Experiment with Atari Breakout"/>
-    <meta property="og:description" content="Implementation of DQN experiment with Atari Breakout"/>
+    <meta property="og:title" content="아타리 탈출 게임(Atari Breakout)을 이용한 DQN 실험"/>
+    <meta property="og:description" content="다음은 아타리 탈출 게임(Atari Breakout)을 이용하여 DQN 실험을 구현한 것입니다."/>
 
-    <title>DQN Experiment with Atari Breakout</title>
+    <title>아타리 탈출 게임(Atari Breakout)을 이용한 DQN 실험</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/rl/dqn/experiment.html"/>
@@ -71,8 +71,8 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>DQN Experiment with Atari Breakout</h1>
-<p>This experiment trains a Deep Q Network (DQN) to play Atari Breakout game on OpenAI Gym. It runs the <a href="../game.html">game environments on multiple processes</a> to sample efficiently.</p>
+            <h1>아타리 탈출 게임(Atari Breakout)을 이용한 DQN 실험</h1>
+<p>다음은 OpenAI Gym에서 아타리 탈출 게임을 수행하기 위해 딥 큐 네트워크를 훈련하는 것입니다. 샘플링을 효율적으로 수행하기 위해 <a href="../game.html">다중 프로세서 환경에서 실행</a>하였습니다. </p>
 <p><a href="https://colab.research.google.com/github/labmlai/annotated_deep_learning_paper_implementations/blob/master/labml_nn/rl/dqn/experiment.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"></a></p>
 
         </div>
@@ -94,7 +94,7 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <p>Select device </p>
+            <p>디바이스를 선택합니다. </p>
 
         </div>
         <div class='code'>
@@ -109,9 +109,9 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <p>Scale observations from <code  class="highlight"><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">]</span></code>
- to <code  class="highlight"><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span></code>
- </p>
+            <p><code  class="highlight"><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">]</span></code>
+사이의 값을  <code  class="highlight"><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span></code>
+사이의 값으로 조정합니다. </p>
 
         </div>
         <div class='code'>
@@ -134,7 +134,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <h2>Trainer</h2>
+            <h2>트레이너(Trainer)</h2>
 
         </div>
         <div class='code'>
@@ -162,7 +162,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>number of workers </p>
+            <p>작업을 수행하는 워커의 수입니다. </p>
 
         </div>
         <div class='code'>
@@ -174,7 +174,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>steps sampled on each update </p>
+            <p>각 업데이트에서 샘플링되는 스텝입니다. </p>
 
         </div>
         <div class='code'>
@@ -186,7 +186,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>number of training iterations </p>
+            <p>훈련 횟수입니다. </p>
 
         </div>
         <div class='code'>
@@ -198,7 +198,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>number of updates </p>
+            <p>업데이트 횟수입니다. </p>
 
         </div>
         <div class='code'>
@@ -210,7 +210,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>size of mini batch for training </p>
+            <p>훈련을 위한 미니 배치의 크기입니다. </p>
 
         </div>
         <div class='code'>
@@ -222,7 +222,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>update target network every 250 update </p>
+            <p>매 250번의 업데이트마다 타겟 네트워크를 업데이트합니다. </p>
 
         </div>
         <div class='code'>
@@ -234,7 +234,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>learning rate </p>
+            <p>학습률입니다. </p>
 
         </div>
         <div class='code'>
@@ -246,7 +246,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>exploration as a function of updates </p>
+            <p>업데이트에 관한 함수로 생각합니다. </p>
 
         </div>
         <div class='code'>
@@ -263,7 +263,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="margin-right:0.05278em">β</span></span></span></span></span></span> for replay buffer as a function of updates </p>
+            <p>리플레이 버퍼를 위한 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="margin-right:0.05278em">β</span></span></span></span></span></span> 는 업데이트에 관한 함수입니다. </p>
 
         </div>
         <div class='code'>
@@ -279,7 +279,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Replay buffer with <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0.6</span></span></span></span></span>. Capacity of the replay buffer must be a power of 2. </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0.6</span></span></span></span></span>로 설정한 리플레이 버퍼입니다. 리플레이 버퍼의 용량은 2의 거듭제곱이어야 합니다.</p>
 
         </div>
         <div class='code'>
@@ -291,7 +291,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Model for sampling and training </p>
+            <p>샘플링과 훈련을 위한 모델입니다. </p>
 
         </div>
         <div class='code'>
@@ -303,7 +303,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>target model to get <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.088326em;vertical-align:-0.276864em;"></span><span class="mord"><span class="mord mathnormal" style="color:orange">Q</span><span class="mopen coloredeq eqa" style="">(</span><span class="mord coloredeq eqa" style=""><span class="mord mathnormal" style="">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">′</span></span></span></span></span></span></span></span></span><span class="mpunct coloredeq eqa" style="">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style="color:orange"><span class="mord mathnormal" style="margin-right:0.02778em">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.811462em;"><span style="top:-2.4231360000000004em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span><span style="top:-3.1031310000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.276864em;"><span></span></span></span></span></span></span><span class="mclose coloredeq eqa" style="">)</span></span></span></span></span></span> </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.088326em;vertical-align:-0.276864em;"></span><span class="mord"><span class="mord mathnormal" style="color:orange">Q</span><span class="mopen coloredeq eqa" style="">(</span><span class="mord coloredeq eqa" style=""><span class="mord mathnormal" style="">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">′</span></span></span></span></span></span></span></span></span><span class="mpunct coloredeq eqa" style="">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style="color:orange"><span class="mord mathnormal" style="margin-right:0.02778em">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.811462em;"><span style="top:-2.4231360000000004em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span><span style="top:-3.1031310000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.276864em;"><span></span></span></span></span></span></span><span class="mclose coloredeq eqa" style="">)</span></span></span></span></span>값을 구하기 위한 타겟 모델입니다.</span> </p>
 
         </div>
         <div class='code'>
@@ -315,7 +315,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>create workers </p>
+            <p>워커를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -327,7 +327,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>initialize tensors for observations </p>
+            <p>관찰을 위해 텐서를 초기화합니다. </p>
 
         </div>
         <div class='code'>
@@ -339,7 +339,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>reset the workers </p>
+            <p>워커를 재설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -352,7 +352,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>get the initial observations </p>
+            <p>초기 관찰 결과를 가져옵니다. </p>
 
         </div>
         <div class='code'>
@@ -365,7 +365,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p>loss function </p>
+            <p>손실 함수를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -377,7 +377,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p>optimizer </p>
+            <p>옵티마이저를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -389,9 +389,9 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <h4><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span>-greedy Sampling</h4>
-<p>When sampling actions we use a <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span>-greedy strategy, where we take a greedy action with probabiliy <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span> and take a random action with probability <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span>. We refer to <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span> as <code  class="highlight"><span></span><span class="n">exploration_coefficient</span></code>
-.</p>
+            <h4><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span>-탐욕적(greedy) 샘플링</h4>
+<p>행동을 샘플링할 때, <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span>-탐욕적 전략을 사용합니다. <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span>의 확률로 탐욕적 행동을 수행하고 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span>확률로 랜덤 행동을 수행하는 것입니다. 여기서 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span> 은 <code  class="highlight"><span></span><span class="n">exploration_coefficient</span></code>
+라고 부릅니다.</p>
 
         </div>
         <div class='code'>
@@ -403,7 +403,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>Sampling doesn&#x27;t need gradients </p>
+            <p>샘플링 시에는 그레디언트를 사용하지 않습니다. </p>
 
         </div>
         <div class='code'>
@@ -415,7 +415,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <p>Sample the action with highest Q-value. This is the greedy action. </p>
+            <p>제일 높은 Q-값으로 행동을 샘플링하는 것이 탐욕적 행동입니다. </p>
 
         </div>
         <div class='code'>
@@ -427,7 +427,7 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <p>Uniformly sample and action </p>
+            <p>균등하게 샘플링하고 행동합니다. </p>
 
         </div>
         <div class='code'>
@@ -439,7 +439,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Whether to chose greedy action or the random action </p>
+            <p>탐욕적 행동과 랜덤 행동 중 수행할 행동을 선택합니다. </p>
 
         </div>
         <div class='code'>
@@ -451,7 +451,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p>Pick the action based on <code  class="highlight"><span></span><span class="n">is_choose_rand</span></code>
+            <p><code  class="highlight"><span></span><span class="n">is_choose_rand</span></code>에 의해 행동을 선택합니다.
  </p>
 
         </div>
@@ -464,7 +464,7 @@
             <div class='section-link'>
                 <a href='#section-30'>#</a>
             </div>
-            <h3>Sample data</h3>
+            <h3>데이터를 샘플링합니다.</h3>
 
         </div>
         <div class='code'>
@@ -476,7 +476,7 @@
             <div class='section-link'>
                 <a href='#section-31'>#</a>
             </div>
-            <p>This doesn&#x27;t need gradients </p>
+            <p>이 작업은 그레디언트를 이용하지 않습니다.</p>
 
         </div>
         <div class='code'>
@@ -488,7 +488,7 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>Sample <code  class="highlight"><span></span><span class="n">worker_steps</span></code>
+            <p><code  class="highlight"><span></span><span class="n">worker_steps</span></code>를 샘플링합니다.
  </p>
 
         </div>
@@ -501,7 +501,7 @@
             <div class='section-link'>
                 <a href='#section-33'>#</a>
             </div>
-            <p>Get Q_values for the current observation </p>
+            <p>현재 상태를 관찰하기 위해 Q 값을 구합니다. </p>
 
         </div>
         <div class='code'>
@@ -513,7 +513,7 @@
             <div class='section-link'>
                 <a href='#section-34'>#</a>
             </div>
-            <p>Sample actions </p>
+            <p>행동을 샘플링합니다. </p>
 
         </div>
         <div class='code'>
@@ -525,7 +525,7 @@
             <div class='section-link'>
                 <a href='#section-35'>#</a>
             </div>
-            <p>Run sampled actions on each worker </p>
+            <p>각 워커에 대해 샘플링된 행동을 수행합니다. </p>
 
         </div>
         <div class='code'>
@@ -538,7 +538,7 @@
             <div class='section-link'>
                 <a href='#section-36'>#</a>
             </div>
-            <p>Collect information from each worker </p>
+            <p>각 워커로부터 정보를 수집합니다. </p>
 
         </div>
         <div class='code'>
@@ -550,7 +550,7 @@
             <div class='section-link'>
                 <a href='#section-37'>#</a>
             </div>
-            <p>Get results after executing the actions </p>
+            <p>행동을 수행한 후 결과를 얻습니다. </p>
 
         </div>
         <div class='code'>
@@ -562,7 +562,7 @@
             <div class='section-link'>
                 <a href='#section-38'>#</a>
             </div>
-            <p>Add transition to replay buffer </p>
+            <p>리플레이 버퍼에 트랜지션을 더합니다. </p>
 
         </div>
         <div class='code'>
@@ -574,8 +574,8 @@
             <div class='section-link'>
                 <a href='#section-39'>#</a>
             </div>
-            <p>update episode information. collect episode info, which is available if an episode finished;  this includes total reward and length of the episode -  look at <code  class="highlight"><span></span><span class="n">Game</span></code>
- to see how it works. </p>
+            <p>에피소드 정보를 업데이트 합니다. 에피소드가 끝난 후, 에피소드 정보(총 보상과 에피소드의 길이를 포함)를 모읍니다-<code  class="highlight"><span></span><span class="n">Game</span></code>를 통해 어떻게 동작하는지 확인할 수 있습니다.
+</p>
 
         </div>
         <div class='code'>
@@ -589,7 +589,7 @@
             <div class='section-link'>
                 <a href='#section-40'>#</a>
             </div>
-            <p>update current observation </p>
+            <p>현재 관찰 정보를 업데이트 합니다. </p>
 
         </div>
         <div class='code'>
@@ -601,7 +601,7 @@
             <div class='section-link'>
                 <a href='#section-41'>#</a>
             </div>
-            <h3>Train the model</h3>
+            <h3>모델을 훈련합니다. </h3>
 
         </div>
         <div class='code'>
@@ -624,7 +624,7 @@
             <div class='section-link'>
                 <a href='#section-43'>#</a>
             </div>
-            <p>Sample from priority replay buffer </p>
+            <p>우선순위 리플레이 버퍼로부터 샘플링을 수행합니다. </p>
 
         </div>
         <div class='code'>
@@ -636,7 +636,7 @@
             <div class='section-link'>
                 <a href='#section-44'>#</a>
             </div>
-            <p>Get the predicted Q-value </p>
+            <p>예측된 Q 값을 얻습니다. </p>
 
         </div>
         <div class='code'>
@@ -648,7 +648,7 @@
             <div class='section-link'>
                 <a href='#section-45'>#</a>
             </div>
-            <p>Get the Q-values of the next state for <a href="index.html">Double Q-learning</a>. Gradients shouldn&#x27;t propagate for these </p>
+            <p><a href="index.html">이중 Q-학습</a>을 위한 다음 상태에 대한 Q-값을 구합니다. 이 과정에는 그레디언트를 이용하지 않습니다. </p>
 
         </div>
         <div class='code'>
@@ -660,7 +660,7 @@
             <div class='section-link'>
                 <a href='#section-46'>#</a>
             </div>
-            <p>Get <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="color:cyan">Q</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style="color:cyan"><span class="mord mathnormal" style="margin-right:0.02778em">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span> </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="color:cyan">Q</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style="color:cyan"><span class="mord mathnormal" style="margin-right:0.02778em">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>를 구합니다.</span> </p>
 
         </div>
         <div class='code'>
@@ -672,7 +672,7 @@
             <div class='section-link'>
                 <a href='#section-47'>#</a>
             </div>
-            <p>Get <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.088326em;vertical-align:-0.276864em;"></span><span class="mord"><span class="mord mathnormal" style="color:orange">Q</span><span class="mopen coloredeq eqa" style="">(</span><span class="mord coloredeq eqa" style=""><span class="mord mathnormal" style="">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">′</span></span></span></span></span></span></span></span></span><span class="mpunct coloredeq eqa" style="">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style="color:orange"><span class="mord mathnormal" style="margin-right:0.02778em">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.811462em;"><span style="top:-2.4231360000000004em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span><span style="top:-3.1031310000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.276864em;"><span></span></span></span></span></span></span><span class="mclose coloredeq eqa" style="">)</span></span></span></span></span></span> </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.088326em;vertical-align:-0.276864em;"></span><span class="mord"><span class="mord mathnormal" style="color:orange">Q</span><span class="mopen coloredeq eqa" style="">(</span><span class="mord coloredeq eqa" style=""><span class="mord mathnormal" style="">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">′</span></span></span></span></span></span></span></span></span><span class="mpunct coloredeq eqa" style="">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style="color:orange"><span class="mord mathnormal" style="margin-right:0.02778em">θ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.811462em;"><span style="top:-2.4231360000000004em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span><span style="top:-3.1031310000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.276864em;"><span></span></span></span></span></span></span><span class="mclose coloredeq eqa" style="">)</span></span></span></span></span>를 구합니다.</span> </p>
 
         </div>
         <div class='code'>
@@ -684,7 +684,7 @@
             <div class='section-link'>
                 <a href='#section-48'>#</a>
             </div>
-            <p>Compute Temporal Difference (TD) errors, <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord mathnormal" style="margin-right:0.03785em">δ</span></span></span></span></span></span>, and the loss, <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal">L</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span></span></span></span></span>. </p>
+            <p>시간차(TD) 오류 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord mathnormal" style="margin-right:0.03785em">δ</span></span></span></span></span></span>와 손실값 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal">L</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span></span></span></span></span> 를 계산합니다. </p>
 
         </div>
         <div class='code'>
@@ -701,7 +701,7 @@
             <div class='section-link'>
                 <a href='#section-49'>#</a>
             </div>
-            <p>Calculate priorities for replay buffer <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord"><span class="mord coloredeq eqh" style=""><span class="mord mathnormal" style="margin-right:0.03785em">δ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span> </p>
+            <p>리플레이 버퍼 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord"><span class="mord coloredeq eqh" style=""><span class="mord mathnormal" style="margin-right:0.03785em">δ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span>을 위해 우선순위를 계산합니다.</span> </p>
 
         </div>
         <div class='code'>
@@ -713,7 +713,7 @@
             <div class='section-link'>
                 <a href='#section-50'>#</a>
             </div>
-            <p>Update replay buffer priorities </p>
+            <p>리플레이 버퍼 우선순위를 업데이트합니다.</p>
 
         </div>
         <div class='code'>
@@ -725,7 +725,7 @@
             <div class='section-link'>
                 <a href='#section-51'>#</a>
             </div>
-            <p>Set learning rate </p>
+            <p>학습률을 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -738,7 +738,7 @@
             <div class='section-link'>
                 <a href='#section-52'>#</a>
             </div>
-            <p>Zero out the previously calculated gradients </p>
+            <p>이전에 계산된 그레디언트들을 0으로 만듭니다. </p>
 
         </div>
         <div class='code'>
@@ -750,7 +750,7 @@
             <div class='section-link'>
                 <a href='#section-53'>#</a>
             </div>
-            <p>Calculate gradients </p>
+            <p>그레디언트를 계산합니다. </p>
 
         </div>
         <div class='code'>
@@ -762,7 +762,7 @@
             <div class='section-link'>
                 <a href='#section-54'>#</a>
             </div>
-            <p>Clip gradients </p>
+            <p>그레디언트를 클립합니다. </p>
 
         </div>
         <div class='code'>
@@ -774,7 +774,7 @@
             <div class='section-link'>
                 <a href='#section-55'>#</a>
             </div>
-            <p>Update parameters based on gradients </p>
+            <p>그레디언트에 기반하여 파라미터를 업데이트합니다. </p>
 
         </div>
         <div class='code'>
@@ -786,7 +786,7 @@
             <div class='section-link'>
                 <a href='#section-56'>#</a>
             </div>
-            <h3>Run training loop</h3>
+            <h3>훈련 루프를 수행합니다.</h3>
 
         </div>
         <div class='code'>
@@ -798,7 +798,7 @@
             <div class='section-link'>
                 <a href='#section-57'>#</a>
             </div>
-            <p>Last 100 episode information </p>
+            <p>마지막 100개 에피소드에 대한 정보를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -811,7 +811,7 @@
             <div class='section-link'>
                 <a href='#section-58'>#</a>
             </div>
-            <p>Copy to target network initially </p>
+            <p>초기에 타겟 네트워크로 복사합니다. </p>
 
         </div>
         <div class='code'>
@@ -825,7 +825,7 @@
             <div class='section-link'>
                 <a href='#section-59'>#</a>
             </div>
-            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span>, exploration fraction </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqg" style=""><span class="mord mathnormal" style="">ϵ</span></span></span></span></span></span>, 탐색 분수(exploration fraction)를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -838,7 +838,7 @@
             <div class='section-link'>
                 <a href='#section-60'>#</a>
             </div>
-            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="margin-right:0.05278em">β</span></span></span></span></span></span> for prioritized replay </p>
+            <p>우선순위 리플레이를 위한 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="margin-right:0.05278em">β</span></span></span></span></span></span>값을 설정합니다.</p>
 
         </div>
         <div class='code'>
@@ -851,7 +851,7 @@
             <div class='section-link'>
                 <a href='#section-61'>#</a>
             </div>
-            <p>Sample with current policy </p>
+            <p>현재 정책 하에서 샘플링을 수행합니다. </p>
 
         </div>
         <div class='code'>
@@ -863,7 +863,7 @@
             <div class='section-link'>
                 <a href='#section-62'>#</a>
             </div>
-            <p>Start training after the buffer is full </p>
+            <p>버퍼가 가득차면 훈련을 시작합니다. </p>
 
         </div>
         <div class='code'>
@@ -875,7 +875,7 @@
             <div class='section-link'>
                 <a href='#section-63'>#</a>
             </div>
-            <p>Train the model </p>
+            <p>모델을 훈련합니다. </p>
 
         </div>
         <div class='code'>
@@ -887,7 +887,7 @@
             <div class='section-link'>
                 <a href='#section-64'>#</a>
             </div>
-            <p>Periodically update target network </p>
+            <p>주기적으로 타겟 네트워크를 업데이트합니다. </p>
 
         </div>
         <div class='code'>
@@ -900,7 +900,7 @@
             <div class='section-link'>
                 <a href='#section-65'>#</a>
             </div>
-            <p>Save tracked indicators. </p>
+            <p>기록한 지표들을 저장합니다. </p>
 
         </div>
         <div class='code'>
@@ -912,7 +912,7 @@
             <div class='section-link'>
                 <a href='#section-66'>#</a>
             </div>
-            <p>Add a new line to the screen periodically </p>
+            <p>화면에 주기적으로 새로운 라인을 추가합니다. </p>
 
         </div>
         <div class='code'>
@@ -925,8 +925,8 @@
             <div class='section-link'>
                 <a href='#section-67'>#</a>
             </div>
-            <h3>Destroy</h3>
-<p>Stop the workers</p>
+            <h3>파괴 작업을 수행합니다.</h3>
+<p>워커를 멈춥니다.</p>
 
         </div>
         <div class='code'>
@@ -961,7 +961,7 @@
             <div class='section-link'>
                 <a href='#section-70'>#</a>
             </div>
-            <p>Create the experiment </p>
+            <p>실험을 생성합니다.</p>
 
         </div>
         <div class='code'>
@@ -973,7 +973,7 @@
             <div class='section-link'>
                 <a href='#section-71'>#</a>
             </div>
-            <p>Configurations </p>
+            <p>설정파일을 만듭니다.</p>
 
         </div>
         <div class='code'>
@@ -985,7 +985,7 @@
             <div class='section-link'>
                 <a href='#section-72'>#</a>
             </div>
-            <p>Number of updates </p>
+            <p>업데이트 횟수입니다. </p>
 
         </div>
         <div class='code'>
@@ -997,7 +997,7 @@
             <div class='section-link'>
                 <a href='#section-73'>#</a>
             </div>
-            <p>Number of epochs to train the model with sampled data. </p>
+            <p>샘플된 데이터로 모델을 훈련하는 에폭 횟수입니다. </p>
 
         </div>
         <div class='code'>
@@ -1009,7 +1009,7 @@
             <div class='section-link'>
                 <a href='#section-74'>#</a>
             </div>
-            <p>Number of worker processes </p>
+            <p>워커 프로세스의 수 입니다. </p>
 
         </div>
         <div class='code'>
@@ -1021,7 +1021,7 @@
             <div class='section-link'>
                 <a href='#section-75'>#</a>
             </div>
-            <p>Number of steps to run on each process for a single update </p>
+            <p>각 업데이트에 대해 각 프로세스에서 수행하는 스텝의 횟수입니다. </p>
 
         </div>
         <div class='code'>
@@ -1033,7 +1033,7 @@
             <div class='section-link'>
                 <a href='#section-76'>#</a>
             </div>
-            <p>Mini batch size </p>
+            <p>미니 배치 크기입니다.</p>
 
         </div>
         <div class='code'>
@@ -1045,7 +1045,7 @@
             <div class='section-link'>
                 <a href='#section-77'>#</a>
             </div>
-            <p>Target model updating interval </p>
+            <p>타겟 모델을 업데이트하는 간격입니다. </p>
 
         </div>
         <div class='code'>
@@ -1057,7 +1057,7 @@
             <div class='section-link'>
                 <a href='#section-78'>#</a>
             </div>
-            <p>Learning rate. </p>
+            <p>학습률입니다. </p>
 
         </div>
         <div class='code'>
@@ -1070,7 +1070,7 @@
             <div class='section-link'>
                 <a href='#section-79'>#</a>
             </div>
-            <p>Configurations </p>
+            <p>설정 사항을 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -1082,7 +1082,7 @@
             <div class='section-link'>
                 <a href='#section-80'>#</a>
             </div>
-            <p>Initialize the trainer </p>
+            <p>트레이너를 초기화합니다. </p>
 
         </div>
         <div class='code'>
@@ -1094,7 +1094,7 @@
             <div class='section-link'>
                 <a href='#section-81'>#</a>
             </div>
-            <p>Run and monitor the experiment </p>
+            <p>실험을 수행하고 모니터링합니다.</p>
 
         </div>
         <div class='code'>
@@ -1107,7 +1107,7 @@
             <div class='section-link'>
                 <a href='#section-82'>#</a>
             </div>
-            <p>Stop the workers </p>
+            <p>워커를 멈춥니다. </p>
 
         </div>
         <div class='code'>
@@ -1119,7 +1119,7 @@
             <div class='section-link'>
                 <a href='#section-83'>#</a>
             </div>
-            <h2>Run it</h2>
+            <h2>실험을 수행합니다.</h2>
 
         </div>
         <div class='code'>
