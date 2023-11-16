@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Train a small model on CIFAR 10 to test how much distillation benefits."/>
+    <meta name="description" content="CIFAR10 데이터셋에서 작은 모델을 훈련하여, 증류법이 얼마나 효과적인지 테스트 합니다.."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Train a small model on CIFAR 10"/>
-    <meta name="twitter:description" content="Train a small model on CIFAR 10 to test how much distillation benefits."/>
+    <meta name="twitter:title" content="CIFAR10에서 작은 모델을 훈련합니다."/>
+    <meta name="twitter:description" content="CIFAR10 데이터셋에서 작은 모델을 훈련하여, 증류법이 얼마나 효과적인지 테스트 합니다.."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/distillation/small.html"/>
-    <meta property="og:title" content="Train a small model on CIFAR 10"/>
+    <meta property="og:title" content="CIFAR10에서 작은 모델을 훈련합니다."/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Train a small model on CIFAR 10"/>
+    <meta property="og:site_name" content="CIFAR10에서 작은 모델을 훈련합니다."/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Train a small model on CIFAR 10"/>
-    <meta property="og:description" content="Train a small model on CIFAR 10 to test how much distillation benefits."/>
+    <meta property="og:title" content="CIFAR10에서 작은 모델을 훈련합니다."/>
+    <meta property="og:description" content="CIFAR10 데이터셋에서 작은 모델을 훈련하여, 증류법이 얼마나 효과적인지 테스트 합니다.."/>
 
-    <title>Train a small model on CIFAR 10</title>
+    <title>CIFAR10에서 작은 모델을 훈련합니다.</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/distillation/small.html"/>
@@ -70,8 +70,8 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Train a small model on CIFAR 10</h1>
-<p>This trains a small model on CIFAR 10 to test how much <a href="index.html">distillation</a> benefits.</p>
+            <h1>CIFAR10에서 작은 모델을 훈련합니다.</h1>
+<p>이 문서는 <a href="index.html">증류</a>가 얼마나 효과있을지 CIFAR 10 데이터셋에서 작은 모델을 훈련하는 방법을 소개합니다. </p>
 
         </div>
         <div class='code'>
@@ -88,9 +88,8 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>Configurations</h2>
-<p>We use <a href="../experiments/cifar10.html"><code  class="highlight"><span></span><span class="n">CIFAR10Configs</span></code>
-</a> which defines all the dataset related configurations, optimizer, and a training loop.</p>
+            <h2>설정값</h2>
+<p>모든 데이터셋 관련 구성, 옵티마이저, 학습 루프를 정의하는 <a href="../experiments/cifar10.html"><code  class="highlight"><span></span><span class="n">CIFAR10Configs</span></code></a>을 사용합니다. </p>
 
         </div>
         <div class='code'>
@@ -113,8 +112,8 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <h3>VGG style model for CIFAR-10 classification</h3>
-<p>This derives from the <a href="../experiments/cifar10.html">generic VGG style architecture</a>.</p>
+            <h3>CIFAR 10 분류를 위한 VGG 스타일 모델 </h3>
+<p>이 모델은 <a href="../experiments/cifar10.html">일반적인 VGG 스타일 아키텍처</a>에서 파생된 것입니다.</p>
 
         </div>
         <div class='code'>
@@ -126,7 +125,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p> Create a convolution layer and the activations</p>
+            <p> 컨볼루션 레이어와 활성 함수를 만듭니다. </p>
 
         </div>
         <div class='code'>
@@ -149,7 +148,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Convolution layer </p>
+            <p>컨볼루션 레이어입니다. </p>
 
         </div>
         <div class='code'>
@@ -161,7 +160,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Batch normalization </p>
+            <p>배치 정규화입니다. </p>
 
         </div>
         <div class='code'>
@@ -173,7 +172,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>ReLU activation </p>
+            <p>ReLU 함수를 사용합니다. </p>
 
         </div>
         <div class='code'>
@@ -197,7 +196,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Create a model with given convolution sizes (channels) </p>
+            <p>주어진 컨볼루션 크기로 채널을 만듭니다. </p>
 
         </div>
         <div class='code'>
@@ -209,7 +208,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <h3>Create model</h3>
+            <h3>모델을 선언합니다. </h3>
 
         </div>
         <div class='code'>
@@ -244,7 +243,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>Create experiment </p>
+            <p>실험을 생성합니다.  </p>
 
         </div>
         <div class='code'>
@@ -256,7 +255,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Create configurations </p>
+            <p>설정값 인스턴스를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -268,7 +267,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Load configurations </p>
+            <p>설정값을 불러옵니다. </p>
 
         </div>
         <div class='code'>
@@ -283,7 +282,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Set model for saving/loading </p>
+            <p>저장/로딩을 위해 모델을 세팅합니다. </p>
 
         </div>
         <div class='code'>
@@ -295,7 +294,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Print number of parameters in the model </p>
+            <p>모델의 파라미터 수를 출력합니다. </p>
 
         </div>
         <div class='code'>
@@ -307,7 +306,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Start the experiment and run the training loop </p>
+            <p>실험을 시작하고 훈련 루프를 실행합니다. </p>
 
         </div>
         <div class='code'>
