@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,20 +7,20 @@
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Distilling the Knowledge in a Neural Network"/>
+    <meta name="twitter:title" content="신경망에 지식 증류를 하는 방법에 관하여"/>
     <meta name="twitter:description" content=""/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/distillation/readme.html"/>
-    <meta property="og:title" content="Distilling the Knowledge in a Neural Network"/>
+    <meta property="og:title" content="신경망에 지식 증류를 하는 방법에 관하여"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Distilling the Knowledge in a Neural Network"/>
+    <meta property="og:site_name" content="신경망에 지식 증류를 하는 방법에 관하여"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Distilling the Knowledge in a Neural Network"/>
+    <meta property="og:title" content="신경망에 지식 증류를 하는 방법에 관하여"/>
     <meta property="og:description" content=""/>
 
-    <title>Distilling the Knowledge in a Neural Network</title>
+    <title>신경망에 지식 증류를 하는 방법에 관하여</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/distillation/readme.html"/>
@@ -70,11 +70,11 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1><a href="https://nn.labml.ai/distillation/index.html">Distilling the Knowledge in a Neural Network</a></h1>
-<p>This is a <a href="https://pytorch.org">PyTorch</a> implementation/tutorial of the paper <a href="https://papers.labml.ai/paper/1503.02531">Distilling the Knowledge in a Neural Network</a>.</p>
-<p>It&#x27;s a way of training a small network using the knowledge in a trained larger network; i.e. distilling the knowledge from the large network.</p>
-<p>A large model with regularization or an ensemble of models (using dropout) generalizes better than a small model when trained directly on the data and labels. However, a small model can be trained to generalize better with help of a large model. Smaller models are better in production: faster, less compute, less memory.</p>
-<p>The output probabilities of a trained model give more information than the labels because it assigns non-zero probabilities to incorrect classes as well. These probabilities tell us that a sample has a chance of belonging to certain classes. For instance, when classifying digits, when given an image of digit <em>7</em>, a generalized model will give a high probability to 7 and a small but non-zero probability to 2, while assigning almost zero probability to other digits. Distillation uses this information to train a small model better. </p>
+            <h1><a href="https://nn.labml.ai/distillation/index.html">신경망에 지식 증류를 하는 방법에 관하여</a></h1>
+<p>이 문서는 <a href="https://papers.labml.ai/paper/1503.02531">신경망 지식 증류</a>에 관한 논문의 <a href="https://pytorch.org">파이토치</a> 구현/튜토리얼입니다.</p>
+<p>이 기술은 대규모 네트워크의 표현력을 사용하여 작은 네트워크를 훈련하는 방법입니다. 즉 대규모 네트워크에서 지식을 추출하는 것입니다.</p>
+<p>정규화되거나 드롭아웃을 통해 앙상블 효과를 학습한 큰 모델은 데이터와 레이블을 직접 학습할 때, 작은 모델보다 더욱 잘 일반화합니다. 이런 효과로 작은 모델은 큰 모델의 도움을 받아 성능을 높이거나 잘 일반화하도록 훈련이 가능합니다. 이렇게 학습된 작은 모델은 더 빠르고, 제한된 컴퓨팅과 메모리 등 실제 프로덕트 환경에서 유리합니다.</p>
+<p>학습된 큰 모델의 출력 분포는 잘못된 클래스에도 0이 아닌 확률을 할당하기 때문에 실제 레이블보다 더 많은 정보를 제공합니다. 이러한 확률은 샘플이 특정 클래스마다 확률이 반드시 있음을 알려줍니다. 예를 들어, 숫자를 분류할 때 숫자 7이 주어지면 잘 학습된 모델은 7에는 높은 확률을, 2에는 0은 아니지만 의미있는 확률을 부여하고 다른 숫자에는 거의 0에 가까운 확률을 할당합니다. 지식 증류는 이 정보를 사용하여 강건하게 학습할 수 있습니다. </p>
 
         </div>
         <div class='code'>
