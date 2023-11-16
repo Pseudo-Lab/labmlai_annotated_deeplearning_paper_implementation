@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,20 +7,20 @@
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Primer: Searching for Efficient Transformers for Language Modeling"/>
+    <meta name="twitter:title" content="Primer: 언어 모델링을 위한 효율적인 트랜스포머 탐색"/>
     <meta name="twitter:description" content=""/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/transformers/primer_ez/readme.html"/>
-    <meta property="og:title" content="Primer: Searching for Efficient Transformers for Language Modeling"/>
+    <meta property="og:title" content="Primer: 언어 모델링을 위한 효율적인 트랜스포머 탐색"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Primer: Searching for Efficient Transformers for Language Modeling"/>
+    <meta property="og:site_name" content="Primer: 언어 모델링을 위한 효율적인 트랜스포머 탐색"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Primer: Searching for Efficient Transformers for Language Modeling"/>
+    <meta property="og:title" content="Primer: 언어 모델링을 위한 효율적인 트랜스포머 탐색"/>
     <meta property="og:description" content=""/>
 
-    <title>Primer: Searching for Efficient Transformers for Language Modeling</title>
+    <title>Primer: 언어 모델링을 위한 효율적인 트랜스포머 탐색</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/transformers/primer_ez/readme.html"/>
@@ -72,13 +72,15 @@
                 <a href='#section-0'>#</a>
             </div>
             <h1><a href="https://nn.labml.ai/transformers/primer_ez/index.html">Primer: Searching for Efficient Transformers for Language Modeling</a></h1>
-<p>This is a <a href="https://pytorch.org">PyTorch</a> implementation of the paper <a href="https://papers.labml.ai/paper/2109.08668">Primer: Searching for Efficient Transformers for Language Modeling</a>.</p>
-<p>The authors do an evolutionary search for transformer architectures. They name the architecture found using the search as Primer (PRIMitives searched transformER). <strong>Primer EZ</strong> is the architecture with the two most robust modifications in Primer compared to  the original transformer. Primer EZ trains a lot faster than the vanilla transformer.</p>
-<h3>Squared ReLU</h3>
-<p>The most effective modification found by the search is using a square ReLU instead of ReLU in the <a href="https://nn.labml.ai/transformers/feed_forward.html">position-wise feedforward module</a>.</p>
-<h3>Multi-DConv-Head Attention (MDHA)</h3>
-<p>The next effective modification is a depth-wise 3 X 1 convolution after multi-head projection  for queries, keys, and values. The convolution is along the sequence dimension and per channel (depth-wise). To be clear, if the number of channels in each head is d_k the convolution will have 1 X 3 kernels for each of the d_k channels.</p>
-<p><a href="https://nn.labml.ai/transformers/primer_ez/experiment.html">Here is the experiment code</a>, for Primer EZ. </p>
+<p>다음은 <a href="https://papers.labml.ai/paper/2109.08668">Primer: Searching for Efficient Transformers for Language Modeling</a> 논문의 <a href="https://pytorch.org">PyTorch</a> 구현입니다.</p>
+<p>저자들은 트랜스포머 아키텍처를 위해 진화적인 탐색을 수행합니다. 그들은 이 탐색을 통해 찾은 아키텍처를 Primer (PRIMitives searched transformER)라고 명명합니다. <strong>Primer EZ</strong> 는 원래의 트랜스포머와 비교하여 Primer에서 가장 견고한 두 가지 수정 사항을 포함한 아키텍처입니다. Primer EZ는 일반적인 트랜스포머에 비해 훈련 속도가 훨씬 빠릅니다.</p>
+<h3>ReLU 제곱</h3>
+<p>탐색에서 찾은 가장 효과적인 수정은 <a href="https://nn.labml.ai/transformers/feed_forward.html">position-wise feedforward module</a>에서 ReLU 대신에 ReLU를 제곱하여 사용한 것입니다.</p>
+<h3>다중-DConv-헤드 어텐션 (MDHA)</h3>
+<p>다음 효과적인 수정은 쿼리, 키, 값들을 프로젝션한 후에 사용한 3 X 1 합성곱입니다.
+    이 합성곱은 시퀀스 차원과 (깊이별) 채널별로 이루어집니다.
+    다시 말해서, 각 헤드의 채널수가 d_k 라면, 합성곱은 각 d_k 채널별로 1 X 3 커널을 가질 것입니다.</p>
+<p>Primer EZ를 사용한 <a href="https://nn.labml.ai/transformers/primer_ez/experiment.html">실험 코드입니다</a> </a></p>
 
         </div>
         <div class='code'>
