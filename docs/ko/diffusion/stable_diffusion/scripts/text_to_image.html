@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Generate images using stable diffusion with a prompt"/>
+    <meta name="description" content="프롬프트와 stable diffusion을 사용하여 이미지 생성"/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Generate images using stable diffusion with a prompt"/>
-    <meta name="twitter:description" content="Generate images using stable diffusion with a prompt"/>
+    <meta name="twitter:title" content="프롬프트와 stable diffusion을 사용하여 이미지 생성"/>
+    <meta name="twitter:description" content="프롬프트와 stable diffusion을 사용하여 이미지 생성"/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/diffusion/stable_diffusion/scripts/text_to_image.html"/>
-    <meta property="og:title" content="Generate images using stable diffusion with a prompt"/>
+    <meta property="og:title" content="프롬프트와 stable diffusion을 사용하여 이미지 생성"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Generate images using stable diffusion with a prompt"/>
+    <meta property="og:site_name" content="프롬프트와 stable diffusion을 사용하여 이미지 생성"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Generate images using stable diffusion with a prompt"/>
-    <meta property="og:description" content="Generate images using stable diffusion with a prompt"/>
+    <meta property="og:title" content="프롬프트와 stable diffusion을 사용하여 이미지 생성"/>
+    <meta property="og:description" content="프롬프트와 stable diffusion을 사용하여 이미지 생성"/>
 
-    <title>Generate images using stable diffusion with a prompt</title>
+    <title>프롬프트와 stable diffusion을 사용하여 이미지 생성</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/diffusion/stable_diffusion/scripts/text_to_image.html"/>
@@ -72,7 +72,7 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Generate images using <a href="../index.html">stable diffusion</a> with a prompt</h1>
+            <h1>프롬프트와 <a href="../index.html">stable diffusion</a>를 사용해 이미지 생성</h1>
 
         </div>
         <div class='code'>
@@ -94,7 +94,7 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h3>Text to image class</h3>
+            <h3>텍스트 - 이미지 클래스</h3>
 
         </div>
         <div class='code'>
@@ -118,13 +118,13 @@
                 <a href='#section-3'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">checkpoint_path</span></code>
-  is the path of the checkpoint </li>
+  는 체크포인트 경로입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">sampler_name</span></code>
-  is the name of the <a href="../sampler/index.html">sampler</a> </li>
+  는 <a href="../sampler/index.html">sampler</a> 샘플러의 이름입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">n_steps</span></code>
-  is the number of sampling steps </li>
+  은 샘플링 스텝의 수 입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">ddim_eta</span></code>
-  is the <a href="../sampler/ddim.html">DDIM sampling</a> <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">η</span></span></span></span></span> constant</li></ul>
+  은 <a href="../sampler/ddim.html">DDIM 샘플링</a> <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">η</span></span></span></span></span> 상수입니다</li></ul>
 
         </div>
         <div class='code'>
@@ -141,7 +141,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Load <a href="../latent_diffusion.html">latent diffusion model</a> </p>
+            <p> <a href="../latent_diffusion.html">latent diffusion model</a>을 불러옵니다 </p>
 
         </div>
         <div class='code'>
@@ -153,7 +153,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>Get device </p>
+            <p>장치를 가져옵니다 </p>
 
         </div>
         <div class='code'>
@@ -165,7 +165,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Move the model to device </p>
+            <p>모델을 장치로 날립니다 </p>
 
         </div>
         <div class='code'>
@@ -177,7 +177,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Initialize <a href="../sampler/index.html">sampler</a> </p>
+            <p><a href="../sampler/index.html">sampler</a>를 초기화합니다</p>
 
         </div>
         <div class='code'>
@@ -195,17 +195,17 @@
                 <a href='#section-8'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">dest_path</span></code>
-  is the path to store the generated images </li>
+  는 생성된 이미지를 저장할 경로입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">batch_size</span></code>
-  is the number of images to generate in a batch </li>
+  는 하나의 배치에서 생성할 이미지의 수입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">prompt</span></code>
-  is the prompt to generate images with </li>
+  는 생성할 이미지의 프롬프트입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">h</span></code>
-  is the height of the image </li>
+  는 이미지의 높이입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">w</span></code>
-  is the width of the image </li>
+  는 이미지의 너비입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">uncond_scale</span></code>
-  is the unconditional guidance scale <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">s</span></span></span></span></span></span>. This is used for  <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">s</span></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord text mtight"><span class="mord mtight">cond</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">s</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqc" style=""><span class="mord" style="">1</span></span><span class="mclose">)</span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord text mtight"><span class="mord mtight">cond</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></li></ul>
+    는 the unconditional guidance scale <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">s</span></span></span></span></span></span>입니다. <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">s</span></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord text mtight"><span class="mord mtight">cond</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">s</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqc" style=""><span class="mord" style="">1</span></span><span class="mclose">)</span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord text mtight"><span class="mord mtight">cond</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></li>에 사용됩니다.</ul>
 
         </div>
         <div class='code'>
@@ -224,7 +224,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>Number of channels in the image </p>
+            <p>이미지의 채널 수입니다. </p>
 
         </div>
         <div class='code'>
@@ -236,7 +236,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Image to latent space resolution reduction </p>
+            <p>잠재공간 해상도 감소 </p>
 
         </div>
         <div class='code'>
@@ -248,7 +248,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Make a batch of prompts </p>
+            <p>프롬프트 배치를 생성합니다 </p>
 
         </div>
         <div class='code'>
@@ -260,7 +260,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>AMP auto casting </p>
+            <p>AMP 오토 캐스팅 </p>
 
         </div>
         <div class='code'>
@@ -272,7 +272,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>In unconditional scaling is not <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqc" style=""><span class="mord" style="">1</span></span></span></span></span></span> get the embeddings for empty prompts (no conditioning). </p>
+            <p>unconditional scaling이 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqc" style=""><span class="mord" style="">1</span></span></span></span></span></span>이 아닌 경우, 빈 프롬프트에 대한 임베딩을 가져옵니다 (조건 없음). </p>
 
         </div>
         <div class='code'>
@@ -287,7 +287,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>Get the prompt embeddings </p>
+            <p>프롬프트 임베딩을 가져옵니다 </p>
 
         </div>
         <div class='code'>
@@ -299,8 +299,8 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p><a href="../sampler/index.html">Sample in the latent space</a>. <code  class="highlight"><span></span><span class="n">x</span></code>
- will be of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">h</span> <span class="o">/</span> <span class="n">f</span><span class="p">,</span> <span class="n">w</span> <span class="o">/</span> <span class="n">f</span><span class="p">]</span></code>
+            <p><a href="../sampler/index.html">잠재공간을 샘플합니다</a>. <code  class="highlight"><span></span><span class="n">x</span></code>
+  는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">h</span> <span class="o">/</span> <span class="n">f</span><span class="p">,</span> <span class="n">w</span> <span class="o">/</span> <span class="n">f</span><span class="p">]</span></code>의 형태를 가집니다
  </p>
 
         </div>
@@ -316,7 +316,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Decode the image from the <a href="../model/autoencoder.html">autoencoder</a> </p>
+            <p> <a href="../model/autoencoder.html">autoencoder</a>로 부터 이미지를 디코딩합니다  </p>
 
         </div>
         <div class='code'>
@@ -328,7 +328,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Save images </p>
+            <p>이미지를 저장합니다 </p>
 
         </div>
         <div class='code'>
@@ -393,7 +393,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Set flash attention </p>
+            <p>플래시 어텐션 설정 </p>
 
         </div>
         <div class='code'>
