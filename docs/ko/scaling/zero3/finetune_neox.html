@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="This script trains the bias parameters of the GPT-NeoX on multiple devices with Zero-DP Memory Optimization."/>
+    <meta name="description" content="이 스크립트는 Zero-DP 메모리를 사용하여 여러 장치에서 GPT-NeoX의 바이어스 매개변수를 훈련시킵니다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Finetune GPT-NeoX with Zero3 memory optimizer"/>
-    <meta name="twitter:description" content="This script trains the bias parameters of the GPT-NeoX on multiple devices with Zero-DP Memory Optimization."/>
+    <meta name="twitter:title" content="Zero3 메모리 옵티마이저를 사용한 GPT-NeoX 파인튜닝"/>
+    <meta name="twitter:description" content="이 스크립트는 Zero-DP 메모리를 사용하여 여러 장치에서 GPT-NeoX의 바이어스 매개변수를 훈련시킵니다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/scaling/zero3/finetune_neox.html"/>
-    <meta property="og:title" content="Finetune GPT-NeoX with Zero3 memory optimizer"/>
+    <meta property="og:title" content="Zero3 메모리 옵티마이저를 사용한 GPT-NeoX 파인튜닝"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Finetune GPT-NeoX with Zero3 memory optimizer"/>
+    <meta property="og:site_name" content="Zero3 메모리 옵티마이저를 사용한 GPT-NeoX 파인튜닝"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Finetune GPT-NeoX with Zero3 memory optimizer"/>
-    <meta property="og:description" content="This script trains the bias parameters of the GPT-NeoX on multiple devices with Zero-DP Memory Optimization."/>
+    <meta property="og:title" content="Zero3 메모리 옵티마이저를 사용한 GPT-NeoX 파인튜닝"/>
+    <meta property="og:description" content="이 스크립트는 Zero-DP 메모리를 사용하여 여러 장치에서 GPT-NeoX의 바이어스 매개변수를 훈련시킵니다."/>
 
-    <title>Finetune GPT-NeoX with Zero3 memory optimizer</title>
+    <title>Zero3 메모리 옵티마이저를 사용한 GPT-NeoX 파인튜닝</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/scaling/zero3/finetune_neox.html"/>
@@ -71,8 +71,8 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Finetune <a href="../../neox/index.html">GPT-NeoX</a> with <a href="index.html">Zero3 memory optimizer</a></h1>
-<p>This script trains the bias parameters of the <a href="../../neox/model.html">GPT-NeoX model</a>  on multiple devices with Zero-DP Memory Optimization.</p>
+            <h1><a href="index.html">Zero3 메모리 옵티마이저</a>를 사용한 <a href="../../neox/index.html">GPT-NeoX</a> 파인튜닝</h1>
+<p>이 스크립트는 제로-DP 메모리 최적화를 통해 여러 디바이스에서 <a href="../../neox/model.html">GPT-NeoX</a> 모델의 바이어스 파라미터를 학습합니다.</p>
 
         </div>
         <div class='code'>
@@ -92,7 +92,7 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <p>Use the <a href="../../neox/samples/finetune.html">Pipeline Parallel Trainer configurations</a> and adapt it for Zero3 memory optimizer. </p>
+            <p><a href="../../neox/samples/finetune.html">파이프라인 병렬 트레이너 설정값</a>을 사용하여 제로3 메모리 옵티마이저에 맞게 조정합니다. </p>
 
         </div>
         <div class='code'>
@@ -106,9 +106,8 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <h4>Set the optimizers for the model</h4>
-<p>Note that we pass the sharded parameters from <code  class="highlight"><span></span><span class="n">get_trainable_chunk</span></code>
-.</p>
+            <h4>모델을 위해 옵티마이저를 세팅합니다. </h4>
+<p>get_trainable_chunk 에서 샤딩된 파라미터를 전달한다는 점에 유의합니다. </p>
 
         </div>
         <div class='code'>
@@ -133,7 +132,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <h4>Create the model with Zero3 memory optimizer</h4>
+            <h4>Zero3 메모리 옵티마이저와 함께 모델을 생성합니다. </h4>
 
         </div>
         <div class='code'>
@@ -157,7 +156,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>To make sure the fine tuner sets the trainable parameters </p>
+            <p>미세 조정자가 훈련 가능한 매개 변수를 설정하려면 다음과 같이 하세요. </p>
 
         </div>
         <div class='code'>
@@ -169,8 +168,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Wrap the layers with <code  class="highlight"><span></span><span class="n">Zero3Layer</span></code>
- </p>
+            <p>Zero3Layer의 레이어를 래핑합니다. </p>
 
         </div>
         <div class='code'>
@@ -185,7 +183,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Create a sequential model </p>
+            <p>직렬 모델을 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -209,8 +207,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <h4>Run the training on the node with rank <code  class="highlight"><span></span><span class="n">rank</span></code>
-.</h4>
+            <h4>랭크가 있는 노드에서 훈련을 실행합니다. </h4>
 
         </div>
         <div class='code'>
@@ -222,7 +219,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Initialize PyTorch distributed process group </p>
+            <p>파이토치 분산 과정 그룹을 초기화합니다. </p>
 
         </div>
         <div class='code'>
@@ -239,7 +236,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Set current device </p>
+            <p>현재 장치를 세팅합니다. </p>
 
         </div>
         <div class='code'>
@@ -252,7 +249,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>Create the experiment </p>
+            <p>실험의 create 메서드를 호출합니다. </p>
 
         </div>
         <div class='code'>
@@ -265,7 +262,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>Create configurations </p>
+            <p>설정값을 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -277,7 +274,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Load configurations </p>
+            <p>설정값을 로드합니다. </p>
 
         </div>
         <div class='code'>
@@ -300,7 +297,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Start the experiment </p>
+            <p>실험을 시작합니다. </p>
 
         </div>
         <div class='code'>
@@ -312,7 +309,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Initialize the model. Do this before the loop for cleaner logs. </p>
+            <p>모델을 초기화합니다. 클린 로그에 대한 루프 전에 이 작업을 수행합니다. </p>
 
         </div>
         <div class='code'>
@@ -324,7 +321,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Train the model </p>
+            <p>모델 훈련을 시작합니다. </p>
 
         </div>
         <div class='code'>
@@ -350,7 +347,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Log the machine configurations </p>
+            <p>머신 설정값을 기록합니다. </p>
 
         </div>
         <div class='code'>
@@ -369,7 +366,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>Start a process for each GPU. You will need a separate launcher if you are using multiple computers. </p>
+            <p>각 GPU 프로세스를 시작합니다. 여러 대 컴퓨터를 사용하는 경우 별도의 런처가 필요합니다. </p>
 
         </div>
         <div class='code'>

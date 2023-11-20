@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="This is an implementation of Zero-DP Memory Optimization written in PyTorch."/>
+    <meta name="description" content="이 문서는 파이토치로 작성된 Zero-DP 메모리 최적화 구현입니다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Zero-DP Memory Optimization"/>
-    <meta name="twitter:description" content="This is an implementation of Zero-DP Memory Optimization written in PyTorch."/>
+    <meta name="twitter:title" content="Zero-DP 메모리 최적화"/>
+    <meta name="twitter:description" content="이 문서는 파이토치로 작성된 Zero-DP 메모리 최적화 구현입니다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/scaling/zero3/index.html"/>
-    <meta property="og:title" content="Zero-DP Memory Optimization"/>
+    <meta property="og:title" content="Zero-DP 메모리 최적화"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Zero-DP Memory Optimization"/>
+    <meta property="og:site_name" content="Zero-DP 메모리 최적화"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Zero-DP Memory Optimization"/>
-    <meta property="og:description" content="This is an implementation of Zero-DP Memory Optimization written in PyTorch."/>
+    <meta property="og:title" content="Zero-DP 메모리 최적화"/>
+    <meta property="og:description" content="이 문서는 파이토치로 작성된 Zero-DP 메모리 최적화 구현입니다."/>
 
-    <title>Zero-DP Memory Optimization</title>
+    <title>Zero-DP 메모리 최적화</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/scaling/zero3/index.html"/>
@@ -71,14 +71,13 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Zero-DP Memory Optimization</h1>
-<p>This is an implementation of Zero-DP introduced in the paper <a href="https://papers.labml.ai/paper/1910.02054">ZeRO: Memory Optimization Towards Training A Trillion Parameter Models</a>,</p>
-<p>It keeps shards of the optimizer state, gradients and parameters into multiple devices/nodes. It reduces the memory consumption to <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.4608599999999998em;vertical-align:-0.4508599999999999em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.01em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight coloredeq eqg" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="margin-right:0.10903em">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3487714285714287em;margin-left:-0.10903em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mathnormal mtight" style="">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15122857142857138em;"><span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.485em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight coloredeq eqe" style=""><span class="mord mtight" style="">2</span><span class="mbin mtight" style="">+</span><span class="mord mtight" style="">2</span></span><span class="mbin mtight">+</span><span class="mord mtight coloredeq eqi" style=""><span class="mord mathnormal mtight" style="margin-right:0.07153em">K</span></span><span class="mclose mtight">)</span><span class="mord mtight coloredeq eqf" style=""><span class="mord mtight" style="">Ψ</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4508599999999999em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span> of the original model, where <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord coloredeq eqf" style=""><span class="mord" style="">Ψ</span></span></span></span></span></span> is the number of parameters, <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqg" style=""><span class="mord" style=""><span class="mord mathnormal" style="margin-right:0.10903em">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> is the number of shards,  and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="margin-right:0.07153em">K</span></span></span></span></span></span> is number of optimizer bytes per parameter. <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord coloredeq eqe" style=""><span class="mord" style="">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin" style="">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord" style="">2</span></span></span></span></span></span> are the parameter and gradient memory assuming 16-bit precision; i.e. 2 bytes per parameter and gradient. <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="margin-right:0.07153em">K</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">12</span></span></span></span></span> for Adam optimizer because it maintains a copy of parameters, and two moments per parameter in fp32.</p>
-<p>The communication volume of Zero-DP is <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">3</span><span class="mord coloredeq eqf" style=""><span class="mord" style="">Ψ</span></span><span class="mclose">)</span></span></span></span></span>. For comparison data-parallel training has a communication volume of <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">2</span><span class="mord coloredeq eqf" style=""><span class="mord" style="">Ψ</span></span><span class="mclose">)</span></span></span></span></span>.</p>
-<p>Although this is named <code  class="highlight"><span></span><span class="n">Zero3</span></code>
-, we have only implemented the Zero-DP part of it and not the  Zero-R memory optimizations which target residual memory consumption. Out implementation supports training only a subset of parameters.</p>
-<p>This implementation is inspired by <a href="https://fairscale.readthedocs.io/en/stable/api/nn/fsdp.html">Fairscale FSDP</a>.</p>
-<p><a href="finetune_neox.html">Here&#x27;s a script to fine-tune</a> GPT NeoX using Zero-DP memory optimization.</p>
+            <h1>Zero-DP 메모리 최적화</h1>
+<p>이 문서는 <a href="https://papers.labml.ai/paper/1910.02054">ZeRO: Memory Optimization Towards Training A Trillion Parameter Models</a>에서 소개된 Zero-dP를 구현한 것입니다.</p>
+<p>옵티마이저 상태, 그래디언트, 파라미터들을 여러 장치 및 노드들에 저장합니다. 이 모델은 원래 모델의 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.4608599999999998em;vertical-align:-0.4508599999999999em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.01em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight coloredeq eqg" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="margin-right:0.10903em">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3487714285714287em;margin-left:-0.10903em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mathnormal mtight" style="">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15122857142857138em;"><span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.485em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight coloredeq eqe" style=""><span class="mord mtight" style="">2</span><span class="mbin mtight" style="">+</span><span class="mord mtight" style="">2</span></span><span class="mbin mtight">+</span><span class="mord mtight coloredeq eqi" style=""><span class="mord mathnormal mtight" style="margin-right:0.07153em">K</span></span><span class="mclose mtight">)</span><span class="mord mtight coloredeq eqf" style=""><span class="mord mtight" style="">Ψ</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4508599999999999em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span> 만큼 메모리 풋프린트를 줄입니다. 이때 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord coloredeq eqf" style=""><span class="mord" style="">Ψ</span></span></span></span></span></span>는 모델의 파라미터 수입니다. <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqg" style=""><span class="mord" style=""><span class="mord mathnormal" style="margin-right:0.10903em">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span>는 샤드의 수입니다. 그리고 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="margin-right:0.07153em">K</span></span></span></span></span></span> 파라미터마다 옵티마이저 최적화 바이트 수입니다. 2+2는 16비트 정밀도를 가정한 파라미터와 그래디언트 메모리입니다; 즉, 파라미터당 그래디언트가 2입니다. K=12는 Adam 최적화 기법이 파라미터 복사본과 fp32에서 매개변수당 두 개의 모멘트를 유지하기 때문입니다.</p>
+<p>제로-DP의 통신량은 O(3Ψ)입니다. 비교를 위해 데이터 병렬 훈련의 통신량은 O(2Ψ)입니다.</p>
+<p>제로3라고 명명되었지만, 잔여 메모리 소비를 목표로 하는 제로-R 메모리 최적화는 구현하지 않고 제로-DP 부분만 구현했습니다. 아웃 구현은 일부 파라미터의 하위 집합만 훈련을 지원합니다.</p>
+<p>이 구현은 <a href="https://fairscale.readthedocs.io/en/stable/api/nn/fsdp.html">Fairscale FSDP</a>에서 영감을 받았습니다. </p>
+<p>다음은 ero-DP 메모리 최적화를 사용하여 GPT-NeoX를 <a href="finetune_neox.html">파인튜닝하는 스크립트입니다.</a></p>
 
         </div>
         <div class='code'>
@@ -95,8 +94,8 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>Zero3 Layer</h2>
-<p>Each layer of the model (or a combination of a few consecutive layers) should be wrapped in this module.</p>
+            <h2>Zero3 레이어</h2>
+<p>모델의 각 레이어(또는 몇 개의 연속된 레이어의 조합)는 이 모듈로 래핑해야 합니다.</p>
 
         </div>
         <div class='code'>
@@ -108,10 +107,7 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <p>Each shard keeps parameters in <code  class="highlight"><span></span><span class="n">chunk</span></code>
- list. The <code  class="highlight"><span></span><span class="n">chunk</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></code>
- is for trainable parameters and <code  class="highlight"><span></span><span class="n">chunk</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span></code>
- is for fixed parameters. </p>
+            <p>각 샤드는 매개변수를 chunk list에 보관합니다. chunk[0]은 훈련 가능한 매개변수이고, chunk[1]은 고정된 매개변수입니다.</p>
 
         </div>
         <div class='code'>
@@ -123,8 +119,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <p>This is the sizes of the chunks in <code  class="highlight"><span></span><span class="n">chunk</span></code>
- list. </p>
+            <p>chunk 리스트에 있는 chunk의 크기입니다. </p>
 
         </div>
         <div class='code'>
@@ -136,7 +131,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>The first chunk is for trainable parameters. </p>
+            <p>첫 번째 chunk는 훈련 가능한 파라미터를 위한 것입니다. </p>
 
         </div>
         <div class='code'>
@@ -148,7 +143,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>This is the list of parameters split into lists as trainable and fixed parameters. </p>
+            <p>훈련 가능한 파라미터와 고정 파라미터로 나뉜 리스트입니다. </p>
 
         </div>
         <div class='code'>
@@ -160,7 +155,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>CUDA stream to featch parameters </p>
+            <p>Featch 파라미터들을 위한 쿠다 스트림입니다. </p>
 
         </div>
         <div class='code'>
@@ -172,7 +167,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>CUDA stream to backup/accumulate gradients </p>
+            <p>백업/누적 그래디언트를 위한 쿠다 스트림입니다. </p>
 
         </div>
         <div class='code'>
@@ -184,7 +179,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>List of layers right before this layer </p>
+            <p>이 레이어 바로 앞의 레이어 리스트입니다. </p>
 
         </div>
         <div class='code'>
@@ -196,7 +191,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>List of layers right after this layer </p>
+            <p>이 레이어 바로 뒤에 있는 레이어 리스트입니다. </p>
 
         </div>
         <div class='code'>
@@ -208,7 +203,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>The position of the current layer; used this for debugging logs </p>
+            <p>현재 레이어의 위치로, 로그 디버깅에 사용됩니다. </p>
 
         </div>
         <div class='code'>
@@ -220,7 +215,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Whether parameters have been fetched </p>
+            <p>파라미터를 가져올지 여부를 결정합니다. </p>
 
         </div>
         <div class='code'>
@@ -232,7 +227,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Device of the layer </p>
+            <p>레이어의 장치입니다.. </p>
 
         </div>
         <div class='code'>
@@ -244,7 +239,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>Data type of the layer </p>
+            <p>레이어의 데이터 타입입니다. </p>
 
         </div>
         <div class='code'>
@@ -256,7 +251,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>The module to be wrapped </p>
+            <p>래핑된 모듈입니다. </p>
 
         </div>
         <div class='code'>
@@ -268,7 +263,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Number of nodes/devices the data is sharded across </p>
+            <p>데이터가 샤딩되는 노드/장치의 수입니다. </p>
 
         </div>
         <div class='code'>
@@ -280,16 +275,11 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <ul><li><code  class="highlight"><span></span><span class="n">module</span></code>
-  The module to be wrapped. </li>
-<li><code  class="highlight"><span></span><span class="n">rank</span></code>
-  The rank of the current node. </li>
-<li><code  class="highlight"><span></span><span class="n">world_size</span></code>
-  The number of nodes/devices the data is sharded across. </li>
-<li><code  class="highlight"><span></span><span class="n">device</span></code>
-  The device of the layer. </li>
-<li><code  class="highlight"><span></span><span class="n">dtype</span></code>
-  The data type of the layer.</li></ul>
+            <ul><li><code  class="highlight"><span></span><span class="n">module</span></code> 이 모듈을 래핑됩니다. </li>
+<li><code  class="highlight"><span></span><span class="n">rank</span></code> 현재 노드의 랭크입니다. </li>
+<li><code  class="highlight"><span></span><span class="n">world_size</span></code> 데이터가 샤딩되는 노드/장치의 수입니다. </li>
+<li><code  class="highlight"><span></span><span class="n">device</span></code> 레이어 장치입니다. </li>
+<li><code  class="highlight"><span></span><span class="n">dtype</span></code> 레이어 데이터 타입입니다. </li></ul>
 
         </div>
         <div class='code'>
@@ -312,7 +302,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Initialize the properties </p>
+            <p>속성을 초기화합니다. </p>
 
         </div>
         <div class='code'>
@@ -335,7 +325,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Collect all the parameters of the layer </p>
+            <p>레이어의 모든 파라미터를 모읍니다. </p>
 
         </div>
         <div class='code'>
@@ -347,7 +337,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Store the shape of the parameters because we need it later to reconstruct them </p>
+            <p>나중에 파라미터를 재구성할 때 필요하므로, 파라미터 모양을 저장합니다. </p>
 
         </div>
         <div class='code'>
@@ -360,7 +350,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>All parameters should have the same type </p>
+            <p>모든 파라미터들은 동일한 타입으로 저장합니다. </p>
 
         </div>
         <div class='code'>
@@ -373,7 +363,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p>Separate parameters as trainable and fixed </p>
+            <p>파라미터를 훈련하는 부분과 프리징하는 부분으로 분리합니다. </p>
 
         </div>
         <div class='code'>
@@ -387,8 +377,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p>The <code  class="highlight"><span></span><span class="n">rank</span> <span class="o">=</span> <span class="mi">0</span></code>
- node will calculate the size each device/node should store, and distribute the parameters accordingly. </p>
+            <p>랭크 = 0 노드는 각 디바이스/노드가 저장해야 하는 크기를 계산하고 그에 따라 파라미터를 분배합니다. </p>
 
         </div>
         <div class='code'>
@@ -400,9 +389,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>Merge and pad trainable (<code  class="highlight"><span></span><span class="n">merged_params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></code>
-) and fixed (<code  class="highlight"><span></span><span class="n">merged_params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span></code>
-) parameters </p>
+            <p>훈련 가능(merged_params[0] ) 및 고정(merged_params[1] ) 파라미터들을 병합하고 패딩합니다.</p>
 
         </div>
         <div class='code'>
@@ -414,7 +401,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>Calculate the chunk sizes of trainable and fixed params </p>
+            <p>훈련 가능한 것과 프리징한 파라미터들의 chunk 크기를 계산합니다. </p>
 
         </div>
         <div class='code'>
@@ -426,7 +413,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <p>Broadcast the sizes </p>
+            <p>크기를 브로드캐스팅합니다. </p>
 
         </div>
         <div class='code'>
@@ -439,7 +426,7 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <p>Create an empty tensor to receive the sizes </p>
+            <p>크기를 받기 위해, 비어있는 텐서를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -451,7 +438,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Receive the sizes </p>
+            <p>크기를 받습니다. </p>
 
         </div>
         <div class='code'>
@@ -464,9 +451,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p>Create parameters for trainable (<code  class="highlight"><span></span><span class="bp">self</span><span class="o">.</span><span class="n">chunk</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></code>
-) and fixed (<code  class="highlight"><span></span><span class="bp">self</span><span class="o">.</span><span class="n">chunk</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span></code>
-) parameters to be stored in current device/node </p>
+            <p>현재 장치/노드에 저장할 훈련 가능(self.chunk[0] ) 및 고정(self.chunk[1] ) 파라미터에 대한 매개변수를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -479,7 +464,7 @@
             <div class='section-link'>
                 <a href='#section-30'>#</a>
             </div>
-            <p>An empty tensor to receive the trainable and fixed parameters combined </p>
+            <p>훈련 가능한 파라미터와 고정 파라미터를 결합한 비어있는 텐서를 받습니다. </p>
 
         </div>
         <div class='code'>
@@ -493,7 +478,7 @@
             <div class='section-link'>
                 <a href='#section-31'>#</a>
             </div>
-            <p>Concatenate both trainable and fixed params </p>
+            <p>훈련 파라미터와 고정 파라미터들을 컨캣합니다. </p>
 
         </div>
         <div class='code'>
@@ -506,7 +491,7 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>Scatter them to all the nodes/devices </p>
+            <p>모든 노드 및 장치에 분산 배포합니다. </p>
 
         </div>
         <div class='code'>
@@ -520,7 +505,7 @@
             <div class='section-link'>
                 <a href='#section-33'>#</a>
             </div>
-            <p>Receive the parameters </p>
+            <p>파라미터들을 받아냅니다. </p>
 
         </div>
         <div class='code'>
@@ -532,7 +517,7 @@
             <div class='section-link'>
                 <a href='#section-34'>#</a>
             </div>
-            <p>Collect the chunk data </p>
+            <p>청크 데이터를 모읍니다. </p>
 
         </div>
         <div class='code'>
@@ -547,7 +532,7 @@
             <div class='section-link'>
                 <a href='#section-35'>#</a>
             </div>
-            <p>Cleanup the normal parameters </p>
+            <p>일반적인 파라미터들을 정리합니다. </p>
 
         </div>
         <div class='code'>
@@ -559,7 +544,7 @@
             <div class='section-link'>
                 <a href='#section-36'>#</a>
             </div>
-            <p>Add a backward hook. This gets called when the gradients relative to the module are computed. </p>
+            <p>백워드 훅을 추가합니다. 모듈의 그라데이션이 계산될 때 호출됩니다. </p>
 
         </div>
         <div class='code'>
@@ -571,8 +556,7 @@
             <div class='section-link'>
                 <a href='#section-37'>#</a>
             </div>
-            <h4>Merge all the parameters and pad it so that it&#x27;s divisible by <code  class="highlight"><span></span><span class="n">world_size</span></code>
-.</h4>
+            <h4>모든 파라미터를 병합하고 world_size 로 나눌 수 있도록 패딩합니다.</h4>
 
         </div>
         <div class='code'>
@@ -584,7 +568,7 @@
             <div class='section-link'>
                 <a href='#section-38'>#</a>
             </div>
-            <p>Total number of parameters </p>
+            <p>전체 파라미터 수입니다. </p>
 
         </div>
         <div class='code'>
@@ -596,8 +580,7 @@
             <div class='section-link'>
                 <a href='#section-39'>#</a>
             </div>
-            <p>If it is not divisible by <code  class="highlight"><span></span><span class="n">world_size</span></code>
-, pad it </p>
+            <p>world_size 로 나눌 수 없는 경우, 패딩합니다. </p>
 
         </div>
         <div class='code'>
@@ -610,7 +593,7 @@
             <div class='section-link'>
                 <a href='#section-40'>#</a>
             </div>
-            <p>Otherwise, no need to pad </p>
+            <p>그렇지 않다면, 패딩할 필요는 없습니다. </p>
 
         </div>
         <div class='code'>
@@ -623,7 +606,7 @@
             <div class='section-link'>
                 <a href='#section-41'>#</a>
             </div>
-            <p>Create an empty padding tensor </p>
+            <p>비어있는 패딩 텐서를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -635,7 +618,7 @@
             <div class='section-link'>
                 <a href='#section-42'>#</a>
             </div>
-            <p>Concatenate all the parameters and pad it </p>
+            <p>모든 파라미터들을 컨캣하고 패딩합니다. </p>
 
         </div>
         <div class='code'>
@@ -647,8 +630,8 @@
             <div class='section-link'>
                 <a href='#section-43'>#</a>
             </div>
-            <h3>Get trainable chunk/shard of the parameters.</h3>
-<p>This is what we pass on to the optimizer on the current node.</p>
+            <h3>훈련 가능한 매개변수 청크/샤드를 가져옵니다.</h3>
+<p>아래는 현재 노드의 옵티마이저에 전달되는 내용입니다. </p>
 
         </div>
         <div class='code'>
@@ -660,7 +643,7 @@
             <div class='section-link'>
                 <a href='#section-44'>#</a>
             </div>
-            <p>Return and empty list if there are no trainable parameters </p>
+            <p>학습 가능한 파라미터가 없으면, 리스트를 비우고 반환합니다. </p>
 
         </div>
         <div class='code'>
@@ -673,7 +656,7 @@
             <div class='section-link'>
                 <a href='#section-45'>#</a>
             </div>
-            <p>Return the trainable chunk as a list </p>
+            <p>리스트 형태로 훈련 가능한 청크를 반환하빈다. </p>
 
         </div>
         <div class='code'>
@@ -685,7 +668,7 @@
             <div class='section-link'>
                 <a href='#section-46'>#</a>
             </div>
-            <h4>Create an empty tensor of the given shape.</h4>
+            <h4>주어진 모양의 빈 텐서를 생성합니다. </h4>
 
         </div>
         <div class='code'>
@@ -708,8 +691,8 @@
             <div class='section-link'>
                 <a href='#section-48'>#</a>
             </div>
-            <h4>Cleanup the parameter data</h4>
-<p>This will release all the memory used by the layer parameters.</p>
+            <h4>파라미터 데이터를 클리어합니다. </h4>
+<p>이 방법은 레이어 파라미터가 차지하는 모든 메모리를 해제합니다. </p>
 
         </div>
         <div class='code'>
@@ -722,7 +705,7 @@
             <div class='section-link'>
                 <a href='#section-49'>#</a>
             </div>
-            <p>Set the flag to indicate that the parameters are not fetched </p>
+            <p>파라미터를 가져오지 않음을 나타내는 플래그를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -734,7 +717,7 @@
             <div class='section-link'>
                 <a href='#section-50'>#</a>
             </div>
-            <p>Iterate through all parameters </p>
+            <p>모든 파라미터를 순회합니다. </p>
 
         </div>
         <div class='code'>
@@ -747,7 +730,7 @@
             <div class='section-link'>
                 <a href='#section-51'>#</a>
             </div>
-            <p>Wait for operations on the parameters to complete before any new operations </p>
+            <p>새 작업을 수행하기 전에 매개변수에 대한 작업이 완료될 때까지 기다립니다. </p>
 
         </div>
         <div class='code'>
@@ -759,7 +742,7 @@
             <div class='section-link'>
                 <a href='#section-52'>#</a>
             </div>
-            <p>Check to make sure the parameter is not sharing storage with anything else </p>
+            <p>파라미터가 다른 항목과 스토리지를 공유하고 있지 않은지 확인합니다. </p>
 
         </div>
         <div class='code'>
@@ -771,9 +754,8 @@
             <div class='section-link'>
                 <a href='#section-53'>#</a>
             </div>
-            <p>Resize the storage to <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">0</span></span></span></span></span></span>. This will release the memory used by the parameter.</p>
-<p><strong>Setting <code  class="highlight"><span></span><span class="n">p</span><span class="o">.</span><span class="n">data</span></code>
- will not release the memory, since the autograd graph keeps a reference to it.</strong> </p>
+            <p>저장소 크기를 0으로 조정합니다. 이렇게 하면 파라미터가 사용하는 메모리가 해제됩니다.</p>
+<p><strong>오토그래프 그래프에 참조가 유지되므로 p.data를 설정해도 메모리가 해제되지 않습니다.</strong> </p>
 
         </div>
         <div class='code'>
@@ -785,7 +767,7 @@
             <div class='section-link'>
                 <a href='#section-54'>#</a>
             </div>
-            <p>Make sure the parameter has no gradient data </p>
+            <p>파라미터에 그래디언트 데이터가 없는지 확인합니다. </p>
 
         </div>
         <div class='code'>
@@ -797,8 +779,8 @@
             <div class='section-link'>
                 <a href='#section-55'>#</a>
             </div>
-            <h3>Fetch the parameters from all shards</h3>
-<p>This will fetch all the parameter data from all the nodes and rebuild the parameters on each node.</p>
+            <h3>모든 샤드에서 파라미터를 로드합니다. </h3>
+<p>이렇게 하면 모든 노드에서 모든 파라미터 데이터를 가져와 각 노드에서 파라미터를 다시 빌드합니다. </p>
 
         </div>
         <div class='code'>
@@ -811,7 +793,7 @@
             <div class='section-link'>
                 <a href='#section-56'>#</a>
             </div>
-            <p>Skip is already fetched </p>
+            <p>스킵으로 이미 가져왔습니다. </p>
 
         </div>
         <div class='code'>
@@ -824,7 +806,7 @@
             <div class='section-link'>
                 <a href='#section-57'>#</a>
             </div>
-            <p>Set the flag </p>
+            <p>플래그를 세팅합니다. </p>
 
         </div>
         <div class='code'>
@@ -836,7 +818,7 @@
             <div class='section-link'>
                 <a href='#section-58'>#</a>
             </div>
-            <p>Skip if there&#x27;s nothing to fetch or share. </p>
+            <p>가져오거나 공유할 항목이 없는 경우 건너뜁니다. </p>
 
         </div>
         <div class='code'>
@@ -849,8 +831,7 @@
             <div class='section-link'>
                 <a href='#section-59'>#</a>
             </div>
-            <p>Use <code  class="highlight"><span></span><span class="n">fetch_stream</span></code>
- to fetch the parameters from all the shards </p>
+            <p>모든 샤드에서 파라미터를 가져오려면 fetch_stream을 사용합니다.</p>
 
         </div>
         <div class='code'>
@@ -862,7 +843,7 @@
             <div class='section-link'>
                 <a href='#section-60'>#</a>
             </div>
-            <p>Create an empty tensor to receive the parameters </p>
+            <p>파라미터를 수신할 빈 텐서를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -874,7 +855,7 @@
             <div class='section-link'>
                 <a href='#section-61'>#</a>
             </div>
-            <p>Split the continuous buffer into the number of nodes. These splits are views of `buffer&#x27;. </p>
+            <p>연속 버퍼를 노드 수로 분할합니다. 이러한 분할은 '버퍼'의 뷰입니다. </p>
 
         </div>
         <div class='code'>
@@ -886,7 +867,7 @@
             <div class='section-link'>
                 <a href='#section-62'>#</a>
             </div>
-            <p>Concatenate both trainable and fixed chunks </p>
+            <p>훈련 가능 / 고정된 청크를 컨캣합니다. </p>
 
         </div>
         <div class='code'>
@@ -898,7 +879,7 @@
             <div class='section-link'>
                 <a href='#section-63'>#</a>
             </div>
-            <p>Gather the parameters from all the nodes/devices </p>
+            <p>모든 노드/장치에서 파라미터를 모읍니다. </p>
 
         </div>
         <div class='code'>
@@ -910,7 +891,7 @@
             <div class='section-link'>
                 <a href='#section-64'>#</a>
             </div>
-            <p>Split the gathered parameters into the trainable and fixed chunks </p>
+            <p>수집된 파라미터를 훈련 가능한 청크와 고정 청크로 분할합니다. </p>
 
         </div>
         <div class='code'>
@@ -922,7 +903,7 @@
             <div class='section-link'>
                 <a href='#section-65'>#</a>
             </div>
-            <p>Wait for the gather operation to complete and then clear the references to the buffers </p>
+            <p>수집 작업이 완료될 때까지 기다린 다음 버퍼 참조를 제거합니다. </p>
 
         </div>
         <div class='code'>
@@ -939,7 +920,7 @@
             <div class='section-link'>
                 <a href='#section-66'>#</a>
             </div>
-            <p>Reshape the trainable and fixed parameters to continuous tensors </p>
+            <p>훈련 가능 및 고정 파라미터를 연속 텐서로 재구성합니다. </p>
 
         </div>
         <div class='code'>
@@ -951,7 +932,7 @@
             <div class='section-link'>
                 <a href='#section-67'>#</a>
             </div>
-            <p>Collect the individual parameter tensors </p>
+            <p>개별 파라미터 텐서들을 모읍니다. </p>
 
         </div>
         <div class='code'>
@@ -963,7 +944,7 @@
             <div class='section-link'>
                 <a href='#section-68'>#</a>
             </div>
-            <p>If there are no parameters, skip </p>
+            <p>파라미터가 없다면 스킵합니다. </p>
 
         </div>
         <div class='code'>
@@ -976,7 +957,7 @@
             <div class='section-link'>
                 <a href='#section-69'>#</a>
             </div>
-            <p>Offset of the continuous tensor </p>
+            <p>연속 텐서의 오프셋입니다. </p>
 
         </div>
         <div class='code'>
@@ -988,7 +969,7 @@
             <div class='section-link'>
                 <a href='#section-70'>#</a>
             </div>
-            <p>Iterate through model parameters and assign the values from the continuous tensor </p>
+            <p>모델 파라미터를 반복하고 연속 텐서에서 값을 할당합니다. </p>
 
         </div>
         <div class='code'>
@@ -1000,7 +981,7 @@
             <div class='section-link'>
                 <a href='#section-71'>#</a>
             </div>
-            <p>Original parameter shape </p>
+            <p>원래의 파라미터 크기입니다. </p>
 
         </div>
         <div class='code'>
@@ -1012,7 +993,7 @@
             <div class='section-link'>
                 <a href='#section-72'>#</a>
             </div>
-            <p>Change the storage size of the parameter. This was set to <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style="">0</span></span></span></span></span></span> when we cleaned up the parameters. </p>
+            <p>파라미터의 스토리지 크기를 변경합니다. 파라미터를 정리할 때 0으로 설정되었습니다. </p>
 
         </div>
         <div class='code'>
@@ -1024,7 +1005,7 @@
             <div class='section-link'>
                 <a href='#section-73'>#</a>
             </div>
-            <p>Assign the values from the continuous tensor </p>
+            <p>연속 텐서에서 값을 할당합니다. </p>
 
         </div>
         <div class='code'>
@@ -1036,7 +1017,7 @@
             <div class='section-link'>
                 <a href='#section-74'>#</a>
             </div>
-            <p>Wait for the operations to complete before other operations can be performed </p>
+            <p>다른 작업을 수행하기 전에, 현재 작업이 완료될 때까지 기다립니다. </p>
 
         </div>
         <div class='code'>
@@ -1048,7 +1029,7 @@
             <div class='section-link'>
                 <a href='#section-75'>#</a>
             </div>
-            <p>Update the offset </p>
+            <p>오프셋을 업데이트합니다. </p>
 
         </div>
         <div class='code'>
@@ -1060,7 +1041,7 @@
             <div class='section-link'>
                 <a href='#section-76'>#</a>
             </div>
-            <p>Wait for the operation to complete before other operations can be performed </p>
+            <p>다른 작업을 수행하기 전에 현재 작업이 완료될 때까지 기다립니다.</p>
 
         </div>
         <div class='code'>
@@ -1084,7 +1065,7 @@
             <div class='section-link'>
                 <a href='#section-78'>#</a>
             </div>
-            <h3>Forward pass</h3>
+            <h3>포워드 패스</h3>
 
         </div>
         <div class='code'>
@@ -1096,7 +1077,7 @@
             <div class='section-link'>
                 <a href='#section-79'>#</a>
             </div>
-            <p>Fetch all the parameters of the current node. This gets called by the previous layer so this call is just to make sure parameters are fetched. </p>
+            <p>현재 노드의 모든 파라미터를 가져옵니다. 이전 레이어에서 호출되므로 이 호출은 파라미터를 가져오는지 확인하는 것입니다. </p>
 
         </div>
         <div class='code'>
@@ -1108,7 +1089,7 @@
             <div class='section-link'>
                 <a href='#section-80'>#</a>
             </div>
-            <p>Wait for parameter fetching to complete. </p>
+            <p>파라미터 패칭이 완료될때 까지 대기합니다. </p>
 
         </div>
         <div class='code'>
@@ -1120,7 +1101,7 @@
             <div class='section-link'>
                 <a href='#section-81'>#</a>
             </div>
-            <p>Start fetching parameters of the proceeding layers, so that they will fetch them which the current layer does its computations. </p>
+            <p>진행 중인 레이어의 파라미터를 불러와, 현재 레이어가 계산을 수행하는 파라미터를 로드합니다. </p>
 
         </div>
         <div class='code'>
@@ -1133,7 +1114,7 @@
             <div class='section-link'>
                 <a href='#section-82'>#</a>
             </div>
-            <p>Add backward hooks to the parameters of the current layer if autograd is enabled. </p>
+            <p>오토그라드가 활성화된 경우 현재 레이어의 파라미터에 백워드 훅을 추가합니다. </p>
 
         </div>
         <div class='code'>
@@ -1146,7 +1127,7 @@
             <div class='section-link'>
                 <a href='#section-83'>#</a>
             </div>
-            <p>Compute the outputs of the current layer </p>
+            <p>현재 레이어의 출력을 계산합니다. </p>
 
         </div>
         <div class='code'>
@@ -1158,8 +1139,8 @@
             <div class='section-link'>
                 <a href='#section-84'>#</a>
             </div>
-            <p>Cleanup the parameters of the layer.</p>
-<p><em>Skip cleaning up if autograd is enabled and this is the last layer in the network, because we will need to fetch the parameters again for the backward pass.</em> </p>
+            <p>레이어의 파라미터들을 클리어합니다. </p>
+<p><em>오토그래드가 활성화되어 있고 이것이 네트워크의 마지막 레이어인 경우, 백워드 패스를 위해 파라미터를 다시 가져와야 하므로 정리를 건너뜁니다.</em> </p>
 
         </div>
         <div class='code'>
@@ -1174,7 +1155,7 @@
             <div class='section-link'>
                 <a href='#section-85'>#</a>
             </div>
-            <h4>Add backward hooks to the parameters of the current layer.</h4>
+            <h4>현재 레이어의 매개변수에 백워드 훅을 추가합니다. </h4>
 
         </div>
         <div class='code'>
@@ -1186,7 +1167,7 @@
             <div class='section-link'>
                 <a href='#section-86'>#</a>
             </div>
-            <p>Number of backward hooks added </p>
+            <p>추가된 백워드 훅의 수입니다. </p>
 
         </div>
         <div class='code'>
@@ -1198,7 +1179,7 @@
             <div class='section-link'>
                 <a href='#section-87'>#</a>
             </div>
-            <p>Loop through trainable parameters of the current layer </p>
+            <p>현재 레이어의 훈련 가능한 파라미터들을 순회합니다. </p>
 
         </div>
         <div class='code'>
@@ -1210,7 +1191,7 @@
             <div class='section-link'>
                 <a href='#section-88'>#</a>
             </div>
-            <p>Make sure a hook hasn&#x27;t already been added </p>
+            <p>훅이 이미 추가되지 않았는지 확인합니다. </p>
 
         </div>
         <div class='code'>
@@ -1222,8 +1203,7 @@
             <div class='section-link'>
                 <a href='#section-89'>#</a>
             </div>
-            <p>Use <code  class="highlight"><span></span><span class="n">expand_as</span></code>
- to create an autograd step which we can intercept </p>
+            <p><code  class="highlight"><span></span><span class="n">expand_as</span></code>를 사용하여 오토그라드 단계를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -1235,8 +1215,7 @@
             <div class='section-link'>
                 <a href='#section-90'>#</a>
             </div>
-            <p>Get a handle to add the backward hook. <a href="https://amsword.medium.com/understanding-pytorchs-autograd-with-grad-fn-and-next-functions-b2c4836daa00">This blog discusses about <code  class="highlight"><span></span><span class="n">grad_acc</span></code>
-</a>. </p>
+            <p>백워드 훅을 가져올 핸들을 추가합니다. <a href="https://amsword.medium.com/understanding-pytorchs-autograd-with-grad-fn-and-next-functions-b2c4836daa00">이 블로그에서 관련 내용을 디스커션합니다.</a>. </p>
 
         </div>
         <div class='code'>
@@ -1248,7 +1227,7 @@
             <div class='section-link'>
                 <a href='#section-91'>#</a>
             </div>
-            <p>Add the backward hook </p>
+            <p>백워드 훅을 추가합니다. </p>
 
         </div>
         <div class='code'>
@@ -1261,7 +1240,7 @@
             <div class='section-link'>
                 <a href='#section-92'>#</a>
             </div>
-            <p>Keep a reference to the handle </p>
+            <p>핸들에 대한 참조를 유지합니다. </p>
 
         </div>
         <div class='code'>
@@ -1273,7 +1252,7 @@
             <div class='section-link'>
                 <a href='#section-93'>#</a>
             </div>
-            <p>Increment the number of hooks added </p>
+            <p>추가된 훅 수 늘립니다. </p>
 
         </div>
         <div class='code'>
@@ -1285,8 +1264,8 @@
             <div class='section-link'>
                 <a href='#section-94'>#</a>
             </div>
-            <h4>Handle a backward event</h4>
-<p>This gets called by parameter backward hooks and the module backward hook.</p>
+            <h4>백워드 이벤트흫 핸들링합니다. </h4>
+<p>이것은 파라미터 백워드 훅와 모듈 백워드 훅에 의해 호출됩니다. </p>
 
         </div>
         <div class='code'>
@@ -1298,7 +1277,7 @@
             <div class='section-link'>
                 <a href='#section-95'>#</a>
             </div>
-            <p>Decrement the hooks counter </p>
+            <p>훅 카운터를 감소시킵니다. </p>
 
         </div>
         <div class='code'>
@@ -1310,7 +1289,7 @@
             <div class='section-link'>
                 <a href='#section-96'>#</a>
             </div>
-            <p>If all the hooks (including the module hook) have been called, then we can back up gradients and clean up the parameters. </p>
+            <p>모듈 훅을 포함한 모든 훅이 호출되었다면 그라디언트를 백업하고 파라미터를 정리할 수 있습니다. </p>
 
         </div>
         <div class='code'>
@@ -1324,7 +1303,7 @@
             <div class='section-link'>
                 <a href='#section-97'>#</a>
             </div>
-            <p>Start fetch parameters of the previous layer, because autograd will next process the gradients of it. </p>
+            <p>자동 그래디언트가 다음 레이어의 그래디언트를 처리하므로 이전 레이어의 파라미터 로딩을 시작합니다. </p>
 
         </div>
         <div class='code'>
@@ -1337,7 +1316,7 @@
             <div class='section-link'>
                 <a href='#section-98'>#</a>
             </div>
-            <h4>Parameter backward hook</h4>
+            <h4>파라미터 백워드 훅입니다.</h4>
 
         </div>
         <div class='code'>
@@ -1349,7 +1328,7 @@
             <div class='section-link'>
                 <a href='#section-99'>#</a>
             </div>
-            <p>Remove the handle from the parameter </p>
+            <p>파라미터에서 핸들을 제거합니다. </p>
 
         </div>
         <div class='code'>
@@ -1362,7 +1341,7 @@
             <div class='section-link'>
                 <a href='#section-100'>#</a>
             </div>
-            <p>Handle a backward event </p>
+            <p>백워드 이벤트를 핸들링합니다. </p>
 
         </div>
         <div class='code'>
@@ -1374,7 +1353,7 @@
             <div class='section-link'>
                 <a href='#section-101'>#</a>
             </div>
-            <h4>Module backward hook</h4>
+            <h4>백워드 훅 모듈입니다. </h4>
 
         </div>
         <div class='code'>
@@ -1386,7 +1365,7 @@
             <div class='section-link'>
                 <a href='#section-102'>#</a>
             </div>
-            <p>Handle a backward event </p>
+            <p>백워드를 이벤트를 핸들링합니다. </p>
 
         </div>
         <div class='code'>
@@ -1398,7 +1377,7 @@
             <div class='section-link'>
                 <a href='#section-103'>#</a>
             </div>
-            <p>The previous layer will start computing gradients. We need to make sure it has finished fetching params. </p>
+            <p>이전 레이어의 그라디언트 계산을 시작합니다. 파라미터 로딩이 완료되었는지 확인합니다. </p>
 
         </div>
         <div class='code'>
@@ -1422,7 +1401,7 @@
             <div class='section-link'>
                 <a href='#section-105'>#</a>
             </div>
-            <h3>Backup the gradients of the current layer</h3>
+            <h3>현재 레이어의 그래디언트를 백업합니다. </h3>
 
         </div>
         <div class='code'>
@@ -1435,7 +1414,7 @@
             <div class='section-link'>
                 <a href='#section-106'>#</a>
             </div>
-            <p>Skip if there are no trainable parameters </p>
+            <p>훈련 가능한 파라미터가 없으면 스킵합니다. </p>
 
         </div>
         <div class='code'>
@@ -1448,7 +1427,7 @@
             <div class='section-link'>
                 <a href='#section-107'>#</a>
             </div>
-            <p>Use the backup stream to backup the gradients </p>
+            <p>백업 스트림을 사용하여 그라디언트를 백업합니다. </p>
 
         </div>
         <div class='code'>
@@ -1460,7 +1439,7 @@
             <div class='section-link'>
                 <a href='#section-108'>#</a>
             </div>
-            <p>Buffer to store the gradients </p>
+            <p>그래디언트를 저장하는 버퍼입니다. </p>
 
         </div>
         <div class='code'>
@@ -1472,7 +1451,7 @@
             <div class='section-link'>
                 <a href='#section-109'>#</a>
             </div>
-            <p>Split the continuous buffer into number of nodes. These splits are views of `buffer&#x27;. </p>
+            <p>연속된 버퍼를 노드 수로 분할합니다. 이러한 분할은 '버퍼'의 뷰입니다. </p>
 
         </div>
         <div class='code'>
@@ -1484,7 +1463,7 @@
             <div class='section-link'>
                 <a href='#section-110'>#</a>
             </div>
-            <p>Offset of the continuous buffer </p>
+            <p>연속된 버퍼의 오프셋입니다. </p>
 
         </div>
         <div class='code'>
@@ -1496,7 +1475,7 @@
             <div class='section-link'>
                 <a href='#section-111'>#</a>
             </div>
-            <p>Iterate through trainable parameters </p>
+            <p>훈련 가능한 파라미터들을 반복합니다. </p>
 
         </div>
         <div class='code'>
@@ -1508,7 +1487,7 @@
             <div class='section-link'>
                 <a href='#section-112'>#</a>
             </div>
-            <p>Collect gradients </p>
+            <p>그래디언트를 모읍니다. </p>
 
         </div>
         <div class='code'>
@@ -1521,7 +1500,7 @@
             <div class='section-link'>
                 <a href='#section-113'>#</a>
             </div>
-            <p>Update the offset </p>
+            <p>오프셋을 업데이트합니다. </p>
 
         </div>
         <div class='code'>
@@ -1533,7 +1512,7 @@
             <div class='section-link'>
                 <a href='#section-114'>#</a>
             </div>
-            <p>Clean the gradients </p>
+            <p>그래디언트를 클리어합니다. </p>
 
         </div>
         <div class='code'>
@@ -1545,7 +1524,7 @@
             <div class='section-link'>
                 <a href='#section-115'>#</a>
             </div>
-            <p>Empty tensor to accumulate the gradients of the current shard </p>
+            <p>현재 샤드의 그래디언트를 누적하는 빈 텐서입니다. </p>
 
         </div>
         <div class='code'>
@@ -1557,7 +1536,7 @@
             <div class='section-link'>
                 <a href='#section-116'>#</a>
             </div>
-            <p>Accumulate the gradients of each shard. It scatters the buffers across the nodes, and each node accumulates (reduces) the tensors it receives. </p>
+            <p>각 샤드의 그래디언트를 누적합니다. 버퍼를 노드에 분산하고 각 노드는 수신하는 텐서를 누적(감소)합니다. </p>
 
         </div>
         <div class='code'>
@@ -1569,7 +1548,7 @@
             <div class='section-link'>
                 <a href='#section-117'>#</a>
             </div>
-            <p>Wait for the operation to complete and then clear the references to the buffers </p>
+            <p>작업이 완료될 때까지 기다린 다음 버퍼에 대한 참조를 지웁니다. </p>
 
         </div>
         <div class='code'>
@@ -1585,7 +1564,7 @@
             <div class='section-link'>
                 <a href='#section-118'>#</a>
             </div>
-            <p>Set the chunk gradients. This is what the optimizer sees. </p>
+            <p>청크 그래디언트를 세팅합니다. 이것이 옵티마이저와 관련됩니다.. </p>
 
         </div>
         <div class='code'>
@@ -1598,8 +1577,7 @@
             <div class='section-link'>
                 <a href='#section-119'>#</a>
             </div>
-            <h2>Sequential module for <code  class="highlight"><span></span><span class="n">Zero3Layer</span></code>
- layers</h2>
+            <h2>Zero3Layer 레이어용 시퀀셜 모듈</h2>
 
         </div>
         <div class='code'>
@@ -1636,7 +1614,7 @@
             <div class='section-link'>
                 <a href='#section-122'>#</a>
             </div>
-            <p>CUDA stream to fetch parameters </p>
+            <p>패치 파라미터를 위한 쿠다 스트림입니다. </p>
 
         </div>
         <div class='code'>
@@ -1648,7 +1626,7 @@
             <div class='section-link'>
                 <a href='#section-123'>#</a>
             </div>
-            <p>CUDA stream to back up (accumulate) gradients </p>
+            <p>그래디언트 백업 (누적)을 위한 쿠다 스트림입니다. </p>
 
         </div>
         <div class='code'>
@@ -1660,8 +1638,7 @@
             <div class='section-link'>
                 <a href='#section-124'>#</a>
             </div>
-            <p>Set the streams and preceding and proceeding layers for each <code  class="highlight"><span></span><span class="n">Zero3Layer</span></code>
- layer </p>
+            <p>각 Zero3Layer 레이어에 대한 스트림과 선행 및 진행 레이어를 세팅합니다.</p>
 
         </div>
         <div class='code'>
@@ -1673,7 +1650,7 @@
             <div class='section-link'>
                 <a href='#section-125'>#</a>
             </div>
-            <p>Set layer index </p>
+            <p>레이어 인덱스를 세팅합니다. </p>
 
         </div>
         <div class='code'>
@@ -1685,7 +1662,7 @@
             <div class='section-link'>
                 <a href='#section-126'>#</a>
             </div>
-            <p>Set streams </p>
+            <p>패치와 백업 스트림을 세팅합니다. </p>
 
         </div>
         <div class='code'>
@@ -1698,7 +1675,7 @@
             <div class='section-link'>
                 <a href='#section-127'>#</a>
             </div>
-            <p>Set proceeding layers </p>
+            <p>진행 레이어를 세팅합니다. </p>
 
         </div>
         <div class='code'>
@@ -1711,7 +1688,7 @@
             <div class='section-link'>
                 <a href='#section-128'>#</a>
             </div>
-            <p>Set preceding layers </p>
+            <p>선행 레이어를 세팅합니다. </p>
 
         </div>
         <div class='code'>
@@ -1724,7 +1701,7 @@
             <div class='section-link'>
                 <a href='#section-129'>#</a>
             </div>
-            <p>Store list of modules </p>
+            <p>모듈 리스트를 저장합니다. </p>
 
         </div>
         <div class='code'>
@@ -1747,7 +1724,7 @@
             <div class='section-link'>
                 <a href='#section-131'>#</a>
             </div>
-            <p>Return the list of trainable chunks from each layer </p>
+            <p>각 레이어에서 훈련 가능한 청크 리스트를 반환합니다. </p>
 
         </div>
         <div class='code'>
@@ -1770,7 +1747,7 @@
             <div class='section-link'>
                 <a href='#section-133'>#</a>
             </div>
-            <p>Make sure gradient back up is complete </p>
+            <p>그래디언트 백업이 완료되었는지 확인합니다. </p>
 
         </div>
         <div class='code'>
@@ -1782,7 +1759,7 @@
             <div class='section-link'>
                 <a href='#section-134'>#</a>
             </div>
-            <p>Forward pass </p>
+            <p>포워드를 패스합니다. </p>
 
         </div>
         <div class='code'>
