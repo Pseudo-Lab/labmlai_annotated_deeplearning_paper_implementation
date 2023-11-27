@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -29,7 +29,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4V3HC8HBLH"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || [];\
 
         function gtag() {
             dataLayer.push(arguments);
@@ -71,11 +71,14 @@
                 <a href='#section-0'>#</a>
             </div>
             <h1><a href="https://nn.labml.ai/conv_mixer/index.html">Patches Are All You Need?</a></h1>
-<p>This is a <a href="https://pytorch.org">PyTorch</a> implementation of the paper <a href="https://papers.labml.ai/paper/2201.09792">Patches Are All You Need?</a>.</p>
-<p>ConvMixer is Similar to <a href="https://nn.labml.ai/transformers/mlp_mixer/index.html">MLP-Mixer</a>. MLP-Mixer separates mixing of spatial and channel dimensions, by applying an MLP across spatial dimension and then an MLP across the channel dimension (spatial MLP replaces the <a href="https://nn.labml.ai/transformers/vit/index.html">ViT</a> attention and channel MLP is the <a href="https://nn.labml.ai/transformers/feed_forward.html">FFN</a> of ViT).</p>
-<p>ConvMixer uses a 1x1 convolution for channel mixing and a depth-wise convolution for spatial mixing. Since it&#x27;s a convolution instead of a full MLP across the space, it mixes only the nearby batches in contrast to ViT or MLP-Mixer. Also, the MLP-mixer uses MLPs of two layers for each mixing and ConvMixer uses a single layer for each mixing.</p>
-<p>The paper recommends removing the residual connection across the channel mixing (point-wise convolution) and having only a residual connection over the spatial mixing (depth-wise convolution). They also use <a href="https://nn.labml.ai/normalization/batch_norm/index.html">Batch normalization</a> instead of <a href="../normalization/layer_norm/index.html">Layer normalization</a>.</p>
-<p>Here&#x27;s <a href="https://nn.labml.ai/conv_mixer/experiment.html">an experiment</a> that trains ConvMixer on CIFAR-10. </p>
+<p>이 문서는 <a href="https://papers.labml.ai/paper/2201.09792">Patches Are All You Need?</a> 논문의 <a href="https://pytorch.org">파이토치</a> 구현입니다.</p>
+<p>ConvMixer는 <a href="https://nn.labml.ai/transformers/mlp_mixer/index.html">MLP-Mixer</a>와 유사합니다. MLP-Mixer는 공간 차원에 MLP를 적용한 다음 채널 차원에 MLP를 적용하여 공간과 채널 차원의 믹싱을 분리합니다(공간 MLP는 <a href="https://nn.labml.ai/transformers/vit/index.html">ViT</a> 어텐션으로 대체되고 채널 MLP는 ViT의 <a href="https://nn.labml.ai/transformers/feed_forward.html">FFN</a>입니다.).
+
+<p>ConvMixer는 채널 믹싱에는 1x1 컨볼루션을, 공간 믹싱에는 깊이별 컨볼루션을 사용합니다. 공간 전체에 걸친 전체 MLP가 아닌 컨볼루션이기 때문에 ViT 또는 MLP 믹서와 달리 가까운 배치만 믹싱합니다. 또한 MLP 믹서는 각 믹싱에 두 개의 레이어로 구성된 MLP를 사용하지만 ConvMixer는 각 믹싱에 단일 레이어를 사용합니다.</p>
+
+<p>이 논문에서는 채널 혼합(포인트별 컨볼루션)에 대한 잔차 연결을 제거하고 공간 믹싱(뎁스-와이스 컨볼루션)에 대한 잔차 연결을 가질 것을 권장합니다. 또한 <a href="../normalization/layer_norm/index.html">레이어 정규화</a> 대신 <a href="https://nn.labml.ai/normalization/batch_norm/index.html">배치 정규화</a>를 사용합니다.
+
+<p>여기 CIFAR-10에서 ConvMixer를 학습하는 <a href="https://nn.labml.ai/conv_mixer/experiment.html">실험</a>이 있습니다.</p>
 
         </div>
         <div class='code'>
