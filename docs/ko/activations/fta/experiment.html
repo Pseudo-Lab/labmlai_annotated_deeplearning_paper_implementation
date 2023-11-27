@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Training a transformer with FTA in FFN on Tiny Shakespeare."/>
+    <meta name="description" content="Tiny Shakespeare 데이터셋에 FFN에 FTA를 사용한 트랜스포머 모델을 학습합니다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Fuzzy Tiling Activation Experiment"/>
-    <meta name="twitter:description" content="Training a transformer with FTA in FFN on Tiny Shakespeare."/>
+    <meta name="twitter:title" content="퍼지 타일링 활성화 실험"/>
+    <meta name="twitter:description" content="Tiny Shakespeare 데이터셋에 FFN에 FTA를 사용한 트랜스포머 모델을 학습합니다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/activations/fta/experiment.html"/>
-    <meta property="og:title" content="Fuzzy Tiling Activation Experiment"/>
+    <meta property="og:title" content="퍼지 타일링 활성화 실험"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Fuzzy Tiling Activation Experiment"/>
+    <meta property="og:site_name" content="퍼지 타일링 활성화 실험"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Fuzzy Tiling Activation Experiment"/>
-    <meta property="og:description" content="Training a transformer with FTA in FFN on Tiny Shakespeare."/>
+    <meta property="og:title" content="퍼지 타일링 활성화 실험"/>
+    <meta property="og:description" content="Tiny Shakespeare 데이터셋에 FFN에 FTA를 사용한 트랜스포머 모델을 학습합니다."/>
 
-    <title>Fuzzy Tiling Activation Experiment</title>
+    <title>퍼지 타일링 활성화 실험</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/activations/fta/experiment.html"/>
@@ -71,10 +71,11 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1><a href="index.html">Fuzzy Tiling Activation</a> Experiment</h1>
+            <h1><a href="index.html">퍼지 타일링 활성화</a> 실험</h1>
 <p><a href="https://colab.research.google.com/github/labmlai/annotated_deep_learning_paper_implementations/blob/master/labml_nn/activations/fta/experiment.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"></a></p>
-<p>Here we train a transformer that uses <a href="index.html">Fuzzy Tiling Activation</a> in the <a href="../../transformers/feed_forward.html">Feed-Forward Network</a>. We use it for a language model and train it on Tiny Shakespeare dataset for demonstration.</p>
-<p>However, this is probably not the ideal task for FTA, and we believe FTA is more suitable for modeling data with continuous variables.</p>
+<p>여기서 우리는 <a href="../../transformers/feed_forward.html">Feed-Forward Network</a> 에 <a href="index.html">Fuzzy Tiling Activation</a> 를 사용한 트랜스포머 모델을 학습합니다. 
+    우리는 언어 모델을 위해서 이를 사용하고 데모를 위해 Tiny Shakespeare 데이터셋에 해당 모델을 학습합니다.</p>
+<p>하지만, 다음 방법은 FTA를 위한 이상적인 방안은 아닙니다. FTA는 연속형 변수들이 있는 데이터에 모델링을 할 때 더 적합합니다.</p>
 
         </div>
         <div class='code'>
@@ -97,7 +98,7 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>FFN module with <a href="index.html">FTA</a> activation</h2>
+            <h2><a href="index.html">FTA</a> 활성화룰 사용한 FFN 모듈</h2>
 
         </div>
         <div class='code'>
@@ -110,13 +111,13 @@
                 <a href='#section-2'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">d_model</span></code>
- is the number of features in a token embedding </li>
+ 은 토큰 임베딩의 피쳐 수입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">d_ff</span></code>
- is the number of features in the hidden layer of the FFN </li>
+ 은 FFN의 은닉층의 피쳐 수입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">activation</span></code>
- is FTA activation module </li>
+ 은 FTA 활성화 모듈입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">dropout</span></code>
- is dropout probability for the hidden layer</li></ul>
+ 은 은닉층의 드랍아웃 활률값입니다.</li></ul>
 
         </div>
         <div class='code'>
@@ -141,7 +142,9 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Layer one parameterized by weight <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqe" style=""><span class="mord" style=""><span class="mord mathnormal" style="margin-right:0.13889em">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> and bias <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqf" style=""><span class="mord" style=""><span class="mord mathnormal" style="">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> </p>
+            <p> <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqe" style=""><span class="mord" style=""><span class="mord mathnormal" style="margin-right:0.13889em">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> 
+                가중치와 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqf" style=""><span class="mord" style=""><span class="mord mathnormal" style="">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span>
+                편향값을 가진 레이어 1 </p>
 
         </div>
         <div class='code'>
@@ -153,7 +156,11 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>Layer two parameterized by weight <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqe" style=""><span class="mord" style=""><span class="mord mathnormal" style="margin-right:0.13889em">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> and bias <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqf" style=""><span class="mord" style=""><span class="mord mathnormal" style="">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> </p>
+            <p>
+                <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqe" style=""><span class="mord" style=""><span class="mord mathnormal" style="margin-right:0.13889em">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> 
+                가중치와 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqf" style=""><span class="mord" style=""><span class="mord mathnormal" style="">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style="">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span>
+                편향값을 가진 레이어 2
+            </p>
 
         </div>
         <div class='code'>
@@ -165,7 +172,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Hidden layer dropout </p>
+            <p>은닉층 드랍아웃 </p>
 
         </div>
         <div class='code'>
@@ -177,7 +184,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Activation function <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="margin-right:0.10764em">f</span></span></span></span></span></span> </p>
+            <p>활성화 함수 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="margin-right:0.10764em">f</span></span></span></span></span></span> </p>
 
         </div>
         <div class='code'>
@@ -212,7 +219,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Apply dropout </p>
+            <p>드랍아웃을 적용 </p>
 
         </div>
         <div class='code'>
@@ -236,8 +243,8 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <h2>Auto-Regressive model</h2>
-<p>This is an autoregressive transformer model that uses Feed-Forward Networks with  (Fuzzy Tiling Activations)(index.html).</p>
+            <h2>자기 회귀 모델</h2>
+<p>다음은 (Fuzzy Tiling Activations)(index.html) 피드 포워드 네트워크를 사용한 자기 회귀 트랜스포머 모델입니다.</p>
 
         </div>
         <div class='code'>
@@ -250,14 +257,13 @@
                 <a href='#section-13'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">n_tokens</span></code>
-  is the number of tokens in the vocabulary </li>
+  는 어휘에 있는 토큰의 수입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">d_model</span></code>
-  is the embedding size </li>
+  는 임베딩 크기 입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">n_layers</span></code>
-  is the number of transformer layers </li>
+  는 트랜스포머 레이어의 수입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">layer</span></code>
-  is the layer. We use <code  class="highlight"><span></span><span class="n">n_layers</span></code>
- copies of this for the transformer.</li></ul>
+  는 레이어 입니다. 우리는 트랜스포머를 위해 레이어의 복사본들 <code  class="highlight"><span></span><span class="n">n_layers</span></code> 을 사용합니다.</li></ul>
 
         </div>
         <div class='code'>
@@ -280,8 +286,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Transformer with <code  class="highlight"><span></span><span class="n">n_layers</span></code>
- layers </p>
+            <p><code  class="highlight"><span></span><span class="n">n_layers</span></code> 레이어를 가진 트랜스포머</p>
 
         </div>
         <div class='code'>
@@ -293,7 +298,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Token embedding layer </p>
+            <p>토큰 임베딩 레이어</p>
 
         </div>
         <div class='code'>
@@ -305,7 +310,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Readout layer </p>
+            <p>출력층 </p>
 
         </div>
         <div class='code'>
@@ -317,7 +322,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>The mask will be initialized on the first call </p>
+            <p>첫 호출에 마스크는 초기화 됩니다.</p>
 
         </div>
         <div class='code'>
@@ -330,7 +335,7 @@
                 <a href='#section-19'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
-  are the input tokens of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">seq_len</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">]</span></code>
+  는 입력 토큰의 사이즈 <code  class="highlight"><span></span><span class="p">[</span><span class="n">seq_len</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">]</span></code> 입니다.
 </li></ul>
 
         </div>
@@ -343,7 +348,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Create auto-regressive mask </p>
+            <p>자기 회귀 마스크를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -355,7 +360,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>Subsequent mask, will mask out tokens from seeing future tokens </p>
+            <p>다음 순서 마스크는 토큰이 다음 토큰을 볼 수 없도록 가립니다. </p>
 
         </div>
         <div class='code'>
@@ -367,7 +372,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p>Get the token embeddings </p>
+            <p>토큰 임베딩 값을 가져옵니다.</p>
 
         </div>
         <div class='code'>
@@ -379,7 +384,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p>Transformer encoder </p>
+            <p>트랜스포머 인코더 </p>
 
         </div>
         <div class='code'>
@@ -392,7 +397,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>Get logits </p>
+            <p>로짓 값을 가져옵니다. </p>
 
         </div>
         <div class='code'>
@@ -404,7 +409,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>Return results </p>
+            <p>결과값을 반환합니다 </p>
 
         </div>
         <div class='code'>
@@ -416,8 +421,8 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <h2>Configurations</h2>
-<p>This inherits from <a href="../../experiments/nlp_autoregression.html#NLPAutoRegressionConfigs"><code  class="highlight"><span></span><span class="n">NLPAutoRegressionConfigs</span></code>
+            <h2>설정값</h2>
+<p>다음은 <a href="../../experiments/nlp_autoregression.html#NLPAutoRegressionConfigs"><code  class="highlight"><span></span><span class="n">NLPAutoRegressionConfigs</span></code> 로부터 상속받았습니다.
 </a></p>
 
         </div>
@@ -430,7 +435,7 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <p>Model </p>
+            <p>모델 </p>
 
         </div>
         <div class='code'>
@@ -442,7 +447,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Number of layers </p>
+            <p>레이어의 수 </p>
 
         </div>
         <div class='code'>
@@ -454,7 +459,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span></span> and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span></span> for DeepNorm </p>
+            <p>심층 정규화를 위한 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span></span> 와 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span></span> </p>
 
         </div>
         <div class='code'>
@@ -467,7 +472,7 @@
             <div class='section-link'>
                 <a href='#section-30'>#</a>
             </div>
-            <p>Number of heads in the attention </p>
+            <p>어텐션에 사용되는 헤드의 수</p>
 
         </div>
         <div class='code'>
@@ -479,7 +484,7 @@
             <div class='section-link'>
                 <a href='#section-31'>#</a>
             </div>
-            <p>Embedding size </p>
+            <p>임베딩 크기</p>
 
         </div>
         <div class='code'>
@@ -491,7 +496,7 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>Size of each attention head </p>
+            <p>각 어텐션 헤드의 크기 </p>
 
         </div>
         <div class='code'>
@@ -503,7 +508,7 @@
             <div class='section-link'>
                 <a href='#section-33'>#</a>
             </div>
-            <p>Feed forward layer size </p>
+            <p>피드 포워드 레이어 크기 </p>
 
         </div>
         <div class='code'>
@@ -530,7 +535,7 @@
             <div class='section-link'>
                 <a href='#section-35'>#</a>
             </div>
-            <h4>Initialize the model</h4>
+            <h4>모델을 초기화합니다</h4>
 
         </div>
         <div class='code'>
@@ -543,7 +548,7 @@
             <div class='section-link'>
                 <a href='#section-36'>#</a>
             </div>
-            <p>Create FTA activation module </p>
+            <p>FTA 활성화 모듈을 생성합니다</p>
 
         </div>
         <div class='code'>
@@ -555,9 +560,9 @@
             <div class='section-link'>
                 <a href='#section-37'>#</a>
             </div>
-            <p>Create the transformer. We re-use <a href="../../transformers/models.html#TransformerLayer"><code  class="highlight"><span></span><span class="n">TransformerLayer</span></code>
+            <p>트랜스포머를 생성합니다. 우리는 <a href="../../transformers/models.html#TransformerLayer"><code  class="highlight"><span></span><span class="n">TransformerLayer</span></code> 와 
 </a> and <a href="../../transformers/mha.html"><code  class="highlight"><span></span><span class="n">MultiHeadAttention</span></code>
-</a> implementations. </p>
+</a> 구현을 재사용합니다. </p>
 
         </div>
         <div class='code'>
@@ -577,7 +582,7 @@
             <div class='section-link'>
                 <a href='#section-38'>#</a>
             </div>
-            <p>Move to the device </p>
+            <p>디바이스에 인식시킵니다. </p>
 
         </div>
         <div class='code'>
@@ -589,7 +594,7 @@
             <div class='section-link'>
                 <a href='#section-39'>#</a>
             </div>
-            <h4>Create and run the experiment</h4>
+            <h4>실험을 생성하고 실행합니다.</h4>
 
         </div>
         <div class='code'>
@@ -601,7 +606,7 @@
             <div class='section-link'>
                 <a href='#section-40'>#</a>
             </div>
-            <p>Create experiment </p>
+            <p>실험을 생성합니다.</p>
 
         </div>
         <div class='code'>
@@ -613,7 +618,7 @@
             <div class='section-link'>
                 <a href='#section-41'>#</a>
             </div>
-            <p>Create configs </p>
+            <p>설정값을 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -625,7 +630,7 @@
             <div class='section-link'>
                 <a href='#section-42'>#</a>
             </div>
-            <p>Override configurations </p>
+            <p>설정값을 덮어씁니다. </p>
 
         </div>
         <div class='code'>
@@ -637,7 +642,7 @@
             <div class='section-link'>
                 <a href='#section-43'>#</a>
             </div>
-            <p>Use character level tokenizer </p>
+            <p>문자 수준의 토크나이저를 사용합니다.  </p>
 
         </div>
         <div class='code'>
@@ -649,7 +654,7 @@
             <div class='section-link'>
                 <a href='#section-44'>#</a>
             </div>
-            <p>Prompt separator is blank </p>
+            <p>프롬프트 구분자는 빈 칸입니다. </p>
 
         </div>
         <div class='code'>
@@ -661,7 +666,7 @@
             <div class='section-link'>
                 <a href='#section-45'>#</a>
             </div>
-            <p>Starting prompt for sampling </p>
+            <p>샘플링을 위한 프롬프트는 다음과 같이 시작합니다. </p>
 
         </div>
         <div class='code'>
@@ -673,7 +678,7 @@
             <div class='section-link'>
                 <a href='#section-46'>#</a>
             </div>
-            <p>Use Tiny Shakespeare dataset </p>
+            <p>Tiny Shakespeare 데이터셋을 사용합니다. </p>
 
         </div>
         <div class='code'>
@@ -685,7 +690,7 @@
             <div class='section-link'>
                 <a href='#section-47'>#</a>
             </div>
-            <p>Use a context size of <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">256</span></span></span></span></span> </p>
+            <p>문맥 크기 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">256</span></span></span></span></span> 을 사용합니다. </p>
 
         </div>
         <div class='code'>
@@ -697,7 +702,7 @@
             <div class='section-link'>
                 <a href='#section-48'>#</a>
             </div>
-            <p>Train for 32 epochs </p>
+            <p>32 에포크로 학습합니다. </p>
 
         </div>
         <div class='code'>
@@ -709,7 +714,7 @@
             <div class='section-link'>
                 <a href='#section-49'>#</a>
             </div>
-            <p>Batch size <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">16</span></span></span></span></span> </p>
+            <p> <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">16</span></span></span></span></span> 의 배치 사이즈를 사용합니다. </p>
 
         </div>
         <div class='code'>
@@ -721,7 +726,7 @@
             <div class='section-link'>
                 <a href='#section-50'>#</a>
             </div>
-            <p>Switch between training and validation for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">10</span></span></span></span></span> times per epoch </p>
+            <p>각 에포크마다 학습과 검증을 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">10</span></span></span></span></span> 번씩 번갈아가며 수행합니다. </p>
 
         </div>
         <div class='code'>
@@ -733,7 +738,7 @@
             <div class='section-link'>
                 <a href='#section-51'>#</a>
             </div>
-            <p>Adam optimizer with no warmup </p>
+            <p>워밍없을 사용하지 않는 아담 옵티마이저를 사용합니다.</p>
 
         </div>
         <div class='code'>
@@ -747,7 +752,7 @@
             <div class='section-link'>
                 <a href='#section-52'>#</a>
             </div>
-            <p>Set model(s) for saving and loading </p>
+            <p>저장하고 로드하기 위한 설정값들을 모델(들)에 지정합니다.</p>
 
         </div>
         <div class='code'>
@@ -759,7 +764,7 @@
             <div class='section-link'>
                 <a href='#section-53'>#</a>
             </div>
-            <p>Start the experiment </p>
+            <p>실험을 시작합니다. </p>
 
         </div>
         <div class='code'>
@@ -771,7 +776,7 @@
             <div class='section-link'>
                 <a href='#section-54'>#</a>
             </div>
-            <p>Run training </p>
+            <p>학습을 실행합니다. </p>
 
         </div>
         <div class='code'>
