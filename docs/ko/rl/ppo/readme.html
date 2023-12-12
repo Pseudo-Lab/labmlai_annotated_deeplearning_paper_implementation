@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,20 +7,20 @@
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Proximal Policy Optimization - PPO"/>
+    <meta name="twitter:title" content="근접 정책 최적화 - PPO"/>
     <meta name="twitter:description" content=""/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/rl/ppo/readme.html"/>
-    <meta property="og:title" content="Proximal Policy Optimization - PPO"/>
+    <meta property="og:title" content="근접 정책 최적화 - PPO"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Proximal Policy Optimization - PPO"/>
+    <meta property="og:site_name" content="근접 정책 최적화 - PPO"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Proximal Policy Optimization - PPO"/>
+    <meta property="og:title" content="근접 정책 최적화 - PPO"/>
     <meta property="og:description" content=""/>
 
-    <title>Proximal Policy Optimization - PPO</title>
+    <title>근접 정책 최적화 - PPO</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/rl/ppo/readme.html"/>
@@ -46,7 +46,7 @@
     <div class='section'>
         <div class='docs'>
             <p>
-                <a class="parent" href="/">home</a>
+                <a class="parent" href="/">홈</a>
                 <a class="parent" href="../index.html">rl</a>
                 <a class="parent" href="index.html">ppo</a>
             </p>
@@ -62,7 +62,7 @@
             </p>
             <p>
                 <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations/tree/master/labml_nn/rl/ppo/readme.md" target="_blank">
-                    View code on Github</a>
+                    Github에서 코드 보기</a>
             </p>
         </div>
     </div>
@@ -71,10 +71,11 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1><a href="https://nn.labml.ai/rl/ppo/index.html">Proximal Policy Optimization - PPO</a></h1>
-<p>This is a <a href="https://pytorch.org">PyTorch</a> implementation of <a href="https://papers.labml.ai/paper/1707.06347">Proximal Policy Optimization - PPO</a>.</p>
-<p>PPO is a policy gradient method for reinforcement learning. Simple policy gradient methods one do a single gradient update per sample (or a set of samples). Doing multiple gradient steps for a singe sample causes problems because the policy deviates too much producing a bad policy. PPO lets us do multiple gradient updates per sample by trying to keep the policy close to the policy that was used to sample data. It does so by clipping gradient flow if the updated policy is not close to the policy used to sample the data.</p>
-<p>You can find an experiment that uses it <a href="https://nn.labml.ai/rl/ppo/experiment.html">here</a>. The experiment uses <a href="https://nn.labml.ai/rl/ppo/gae.html">Generalized Advantage Estimation</a>.</p>
+            <h1><a href="https://nn.labml.ai/rl/ppo/index.html">근접 정책 최적화 - PPO</a></h1>
+<p>이 문서는 <a href="https://papers.labml.ai/paper/1707.06347">근접 정책 최적화 - PPO</a>의 <a href="https://pytorch.org">PyTorch</a> 구현입니다.</p>
+<p>PPO는 강화 학습을 위한 정책 그라디언트 방법입니다. 간단한 정책 그라디언트 방법은 샘플(또는 샘플 세트)당 단일 그라디언트 업데이트를 수행합니다. 하나의 샘플에 대해 여러 단계의 그라디언트 단계를 수행하면 정책의 편차가 너무 커서 잘못된 정책이 생성되기 때문에 문제가 발생합니다. PPO를 사용하면 데이터를 샘플링하는 데 사용된 정책에 가깝게 정책을 유지함으로써 샘플당 여러 번의 그라디언트 업데이트를 수행할 수 있습니다. 업데이트된 정책이 데이터 샘플링에 사용된 정책에 가깝지 않은 경우 그라디언트 흐름을 클리핑하여 이를 수행합니다.</p>
+<p><a href="https://nn.labml.ai/rl/ppo/experiment.html">여기서</a> 사용하는 실험을 찾을 수 있습니다. 실험은 <a href="https://nn.labml.ai/rl/ppo/gae.html">일반화된 이점 추정
+</a>을 사용합니다.</p>
 <p><a href="https://colab.research.google.com/github/labmlai/annotated_deep_learning_paper_implementations/blob/master/labml_nn/rl/ppo/experiment.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"></a> </p>
 
         </div>
@@ -83,7 +84,7 @@
         </div>
     </div>
     <div class='footer'>
-        <a href="https://papers.labml.ai">Trending Research Papers</a>
+        <a href="https://papers.labml.ai">최신 연구 논문</a>
         <a href="https://labml.ai">labml.ai</a>
     </div>
 </div>
