@@ -140,7 +140,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>마지막 2프레임의 최대값을 유지하는 버퍼 </p>
+            <p>마지막 두 프레임의 최대값을 유지하는 버퍼 </p>
 
         </div>
         <div class='code'>
@@ -177,8 +177,8 @@
                 <a href='#section-8'>#</a>
             </div>
             <h3>단계</h3>
-<p>4개의 시간 단계에 대한 <code  class="highlight"><span></span><span class="n">행동</span></code>
-    을 실행하고 (관찰, 보상, 완료, 에피소드_정보)의 튜플을 반환합니다..</p>
+<p>4개의 시간 간격에 대한 <code  class="highlight"><span></span><span class="n">행동</span></code>
+    을 실행하고 (관찰, 보상, 완료, 에피소드_정보)의 튜플을 반환합니다.</p>
 <ul><li><code  class="highlight"><span></span><span class="n">observation</span></code>
 : 4개 프레임 쌓임(이 프레임과 마지막 3개 작업에 대한 프레임) </li>
 <li><code  class="highlight"><span></span><span class="n">reward</span></code>
@@ -210,7 +210,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>4단계에 대해 실행하세요. </p>
+            <p>4가지 단계를 수행하세요. </p>
 
         </div>
         <div class='code'>
@@ -279,7 +279,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>완료되면 에피소드가 끝나면 에피소드 정보를 설정하고 재설정합니다. </p>
+            <p>작업이 완료된 경우, 에피소드의 종료 여부에 따라 다음 작업을 수행합니다. 에피소드가 종료되었다면 정보를 설정하고 리셋을 수행합니다. </p>
 
         </div>
         <div class='code'>
@@ -322,7 +322,7 @@
                 <a href='#section-18'>#</a>
             </div>
             <h3>환경 재설정</h3>
-<p>에피소드 정보 및 4프레임 스택 정리하세요.</p>
+<p>에피소드 정보 및 4개 프레임 스택을 정리합니다.</p>
 
         </div>
         <div class='code'>
@@ -417,7 +417,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>연결의 지시를 기다리고 실행하십시오. </p>
+            <p>지시 사항이 전달될 때까지 기다립니다. 지시 사항이 오면 해당 지시를 수행합니다. </p>
 
         </div>
         <div class='code'>
