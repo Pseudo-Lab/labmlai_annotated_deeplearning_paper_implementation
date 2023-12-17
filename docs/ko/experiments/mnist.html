@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="This is a reusable trainer for MNIST dataset"/>
+    <meta name="description" content="다음은 MNIST 데이터셋을 위한 재사용가능한 트레이너(trainer)입니다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="MNIST Experiment"/>
-    <meta name="twitter:description" content="This is a reusable trainer for MNIST dataset"/>
+    <meta name="twitter:title" content="MNIST 실험"/>
+    <meta name="twitter:description" content="다음은 MNIST 데이터셋을 위한 재사용가능한 트레이너(trainer)입니다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/experiments/mnist.html"/>
-    <meta property="og:title" content="MNIST Experiment"/>
+    <meta property="og:title" content="MNIST 실험"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="MNIST Experiment"/>
+    <meta property="og:site_name" content="MNIST 실험"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="MNIST Experiment"/>
-    <meta property="og:description" content="This is a reusable trainer for MNIST dataset"/>
+    <meta property="og:title" content="MNIST 실험"/>
+    <meta property="og:description" content="다음은 MNIST 데이터셋을 위한 재사용가능한 트레이너(trainer)입니다."/>
 
-    <title>MNIST Experiment</title>
+    <title>MNIST 실험</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/experiments/mnist.html"/>
@@ -70,7 +70,7 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>MNIST Experiment</h1>
+            <h1>MNIST 실험</h1>
 
         </div>
         <div class='code'>
@@ -93,7 +93,7 @@
                 <a href='#section-1'>#</a>
             </div>
             <p> <a id="MNISTConfigs"></a></p>
-<h2>Trainer configurations</h2>
+<h2>트레이너(trainer) 설정파일을 만듭니다.</h2>
 
         </div>
         <div class='code'>
@@ -105,7 +105,7 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <p>Optimizer </p>
+            <p>옵티마이저를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -117,7 +117,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <p>Training device </p>
+            <p>훈련 디바이스 정보를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -129,7 +129,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Classification model </p>
+            <p>분류 모델을 지정합니다. </p>
 
         </div>
         <div class='code'>
@@ -141,7 +141,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>Number of epochs to train for </p>
+            <p>훈련할 에폭 수를 설정합니다.</p>
 
         </div>
         <div class='code'>
@@ -153,7 +153,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Number of times to switch between training and validation within an epoch </p>
+            <p>각 에폭에서 훈련과 검증을 번갈아가며 수행할 횟수를 지정합니다. </p>
 
         </div>
         <div class='code'>
@@ -165,7 +165,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Accuracy function </p>
+            <p>정확도 함수를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -177,7 +177,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Loss function </p>
+            <p>손실 함수를 설정합니다.</p>
 
         </div>
         <div class='code'>
@@ -189,7 +189,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <h3>Initialization</h3>
+            <h3>초기화를 수행합니다.</h3>
 
         </div>
         <div class='code'>
@@ -201,7 +201,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Set tracker configurations </p>
+            <p>트래커에 값을 설정합니다.  </p>
 
         </div>
         <div class='code'>
@@ -214,7 +214,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Add a hook to log module outputs </p>
+            <p>모듈의 결과물을 기록하기 위한 훅을 추가합니다. </p>
 
         </div>
         <div class='code'>
@@ -226,7 +226,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Add accuracy as a state module. The name is probably confusing, since it&#x27;s meant to store states between training and validation for RNNs. This will keep the accuracy metric stats separate for training and validation. </p>
+            <p>상태 모듈로써 정확도를 추가합니다. RNN에서 훈련과 검증 사이의 상태를 저장하기 위해 상태 모듈을 이용하기 때문에 다소 명칭에 혼돈이 있을 수 있지만, 여기서의 상태 모듈은 훈련과 검증을 수행하는 동안 정확도 값을 저장하는 역할을 합니다. </p>
 
         </div>
         <div class='code'>
@@ -238,7 +238,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <h3>Training or validation step</h3>
+            <h3>훈련 또는 검증을 수행합니다.</h3>
 
         </div>
         <div class='code'>
@@ -250,7 +250,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>Training/Evaluation mode </p>
+            <p>훈련 또는 평가 모드를 지정합니다. </p>
 
         </div>
         <div class='code'>
@@ -262,7 +262,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Move data to the device </p>
+            <p>디바이스에 데이터를 옮깁니다. </p>
 
         </div>
         <div class='code'>
@@ -274,7 +274,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Update global step (number of samples processed) when in training mode </p>
+            <p>훈련 모드에서 전역 단계값(처리된 샘플의 개수)을 업데이트 합니다. </p>
 
         </div>
         <div class='code'>
@@ -287,7 +287,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Whether to capture model outputs </p>
+            <p>모델의 출력값을 저장할지 여부에 따라 다음을 수행합니다. </p>
 
         </div>
         <div class='code'>
@@ -299,7 +299,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Get model outputs. </p>
+            <p>모델의 출력값을 가져옵니다. </p>
 
         </div>
         <div class='code'>
@@ -311,7 +311,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Calculate and log loss </p>
+            <p>손실을 계산하고 기록합니다. </p>
 
         </div>
         <div class='code'>
@@ -324,7 +324,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Calculate and log accuracy </p>
+            <p>정확도를 계산하고 기록합니다. </p>
 
         </div>
         <div class='code'>
@@ -337,7 +337,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>Train the model </p>
+            <p>모델을 훈련합니다. </p>
 
         </div>
         <div class='code'>
@@ -349,7 +349,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p>Calculate gradients </p>
+            <p>그레디언트를 계산합니다. </p>
 
         </div>
         <div class='code'>
@@ -361,7 +361,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p>Take optimizer step </p>
+            <p>옵티마이저를 이용합니다. </p>
 
         </div>
         <div class='code'>
@@ -373,7 +373,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>Log the model parameters and gradients on last batch of every epoch </p>
+            <p>매 에폭마다 모델 파라미터와 마지막 배치에서의 그레디언트를 기록합니다. </p>
 
         </div>
         <div class='code'>
@@ -386,7 +386,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>Clear the gradients </p>
+            <p>그레디언트를 0으로 만듭니다. </p>
 
         </div>
         <div class='code'>
@@ -398,7 +398,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <p>Save the tracked metrics </p>
+            <p>훈련 과정동안의 메트릭들을 저장합니다. </p>
 
         </div>
         <div class='code'>
@@ -410,7 +410,7 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <h3>Default optimizer configurations</h3>
+            <h3>옵티마이저 설정 기본값을 지정합니다.</h3>
 
         </div>
         <div class='code'>
