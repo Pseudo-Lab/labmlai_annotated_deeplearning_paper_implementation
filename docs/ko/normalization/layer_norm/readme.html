@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,20 +7,20 @@
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Layer Normalization"/>
+    <meta name="twitter:title" content="계층 정규화"/>
     <meta name="twitter:description" content=""/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/normalization/layer_norm/readme.html"/>
-    <meta property="og:title" content="Layer Normalization"/>
+    <meta property="og:title" content="계층 정규화"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Layer Normalization"/>
+    <meta property="og:site_name" content="계층 정규화"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Layer Normalization"/>
+    <meta property="og:title" content="계층 정규화"/>
     <meta property="og:description" content=""/>
 
-    <title>Layer Normalization</title>
+    <title>계층 정규화</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/normalization/layer_norm/readme.html"/>
@@ -71,17 +71,17 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1><a href="https://nn.labml.ai/normalization/layer_norm/index.html">Layer Normalization</a></h1>
-<p>This is a <a href="https://pytorch.org">PyTorch</a> implementation of <a href="https://papers.labml.ai/paper/1607.06450">Layer Normalization</a>.</p>
-<h3>Limitations of <a href="https://nn.labml.ai/normalization/batch_norm/index.html">Batch Normalization</a></h3>
-<ul><li>You need to maintain running means. </li>
-<li>Tricky for RNNs. Do you need different normalizations for each step? </li>
-<li>Doesn&#x27;t work with small batch sizes; large NLP models are usually trained with small batch sizes. </li>
-<li>Need to compute means and variances across devices in distributed training.</li></ul>
-<h2>Layer Normalization</h2>
-<p>Layer normalization is a simpler normalization method that works on a wider range of settings. Layer normalization transforms the inputs to have zero mean and unit variance across the features. <em>Note that batch normalization fixes the zero mean and unit variance for each element.</em> Layer normalization does it for each batch across all elements.</p>
-<p>Layer normalization is generally used for NLP tasks.</p>
-<p>We have used layer normalization in most of the <a href="https://nn.labml.ai/transformers/gpt/index.html">transformer implementations</a>.</p>
+            <h1><a href="https://nn.labml.ai/normalization/layer_norm/index.html">계층 정규화</a></h1>
+            <p>해당 페이지는 <a href="https://papers.labml.ai/paper/1607.06450">Layer Normalization</a>를 <a href="https://pytorch.org">PyTorch</a>로 구현한 내용입니다.</p>
+            <h3><a href="../batch_norm/index.html">Batch Normalization</a>의 한계</h3>
+            <ul><li>이동 평균값을 사용하여 일관성을 유지해야한다. </li>
+            <li>RNN 모델에 적용하기 어렵다. 각 시점마다 다른 정규화 방법을 사용해야 한다. </li>
+            <li>작은 배치 사이즈를 갖는 경우에는 사용하기 어렵다. 큰 NLP 모델들은 일반적으로 작은 배치 사이즈로 학습이 된다.</li>
+            <li>여러 장치에서의 분산 학습 과정에 걸쳐 평균과 분산을 계산해야 합니다.</li></ul>
+            <h2>계층 정규화</h2>
+            <p>계층 정규화는 더 넓은 범위의 설정에서 동작하는 간단한 정규화 방법입니다. 계층 정규화는 입력 데이터를 변수들 전체에 걸쳐서 단위 분산과 0의 평균을 갖도록 변환해줍니다.<em>배치 정규화는 데이터의 각 요소들을 0의 평균과 단위 분산을 갖도록 고정합니다.</em> 계층 정규화는 이 행위를 모든 요소에 걸쳐서 각 배치마다 합니다.</p>
+            <p>계층 정규화는 일반적으로 NLP 작업에 사용이 됩니다.</p>
+            <p>주로 <a href="../../transformers/gpt/index.html">트랜스포머 구현</a> 작업에서 계층 정규화를 사용합니다.</p>
 
         </div>
         <div class='code'>
