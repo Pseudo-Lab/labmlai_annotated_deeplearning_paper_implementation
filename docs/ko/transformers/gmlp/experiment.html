@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="This experiment trains a gMLP based model on Tiny Shakespeare dataset."/>
+    <meta name="description" content="이 실험은 Tiny Shakespeare dataset에 대하여 gMLP 기반 모델을 학습합니다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Pay Attention to MLPs (gMLP) Experiment"/>
-    <meta name="twitter:description" content="This experiment trains a gMLP based model on Tiny Shakespeare dataset."/>
+    <meta name="twitter:title" content="Pay Attention to MLPs (gMLP) 실험"/>
+    <meta name="twitter:description" content="이 실험은 Tiny Shakespeare dataset에 대하여 gMLP 기반 모델을 학습합니다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/transformers/gmlp/experiment.html"/>
-    <meta property="og:title" content="Pay Attention to MLPs (gMLP) Experiment"/>
+    <meta property="og:title" content="Pay Attention to MLPs (gMLP) 실험"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Pay Attention to MLPs (gMLP) Experiment"/>
+    <meta property="og:site_name" content="Pay Attention to MLPs (gMLP) 실험"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Pay Attention to MLPs (gMLP) Experiment"/>
-    <meta property="og:description" content="This experiment trains a gMLP based model on Tiny Shakespeare dataset."/>
+    <meta property="og:title" content="Pay Attention to MLPs (gMLP) 실험"/>
+    <meta property="og:description" content="이 실험은 Tiny Shakespeare dataset에 대하여 gMLP 기반 모델을 학습합니다."/>
 
-    <title>Pay Attention to MLPs (gMLP) Experiment</title>
+    <title>Pay Attention to MLPs (gMLP) 실험</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/transformers/gmlp/experiment.html"/>
@@ -62,7 +62,7 @@
             </p>
             <p>
                 <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations/tree/master/labml_nn/transformers/gmlp/experiment.py" target="_blank">
-                    View code on Github</a>
+                    Github에서 코드 보기</a>
             </p>
         </div>
     </div>
@@ -71,9 +71,9 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1><a href="index.html">Pay Attention to MLPs (gMLP)</a> Experiment</h1>
-<p>This is an annotated PyTorch experiment to train a <a href="index.html">gMLP model</a>. The paper also applies a Stochastic Depth regularization where some layers are removed randomly during training. We have not implemented that here.</p>
-<p>This is based on <a href="../basic/autoregressive_experiment.html">training loop and configurations for a simple transformer auto-regressive NLP task</a>.</p>
+            <h1><a href="index.html">Pay Attention to MLPs (gMLP)</a> 실험</h1>
+<p>이것은 <a href="index.html">gMLP 모델</a>을 학습하기 위해 널리 알려진 파이토치 구현체입니다. 이 논문에서는 훈련 과정에서 몇몇 레이어들이 무작위로 제거되는 확률론적 깊이 정규화를 적용하고 있습니다. 우리는 이를 여기에 구현하지 않았습니다.</p>
+<p>이것은 <a href="../basic/autoregressive_experiment.html">간단한 트랜스포머 기반 자기회귀 NLP 태스크를 위한 학습 루프와 설정값</a>에 기반하였습니다.</p>
 
         </div>
         <div class='code'>
@@ -89,8 +89,8 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>Configurations</h2>
-<p>This inherits from <a href="../basic/autoregressive_transformer.html">training loop and configurations for a simple transformer auto-regressive NLP task</a>.</p>
+            <h2>설정값</h2>
+<p>이것은 <a href="../basic/autoregressive_transformer.html">간단한 트랜스포머 기반 자기회귀 NLP 태스크를 위한 학습 루프와 설정값</a>로부터 상속받습니다.</p>
 
         </div>
         <div class='code'>
@@ -102,7 +102,7 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <p>Transformer </p>
+            <p>트랜스포머 </p>
 
         </div>
         <div class='code'>
@@ -114,7 +114,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <p>gMLP Block </p>
+            <p>gMLP 블록 </p>
 
         </div>
         <div class='code'>
@@ -126,8 +126,8 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p><code  class="highlight"><span></span><span class="n">d_ffn</span></code>
- for gMLP projection layer </p>
+            <p> gMLP 사영 레이어를 위한 <code  class="highlight"><span></span><span class="n">d_ffn</span></code>
+  </p>
 
         </div>
         <div class='code'>
@@ -139,7 +139,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <h3>Create a gMLP block</h3>
+            <h3>gMLP 블록을 생성합니다</h3>
 
         </div>
         <div class='code'>
@@ -163,7 +163,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <h3>Transformer configurations</h3>
+            <h3>트랜스포머 설정값들</h3>
 
         </div>
         <div class='code'>
@@ -176,7 +176,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>We use our <a href="../configs.html#TransformerConfigs">configurable transformer implementation</a> </p>
+            <p>우리는 우리의 <a href="../configs.html#TransformerConfigs">설정가능한 트랜스포머 구현체</a>를 사용합니다 </p>
 
         </div>
         <div class='code'>
@@ -188,7 +188,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>Set the vocabulary sizes for embeddings and generating logits </p>
+            <p>이베딩을 위한 단어 크기를 세팅하고 로짓을 생성합니다 </p>
 
         </div>
         <div class='code'>
@@ -201,7 +201,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Set model size </p>
+            <p>모델 크기를 세팅합니다 </p>
 
         </div>
         <div class='code'>
@@ -213,7 +213,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Replace the encoder layer with a gMLP layer </p>
+            <p>인코더 레이어를 gMLP 레이어로 교체합니다 </p>
 
         </div>
         <div class='code'>
@@ -238,7 +238,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>Create experiment </p>
+            <p>실험을 생성합니다 </p>
 
         </div>
         <div class='code'>
@@ -250,7 +250,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>Create configs </p>
+            <p>설정값을 생성합니다 </p>
 
         </div>
         <div class='code'>
@@ -262,7 +262,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Override configurations </p>
+            <p>설정값을 오버라이드합니다 </p>
 
         </div>
         <div class='code'>
@@ -274,7 +274,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Use character level tokenizer </p>
+            <p>문자 수준의 토크나이저를 사용합니다 </p>
 
         </div>
         <div class='code'>
@@ -286,7 +286,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Prompt separator is blank </p>
+            <p>프롬프트 구분자는 공백입니다 </p>
 
         </div>
         <div class='code'>
@@ -298,7 +298,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Starting prompt for sampling </p>
+            <p>샘플링을 위한 프롬프트를 시작합니다 </p>
 
         </div>
         <div class='code'>
@@ -310,7 +310,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Use Tiny Shakespeare dataset </p>
+            <p>Tiny Shakespeare 데이터셋을 사용합니다 </p>
 
         </div>
         <div class='code'>
@@ -322,7 +322,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Use a context size of <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">256</span></span></span></span></span> </p>
+            <p>컨텍스트 크기 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">256</span></span></span></span></span>을 사용합니다</p>
 
         </div>
         <div class='code'>
@@ -334,7 +334,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>Train for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">128</span></span></span></span></span> epochs </p>
+            <p> <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">128</span></span></span></span></span> 에폭동안 학습합니다 </p>
 
         </div>
         <div class='code'>
@@ -346,7 +346,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p>Batch size <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">32</span></span></span></span></span> </p>
+            <p>배치 사이즈 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">32</span></span></span></span></span> </p>
 
         </div>
         <div class='code'>
@@ -358,7 +358,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p>Switch between training and validation for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">10</span></span></span></span></span> times per epoch </p>
+            <p>매 에폭마다 학습과 검증을 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">10</span></span></span></span></span> 번씩 번갈아 진행합니다 </p>
 
         </div>
         <div class='code'>
@@ -370,7 +370,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>Model size </p>
+            <p>모델 크기 </p>
 
         </div>
         <div class='code'>
@@ -383,7 +383,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>Use <a href="../../optimizers/noam.html">Noam optimizer</a> </p>
+            <p><a href="../../optimizers/noam.html">Noam 옵티마이저</a>를 사용합니다</p>
 
         </div>
         <div class='code'>
@@ -397,7 +397,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <p>Set models for saving and loading </p>
+            <p>저장과 로드를 위해 모델을 세팅합니다 </p>
 
         </div>
         <div class='code'>
@@ -409,7 +409,7 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <p>Start the experiment </p>
+            <p>실험을 시작합니다 </p>
 
         </div>
         <div class='code'>
@@ -421,7 +421,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Run training </p>
+            <p>학습을 시작합니다 </p>
 
         </div>
         <div class='code'>
