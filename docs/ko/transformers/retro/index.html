@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="This is a PyTorch implementation/tutorial of the paper Improving language models by retrieving from trillions of tokens. It builds a key-value database of chunks of text and retrieves and uses them when making predictions."/>
+    <meta name="description" content="이것은 논문 '수 조의 토큰들을 검색함으로 언어 모델을 향상'의 파이토치 구현체이다. 텍스트 덩어리의 키-값 데이터베이스를 만들고 예측 시에 이것들을 검색에 사용합니다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Retrieval-Enhanced Transformer (Retro)"/>
-    <meta name="twitter:description" content="This is a PyTorch implementation/tutorial of the paper Improving language models by retrieving from trillions of tokens. It builds a key-value database of chunks of text and retrieves and uses them when making predictions."/>
+    <meta name="twitter:title" content="검색으로 향상된 트랜스포머 (Retro)"/>
+    <meta name="twitter:description" content="이것은 논문 '수 조의 토큰들을 검색함으로 언어 모델을 향상'의 파이토치 구현체이다. 텍스트 덩어리의 키-값 데이터베이스를 만들고 예측 시에 이것들을 검색에 사용합니다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/transformers/retro/index.html"/>
-    <meta property="og:title" content="Retrieval-Enhanced Transformer (Retro)"/>
+    <meta property="og:title" content="검색으로 향상된 트랜스포머 (Retro)"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Retrieval-Enhanced Transformer (Retro)"/>
+    <meta property="og:site_name" content="검색으로 향상된 트랜스포머 (Retro)"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Retrieval-Enhanced Transformer (Retro)"/>
-    <meta property="og:description" content="This is a PyTorch implementation/tutorial of the paper Improving language models by retrieving from trillions of tokens. It builds a key-value database of chunks of text and retrieves and uses them when making predictions."/>
+    <meta property="og:title" content="검색으로 향상된 트랜스포머 (Retro)"/>
+    <meta property="og:description" content="이것은 논문 '수 조의 토큰들을 검색함으로 언어 모델을 향상'의 파이토치 구현체이다. 텍스트 덩어리의 키-값 데이터베이스를 만들고 예측 시에 이것들을 검색에 사용합니다."/>
 
-    <title>Retrieval-Enhanced Transformer (Retro)</title>
+    <title>검색으로 향상된 트랜스포머 (Retro)</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/transformers/retro/index.html"/>
@@ -62,7 +62,7 @@
             </p>
             <p>
                 <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations/tree/master/labml_nn/transformers/retro/__init__.py" target="_blank">
-                    View code on Github</a>
+                    Github에서 코드 보기</a>
             </p>
         </div>
     </div>
@@ -71,17 +71,17 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Retrieval-Enhanced Transformer (Retro)</h1>
-<p>This is a <a href="https://pytorch.org">PyTorch</a> implementation of the paper <a href="https://papers.labml.ai/paper/2112.04426">Improving language models by retrieving from trillions of tokens</a>.</p>
-<p>It builds a database of chunks of text. It is a key-value database where the keys are indexed by the BERT embeddings of the chunks. They use a frozen pre-trained BERT model to calculate these embeddings. The values are the corresponding chunks and an equal length of text proceeding that chunk.</p>
-<p>Then the model retrieves text similar (nearest neighbors) to the input to the model from this database. These retrieved texts are used to predict the output.</p>
-<p>Since we use a frozen BERT model for retrieval we can pre-calculate all the nearest neighbors for the training dataset. This speeds up the training process.</p>
-<p>Components:</p>
-<ul><li><a href="bert_embeddings.html">BERT embeddings</a>: Code to get BERT embeddings of chunks of text. </li>
-<li><a href="database.html">Key-value database</a>: Build and retrieve chunks </li>
-<li><a href="model.html">Model</a> </li>
-<li><a href="dataset.html">Dataset</a>: Pre-calculate the nearest neighbors </li>
-<li><a href="train.html">Training code</a></li></ul>
+            <h1>검색으로 향상된 트랜스포머 (Retro)</h1>
+<p>이것은 논문 <a href="https://papers.labml.ai/paper/2112.04426">수 조의 토큰들을 검색함으로 언어 모델을 향상</a>의 <a href="https://pytorch.org">파이토치</a>구현체입니다.</p>
+<p>이것은 텍스트 덩어리의 데이터베이스를 만듭니다. 이것은 덩어리들의 BERT 임베딩에 의해 인덱싱된 키로 구성된 키-값 데이터베이스입니다. 그들은 이 임베딩 값을 계산하기 위해 사전에 학습된 고정된 BERT 모델을 사용한다. 값들은 상응하는 덩어리들이고 동일한 길이의 텍스트가 그 덩어리를 처리합니다.</p>
+<p>그리고 모델이 이 데이터베이스로부터 모델의 입력과 비슷한(가장 가까운 이웃) 텍스트를 검색합니다. 이렇게 검색된 텍스트들은 출력을 예측하는데 사용됩니다.</p>
+<p>우리가 검색에 고정된 BERT 모델을 사용하기 때문에 학습 데이터셋에서 가장 가까운 이웃정보들을 모두 사전에 계산할 수 있습니다. 이것은 학습 과정을 빠르게 합니다.</p>
+<p>구성 요소:</p>
+<ul><li><a href="bert_embeddings.html">BERT 임베딩</a>: 텍스트 덩어리의 BERT 임베딩을 얻기 위한 코드. </li>
+<li><a href="database.html">키-값 데이터베이스</a>: 텍스트 덩어리를 만들고 검색합니다 </li>
+<li><a href="model.html">모델</a> </li>
+<li><a href="dataset.html">데이터셋</a>: 가장 가까운 이웃정보를 사전에 계산합니다 </li>
+<li><a href="train.html">학습 코드</a></li></ul>
 
         </div>
         <div class='code'>
