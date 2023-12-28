@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Loads text datasets to fine-tune GPT-NeoX"/>
+    <meta name="description" content="GPT-NeoX를 미세 조정하기 위한 데이터셋을 로드합니다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Text Dataset for GPT-NeoX"/>
-    <meta name="twitter:description" content="Loads text datasets to fine-tune GPT-NeoX"/>
+    <meta name="twitter:title" content="GPT-NeoX를 위한 텍스트 데이터셋"/>
+    <meta name="twitter:description" content="GPT-NeoX를 미세 조정하기 위한 데이터셋을 로드합니다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/neox/utils/text_dataset.html"/>
-    <meta property="og:title" content="Text Dataset for GPT-NeoX"/>
+    <meta property="og:title" content="GPT-NeoX를 위한 텍스트 데이터셋"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Text Dataset for GPT-NeoX"/>
+    <meta property="og:site_name" content="GPT-NeoX를 위한 텍스트 데이터셋"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Text Dataset for GPT-NeoX"/>
-    <meta property="og:description" content="Loads text datasets to fine-tune GPT-NeoX"/>
+    <meta property="og:title" content="GPT-NeoX를 위한 텍스트 데이터셋"/>
+    <meta property="og:description" content="GPT-NeoX를 미세 조정하기 위한 데이터셋을 로드합니다."/>
 
-    <title>Text Dataset for GPT-NeoX</title>
+    <title>GPT-NeoX를 위한 텍스트 데이터셋</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/neox/utils/text_dataset.html"/>
@@ -71,7 +71,7 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Text Dataset for GPT-NeoX</h1>
+            <h1>GPT-NeoX를 위한 텍스트 데이터셋</h1>
 
         </div>
         <div class='code'>
@@ -93,14 +93,14 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h3>Load text file</h3>
+            <h3>텍스트 파일을 로드</h3>
 <ul><li><code  class="highlight"><span></span><span class="n">path</span></code>
-  is the location of the text file </li>
+  는 텍스트 파일의 위치입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">url</span></code>
-  is the URL to download the file from </li>
+  는 파일을 다운로드 받을 URL 입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">filter_subset</span></code>
-  is the number of characters to filter.  Use this during testing when trying large datasets </li>
-<p><em>Returns</em>  the text content</p></ul>
+  는 필터링할 문자의 수입니다. 큰 데이터셋에 테스트할 때 이를 사용합니다.</li>
+<p>텍스트 내용을 <em>반환</em> 합니다.</p></ul>
 
         </div>
         <div class='code'>
@@ -123,7 +123,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <p>Download if it doesn&#x27;t exist </p>
+            <p>존재하지 않는다면 다운로드</p>
 
         </div>
         <div class='code'>
@@ -141,7 +141,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Load data </p>
+            <p>데이터 로드 </p>
 
         </div>
         <div class='code'>
@@ -154,7 +154,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>Filter </p>
+            <p>필터링 </p>
 
         </div>
         <div class='code'>
@@ -179,8 +179,8 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <h2>Dataset for fine-tuning GPT-NeoX</h2>
-<p>This is not optimized to very large datasets.</p>
+            <h2>GPT-NeoX 미세 조정을 위한 데이터셋</h2>
+<p>다음은 매우 큰 데이터셋에는 최적화되지 않습니다.</p>
 
         </div>
         <div class='code'>
@@ -193,9 +193,9 @@
                 <a href='#section-8'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">tokens</span></code>
-  is the list of token ids </li>
+  는 토큰 id의 리스트입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">seq_len</span></code>
-  is the sequence length of a single training sample</li></ul>
+  는 하나의 학습 샘플의 시퀀스 길이입니다.</li></ul>
 
         </div>
         <div class='code'>
@@ -218,7 +218,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Number of samples </p>
+            <p>샘플의 수 </p>
 
         </div>
         <div class='code'>
@@ -231,7 +231,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Truncate </p>
+            <p>잘라내기 </p>
 
         </div>
         <div class='code'>
@@ -243,7 +243,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Create a PyTorch tensor </p>
+            <p>파이토치 텐서 생성 </p>
 
         </div>
         <div class='code'>
@@ -267,10 +267,10 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <h3>Get a sample</h3>
+            <h3>샘플을 반환</h3>
 <ul><li><code  class="highlight"><span></span><span class="n">idx</span></code>
-  is the index of the sample </li>
-<p><em>Returns</em>  the input and the target</p></ul>
+  는 샘플의 인덱스입니다. </li>
+<p>입력값과 타겟을 <em>반환</em>  합니다.</p></ul>
 
         </div>
         <div class='code'>
@@ -302,12 +302,12 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <h3>Load Dataset</h3>
+            <h3>데이터셋을 로드</h3>
 <ul><li><code  class="highlight"><span></span><span class="n">seq_len</span></code>
-  is the sequence length of a single training sample </li>
+  는 하나의 학습 샘플의 시퀀스 길이입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">dataset_name</span></code>
-  is the name of the dataset </li>
-<p><em>Returns</em>  the dataset</p></ul>
+  는 데이터셋의 이름입니다. </li>
+<p> 데이터셋을 <em>반환</em>  합니다.</p></ul>
 
         </div>
         <div class='code'>
@@ -330,7 +330,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Load the content </p>
+            <p>내용을 로드 </p>
 
         </div>
         <div class='code'>
@@ -342,7 +342,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Tokenize </p>
+            <p>토큰화 </p>
 
         </div>
         <div class='code'>
