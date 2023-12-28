@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="This creates arithmetic problems."/>
+    <meta name="description" content="다음은 산술 문제 생성에 대한 것입니다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Arithmetic Dataset"/>
-    <meta name="twitter:description" content="This creates arithmetic problems."/>
+    <meta name="twitter:title" content="산술 데이터셋"/>
+    <meta name="twitter:description" content="다음은 산술 문제 생성에 대한 것입니다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/experiments/arithmetic_dataset.html"/>
-    <meta property="og:title" content="Arithmetic Dataset"/>
+    <meta property="og:title" content="산술 데이터셋"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Arithmetic Dataset"/>
+    <meta property="og:site_name" content="산술 데이터셋"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Arithmetic Dataset"/>
-    <meta property="og:description" content="This creates arithmetic problems."/>
+    <meta property="og:title" content="산술 데이터셋"/>
+    <meta property="og:description" content="다음은 산술 문제 생성에 대한 것입니다."/>
 
-    <title>Arithmetic Dataset</title>
+    <title>산술 데이터셋</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/experiments/arithmetic_dataset.html"/>
@@ -70,7 +70,7 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <p><em>This is based on code by <a href="https://twitter.com/gharik">Georges Harik (@gharik)</a>.</em></p>
+            <p><em>다음은 <a href="https://twitter.com/gharik">Georges Harik (@gharik)</a>의 코드를 기반으로 하고 있습니다.</em></p>
 
         </div>
         <div class='code'>
@@ -92,9 +92,9 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>Arithmetic Dataset</h2>
-<p>This creates arithmetic addition problems and solutions with workings. We&#x27;ve only implemented addition so far.</p>
-<p>It&#x27;s based on a character level tokenization.</p>
+            <h2>산술 데이터셋</h2>
+<p>다음은 산술 덧셈 문제 생성과 해결 방법에 대한 것입니다. 현재까지는 덧셈에 대해서만 구현하였습니다. </p>
+<p>글자 단위의 토큰화를 기반으로 하고 있습니다.</p>
 
         </div>
         <div class='code'>
@@ -107,7 +107,7 @@
                 <a href='#section-2'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">seq_len</span></code>
-  is the sequence length of generated math problems.  We fill as many problems as possible upto this length :max_digits: is the maximum number of digits in the operand integers :n_sequences: is the number of sequences per epoch</li></ul>
+  은 생성된 수학 문제의 시퀀스 길이입니다. 최대 이 길이만큼의 문제들을 채웁니다. max_digits은 피연산자 정수의 최대 자리 수입니다. n_sequences는 에폭 당 시퀀의 갯수입니다. </li></ul>
 
         </div>
         <div class='code'>
@@ -132,7 +132,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Token id to string </p>
+            <p>토큰 아이디를 문자열로 변환합니다. </p>
 
         </div>
         <div class='code'>
@@ -144,7 +144,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>Character to token id </p>
+            <p>문자를 토큰 아이디로 변환합니다. </p>
 
         </div>
         <div class='code'>
@@ -156,8 +156,8 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p> Generates an integer with <code  class="highlight"><span></span><span class="n">n_digit</span></code>
- number of digits</p>
+            <p> <code  class="highlight"><span></span><span class="n">n_digit</span></code>
+ 개의 숫자를 이용하여 정수를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -186,9 +186,9 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p> Generates the workings for <code  class="highlight"><span></span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span></code>
-. For example for <code  class="highlight"><span></span><span class="mi">11</span><span class="o">+</span><span class="mi">29</span></code>
- it generates <code  class="highlight"><span></span><span class="mf">1e0</span><span class="o">+</span><span class="mf">9e0</span><span class="o">+</span><span class="mf">0e0</span><span class="o">=</span><span class="mf">10e0</span> <span class="mf">1e0</span><span class="o">+</span><span class="mf">2e0</span><span class="o">+</span><span class="mf">1e0</span><span class="o">=</span><span class="mf">4e0</span></code>
+            <p> <code  class="highlight"><span></span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span></code>
+를 수행하기 위한 작업을 생성합니다. 예를 들어, <code  class="highlight"><span></span><span class="mi">11</span><span class="o">+</span><span class="mi">29</span></code>
+를 계산하기 위해 다음을 생성합니다; <code  class="highlight"><span></span><span class="mf">1e0</span><span class="o">+</span><span class="mf">9e0</span><span class="o">+</span><span class="mf">0e0</span><span class="o">=</span><span class="mf">10e0</span> <span class="mf">1e0</span><span class="o">+</span><span class="mf">2e0</span><span class="o">+</span><span class="mf">1e0</span><span class="o">=</span><span class="mf">4e0</span></code>
 .</p>
 
         </div>
@@ -223,8 +223,8 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Make a problem with a pre_explanation or not</p>
-<p>Creates an arithmetic addition problem with workings and answer.</p>
+            <p>(사전 설명을 포함하여) 문제를 생성합니다. </p>
+<p>산술 연산 문제에 대한 작업과 답변을 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -251,7 +251,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p> Get arithmetic problem and answer. This is used for evaluation.</p>
+            <p> 산술 문제와 답변을 가지고 평가를 수행합니다. </p>
 
         </div>
         <div class='code'>
@@ -277,7 +277,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p> Generate multiple problems and pack them into a sequence.</p>
+            <p> 다수의 문제를 생성하고 하나의 시퀀스로 묶습니다. </p>
 
         </div>
         <div class='code'>
@@ -305,7 +305,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p> Encode a given string</p>
+            <p> 주어진 문자열을 인코딩합니다. </p>
 
         </div>
         <div class='code'>
@@ -328,7 +328,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p> Decode a list of token ids</p>
+            <p> 토큰 아이디 리스트에 대해 디코딩을 수행합니다.</p>
 
         </div>
         <div class='code'>
@@ -351,7 +351,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p> Get a input and target pair for auto-regressive modelling</p>
+            <p> 자기 회귀(auto-regressive) 모델링을 위한 입력과 타겟 쌍을 얻습니다.</p>
 
         </div>
         <div class='code'>
@@ -375,7 +375,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p> Number of sequences per epoch</p>
+            <p> 에폭 당 시퀀스의 갯수를 구합니다.</p>
 
         </div>
         <div class='code'>
@@ -398,7 +398,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <h2>Arithmetic Task Experiment Configurations</h2>
+            <h2>산술 문제 실험을 위한 설정을 수행합니다. </h2>
 
         </div>
         <div class='code'>
@@ -410,7 +410,7 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <p>Maximum number of digits per operand integer </p>
+            <p>피연산자 정수의 최대 자리 수를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -422,7 +422,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <p>Number of training sequences per epoch </p>
+            <p>에폭 당 훈련 시퀀스의 갯수를 설정합니다.  </p>
 
         </div>
         <div class='code'>
@@ -434,7 +434,7 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <p>Training data loader </p>
+            <p>훈련을 위한 데이터 로더를 설정합니다.</p>
 
         </div>
         <div class='code'>
@@ -446,7 +446,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Number of problems in evaluation </p>
+            <p>평가 수행에 이용하는 문제 수를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -458,7 +458,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p>No need of a validation dataset </p>
+            <p>검증을 위한 데이터 셋은 사용하지 않습니다. </p>
 
         </div>
         <div class='code'>
@@ -470,7 +470,7 @@
             <div class='section-link'>
                 <a href='#section-30'>#</a>
             </div>
-            <p>Number of times to run evaluations per epoch </p>
+            <p>에폭 당 평가 수행 횟수를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -482,7 +482,7 @@
             <div class='section-link'>
                 <a href='#section-31'>#</a>
             </div>
-            <p>Number of tokens in the vocabulary </p>
+            <p>단어(vocabulary)에서의 토큰 갯수를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -494,8 +494,8 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <h3>Evaluation</h3>
-<p>We use the sampling function to evaluate the model on a set of problems</p>
+            <h3>평가를 수행합니다.</h3>
+<p>문제 집합을 가지고 모델을 평가하기 위해 샘플링 함수를 이용합니다.</p>
 
         </div>
         <div class='code'>
@@ -508,7 +508,7 @@
             <div class='section-link'>
                 <a href='#section-33'>#</a>
             </div>
-            <p>Skip in the first epoch </p>
+            <p>첫번째 에폭은 스킵합니다. </p>
 
         </div>
         <div class='code'>
@@ -521,7 +521,7 @@
             <div class='section-link'>
                 <a href='#section-34'>#</a>
             </div>
-            <p>Create a dataset to generate problems </p>
+            <p>문제를 생성하기 위한 데이터셋을 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -533,7 +533,7 @@
             <div class='section-link'>
                 <a href='#section-35'>#</a>
             </div>
-            <p>Get a set of problems and answers </p>
+            <p>문제와 답변 데이터를 가져옵니다. </p>
 
         </div>
         <div class='code'>
@@ -545,7 +545,7 @@
             <div class='section-link'>
                 <a href='#section-36'>#</a>
             </div>
-            <p>Collect the problems only </p>
+            <p>문제 부분만 모읍니다. </p>
 
         </div>
         <div class='code'>
@@ -557,7 +557,7 @@
             <div class='section-link'>
                 <a href='#section-37'>#</a>
             </div>
-            <p>Create a tensor with only the initial token </p>
+            <p>초기 토큰만을 가지고 텐서를 생성합니다. </p>
 
         </div>
         <div class='code'>
@@ -569,7 +569,7 @@
             <div class='section-link'>
                 <a href='#section-38'>#</a>
             </div>
-            <p>Move to device </p>
+            <p>디바이스로 데이터를 옮깁니다. </p>
 
         </div>
         <div class='code'>
@@ -581,7 +581,7 @@
             <div class='section-link'>
                 <a href='#section-39'>#</a>
             </div>
-            <p>Number of sequences that have completed </p>
+            <p>완료된 시퀀스의 갯수를 구합니다. </p>
 
         </div>
         <div class='code'>
@@ -593,7 +593,7 @@
             <div class='section-link'>
                 <a href='#section-40'>#</a>
             </div>
-            <p>Token id of the new line character - this marks end of the answer </p>
+            <p>개행 문자에 대한 토큰 아이디를 구합니다. 개행 문자는 답변 종료를 표시합니다.</p>
 
         </div>
         <div class='code'>
@@ -605,7 +605,7 @@
             <div class='section-link'>
                 <a href='#section-41'>#</a>
             </div>
-            <p>Sampled results </p>
+            <p>결과를 샘플합니다.</p>
 
         </div>
         <div class='code'>
@@ -617,7 +617,7 @@
             <div class='section-link'>
                 <a href='#section-42'>#</a>
             </div>
-            <p>Sample upto sequence length </p>
+            <p>시퀀스 길이만큼 샘플링을 수행합니다.</p>
 
         </div>
         <div class='code'>
@@ -629,7 +629,7 @@
             <div class='section-link'>
                 <a href='#section-43'>#</a>
             </div>
-            <p>If all the sequences have completed we skip this </p>
+            <p>모든 시퀀스에 대해 완료되었다면 이하 과정을 스킵합니다. </p>
 
         </div>
         <div class='code'>
@@ -642,7 +642,7 @@
             <div class='section-link'>
                 <a href='#section-44'>#</a>
             </div>
-            <p>Get the model output </p>
+            <p>모델의 출력값을 구합니다.</p>
 
         </div>
         <div class='code'>
@@ -654,7 +654,7 @@
             <div class='section-link'>
                 <a href='#section-45'>#</a>
             </div>
-            <p>Get the model prediction (greedy) </p>
+            <p>모델의 (탐욕적) 예측값을 구합니다. </p>
 
         </div>
         <div class='code'>
@@ -666,7 +666,7 @@
             <div class='section-link'>
                 <a href='#section-46'>#</a>
             </div>
-            <p>Find which sequences have finished </p>
+            <p>완료된 시퀀스를 찾습니다. </p>
 
         </div>
         <div class='code'>
@@ -678,7 +678,7 @@
             <div class='section-link'>
                 <a href='#section-47'>#</a>
             </div>
-            <p>Skip if all have finished </p>
+            <p>모든 과정이 완료되었다면 이하 과정을 스킵합니다. </p>
 
         </div>
         <div class='code'>
@@ -691,7 +691,7 @@
             <div class='section-link'>
                 <a href='#section-48'>#</a>
             </div>
-            <p>Override with the question </p>
+            <p>질문에 대해 오버라이드를 수행합니다. </p>
 
         </div>
         <div class='code'>
@@ -705,7 +705,7 @@
             <div class='section-link'>
                 <a href='#section-49'>#</a>
             </div>
-            <p>Add the next token to the input </p>
+            <p>입력에 다음 순서의 토큰을 더합니다. </p>
 
         </div>
         <div class='code'>
@@ -717,7 +717,7 @@
             <div class='section-link'>
                 <a href='#section-50'>#</a>
             </div>
-            <p>Get the sampled results </p>
+            <p>샘플된 결과값을 구합니다. </p>
 
         </div>
         <div class='code'>
@@ -730,7 +730,7 @@
             <div class='section-link'>
                 <a href='#section-51'>#</a>
             </div>
-            <p>Discard everything after the answer in the results </p>
+            <p>결과값에서 답변 이후의 값을 모두 제거합니다. </p>
 
         </div>
         <div class='code'>
@@ -742,7 +742,7 @@
             <div class='section-link'>
                 <a href='#section-52'>#</a>
             </div>
-            <p>Log a sample </p>
+            <p>샘플을 기록합니다. </p>
 
         </div>
         <div class='code'>
@@ -755,7 +755,7 @@
             <div class='section-link'>
                 <a href='#section-53'>#</a>
             </div>
-            <p>Get the answers </p>
+            <p>답변을 구합니다. </p>
 
         </div>
         <div class='code'>
@@ -767,7 +767,7 @@
             <div class='section-link'>
                 <a href='#section-54'>#</a>
             </div>
-            <p>Count the number of correct answers </p>
+            <p>정답의 갯수를 셉니다.</p>
 
         </div>
         <div class='code'>
@@ -782,7 +782,7 @@
             <div class='section-link'>
                 <a href='#section-55'>#</a>
             </div>
-            <p>Log the score </p>
+            <p>점수를 기록합니다.</p>
 
         </div>
         <div class='code'>
@@ -794,7 +794,7 @@
             <div class='section-link'>
                 <a href='#section-56'>#</a>
             </div>
-            <p> Training data loader</p>
+            <p>훈련을 위한 데이터 로더를 만듭니다.</p>
 
         </div>
         <div class='code'>
@@ -821,7 +821,7 @@
             <div class='section-link'>
                 <a href='#section-58'>#</a>
             </div>
-            <p> Code to test generated problems</p>
+            <p> 생성된 문제들을 테스트하기 위한 부분입니다. </p>
 
         </div>
         <div class='code'>
