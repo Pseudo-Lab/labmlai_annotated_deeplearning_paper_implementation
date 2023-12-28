@@ -72,13 +72,18 @@
                 <a href='#section-0'>#</a>
             </div>
             <h1>LLM.int() on GPT-NeoX</h1>
-<p>This implements a utility function to transform a <code  class="highlight"><span></span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span></code>
- layer to LLM.int8() linear layer.</p>
-<p><a href="https://papers.labml.ai/paper/eb2bcaee1d0011edaa66a71c10a887e7">LLM.int8() paper</a>  shows you can use int8 quantization while handling outliers to reduce memory footprint without performance degradation in large language models. They convert weights and inputs to scaled 8-bit integers and does matrix multiplication producing int32 results which is then converted back to float16 and rescaled. They show that in large langauge models, some features can give extreme values (outliers) that dominate the model&#x27;s output. These features get clamped in 8-bit integer space which causes the model performance to degrade. As a solution they pick these outliers (greater than a specified threshold) and compute their multiplications separately in float16 space. Since the percentage of outliers is around 0.01% this doesn&#x27;t increase memory usage, and prevents the model from degrading performance.</p>
-<p>The code to transform GPT-NoeX layers is defined in <a href="../model.html#post_load_prepare">model.py</a>.</p>
-<p>Here are example uses of GPT-NeoX with int8 quantization.</p>
-<ul><li><a href="../samples/llm_int8.html">Generate Text</a> </li>
-<li><a href="../evaluation/llm_int8.html">Run Evaluation Tests</a></li></ul>
+<p>이것은  <code  class="highlight"><span></span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span></code>
+레이어를 LLM.int8() 선형 레이어로 변환하기 위한 유틸리티 기능을 구현합니다.</p>
+<p><a href="https://papers.labml.ai/paper/eb2bcaee1d0011edaa66a71c10a887e7">LLM.int8() 논문</a>  
+    는 이상치를 처리하면서 int8 양자화를 사용하여 대용량 언어 모델에서 성능 저하 없이 메모리 설치 공간을 줄일 수 있음을 보여줍니다.
+    그들은 가중치와 입력을 스케일링된 8비트 정수로 변환하고 행렬 곱셈을 수행하여 int32 결과를 생성한 다음 다시 float16으로 변환하여 스케일을 재조정합니다.
+    그들은 큰 언어 모델에서 일부 기능이 모델의 출력을 지배하는 극단값(이상치)을 제공할 수 있음을 보여줍니다.
+    이러한 기능은 8비트 정수 공간에 고정되어 모델 성능이 저하됩니다.
+    해결책으로 이러한 이상치(지정된 임계값보다 큰)를 선택하고 float16 space에서 곱셈을 별도로 계산합니다.</p>
+<p>GPT-NoeX 계층을 변환하기 위한 코드는<a href="../model.html#post_load_prepare">model.py</a>에 정의되어있습니다.</p>
+<p>다음은 int8 양자화를 사용한 GPT-NeoX의 예시입니다.</p>
+<ul><li><a href="../samples/llm_int8.html">텍스트 생성</a> </li>
+<li><a href="../evaluation/llm_int8.html">평가 테스트 실행하기</a></li></ul>
 
         </div>
         <div class='code'>
@@ -90,8 +95,8 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <p>Import <a href="https://github.com/timdettmers/bitsandbytes"><code  class="highlight"><span></span><span class="n">bitsandbytes</span></code>
-</a> package </p>
+            <p><a href="https://github.com/timdettmers/bitsandbytes"><code  class="highlight"><span></span><span class="n">bitsandbytes</span></code>
+</a> 패키지 임포트해오기 </p>
 
         </div>
         <div class='code'>
@@ -109,15 +114,15 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <h2>Transform a <code  class="highlight"><span></span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span></code>
- layer to LLM.int8() linear layer</h2>
+            <h2><code  class="highlight"><span></span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span></code>
+ 레이어를 LLM.int8() 선형 레이어로 변환하기 </h2>
 <ul><li><code  class="highlight"><span></span><span class="n">linear_module</span></code>
-  is the <code  class="highlight"><span></span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span></code>
- layer to transform </li>
+는 변환할 <code  class="highlight"><span></span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span></code>
+레이어 입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">device</span></code>
-  is the device of the model </li>
+ 는 모델의 device입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">threshold</span></code>
-  is the threshold <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span></span> to use for outlier detection</li></ul>
+  는 이상치 탐지에 사용되는 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span></span>값입니다.</li></ul>
 
         </div>
         <div class='code'>
@@ -141,7 +146,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Create an empty Linear8bitLt module </p>
+            <p>8비트 선형 모듈 생성하기 </p>
 
         </div>
         <div class='code'>
@@ -159,7 +164,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>Quantize the weights </p>
+            <p>가중치 양자화 </p>
 
         </div>
         <div class='code'>
@@ -173,7 +178,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Set the bias in float16 space </p>
+            <p>편향을 float16 space에 두기 </p>
 
         </div>
         <div class='code'>
