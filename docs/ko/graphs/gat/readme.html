@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -62,7 +62,7 @@
             </p>
             <p>
                 <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations/tree/master/labml_nn/graphs/gat/readme.md" target="_blank">
-                    View code on Github</a>
+                    Github에서 코드 보기</a>
             </p>
         </div>
     </div>
@@ -72,10 +72,10 @@
                 <a href='#section-0'>#</a>
             </div>
             <h1><a href="https://nn.labml.ai/graphs/gat/index.html">Graph Attention Networks (GAT)</a></h1>
-<p>This is a <a href="https://pytorch.org">PyTorch</a> implementation of the paper <a href="https://papers.labml.ai/paper/1710.10903">Graph Attention Networks</a>.</p>
-<p>GATs work on graph data. A graph consists of nodes and edges connecting nodes. For example, in Cora dataset the nodes are research papers and the edges are citations that connect the papers.</p>
-<p>GAT uses masked self-attention, kind of similar to <a href="https://nn.labml.ai/transformers/mha.html">transformers</a>. GAT consists of graph attention layers stacked on top of each other. Each graph attention layer gets node embeddings as inputs and outputs transformed embeddings. The node embeddings pay attention to the embeddings of other nodes it&#x27;s connected to. The details of graph attention layers are included alongside the implementation.</p>
-<p>Here is <a href="https://nn.labml.ai/graphs/gat/experiment.html">the training code</a> for training a two-layer GAT on Cora dataset. </p>
+<p>이것은 논문 <a href="https://papers.labml.ai/paper/1710.10903">Graph Attention Networks</a>의 <a href="https://pytorch.org">파이토치</a> 구현체입니다.</p>
+<p>GATs는 그래프 데이터에 대해 동작합니다. 그래프는 노드와 노드를 연결하는 엣지로 구성되어 있습니다. 예를 들어, Cora 데이터셋에는 노드가 연구 논문들이고 엣지가 논문들을 연결하는 인용입니다.</p>
+<p>GAT는 <a href="https://nn.labml.ai/transformers/mha.html">트랜스포머</a>와 비슷하게 masked self-attention을 사용합니다. GAT는 graph attention 레이어가 서로 쌓여 구성되어있습니다. 각각의 graph attention 레이어는 입력으로 노드 임베딩값을 받고 변환된 임베딩값을 내보냅니다. 노드 임베딩값은 연결되어 있는 서로 다른 노드의 임베딩값에 집중합니다. graph attention 레이어의 자세한 사항은 구현체에 포함되어 있습니다.</p>
+<p>여기에 Cora 데이터셋에 대하여 두 개의 GAT 레이어를 학습하는 <a href="https://nn.labml.ai/graphs/gat/experiment.html">학습코드</a>가 있습니다. </p>
 
         </div>
         <div class='code'>
