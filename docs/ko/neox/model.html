@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="This is the model definition of GPT-NeoX."/>
+    <meta name="description" content="이것은 모델 GPT-NeoX에 대한 정의입니다."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="GPT-NeoX Model Definition"/>
-    <meta name="twitter:description" content="This is the model definition of GPT-NeoX."/>
+    <meta name="twitter:title" content="GPT-NeoX 모델 정의"/>
+    <meta name="twitter:description" content="이것은 모델 GPT-NeoX에 대한 정의입니다."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/neox/model.html"/>
-    <meta property="og:title" content="GPT-NeoX Model Definition"/>
+    <meta property="og:title" content="GPT-NeoX 모델 정의"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="GPT-NeoX Model Definition"/>
+    <meta property="og:site_name" content="GPT-NeoX 모델 정의"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="GPT-NeoX Model Definition"/>
-    <meta property="og:description" content="This is the model definition of GPT-NeoX."/>
+    <meta property="og:title" content="GPT-NeoX 모델 정의"/>
+    <meta property="og:description" content="이것은 모델 GPT-NeoX에 대한 정의입니다."/>
 
-    <title>GPT-NeoX Model Definition</title>
+    <title>GPT-NeoX 모델 정의</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/neox/model.html"/>
@@ -61,7 +61,7 @@
             </p>
             <p>
                 <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations/tree/master/labml_nn/neox/model.py" target="_blank">
-                    View code on Github</a>
+                    Github에서 코드 보기</a>
             </p>
         </div>
     </div>
@@ -70,11 +70,11 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>GPT-NeoX Model</h1>
-<p>Here is the code for layers of GPT-NeoX model and the code to load 20B checkpoint.</p>
-<p>The method <code  class="highlight"><span></span><span class="n">load_state</span></code>
- in the layers load the checkpoints of that layer. The checkpoint loading helpers are on <a href="checkpoint.html"><code  class="highlight"><span></span><span class="n">checkpoint</span><span class="o">.</span><span class="n">py</span></code>
-</a></p>
+            <h1>GPT-NeoX 모델</h1>
+<p>이것은 GPT-NeoX 모델의 레이어 및 20B 체크포인트를 로드하는 코드입니다.</p>
+<p>레이어의 <code  class="highlight"><span></span><span class="n">load_state</span></code> 메서드는 해당 레이어의 체크포인트를 로드합니다.
+ 체크포인트 로딩 헬퍼는 <a href="checkpoint.html"><code  class="highlight"><span></span><span class="n">checkpoint</span><span class="o">.</span><span class="n">py</span></code>
+</a>에 있습니다.</p>
 
         </div>
         <div class='code'>
@@ -120,8 +120,8 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <h2>Embedding layer</h2>
-<p>This is a standard embeddings layer with code to load the checkpoint.</p>
+            <h2>임베딩 레이어</h2>
+<p>이것은 표준 임베딩 레이어로, 체크포인트를 로드하는 코드가 포함되어 있습니다.</p>
 
         </div>
         <div class='code'>
@@ -134,9 +134,9 @@
                 <a href='#section-4'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">n_vocab</span></code>
-  is the size of the vocabulary </li>
+  은 단어의 크기를 의미합니다 </li>
 <li><code  class="highlight"><span></span><span class="n">n_hidden</span></code>
-  is the size of the embeddings</li></ul>
+  은 임베딩의 크기를 의미합니다</li></ul>
 
         </div>
         <div class='code'>
@@ -162,7 +162,7 @@
                 <a href='#section-6'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
-  are the token ids of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">]</span></code>
+  는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">]</span></code> 형태의 토큰 아이디들입니다.
 </li></ul>
 
         </div>
@@ -186,7 +186,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p> Code to load the checkpoint</p>
+            <p> 체크포인트를 로드하기 위한 코드</p>
 
         </div>
         <div class='code'>
@@ -210,9 +210,9 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <h2>Rotary Positional Embeddings</h2>
-<p>GPT-NeoX uses <a href="https://papers.labml.ai/paper/2104.09864">rotary positional embeddings (RoPE)</a>.</p>
-<p>WE have annotated implementation of RoPE <a href="https://nn.labml.ai/transformers/rope/index.html">here</a> with more notes the theory.</p>
+            <h2>Rotary Positional 임베딩</h2>
+<p>GPT-NeoX는 <a href="https://papers.labml.ai/paper/2104.09864">rotary positional 임베딩 (RoPE)</a>을 사용합니다.</p>
+<p>우리는 이론에 대한 추가 노트와 함께 <a href="https://nn.labml.ai/transformers/rope/index.html">여기</a>에 RoPE의 알려진 구현체을 가지고 있습니다.</p>
 
         </div>
         <div class='code'>
@@ -225,10 +225,9 @@
                 <a href='#section-11'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">d_rope</span></code>
-  is the number of features for RoPE embeddings </li>
+  는 RoPE 임베딩에 사용되는 피처의 개수입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">base</span></code>
-  is the base for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.27379em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqd" style=""><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel" style="">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord" style=""><span class="mord" style=""><span class="mord coloredeq eql" style="">10000</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.12379em;"><span style="top:-3.3973400000000002em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0377857142857143em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="">d</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em"></span></span><span style="top:-3.5020714285714285em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">2</span><span class="mopen mtight" style="">(</span><span class="mord mathnormal mtight" style="">i</span><span class="mbin mtight" style="">−</span><span class="mord mtight" style="">1</span><span class="mclose mtight" style="">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>, which defaults to <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eql" style=""><span class="mord" style="">10000</span></span></span></span></span></span></li></ul>
-
+  는 기본값이 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eql" style=""><span class="mord" style="">10000</span></span></span></span></span></span></li></ul>인<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.27379em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqd" style=""><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel" style="">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord" style=""><span class="mord" style=""><span class="mord coloredeq eql" style="">10000</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.12379em;"><span style="top:-3.3973400000000002em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0377857142857143em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="">d</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em"></span></span><span style="top:-3.5020714285714285em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">2</span><span class="mopen mtight" style="">(</span><span class="mord mathnormal mtight" style="">i</span><span class="mbin mtight" style="">−</span><span class="mord mtight" style="">1</span><span class="mclose mtight" style="">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>에 대한 베이스입니다.
         </div>
         <div class='code'>
             <div class="highlight"><pre><span class="lineno">75</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d_rope</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">base</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">10_000.</span><span class="p">):</span></pre></div>
@@ -250,7 +249,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>To store <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> for the features </p>
+            <p>특징들을 위해 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span> 를 저장합니다 </p>
 
         </div>
         <div class='code'>
@@ -262,7 +261,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>Cache <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqf" style=""><span class="mop" style=""><span style="">c</span><span style="">o</span><span style="">s</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></span> and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqg" style=""><span class="mop" style=""><span style="">s</span><span style="">i</span><span style="">n</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></span> </p>
+            <p> <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqf" style=""><span class="mop" style=""><span style="">c</span><span style="">o</span><span style="">s</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></span> 과 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqg" style=""><span class="mop" style=""><span style="">s</span><span style="">i</span><span style="">n</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></span> 를 캐싱합니다</p>
 
         </div>
         <div class='code'>
@@ -275,7 +274,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Base for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.27379em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqd" style=""><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel" style="">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord" style=""><span class="mord" style=""><span class="mord coloredeq eql" style="">10000</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.12379em;"><span style="top:-3.3973400000000002em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0377857142857143em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="">d</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em"></span></span><span style="top:-3.5020714285714285em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">2</span><span class="mopen mtight" style="">(</span><span class="mord mathnormal mtight" style="">i</span><span class="mbin mtight" style="">−</span><span class="mord mtight" style="">1</span><span class="mclose mtight" style="">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span> </p>
+            <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.27379em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqd" style=""><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel" style="">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord" style=""><span class="mord" style=""><span class="mord coloredeq eql" style="">10000</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.12379em;"><span style="top:-3.3973400000000002em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0377857142857143em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="">d</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em"></span></span><span style="top:-3.5020714285714285em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mtight" style=""><span class="mord mtight" style="">2</span><span class="mopen mtight" style="">(</span><span class="mord mathnormal mtight" style="">i</span><span class="mbin mtight" style="">−</span><span class="mord mtight" style="">1</span><span class="mclose mtight" style="">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span> 에 대한 베이스입니다</p>
 
         </div>
         <div class='code'>
@@ -287,7 +286,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Number of features for RoPE </p>
+            <p>RoPE의 특징들의 개수입니다 </p>
 
         </div>
         <div class='code'>
@@ -299,7 +298,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <h3>Rotate the features</h3>
+            <h3>특징들을 회전시킵니다</h3>
 <p><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.22902em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">−</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.97902em;"><span style="top:-3.363em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8800285714285714em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span><span class="mbin mtight">+</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">−</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.97902em;"><span style="top:-3.363em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8800285714285714em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span><span class="mbin mtight">+</span><span class="mord mtight">2</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">...</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">−</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight">d</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">2</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">...</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">−</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.97902em;"><span style="top:-3.363em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8800285714285714em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span></span></p>
 
         </div>
@@ -326,11 +325,11 @@
                 <a href='#section-19'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
-  has shape <code  class="highlight"><span></span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="n">d_k</span><span class="p">]</span></code>
+  는<code  class="highlight"><span></span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="n">d_k</span><span class="p">]</span></code> 형태입니다
  </li>
 <li><code  class="highlight"><span></span><span class="n">offset</span></code>
-  is the starting position of <code  class="highlight"><span></span><span class="n">x</span></code>
-. This is <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></span> when we have cached the keys and queries of previous positions</li></ul>
+  는 <code  class="highlight"><span></span><span class="n">x</span></code>의 시작 지점입니다
+. 이것은 우리가 이전 위치의 키와 쿼리를 캐싱했을 때 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></span> 보다 큽니다</li></ul>
 
         </div>
         <div class='code'>
@@ -342,7 +341,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Get the actual sequence length </p>
+            <p>실제 시퀀스 길이를 얻습니다 </p>
 
         </div>
         <div class='code'>
@@ -354,7 +353,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>Initialize <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord coloredeq eqk" style=""><span class="mord mathnormal" style="margin-right:0.02778em">θ</span></span></span></span></span></span> </p>
+            <p> <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord coloredeq eqk" style=""><span class="mord mathnormal" style="margin-right:0.02778em">θ</span></span></span></span></span></span> 를 초기화합니다</p>
 
         </div>
         <div class='code'>
@@ -379,7 +378,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p>Initialize <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqf" style=""><span class="mop" style=""><span style="">c</span><span style="">o</span><span style="">s</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></span> and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqg" style=""><span class="mop" style=""><span style="">s</span><span style="">i</span><span style="">n</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></span> cache </p>
+            <p> <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqf" style=""><span class="mop" style=""><span style="">c</span><span style="">o</span><span style="">s</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></span> 과 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqg" style=""><span class="mop" style=""><span style="">s</span><span style="">i</span><span style="">n</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></span> 를 초기화하고 캐싱합니다 </p>
 
         </div>
         <div class='code'>
@@ -396,7 +395,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>Get position indexes <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="">m</span></span></span></span></span></span> </p>
+            <p>위치 인덱스 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="">m</span></span></span></span></span></span> 을 얻습니다</p>
 
         </div>
         <div class='code'>
@@ -420,7 +419,7 @@
             <div class='section-link'>
                 <a href='#section-26'>#</a>
             </div>
-            <p>Concatenate so that for row <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="">m</span></span></span></span></span></span> we have</p>
+            <p>합쳐서 행 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="">m</span></span></span></span></span></span> 에 대하여 우리는 다음을 얻습니다</p>
 <p><span ><span class="katex-display"><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.26202em;vertical-align:-0.5120199999999999em;"></span><span class="mopen">[</span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="">m</span></span><span class="mord"><span class="mord coloredeq eqk" style=""><span class="mord mathnormal" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="">m</span></span><span class="mord"><span class="mord coloredeq eqk" style=""><span class="mord mathnormal" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">...</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="">m</span></span><span class="mord"><span class="mord coloredeq eqk" style=""><span class="mord mathnormal" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.7287800000000004em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8800285714285714em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5120199999999999em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="">m</span></span><span class="mord"><span class="mord coloredeq eqk" style=""><span class="mord mathnormal" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="">m</span></span><span class="mord"><span class="mord coloredeq eqk" style=""><span class="mord mathnormal" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">...</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord coloredeq eqn" style=""><span class="mord mathnormal" style="">m</span></span><span class="mord"><span class="mord coloredeq eqk" style=""><span class="mord mathnormal" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.7287800000000004em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8800285714285714em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5120199999999999em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span></span></span> </p>
 
         </div>
@@ -433,7 +432,7 @@
             <div class='section-link'>
                 <a href='#section-27'>#</a>
             </div>
-            <p>Calculate <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqf" style=""><span class="mop" style=""><span style="">c</span><span style="">o</span><span style="">s</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></span> and <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqg" style=""><span class="mop" style=""><span style="">s</span><span style="">i</span><span style="">n</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></span> in fp32 </p>
+            <p> <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqf" style=""><span class="mop" style=""><span style="">c</span><span style="">o</span><span style="">s</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></span> 과 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord coloredeq eqg" style=""><span class="mop" style=""><span style="">s</span><span style="">i</span><span style="">n</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span></span> 를 fp32로 계산합니다 </p>
 
         </div>
         <div class='code'>
@@ -446,7 +445,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Add head dimension </p>
+            <p>헤드 차원을 추가합니다 </p>
 
         </div>
         <div class='code'>
@@ -459,7 +458,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p>Cache them </p>
+            <p>캐싱합니다 </p>
 
         </div>
         <div class='code'>
@@ -472,8 +471,8 @@
             <div class='section-link'>
                 <a href='#section-30'>#</a>
             </div>
-            <p>Split the features. We apply RoPE to only <code  class="highlight"><span></span><span class="n">d_rope</span></code>
- features </p>
+            <p>특징들을 분리합니다. 우리는 오직 <code  class="highlight"><span></span><span class="n">d_rope</span></code>
+ 에만 RoPE를 적용합니다 </p>
 
         </div>
         <div class='code'>
@@ -485,7 +484,7 @@
             <div class='section-link'>
                 <a href='#section-31'>#</a>
             </div>
-            <p>Get the sin and cos values from the cache </p>
+            <p>캐시로부터 사인, 코사인 값을 가져옵니다 </p>
 
         </div>
         <div class='code'>
@@ -497,7 +496,7 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>RoPE embeddings</p>
+            <p>RoPE 임베딩</p>
 <span ><span class="katex-display"><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:3.42324em;vertical-align:-1.4616200000000001em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.9616199999999997em;"><span style="top:-3.96162em;"><span class="pstrut" style="height:3.8116199999999996em;"></span><span class="mord"><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">(</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8116199999999998em;"><span style="top:-3.81162em;"><span class="pstrut" style="height:3.20162em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.5834080000000004em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight coloredeq eqn" style=""><span class="mord mathnormal mtight" style="">m</span></span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight">i</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.11659199999999997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.20162em;"><span style="top:-2.883408em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight coloredeq eqn" style=""><span class="mord mathnormal mtight" style="">m</span></span></span></span><span style="top:-3.5856000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight">i</span><span class="mbin mtight">+</span><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8800285714285714em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.11659199999999997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.20162em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.20162em;"><span style="top:-2.883408em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight coloredeq eqn" style=""><span class="mord mathnormal mtight" style="">m</span></span></span></span><span style="top:-3.5856000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight">i</span><span class="mbin mtight">+</span><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8800285714285714em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.11659199999999997em;"><span></span></span></span></span></span></span><span class="mord coloredeq eqf" style=""><span class="mop" style=""><span style="">c</span><span style="">o</span><span style="">s</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.5834080000000004em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight coloredeq eqn" style=""><span class="mord mathnormal mtight" style="">m</span></span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight">i</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.11659199999999997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord coloredeq eqh" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqn" style="">m</span></span><span class="mord" style=""><span class="mord coloredeq eqi" style=""><span class="mord" style=""><span class="mord mathnormal coloredeq eqk" style="margin-right:0.02778em">θ</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.3116200000000002em;"><span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size4">)</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.4616200000000001em;"><span></span></span></span></span></span></span></span></span></span></span></span></span><p>for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69862em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.2251079999999999em;vertical-align:-0.345em;"></span><span class="mord"><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">...</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8801079999999999em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span> </p>
 
         </div>
@@ -510,7 +509,7 @@
             <div class='section-link'>
                 <a href='#section-33'>#</a>
             </div>
-            <p>Concatenate with features that didn&#x27;t get RoPE embeddings </p>
+            <p>RoPE 임베딩을 얻지 못하는 특징들을 연결합니다 </p>
 
         </div>
         <div class='code'>
@@ -522,7 +521,7 @@
             <div class='section-link'>
                 <a href='#section-34'>#</a>
             </div>
-            <h2>Attention layer</h2>
+            <h2>어텐션 레이어</h2>
 
         </div>
         <div class='code'>
@@ -535,15 +534,15 @@
                 <a href='#section-35'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">n_hidden</span></code>
-  the number of features in embeddings </li>
+  는 임베딩에서 특징들의 개수입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">n_heads</span></code>
-  the number of attention heads </li>
+  는 어텐션의 헤드의 개수입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">rope_percentage</span></code>
-  percentage of features to add RoPE embeddings </li>
+  는 RoPE 임베딩에 추가하기 위한 특징들의 비율입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">mask_fill</span></code>
-  masking fill value for attention matrix </li>
+  어텐션 행렬을 위해 채울 값을 마스킹합니다 </li>
 <li><code  class="highlight"><span></span><span class="n">is_flash_attention</span></code>
-  specifies whether to use  <a href="https://github.com/HazyResearch/flash-attention">FlashAttention</a></li></ul>
+  는   <a href="https://github.com/HazyResearch/flash-attention">FlashAttention</a>를 사용할지를 명시합니다</li></ul>
 
         </div>
         <div class='code'>
@@ -570,7 +569,7 @@
             <div class='section-link'>
                 <a href='#section-37'>#</a>
             </div>
-            <p>Linear layer for query, key and value </p>
+            <p>쿼리, 키, 값을 위한 선형 레이어 </p>
 
         </div>
         <div class='code'>
@@ -582,7 +581,7 @@
             <div class='section-link'>
                 <a href='#section-38'>#</a>
             </div>
-            <p>Final linear layer </p>
+            <p>마지막 선형 레이어 </p>
 
         </div>
         <div class='code'>
@@ -594,7 +593,7 @@
             <div class='section-link'>
                 <a href='#section-39'>#</a>
             </div>
-            <p>Number of features per head </p>
+            <p>헤드 별 특징들의 개수 </p>
 
         </div>
         <div class='code'>
@@ -606,7 +605,7 @@
             <div class='section-link'>
                 <a href='#section-40'>#</a>
             </div>
-            <p>RoPE embedding module </p>
+            <p>RoPE 임베딩 모듈 </p>
 
         </div>
         <div class='code'>
@@ -618,7 +617,7 @@
             <div class='section-link'>
                 <a href='#section-41'>#</a>
             </div>
-            <p>Attention scaling factor </p>
+            <p>어텐션 크기 조절 요소 </p>
 
         </div>
         <div class='code'>
@@ -630,7 +629,7 @@
             <div class='section-link'>
                 <a href='#section-42'>#</a>
             </div>
-            <p>To cache causal mask </p>
+            <p>일반적인 마스킹을 캐싱합니다 </p>
 
         </div>
         <div class='code'>
@@ -642,7 +641,7 @@
             <div class='section-link'>
                 <a href='#section-43'>#</a>
             </div>
-            <p>Attention softmax module </p>
+            <p>어텐션 소프트맥스 모듈 </p>
 
         </div>
         <div class='code'>
@@ -675,9 +674,9 @@
             <div class='section-link'>
                 <a href='#section-45'>#</a>
             </div>
-            <h4>Calculate the causal mask</h4>
+            <h4>일반적인 마스킹을 계산합니다</h4>
 <ul><li><code  class="highlight"><span></span><span class="n">attn</span></code>
- has shape <a href="batch_size, query_seq_len, key_seq_len, n_heads">batch_size, query_seq_len, key_seq_len, n_heads</a></li></ul>
+ 는 <a href="batch_size, query_seq_len, key_seq_len, n_heads">batch_size, query_seq_len, key_seq_len, n_heads</a> 형태입니다</li></ul>
 
         </div>
         <div class='code'>
@@ -689,7 +688,7 @@
             <div class='section-link'>
                 <a href='#section-46'>#</a>
             </div>
-            <p>Query and key lengths </p>
+            <p>쿼리와 키 길이입니다 </p>
 
         </div>
         <div class='code'>
@@ -701,7 +700,7 @@
             <div class='section-link'>
                 <a href='#section-47'>#</a>
             </div>
-            <p>Create mask </p>
+            <p>마스크를 생성합니다 </p>
 
         </div>
         <div class='code'>
@@ -719,7 +718,7 @@
             <div class='section-link'>
                 <a href='#section-48'>#</a>
             </div>
-            <p>Return from cache </p>
+            <p>캐시로부터 반환합니다 </p>
 
         </div>
         <div class='code'>
@@ -732,7 +731,7 @@
                 <a href='#section-49'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
-  has shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">]</span></code>
+  는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">]</span></code> 형태입니다
 </li></ul>
 
         </div>
@@ -745,7 +744,7 @@
             <div class='section-link'>
                 <a href='#section-50'>#</a>
             </div>
-            <p>Get query, key and value embeddings (all concatenated). The last dimension size will change from n_hidden -&gt; <code  class="highlight"><span></span><span class="mi">3</span> <span class="n">x</span> <span class="n">n_hidden</span></code>
+            <p>쿼리, 키, 값 임베딩을 얻습니다. 마지막 차원의 크기는 n_hidden 으로부터 <code  class="highlight"><span></span><span class="mi">3</span> <span class="n">x</span> <span class="n">n_hidden</span></code>로 바뀔 것입니다
  </p>
 
         </div>
@@ -758,7 +757,7 @@
             <div class='section-link'>
                 <a href='#section-51'>#</a>
             </div>
-            <p>Split into heads by changing the shape to <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">d_k</span><span class="p">]</span></code>
+            <p>헤드들로 분리해서  <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">d_k</span><span class="p">]</span></code> 형태를 가지도록 변화시킵니다
  </p>
 
         </div>
@@ -771,7 +770,7 @@
             <div class='section-link'>
                 <a href='#section-52'>#</a>
             </div>
-            <p>Split into query, key and value each of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">d_k</span><span class="p">]</span></code>
+            <p>쿼리, 키, 값으로 각각 분리해서 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">d_k</span><span class="p">]</span></code> 형태를 가지도록 변화시킵니다
  </p>
 
         </div>
@@ -784,7 +783,7 @@
             <div class='section-link'>
                 <a href='#section-53'>#</a>
             </div>
-            <p>If we are caching the states of previous tokens </p>
+            <p>만약 우리가 이전 토큰들의 상태를 캐싱하고 있다면 </p>
 
         </div>
         <div class='code'>
@@ -796,7 +795,7 @@
             <div class='section-link'>
                 <a href='#section-54'>#</a>
             </div>
-            <p>Get the state id&#x27;s. We use to retrieve previous states and store the next states </p>
+            <p>상태 id를 가져옵니다. 우리는 이전 상태를 검색하고 다음 상태를 저장하기 위해 사용합니다 </p>
 
         </div>
         <div class='code'>
@@ -808,7 +807,7 @@
             <div class='section-link'>
                 <a href='#section-55'>#</a>
             </div>
-            <p>If there&#x27;s cache </p>
+            <p>만약 캐시가 존재한다면 </p>
 
         </div>
         <div class='code'>
@@ -820,7 +819,7 @@
             <div class='section-link'>
                 <a href='#section-56'>#</a>
             </div>
-            <p>Get the past keys and values. These will have shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">prev_seq_len</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="n">d_k</span><span class="p">]</span></code>
+            <p>과거 키와 값을 가져옵니다. 이것들은 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">prev_seq_len</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="n">d_k</span><span class="p">]</span></code> 형태를 가질 것입니다
  </p>
 
         </div>
@@ -833,7 +832,7 @@
             <div class='section-link'>
                 <a href='#section-57'>#</a>
             </div>
-            <p>Offset of the current embeddings </p>
+            <p>현재 임베딩값의 오프셋 </p>
 
         </div>
         <div class='code'>
@@ -845,7 +844,7 @@
             <div class='section-link'>
                 <a href='#section-58'>#</a>
             </div>
-            <p>Add RoPE embeddings </p>
+            <p>RoPE 임베딩을 추가합니다 </p>
 
         </div>
         <div class='code'>
@@ -858,7 +857,7 @@
             <div class='section-link'>
                 <a href='#section-59'>#</a>
             </div>
-            <p>Concatenate the past </p>
+            <p>과거의 값을 연결합니다 </p>
 
         </div>
         <div class='code'>
@@ -872,7 +871,7 @@
             <div class='section-link'>
                 <a href='#section-60'>#</a>
             </div>
-            <p>Add RoPE embeddings </p>
+            <p>RoPE 임베딩을 추가합니다 </p>
 
         </div>
         <div class='code'>
@@ -885,7 +884,7 @@
             <div class='section-link'>
                 <a href='#section-61'>#</a>
             </div>
-            <p>Save the current state </p>
+            <p>현재 상태를 저장합니다 </p>
 
         </div>
         <div class='code'>
@@ -898,7 +897,7 @@
             <div class='section-link'>
                 <a href='#section-62'>#</a>
             </div>
-            <p>No cache - simply add RoPE embeddings </p>
+            <p>캐싱하지 않고 단순히 RoPE 임베딩을 추가합니다 </p>
 
         </div>
         <div class='code'>
@@ -911,7 +910,7 @@
             <div class='section-link'>
                 <a href='#section-63'>#</a>
             </div>
-            <p>Use flash attention </p>
+            <p>flash 어텐션을 사용합니다 </p>
 
         </div>
         <div class='code'>
@@ -924,7 +923,7 @@
             <div class='section-link'>
                 <a href='#section-64'>#</a>
             </div>
-            <p>Otherwise, use normal attention </p>
+            <p>그렇지 않다면, 일반 어텐션을 사용합니다 </p>
 
         </div>
         <div class='code'>
@@ -937,8 +936,8 @@
             <div class='section-link'>
                 <a href='#section-65'>#</a>
             </div>
-            <p>Reshape from <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="n">d_k</span><span class="p">]</span> <span class="n">to</span></code>
-<a href="batch_size, seq_len, n_hidden">batch_size, seq_len, n_hidden</a>` </p>
+            <p><code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="n">d_k</span><span class="p">]</span> <span class="n">to</span></code>에서
+<a href="batch_size, seq_len, n_hidden">batch_size, seq_len, n_hidden</a>` 로 형태를 재가공합니다</p>
 
         </div>
         <div class='code'>
@@ -950,7 +949,7 @@
             <div class='section-link'>
                 <a href='#section-66'>#</a>
             </div>
-            <p>Final linear layer </p>
+            <p>마지막 선형 레이어 </p>
 
         </div>
         <div class='code'>
@@ -973,7 +972,7 @@
             <div class='section-link'>
                 <a href='#section-68'>#</a>
             </div>
-            <p>Stack them into shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="n">d_k</span><span class="p">]</span></code>
+            <p><code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="n">d_k</span><span class="p">]</span></code> 형태로 그들을 쌓습니다
  </p>
 
         </div>
@@ -1000,7 +999,7 @@
             <div class='section-link'>
                 <a href='#section-69'>#</a>
             </div>
-            <p>The output is of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="n">d_k</span> <span class="o">+</span> <span class="n">padding</span><span class="p">]</span></code>
+            <p>출력은 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="n">d_k</span> <span class="o">+</span> <span class="n">padding</span><span class="p">]</span></code>의 형태입니다
  </p>
 
         </div>
@@ -1026,7 +1025,7 @@
             <div class='section-link'>
                 <a href='#section-71'>#</a>
             </div>
-            <p>Disable auto-casting to fp16 for attention computation </p>
+            <p>어텐션 계산을 위한 fp16으로의 자동 캐스팅을 비활성화합니다 </p>
 
         </div>
         <div class='code'>
@@ -1039,7 +1038,7 @@
             <div class='section-link'>
                 <a href='#section-72'>#</a>
             </div>
-            <p>Convert to fp32 if the current dtype is fp16 </p>
+            <p>현재 dtype이 fp16이면 fp32로 변환합니다 </p>
 
         </div>
         <div class='code'>
@@ -1052,7 +1051,7 @@
             <div class='section-link'>
                 <a href='#section-73'>#</a>
             </div>
-            <p>Do not cast for bfloat </p>
+            <p>bfloat으로 캐스팅하지 않습니다 </p>
 
         </div>
         <div class='code'>
@@ -1064,7 +1063,7 @@
             <div class='section-link'>
                 <a href='#section-74'>#</a>
             </div>
-            <p>Scale attention </p>
+            <p>스케일 어텐션 </p>
 
         </div>
         <div class='code'>
@@ -1076,7 +1075,7 @@
             <div class='section-link'>
                 <a href='#section-75'>#</a>
             </div>
-            <p>Get causal mask </p>
+            <p>일반적인 마스크를 얻습니다 </p>
 
         </div>
         <div class='code'>
@@ -1088,7 +1087,7 @@
             <div class='section-link'>
                 <a href='#section-76'>#</a>
             </div>
-            <p>Apply mask </p>
+            <p>마스크를 적용합니다 </p>
 
         </div>
         <div class='code'>
@@ -1100,7 +1099,7 @@
             <div class='section-link'>
                 <a href='#section-77'>#</a>
             </div>
-            <p>Attention softmax </p>
+            <p>어텐션 소프트맥스 </p>
 
         </div>
         <div class='code'>
@@ -1112,7 +1111,7 @@
             <div class='section-link'>
                 <a href='#section-78'>#</a>
             </div>
-            <p>Get attention weighted values </p>
+            <p>어텐션 가중치 값을 얻습니다</p>
 
         </div>
         <div class='code'>
@@ -1126,7 +1125,7 @@
             <div class='section-link'>
                 <a href='#section-79'>#</a>
             </div>
-            <h2>Feedforward Network</h2>
+            <h2>피드포워드 네트워크</h2>
 
         </div>
         <div class='code'>
@@ -1139,7 +1138,7 @@
                 <a href='#section-80'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">n_hidden</span></code>
-  is the embedding size</li></ul>
+  는 임베딩 크기입니다</li></ul>
 
         </div>
         <div class='code'>
@@ -1165,7 +1164,7 @@
             <div class='section-link'>
                 <a href='#section-82'>#</a>
             </div>
-            <p>Expansion linear layer </p>
+            <p>확장 선형 레이어 </p>
 
         </div>
         <div class='code'>
@@ -1177,7 +1176,7 @@
             <div class='section-link'>
                 <a href='#section-83'>#</a>
             </div>
-            <p>GELU activation </p>
+            <p>GELU 활성화 함수 </p>
 
         </div>
         <div class='code'>
@@ -1189,7 +1188,7 @@
             <div class='section-link'>
                 <a href='#section-84'>#</a>
             </div>
-            <p>Contraction linear layer </p>
+            <p>축소 선형 레이어 </p>
 
         </div>
         <div class='code'>
@@ -1202,7 +1201,7 @@
                 <a href='#section-85'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
-  has shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">]</span></code>
+  는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">]</span></code> 형태입니다
 </li></ul>
 
         </div>
@@ -1230,7 +1229,7 @@
             <div class='section-link'>
                 <a href='#section-87'>#</a>
             </div>
-            <h2>Transformer Layer</h2>
+            <h2>트랜스포머 레이어</h2>
 
         </div>
         <div class='code'>
@@ -1243,12 +1242,12 @@
                 <a href='#section-88'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">n_hidden</span></code>
-  is the embedding size </li>
+  는 임베딩 크기입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">n_heads</span></code>
-  is the number of heads </li>
+  는 헤드의 개수입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">is_flash_attention</span></code>
-  specifies whether to use  <a href="https://github.com/HazyResearch/flash-attention">FlashAttention</a></li></ul>
-<p><em>Out implementation doesn&#x27;t include dropout</em>.</p>
+  는 <a href="https://github.com/HazyResearch/flash-attention">FlashAttention</a>를 사용할지를 명시합니다</li></ul>
+<p><em>우리의 구현체는 드롭아웃을 포함하지 않습니다.</p>
 
         </div>
         <div class='code'>
@@ -1271,7 +1270,7 @@
             <div class='section-link'>
                 <a href='#section-90'>#</a>
             </div>
-            <p>Layer normalization before attention </p>
+            <p>어텐션 이전 레이어 정규화 </p>
 
         </div>
         <div class='code'>
@@ -1283,7 +1282,7 @@
             <div class='section-link'>
                 <a href='#section-91'>#</a>
             </div>
-            <p>Layer normalization before FFN </p>
+            <p>FFN 이전 레이어 정규화 </p>
 
         </div>
         <div class='code'>
@@ -1295,7 +1294,7 @@
             <div class='section-link'>
                 <a href='#section-92'>#</a>
             </div>
-            <p>Attention layer </p>
+            <p>어텐션 레이어 </p>
 
         </div>
         <div class='code'>
@@ -1307,7 +1306,7 @@
             <div class='section-link'>
                 <a href='#section-93'>#</a>
             </div>
-            <p>FFN layer </p>
+            <p>FFN 레이어 </p>
 
         </div>
         <div class='code'>
@@ -1320,7 +1319,7 @@
                 <a href='#section-94'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
-  are the embeddings of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">]</span></code>
+  는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">]</span></code> 형태의 임베딩값입니다
 </li></ul>
 
         </div>
@@ -1333,7 +1332,7 @@
             <div class='section-link'>
                 <a href='#section-95'>#</a>
             </div>
-            <p>Residual connection </p>
+            <p>잔차 연결 </p>
 
         </div>
         <div class='code'>
@@ -1345,7 +1344,7 @@
             <div class='section-link'>
                 <a href='#section-96'>#</a>
             </div>
-            <p>NeoX runs attention and feedforward network in parallel </p>
+            <p>NeoX는 어텐션과 피드포워드 네트워크를 병렬적으로 실행합니다 </p>
 
         </div>
         <div class='code'>
@@ -1358,7 +1357,7 @@
             <div class='section-link'>
                 <a href='#section-97'>#</a>
             </div>
-            <p>Add them and the residual connection </p>
+            <p>그것들과 잔차 연결을 더합니다 </p>
 
         </div>
         <div class='code'>
@@ -1370,7 +1369,7 @@
             <div class='section-link'>
                 <a href='#section-98'>#</a>
             </div>
-            <p> Code to load the checkpoint</p>
+            <p> 체크포인트를 로드하기 위한 코드</p>
 
         </div>
         <div class='code'>
@@ -1393,7 +1392,7 @@
             <div class='section-link'>
                 <a href='#section-100'>#</a>
             </div>
-            <p>Attention output transform </p>
+            <p>어텐션 출력 변환 </p>
 
         </div>
         <div class='code'>
@@ -1406,7 +1405,7 @@
             <div class='section-link'>
                 <a href='#section-101'>#</a>
             </div>
-            <p>Attention query, key and value transform </p>
+            <p>쿼리, 키, 값 변환을 어텐션합니다 </p>
 
         </div>
         <div class='code'>
@@ -1419,7 +1418,7 @@
             <div class='section-link'>
                 <a href='#section-102'>#</a>
             </div>
-            <p>Layer norm before attention </p>
+            <p>어텐션 이전 레이어 정규화 </p>
 
         </div>
         <div class='code'>
@@ -1432,7 +1431,7 @@
             <div class='section-link'>
                 <a href='#section-103'>#</a>
             </div>
-            <p>FFN second transform </p>
+            <p>FFN 두번째 변환 </p>
 
         </div>
         <div class='code'>
@@ -1445,7 +1444,7 @@
             <div class='section-link'>
                 <a href='#section-104'>#</a>
             </div>
-            <p>FFN first transform </p>
+            <p>FFN 첫번째 변환 </p>
 
         </div>
         <div class='code'>
@@ -1458,7 +1457,7 @@
             <div class='section-link'>
                 <a href='#section-105'>#</a>
             </div>
-            <p>Layer norm before FFN </p>
+            <p>FFN 이전 레이어 정규화 </p>
 
         </div>
         <div class='code'>
@@ -1471,7 +1470,7 @@
             <div class='section-link'>
                 <a href='#section-106'>#</a>
             </div>
-            <h2>Final normalization layer</h2>
+            <h2>마지막 정규화 레이어</h2>
 
         </div>
         <div class='code'>
@@ -1484,7 +1483,7 @@
                 <a href='#section-107'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">n_hidden</span></code>
-  is the embedding size</li></ul>
+  는 임베딩 크기입니다</li></ul>
 
         </div>
         <div class='code'>
@@ -1510,7 +1509,7 @@
                 <a href='#section-109'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
-  are the embeddings of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">]</span></code>
+  는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">]</span></code> 형태의 임베딩입니다
 </li></ul>
 
         </div>
@@ -1534,7 +1533,7 @@
             <div class='section-link'>
                 <a href='#section-111'>#</a>
             </div>
-            <p> Code to load the checkpoint</p>
+            <p> 체크포인트를 로드하기 위한 코드</p>
 
         </div>
         <div class='code'>
@@ -1559,7 +1558,7 @@
             <div class='section-link'>
                 <a href='#section-113'>#</a>
             </div>
-            <p> Readout layer</p>
+            <p> Readout 레이어</p>
 
         </div>
         <div class='code'>
@@ -1572,9 +1571,9 @@
                 <a href='#section-114'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">n_hidden</span></code>
-  is the embedding size </li>
+  는 임베딩 크기입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">n_vocab</span></code>
-  is the size of the vocabulary</li></ul>
+  는 단어의 크기입니다</li></ul>
 
         </div>
         <div class='code'>
@@ -1600,7 +1599,7 @@
                 <a href='#section-116'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
-  are the embeddings of shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">]</span></code>
+  는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">]</span></code> 형태의 임베딩입니다
 </li></ul>
 
         </div>
@@ -1624,7 +1623,7 @@
             <div class='section-link'>
                 <a href='#section-118'>#</a>
             </div>
-            <p> Code to load the checkpoint</p>
+            <p>체크포인트를 로드하기 위한 코드</p>
 
         </div>
         <div class='code'>
@@ -1660,32 +1659,31 @@
             <div class='section-link'>
                 <a href='#section-121'>#</a>
             </div>
-            <h3>Generator to create layers</h3>
-<p>The layers are generated in the same order as checkpoints.</p>
-<p>It gives <code  class="highlight"><span></span><span class="kc">None</span></code>
- when a layer is not available; we use the layer indices as NeoX and there are two transformation layers we don&#x27;t need in our implementation.</p>
+            <h3>레이어를 생성하기 위한 제너레이터</h3>
+<p>레이어는 체크포인트와 동일한 순서로 생성됩니다.</p>
+<p>레이어가 존재하지 않으면 <code  class="highlight"><span></span><span class="kc">None</span></code>을 반환합니다; 우리는 NeoX를 레이어 인덱스로 사용하고 우리의 구현체에서 필요없는 두개의 변환 레이어가 있습니다.</p>
 <ul><li><code  class="highlight"><span></span><span class="n">n_vocab</span></code>
-  is the number of tokens in the vocabulary </li>
+  는 단어에서 토큰들의 개수입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">n_hidden</span></code>
-  is the number of features in the embeddings </li>
+  는 임베딩에서 특징들의 개수입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">n_layers</span></code>
-  is the number of transformer layers </li>
+  는 트랜스포머 레이어의 개수입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">n_heads</span></code>
-  is the number of attention heads </li>
+  는 어텐션 헤드의 개수입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">filter_layers</span></code>
-  are the set of layers to be used. All layers will be used if None.  This is used to test smaller versions of the model with fewer layers </li>
+  는 사용될 레이어의 집합입니다. 모든 레이어는 None인 경우 사용될 것입니다. 이것은 적은 레이어로 모델의 작은 버전을 테스트하기 위해 사용됩니다 </li>
 <li><code  class="highlight"><span></span><span class="n">is_clone_layers</span></code>
-  specifies whether to clone the transformer layers (a bit faster) </li>
+  는 더 빨라지기 위해 트랜스포머 레이어를 복제할것인지를 명시합니다 </li>
 <li><code  class="highlight"><span></span><span class="n">dtype</span></code>
-  is the data type of the model </li>
+  는 모델의 데이터 타입입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">device</span></code>
-  is the device of the model </li>
+  는 모델의 디바이스입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">is_llm_int8</span></code>
-  specifies whether to use int8 quantization </li>
+  는 int8 양자화를 사용할지를 명시합니다 </li>
 <li><code  class="highlight"><span></span><span class="n">llm_int8_threshold</span></code>
-  is the threshold <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span></span></span></span></span></span> used to separate outlier features </li>
+  는 이상치 특징들을 분리하기 위해 사용되는 경계값 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span></span></span></span></span></span> 입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">is_flash_attention</span></code>
-  specifies whether to use  <a href="https://github.com/HazyResearch/flash-attention">FlashAttention</a></li></ul>
+  는 <a href="https://github.com/HazyResearch/flash-attention">FlashAttention</a>를 사용할지를 명시합니다</li></ul>
 
         </div>
         <div class='code'>
@@ -1734,11 +1732,11 @@
             <div class='section-link'>
                 <a href='#section-123'>#</a>
             </div>
-            <h4>Prepares the layer for usage</h4>
-<p>We move the layer to the device and convert it to the correct data type</p>
+            <h4>레이어를 사용처에 맞게 준비합니다</h4>
+<p>우리는 디바이스로 레이어를 이동시키고 올바른 데이터 타입으로 변환시킵니다</p>
 <ul><li><code  class="highlight"><span></span><span class="n">layer</span></code>
-  is the layer to prepare </li>
-<p><em>Returns</em>  the prepared layer</p></ul>
+  는 준비하기 위한 레이어입니다 </li>
+  <p>  준비된 레이어를 <em>반환합니다</em></p></ul>
 
         </div>
         <div class='code'>
@@ -1762,18 +1760,18 @@
                 <a href='#section-125'>#</a>
             </div>
             <p> <a id="post_load_prepare"></a></p>
-<h3>Layer transformations after loading the checkpoint</h3>
-<p>This function implements layer transformations after loading the checkpoint.</p>
-<p>Currently, it only applies the int8 quantization.</p>
+<h3>체크포인트를 로드한 이후 레이어 변환</h3>
+<p>이 함수는 체크포인트를 로드하고 나서의 레이어 변환을 구현합니다.</p>
+<p>현재 이것은 int8 양자화만 적용하고 있습니다.</p>
 <ul><li><code  class="highlight"><span></span><span class="n">layer</span></code>
-  is the layer to prepare </li>
+  는 준비하기 위한 레이어입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">is_llm_int8</span></code>
-  specifies whether to use int8 quantization </li>
+  는 int8 양자화를 사용할지를 명시합니다 </li>
 <li><code  class="highlight"><span></span><span class="n">device</span></code>
-  is the device of the model </li>
+  는 모델의 디바이스입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">llm_int8_threshold</span></code>
-  is the threshold <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span></span></span></span></span></span> used to separate outlier features </li>
-<p><em>Returns</em>  the prepared layer</p></ul>
+  는 이상치 특징들을 분리하기 위한 경계값 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="margin-right:0.0037em">α</span></span></span></span></span></span> 입니다 </li>
+<p>  준비된 레이어를 <em>반환합니다</em></p></ul>
 
         </div>
         <div class='code'>
@@ -1790,7 +1788,7 @@
             <div class='section-link'>
                 <a href='#section-126'>#</a>
             </div>
-            <p>Get default values if not specified </p>
+            <p>명시되어 있지 않다면 기본값을 얻습니다 </p>
 
         </div>
         <div class='code'>
@@ -1807,7 +1805,7 @@
             <div class='section-link'>
                 <a href='#section-127'>#</a>
             </div>
-            <p>Skip if not using int8 quantization </p>
+            <p>int8 양자화를 사용하지 않는다면 생략합니다 </p>
 
         </div>
         <div class='code'>
@@ -1820,7 +1818,7 @@
             <div class='section-link'>
                 <a href='#section-128'>#</a>
             </div>
-            <p>Only convert the linear layers in the transformer layers </p>
+            <p>트랜스포머 레이어에서 선형 레이어만 변환합니다 </p>
 
         </div>
         <div class='code'>
@@ -1833,8 +1831,7 @@
             <div class='section-link'>
                 <a href='#section-129'>#</a>
             </div>
-            <p>Use <code  class="highlight"><span></span><span class="n">make_llm_int8_linear</span></code>
- defined in <a href="./utils/llm_int8.html">utilities</a>. </p>
+            <p><a href="./utils/llm_int8.html">utilities</a>에 정의되어 있는  <code  class="highlight"><span></span><span class="n">make_llm_int8_linear</span></code>를 사용합니다. </p>
 
         </div>
         <div class='code'>
@@ -1846,7 +1843,7 @@
             <div class='section-link'>
                 <a href='#section-130'>#</a>
             </div>
-            <p>Convert the linear layers </p>
+            <p>선형 레이어들을 변환합니다 </p>
 
         </div>
         <div class='code'>
@@ -1882,13 +1879,13 @@
             <div class='section-link'>
                 <a href='#section-132'>#</a>
             </div>
-            <h4>Creates and caches a layer</h4>
-<p>Copying cached layers is faster than initializing new layers because it takes time to initialize parameters.</p>
+            <h4>레이어를 생성하고 캐싱합니다</h4>
+<p>매개변수들을 초기화하는데 시간이 걸리기 때문에 새로운 레이어를 초기화하는 것보다 캐시된 레이어를 복사하는 것이 더 빠릅니다.</p>
 <ul><li><code  class="highlight"><span></span><span class="n">name</span></code>
-  is the name of the layer </li>
+  는 레이어의 이름입니다 </li>
 <li><code  class="highlight"><span></span><span class="n">creator</span></code>
-  is the function to create the layer </li>
-<p><em>Returns</em>  the created layer or a copy of the cached layer</p></ul>
+  는 레이어를 생성하기 위한 함수입니다</li>
+<p>생성된 레이어 혹은 캐시된 레이어의 복사본을 <em>반환합니다</em></p></ul>
 
         </div>
         <div class='code'>
@@ -1969,7 +1966,7 @@
             <div class='section-link'>
                 <a href='#section-138'>#</a>
             </div>
-            <h3>Generator to get layers</h3>
+            <h3>레이어들을 얻기 위한 제너레이터</h3>
 
         </div>
         <div class='code'>
@@ -1982,7 +1979,7 @@
             <div class='section-link'>
                 <a href='#section-139'>#</a>
             </div>
-            <p>Embedding layer </p>
+            <p>임베딩 레이어 </p>
 
         </div>
         <div class='code'>
@@ -1997,7 +1994,7 @@
             <div class='section-link'>
                 <a href='#section-140'>#</a>
             </div>
-            <p>Transformer layers </p>
+            <p>트랜스포머 레이어 </p>
 
         </div>
         <div class='code'>
@@ -2009,7 +2006,7 @@
             <div class='section-link'>
                 <a href='#section-141'>#</a>
             </div>
-            <p>Transformer layer </p>
+            <p>트랜스포머 레이어 </p>
 
         </div>
         <div class='code'>
@@ -2025,7 +2022,7 @@
             <div class='section-link'>
                 <a href='#section-142'>#</a>
             </div>
-            <p>Final normalization layer </p>
+            <p>마지막 정규화 레이어 </p>
 
         </div>
         <div class='code'>
@@ -2040,7 +2037,7 @@
             <div class='section-link'>
                 <a href='#section-143'>#</a>
             </div>
-            <p>Readout layer </p>
+            <p>Readout 레이어 </p>
 
         </div>
         <div class='code'>
@@ -2058,7 +2055,7 @@
             <div class='section-link'>
                 <a href='#section-144'>#</a>
             </div>
-            <h3>Returns the total number of layers</h3>
+            <h3>레이어의 총 개수를 반환합니다</h3>
 
         </div>
         <div class='code'>
@@ -2082,7 +2079,7 @@
             <div class='section-link'>
                 <a href='#section-146'>#</a>
             </div>
-            <h3>Generator to load layers</h3>
+            <h3>레이어를 로드하기 위한 제너레이터</h3>
 
         </div>
         <div class='code'>
