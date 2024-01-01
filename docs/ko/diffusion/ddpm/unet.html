@@ -20,7 +20,7 @@
     <meta property="og:title" content="U-Net model for Denoising Diffusion Probabilistic Models (DDPM)"/>
     <meta property="og:description" content="UNet model for Denoising Diffusion Probabilistic Models (DDPM)"/>
 
-    <title>U-Net model for Denoising Diffusion Probabilistic Models (DDPM)</title>
+    <title>U-Net model for Diffusion Probabilistic Models (DDPM)</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/diffusion/ddpm/unet.html"/>
@@ -71,11 +71,11 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>U-Net model for <a href="index.html">Denoising Diffusion Probabilistic Models (DDPM)</a></h1>
-<p>This is a <a href="../../unet/index.html">U-Net</a> based model to predict noise <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord" style="color:lightgreen"><span class="mord mathnormal" style="">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="margin-right:0.02778em">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight coloredeq eqj" style=""><span class="mord mathnormal mtight" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span><span class="mclose">)</span></span></span></span></span>.</p>
-<p>U-Net is a gets it&#x27;s name from the U shape in the model diagram. It processes a given image by progressively lowering (halving) the feature map resolution and then increasing the resolution. There are pass-through connection at each resolution.</p>
+            <h1><a href="index.html">노이즈를 제거하는 확산 확률론적 모델 (DDPM)</a>을 위한 U-Net 모델</h1>
+<p>이 문서는 노이즈 <span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord" style="color:lightgreen"><span class="mord mathnormal" style="">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mathnormal mtight" style="margin-right:0.02778em">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight coloredeq eqj" style=""><span class="mord mathnormal mtight" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span><span class="mclose">)</span></span></span></span></span>를 예측하기 위한 <a href="../../unet/index.html">U-Net</a>에 기반을 둔 모델을 설명하는 문서입니다. <span ></p>
+<p>U-Net 은 U 모양의 모델 다이어그램에서 그 이름을 얻었습니다.</p>
 <p><img alt="U-Net diagram from paper" src="../../unet/unet.png"></p>
-<p>This implementation contains a bunch of modifications to original U-Net (residual blocks, multi-head attention)  and also adds time-step embeddings <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span></span></span></span></span>.</p>
+<p>이 구현은 원본 U-net에 많은 변형(잔여 블록, 다중헤드 attention)등을 포함하고 있으며, time-step 임베딩<span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span></span></span></span></span>도 포함되어있습니다.<span ></span></p>
 
         </div>
         <div class='code'>
@@ -93,7 +93,7 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h3>Swish actiavation function</h3>
+            <h3>Swish 활성 함수</h3>
 <p><span ><span class="katex-display"><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.44445em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span></span></span></p>
 
         </div>
@@ -118,7 +118,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <h3>Embeddings for <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span></span></span></span></span></h3>
+            <h3><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span></span></span></span>에 대한 임베딩</span></h3>
 
         </div>
         <div class='code'>
@@ -131,7 +131,7 @@
                 <a href='#section-4'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">n_channels</span></code>
- is the number of dimensions in the embedding</li></ul>
+은 embedding안의 차원 개수를 뜻합니다.</li></ul>
 
         </div>
         <div class='code'>
@@ -155,7 +155,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>First linear layer </p>
+            <p>첫번째 선형 레이어 </p>
 
         </div>
         <div class='code'>
@@ -167,7 +167,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Activation </p>
+            <p>활성화 </p>
 
         </div>
         <div class='code'>
@@ -179,7 +179,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Second linear layer </p>
+            <p>두번째 선형 레이어</p>
 
         </div>
         <div class='code'>
@@ -202,8 +202,8 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Create sinusoidal position embeddings <a href="../../transformers/positional_encoding.html">same as those from the transformer</a></p>
-<span ><span class="katex-display"><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:6.600059999999999em;vertical-align:-3.0500299999999996em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.5500299999999996em;"><span style="top:-5.55003em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.4231360000000004em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight coloredeq eqj" style=""><span class="mord mathnormal mtight" style="">t</span></span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">i</span></span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.412972em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.4231360000000004em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight coloredeq eqj" style=""><span class="mord mathnormal mtight" style="">t</span></span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">i</span></span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">2</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.412972em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.0500299999999996em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.5500299999999996em;"><span style="top:-5.55003em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">in</span><span class="mord"><span class="delimsizing size4">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.29208em;"><span style="top:-2.121225em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1000</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9887749999999998em;"><span style="top:-3.3902150000000004em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8550857142857142em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight coloredeq eqi" style=""><span class="mord mathnormal mtight" style="">d</span></span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2255em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.40352142857142853em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8787749999999999em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="delimsizing size4">)</span></span></span></span><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal">cos</span><span class="mord"><span class="delimsizing size4">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.29208em;"><span style="top:-2.121225em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1000</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9887749999999998em;"><span style="top:-3.3902150000000004em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8550857142857142em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight coloredeq eqi" style=""><span class="mord mathnormal mtight" style="">d</span></span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2255em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.40352142857142853em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8787749999999999em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="delimsizing size4">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.0500299999999996em;"><span></span></span></span></span></span></span></span></span></span></span></span></span><p>where <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="">d</span></span></span></span></span></span> is <code  class="highlight"><span></span><span class="n">half_dim</span></code>
+            <p>사인모양의 위치 임베딩 만들기 (<a href="../../transformers/positional_encoding.html">트랜스포머와 동일</a>)</p>
+<span ><span class="katex-display"><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:6.600059999999999em;vertical-align:-3.0500299999999996em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.5500299999999996em;"><span style="top:-5.55003em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.4231360000000004em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight coloredeq eqj" style=""><span class="mord mathnormal mtight" style="">t</span></span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">i</span></span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.412972em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.4231360000000004em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight coloredeq eqj" style=""><span class="mord mathnormal mtight" style="">t</span></span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">i</span></span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">2</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.412972em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.0500299999999996em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.5500299999999996em;"><span style="top:-5.55003em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">in</span><span class="mord"><span class="delimsizing size4">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.29208em;"><span style="top:-2.121225em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1000</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9887749999999998em;"><span style="top:-3.3902150000000004em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8550857142857142em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight coloredeq eqi" style=""><span class="mord mathnormal mtight" style="">d</span></span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2255em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.40352142857142853em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8787749999999999em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="delimsizing size4">)</span></span></span></span><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal">cos</span><span class="mord"><span class="delimsizing size4">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.29208em;"><span style="top:-2.121225em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1000</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9887749999999998em;"><span style="top:-3.3902150000000004em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8550857142857142em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight coloredeq eqi" style=""><span class="mord mathnormal mtight" style="">d</span></span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2255em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.40352142857142853em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8787749999999999em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="delimsizing size4">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.0500299999999996em;"><span></span></span></span></span></span></span></span></span></span></span></span></span><p>여기서 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord coloredeq eqi" style=""><span class="mord mathnormal" style="">d</span></span></span></span></span></span> 는  <code  class="highlight"><span></span><span class="n">half_dim</span></code> 입니다.
  </p>
 
         </div>
@@ -220,7 +220,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Transform with the MLP </p>
+            <p>MLP로 변형하기 </p>
 
         </div>
         <div class='code'>
@@ -245,8 +245,8 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <h3>Residual block</h3>
-<p>A residual block has two convolution layers with group normalization. Each resolution is processed with two residual blocks.</p>
+            <h3>잔여 블록</h3>
+<p>잔여 블록은 그룹 정규화를 갖는 두 개의 컨볼루션 층을 갖습니다. 각 해상도는 두 개의 잔여 블록으로 처리됩니다.</p>
 
         </div>
         <div class='code'>
@@ -259,15 +259,15 @@
                 <a href='#section-14'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">in_channels</span></code>
- is the number of input channels </li>
+는 input channels의 개수입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">out_channels</span></code>
- is the number of input channels </li>
+는 input channels의 개수입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">time_channels</span></code>
- is the number channels in the time step (<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span></span></span></span></span>) embeddings </li>
+time step (<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span></span></span></span></span>) 임베딩안에 있는 input channels의 개수입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">n_groups</span></code>
- is the number of groups for <a href="../../normalization/group_norm/index.html">group normalization</a> </li>
+는 <a href="../../normalization/group_norm/index.html">group normalization</a>를 위한 그룹의 개수입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">dropout</span></code>
- is the dropout rate</li></ul>
+은 드롭아웃 비율입니다. </li></ul>
 
         </div>
         <div class='code'>
@@ -291,7 +291,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Group normalization and the first convolution layer </p>
+            <p>그룹 정규화와 첫번째 컨볼루션 레이어 </p>
 
         </div>
         <div class='code'>
@@ -305,7 +305,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Group normalization and the second convolution layer </p>
+            <p>그룹 정규화와 두번째 컨볼루션 레이어 </p>
 
         </div>
         <div class='code'>
@@ -319,7 +319,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>If the number of input channels is not equal to the number of output channels we have to project the shortcut connection </p>
+            <p>입력 채널의 수와 출력 채널의 수와 동일하지 않으면 shortcut 연결을 사용해야합니다.</p>
 
         </div>
         <div class='code'>
@@ -334,7 +334,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Linear layer for time embeddings </p>
+            <p>시간 임베딩을 위한 선형 레이어 </p>
 
         </div>
         <div class='code'>
@@ -366,7 +366,7 @@
             <div class='section-link'>
                 <a href='#section-21'>#</a>
             </div>
-            <p>First convolution layer </p>
+            <p>첫번째 컨볼루션 레이어 </p>
 
         </div>
         <div class='code'>
@@ -378,7 +378,7 @@
             <div class='section-link'>
                 <a href='#section-22'>#</a>
             </div>
-            <p>Add time embeddings </p>
+            <p>시간 임베딩을 추가하기 </p>
 
         </div>
         <div class='code'>
@@ -390,7 +390,7 @@
             <div class='section-link'>
                 <a href='#section-23'>#</a>
             </div>
-            <p>Second convolution layer </p>
+            <p>두번째 컨볼루션 레이어 </p>
 
         </div>
         <div class='code'>
@@ -402,7 +402,7 @@
             <div class='section-link'>
                 <a href='#section-24'>#</a>
             </div>
-            <p>Add the shortcut connection and return </p>
+            <p>shortcut 연결을 추가하고 반환 </p>
 
         </div>
         <div class='code'>
@@ -414,8 +414,8 @@
             <div class='section-link'>
                 <a href='#section-25'>#</a>
             </div>
-            <h3>Attention block</h3>
-<p>This is similar to <a href="../../transformers/mha.html">transformer multi-head attention</a>.</p>
+            <h3>Attention 블록</h3>
+<p>이것은 <a href="../../transformers/mha.html">트랜스포어 멀티헤드 attention</a>와 유사합니다.</p>
 
         </div>
         <div class='code'>
@@ -428,13 +428,13 @@
                 <a href='#section-26'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">n_channels</span></code>
- is the number of channels in the input </li>
+는 입력의 채널의 개수입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">n_heads</span></code>
- is the number of heads in multi-head attention </li>
+는 멀티헤드 attention의 헤드 개수입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">d_k</span></code>
- is the number of dimensions in each head </li>
+각각 헤드의 차원의 개수입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">n_groups</span></code>
- is the number of groups for <a href="../../normalization/group_norm/index.html">group normalization</a></li></ul>
+는 <a href="../../normalization/group_norm/index.html">그룹 정규화</a>의 그룹의 개수입니다.</li></ul>
 
         </div>
         <div class='code'>
@@ -457,7 +457,7 @@
             <div class='section-link'>
                 <a href='#section-28'>#</a>
             </div>
-            <p>Default <code  class="highlight"><span></span><span class="n">d_k</span></code>
+            <p>기본값 <code  class="highlight"><span></span><span class="n">d_k</span></code>
  </p>
 
         </div>
@@ -471,7 +471,7 @@
             <div class='section-link'>
                 <a href='#section-29'>#</a>
             </div>
-            <p>Normalization layer </p>
+            <p>정규화 레이어 </p>
 
         </div>
         <div class='code'>
@@ -483,7 +483,7 @@
             <div class='section-link'>
                 <a href='#section-30'>#</a>
             </div>
-            <p>Projections for query, key and values </p>
+            <p>쿼리, 키, 값에 대한 projection </p>
 
         </div>
         <div class='code'>
@@ -495,7 +495,7 @@
             <div class='section-link'>
                 <a href='#section-31'>#</a>
             </div>
-            <p>Linear layer for final transformation </p>
+            <p>마지막 변형에 대한 선형 레이어 </p>
 
         </div>
         <div class='code'>
@@ -507,7 +507,7 @@
             <div class='section-link'>
                 <a href='#section-32'>#</a>
             </div>
-            <p>Scale for dot-product attention </p>
+            <p>dot-product attention를 위해서 스케일화</p>
 
         </div>
         <div class='code'>
@@ -533,10 +533,10 @@
                 <a href='#section-34'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
- has shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">]</span></code>
+는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">]</span> 의 크기를 가집니다.</code>
  </li>
 <li><code  class="highlight"><span></span><span class="n">t</span></code>
- has shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">time_channels</span><span class="p">]</span></code>
+<code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">time_channels</span><span class="p">]</span>의 크기를 가집니다.</code>
 </li></ul>
 
         </div>
@@ -550,8 +550,7 @@
                 <a href='#section-35'>#</a>
             </div>
             <p><code  class="highlight"><span></span><span class="n">t</span></code>
- is not used, but it&#x27;s kept in the arguments because for the attention layer function signature to match with <code  class="highlight"><span></span><span class="n">ResidualBlock</span></code>
-. </p>
+는 쓰이지 않습니다, 하지만 attention 레이어 function signiture이 <code  class="highlight"><span></span><span class="n">ResidualBlock</span></code>와 일치하기 때문에 arguments에 포함됩니다.</p>
 
         </div>
         <div class='code'>
@@ -563,7 +562,7 @@
             <div class='section-link'>
                 <a href='#section-36'>#</a>
             </div>
-            <p>Get shape </p>
+            <p>모양을 얻기</p>
 
         </div>
         <div class='code'>
@@ -575,9 +574,8 @@
             <div class='section-link'>
                 <a href='#section-37'>#</a>
             </div>
-            <p>Change <code  class="highlight"><span></span><span class="n">x</span></code>
- to shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">n_channels</span><span class="p">]</span></code>
- </p>
+            <p><code  class="highlight"><span></span><span class="n">x</span></code>
+ 를 모양<code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">n_channels</span><span class="p">]</span></code>로 바꾸기</p>
 
         </div>
         <div class='code'>
@@ -589,8 +587,8 @@
             <div class='section-link'>
                 <a href='#section-38'>#</a>
             </div>
-            <p>Get query, key, and values (concatenated) and shape it to <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">d_k</span><span class="p">]</span></code>
- </p>
+            <p>쿼리, 키, 값들 (concatenated) 그리고<code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">d_k</span><span class="p">]</span></code>
+ 모양으로 만듭니다.</p>
 
         </div>
         <div class='code'>
@@ -602,8 +600,8 @@
             <div class='section-link'>
                 <a href='#section-39'>#</a>
             </div>
-            <p>Split query, key, and values. Each of them will have shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="n">d_k</span><span class="p">]</span></code>
- </p>
+            <p>쿼리, 키 ,값들로 나누고 각각은 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">n_heads</span><span class="p">,</span> <span class="n">d_k</span><span class="p">]</span></code>
+ 모양을 가질 것입니다.</p>
 
         </div>
         <div class='code'>
@@ -615,7 +613,7 @@
             <div class='section-link'>
                 <a href='#section-40'>#</a>
             </div>
-            <p>Calculate scaled dot-product <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.633028em;vertical-align:-0.538em;"></span><span class="mord coloredeq eqd" style=""><span class="mord" style=""><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.095028em;"><span style="top:-2.5864385em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord sqrt mtight" style=""><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8622307142857143em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mtight" style="padding-left:0.833em"><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight coloredeq eqi" style="">d</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3487714285714287em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mathnormal mtight" style="margin-right:0.03148em">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15122857142857138em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.8222307142857144em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail mtight" style="min-width:0.853em;height:1.08em"><svg height="1.08em" preserveaspectratio="xMinYMin slice" viewbox="0 0 400000 1080" width="400em" xmlns="http://www.w3.org/2000/svg"><path d="M95,702
+            <p>스케일화한 dot-product <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.633028em;vertical-align:-0.538em;"></span><span class="mord coloredeq eqd" style=""><span class="mord" style=""><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.095028em;"><span style="top:-2.5864385em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord sqrt mtight" style=""><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8622307142857143em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mtight" style="padding-left:0.833em"><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight coloredeq eqi" style="">d</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3487714285714287em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mathnormal mtight" style="margin-right:0.03148em">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15122857142857138em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.8222307142857144em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail mtight" style="min-width:0.853em;height:1.08em"><svg height="1.08em" preserveaspectratio="xMinYMin slice" viewbox="0 0 400000 1080" width="400em" xmlns="http://www.w3.org/2000/svg"><path d="M95,702
 c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
 c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
 c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
@@ -626,7 +624,7 @@ c5.3,-9.3,12,-14,20,-14
 H400000v40H845.2724
 s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
 c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
-M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.17776928571428574em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em"></span></span><span style="top:-3.446108em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="">Q</span><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="margin-right:0.07153em">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9270285714285713em;"><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mtight" style="">⊤</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.538em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span> </p>
+M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.17776928571428574em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em"></span></span><span style="top:-3.446108em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="">Q</span><span class="mord mtight" style=""><span class="mord mathnormal mtight" style="margin-right:0.07153em">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9270285714285713em;"><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mtight" style="">⊤</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.538em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span>를 얻기</p>
 
         </div>
         <div class='code'>
@@ -638,7 +636,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-41'>#</a>
             </div>
-            <p>Softmax along the sequence dimension <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:3.0000299999999998em;vertical-align:-1.25003em;"></span><span class="mord"><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6944399999999998em;"><span style="top:-2.20556em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">se</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">q</span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop"><span class="mord mathnormal">so</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.030548em;"><span></span></span></span></span></span></span><span class="mord"><span class="delimsizing size4">(</span></span><span class="mord coloredeq eqd" style=""><span class="mord" style=""><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.095028em;"><span style="top:-2.5864385em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord sqrt mtight" style=""><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8622307142857143em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mtight" style="padding-left:0.833em"><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight coloredeq eqi" style="">d</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3487714285714287em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mathnormal mtight" style="margin-right:0.03148em">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15122857142857138em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.8222307142857144em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail mtight" style="min-width:0.853em;height:1.08em"><svg height="1.08em" preserveaspectratio="xMinYMin slice" viewbox="0 0 400000 1080" width="400em" xmlns="http://www.w3.org/2000/svg"><path d="M95,702
+            <p>시퀀스 차원을 따라서 softmax 취하기<span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:3.0000299999999998em;vertical-align:-1.25003em;"></span><span class="mord"><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6944399999999998em;"><span style="top:-2.20556em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">se</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">q</span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop"><span class="mord mathnormal">so</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord coloredeq eqj" style=""><span class="mord mathnormal" style="">t</span></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.030548em;"><span></span></span></span></span></span></span><span class="mord"><span class="delimsizing size4">(</span></span><span class="mord coloredeq eqd" style=""><span class="mord" style=""><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.095028em;"><span style="top:-2.5864385em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight" style=""><span class="mord mtight" style=""><span class="mord sqrt mtight" style=""><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8622307142857143em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mtight" style="padding-left:0.833em"><span class="mord mtight" style=""><span class="mord mtight" style=""><span class="mord mathnormal mtight coloredeq eqi" style="">d</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3487714285714287em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight" style=""><span class="mord mathnormal mtight" style="margin-right:0.03148em">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15122857142857138em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.8222307142857144em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail mtight" style="min-width:0.853em;height:1.08em"><svg height="1.08em" preserveaspectratio="xMinYMin slice" viewbox="0 0 400000 1080" width="400em" xmlns="http://www.w3.org/2000/svg"><path d="M95,702
 c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
 c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
 c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
@@ -661,7 +659,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-42'>#</a>
             </div>
-            <p>Multiply by values </p>
+            <p>값들끼리 곱하기 </p>
 
         </div>
         <div class='code'>
@@ -673,8 +671,8 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-43'>#</a>
             </div>
-            <p>Reshape to <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">n_heads</span> <span class="o">*</span> <span class="n">d_k</span><span class="p">]</span></code>
- </p>
+            <p><code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">n_heads</span> <span class="o">*</span> <span class="n">d_k</span><span class="p">]</span></code>
+ 로 모양 맞추기</p>
 
         </div>
         <div class='code'>
@@ -686,8 +684,8 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-44'>#</a>
             </div>
-            <p>Transform to <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">n_channels</span><span class="p">]</span></code>
- </p>
+            <p><code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">n_channels</span><span class="p">]</span></code>
+ 로 변형하기</p>
 
         </div>
         <div class='code'>
@@ -699,7 +697,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-45'>#</a>
             </div>
-            <p>Add skip connection </p>
+            <p>skip connection 추가하기</p>
 
         </div>
         <div class='code'>
@@ -711,8 +709,8 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-46'>#</a>
             </div>
-            <p>Change to shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">]</span></code>
- </p>
+            <p><code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">]</span></code>
+ 로 변형하기</p>
 
         </div>
         <div class='code'>
@@ -736,10 +734,10 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-48'>#</a>
             </div>
-            <h3>Down block</h3>
-<p>This combines <code  class="highlight"><span></span><span class="n">ResidualBlock</span></code>
- and <code  class="highlight"><span></span><span class="n">AttentionBlock</span></code>
-. These are used in the first half of U-Net at each resolution.</p>
+            <h3>바닥 블록</h3>
+<p>이 블록은 <code  class="highlight"><span></span><span class="n">ResidualBlock</span></code>
+과 <code  class="highlight"><span></span><span class="n">AttentionBlock</span></code>
+을 포함합니다. 이들은 각 해상도에서 U-Net의 전반부에 사용됩니다.</p>
 
         </div>
         <div class='code'>
@@ -782,10 +780,10 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-51'>#</a>
             </div>
-            <h3>Up block</h3>
-<p>This combines <code  class="highlight"><span></span><span class="n">ResidualBlock</span></code>
- and <code  class="highlight"><span></span><span class="n">AttentionBlock</span></code>
-. These are used in the second half of U-Net at each resolution.</p>
+            <h3>윗부분 블록</h3>
+<p>이것은 <code  class="highlight"><span></span><span class="n">ResidualBlock</span></code>
+과 <code  class="highlight"><span></span><span class="n">AttentionBlock</span></code>
+을 포함합니다. 이들은 각 해상도에서 U-Net의 후반부에 사용됩니다.</p>
 
         </div>
         <div class='code'>
@@ -809,8 +807,8 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-53'>#</a>
             </div>
-            <p>The input has <code  class="highlight"><span></span><span class="n">in_channels</span> <span class="o">+</span> <span class="n">out_channels</span></code>
- because we concatenate the output of the same resolution from the first half of the U-Net </p>
+            <p>입력은 <code  class="highlight"><span></span><span class="n">in_channels</span> <span class="o">+</span> <span class="n">out_channels</span></code>
+채널입니다. 왜냐하면 U-Net의 전반부에서 동일한 해상도의 출력을 연결하기때문입니다.</p>
 
         </div>
         <div class='code'>
@@ -840,11 +838,11 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-55'>#</a>
             </div>
-            <h3>Middle block</h3>
-<p>It combines a <code  class="highlight"><span></span><span class="n">ResidualBlock</span></code>
-, <code  class="highlight"><span></span><span class="n">AttentionBlock</span></code>
-, followed by another <code  class="highlight"><span></span><span class="n">ResidualBlock</span></code>
-. This block is applied at the lowest resolution of the U-Net.</p>
+            <h3>중간 블록</h3>
+<p>이 블록은 <code  class="highlight"><span></span><span class="n">ResidualBlock</span></code>
+을 포함하고, <code  class="highlight"><span></span><span class="n">AttentionBlock</span></code>
+, 뒤를 이어 또 <code  class="highlight"><span></span><span class="n">ResidualBlock</span></code>
+이 있습니다. 이 블록은 U-Net의 최저 해상도로 적용됩니다.</p>
 
         </div>
         <div class='code'>
@@ -886,7 +884,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-58'>#</a>
             </div>
-            <h3>Scale up the feature map by <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord">×</span></span></span></span></span></h3>
+            <h3><span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord">×</span></span></span></span></span>로 피처맵을 스케일업하기</h3>
 
         </div>
         <div class='code'>
@@ -923,8 +921,8 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
                 <a href='#section-61'>#</a>
             </div>
             <p><code  class="highlight"><span></span><span class="n">t</span></code>
- is not used, but it&#x27;s kept in the arguments because for the attention layer function signature to match with <code  class="highlight"><span></span><span class="n">ResidualBlock</span></code>
-. </p>
+는 쓰이지만, <code  class="highlight"><span></span><span class="n">ResidualBlock</span></code>과 attention 레이어 function signature
+이 일치하기 때문에 여전히 논쟁이 있습니다. </p>
 
         </div>
         <div class='code'>
@@ -937,7 +935,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-62'>#</a>
             </div>
-            <h3>Scale down the feature map by <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord">×</span></span></span></span></span></h3>
+            <h3>피처맵을 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord">×</span></span></span></span></span>으로 스케일 다운</h3>
 
         </div>
         <div class='code'>
@@ -974,8 +972,8 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
                 <a href='#section-65'>#</a>
             </div>
             <p><code  class="highlight"><span></span><span class="n">t</span></code>
- is not used, but it&#x27;s kept in the arguments because for the attention layer function signature to match with <code  class="highlight"><span></span><span class="n">ResidualBlock</span></code>
-. </p>
+                는 쓰이지만, <code  class="highlight"><span></span><span class="n">ResidualBlock</span></code>과 attention 레이어 function signature
+                이 일치하기 때문에 여전히 논쟁이 있습니다. </p>
 
         </div>
         <div class='code'>
@@ -1001,17 +999,17 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
                 <a href='#section-67'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">image_channels</span></code>
- is the number of channels in the image. <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></span> for RGB. </li>
+는 이미지의 채널의 개수입니다. <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span></span></span></span></span>RGB로 <span class="mord">3</span>채널입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">n_channels</span></code>
- is number of channels in the initial feature map that we transform the image into </li>
+    이미지를 변환하는 초기 피쳐 맵의 채널 수입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">ch_mults</span></code>
- is the list of channel numbers at each resolution. The number of channels is <code  class="highlight"><span></span><span class="n">ch_mults</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_channels</span></code>
- </li>
+    는 각 해상도의 채널 번호 목록입니다. 채널의 수는 <code  class="highlight"><span></span><span class="n">ch_mults</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_channels</span></code>
+입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">is_attn</span></code>
- is a list of booleans that indicate whether to use attention at each resolution </li>
+    각 해상도에서 주의를 사용할지 여부를 나타내는 불리언 목록입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">n_blocks</span></code>
- is the number of <code  class="highlight"><span></span><span class="n">UpDownBlocks</span></code>
- at each resolution</li></ul>
+는 각 해상도 당<code  class="highlight"><span></span><span class="n">UpDownBlocks</span></code>의 개수입니다.
+</li></ul>
 
         </div>
         <div class='code'>
@@ -1037,7 +1035,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-69'>#</a>
             </div>
-            <p>Number of resolutions </p>
+            <p>해상도의 개수 </p>
 
         </div>
         <div class='code'>
@@ -1049,7 +1047,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-70'>#</a>
             </div>
-            <p>Project image into feature map </p>
+            <p>피처맵에 이미지 투영 </p>
 
         </div>
         <div class='code'>
@@ -1061,8 +1059,8 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-71'>#</a>
             </div>
-            <p>Time embedding layer. Time embedding has <code  class="highlight"><span></span><span class="n">n_channels</span> <span class="o">*</span> <span class="mi">4</span></code>
- channels </p>
+            <p>시간 임베딩 레이어. 시간 임베딩은 <code  class="highlight"><span></span><span class="n">n_channels</span> <span class="o">*</span> <span class="mi">4</span></code>
+채널을 가지고 있습니다.</p>
 
         </div>
         <div class='code'>
@@ -1074,7 +1072,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-72'>#</a>
             </div>
-            <h4>First half of U-Net - decreasing resolution</h4>
+            <h4>U-Net 전반부 - 해상도 저하</h4>
 
         </div>
         <div class='code'>
@@ -1086,7 +1084,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-73'>#</a>
             </div>
-            <p>Number of channels </p>
+            <p>채널의 개수 </p>
 
         </div>
         <div class='code'>
@@ -1098,7 +1096,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-74'>#</a>
             </div>
-            <p>For each resolution </p>
+            <p>각각 해상도 </p>
 
         </div>
         <div class='code'>
@@ -1110,7 +1108,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-75'>#</a>
             </div>
-            <p>Number of output channels at this resolution </p>
+            <p>각 해상도의 출력 채널 수</p>
 
         </div>
         <div class='code'>
@@ -1122,8 +1120,8 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-76'>#</a>
             </div>
-            <p>Add <code  class="highlight"><span></span><span class="n">n_blocks</span></code>
- </p>
+            <p><code  class="highlight"><span></span><span class="n">n_blocks</span></code>
+ 추가</p>
 
         </div>
         <div class='code'>
@@ -1137,7 +1135,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-77'>#</a>
             </div>
-            <p>Down sample at all resolutions except the last </p>
+            <p>마지막을 제외한 모든 해상도에서 샘플 다운 </p>
 
         </div>
         <div class='code'>
@@ -1150,7 +1148,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-78'>#</a>
             </div>
-            <p>Combine the set of modules </p>
+            <p>모듈 집합을 결합하기 </p>
 
         </div>
         <div class='code'>
@@ -1162,7 +1160,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-79'>#</a>
             </div>
-            <p>Middle block </p>
+            <p>중간 블록 </p>
 
         </div>
         <div class='code'>
@@ -1174,7 +1172,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-80'>#</a>
             </div>
-            <h4>Second half of U-Net - increasing resolution</h4>
+            <h4>U-Net 하반부 - 해상도 향상</h4>
 
         </div>
         <div class='code'>
@@ -1186,7 +1184,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-81'>#</a>
             </div>
-            <p>Number of channels </p>
+            <p>채널의 개수</p>
 
         </div>
         <div class='code'>
@@ -1198,7 +1196,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-82'>#</a>
             </div>
-            <p>For each resolution </p>
+            <p>각각 해상도 </p>
 
         </div>
         <div class='code'>
@@ -1210,8 +1208,8 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-83'>#</a>
             </div>
-            <p><code  class="highlight"><span></span><span class="n">n_blocks</span></code>
- at the same resolution </p>
+            <p>같은 해상도에서의 <code  class="highlight"><span></span><span class="n">n_blocks</span></code>
+</p>
 
         </div>
         <div class='code'>
@@ -1225,7 +1223,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-84'>#</a>
             </div>
-            <p>Final block to reduce the number of channels </p>
+            <p>채널 수를 줄이기 위한 최종 블록 </p>
 
         </div>
         <div class='code'>
@@ -1239,7 +1237,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-85'>#</a>
             </div>
-            <p>Up sample at all resolutions except last </p>
+            <p>마지막을 제외한 모든 해상도에서 업샘플링</p>
 
         </div>
         <div class='code'>
@@ -1252,7 +1250,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-86'>#</a>
             </div>
-            <p>Combine the set of modules </p>
+            <p>모듈 집합을 결합하기 </p>
 
         </div>
         <div class='code'>
@@ -1264,7 +1262,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-87'>#</a>
             </div>
-            <p>Final normalization and convolution layer </p>
+            <p>최종 정규화 및 컨볼루션 레이어 </p>
 
         </div>
         <div class='code'>
@@ -1279,11 +1277,11 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
                 <a href='#section-88'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">x</span></code>
- has shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">]</span></code>
- </li>
+는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">]</span></code>
+의 모양을 가집니다. </li>
 <li><code  class="highlight"><span></span><span class="n">t</span></code>
- has shape <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">]</span></code>
-</li></ul>
+는 <code  class="highlight"><span></span><span class="p">[</span><span class="n">batch_size</span><span class="p">]</span></code>
+의 모양을 가집니다. </li></ul>
 
         </div>
         <div class='code'>
@@ -1295,7 +1293,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-89'>#</a>
             </div>
-            <p>Get time-step embeddings </p>
+            <p>시간 단계별 임베딩 가져오기 </p>
 
         </div>
         <div class='code'>
@@ -1307,7 +1305,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-90'>#</a>
             </div>
-            <p>Get image projection </p>
+            <p>이미지 투영 가져오기 </p>
 
         </div>
         <div class='code'>
@@ -1320,7 +1318,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
                 <a href='#section-91'>#</a>
             </div>
             <p><code  class="highlight"><span></span><span class="n">h</span></code>
- will store outputs at each resolution for skip connection </p>
+스킵 연결을 위해 각 해상도에 출력을 저장합니다. </p>
 
         </div>
         <div class='code'>
@@ -1332,7 +1330,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-92'>#</a>
             </div>
-            <p>First half of U-Net </p>
+            <p>U-Net의 전반부 </p>
 
         </div>
         <div class='code'>
@@ -1358,7 +1356,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-94'>#</a>
             </div>
-            <p>Second half of U-Net </p>
+            <p>U-Net의 후반부 </p>
 
         </div>
         <div class='code'>
@@ -1373,7 +1371,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-95'>#</a>
             </div>
-            <p>Get the skip connection from first half of U-Net and concatenate </p>
+            <p>U-Net의 전반부에서 skip-connection을 가져와 연결합니다</p>
 
         </div>
         <div class='code'>
@@ -1398,7 +1396,7 @@ M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist
             <div class='section-link'>
                 <a href='#section-97'>#</a>
             </div>
-            <p>Final normalization and convolution </p>
+            <p>최종 정규화 및 컨볼루션</p>
 
         </div>
         <div class='code'>
