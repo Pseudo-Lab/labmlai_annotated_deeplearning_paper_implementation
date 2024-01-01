@@ -72,7 +72,7 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Generate images using <a href="../index.html">stable diffusion</a> with a prompt from a given image</h1>
+            <h1>프롬프트를 사용하여 주어진 이미지들로 부터 <a href="../index.html">stable diffusion</a>로 새로운 이미지를 생성하기</h1>
 
         </div>
         <div class='code'>
@@ -91,7 +91,7 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h3>Image to image class</h3>
+            <h3>이미지 클래스</h3>
 
         </div>
         <div class='code'>
@@ -104,11 +104,11 @@
                 <a href='#section-2'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">checkpoint_path</span></code>
-  is the path of the checkpoint </li>
+는 체크포인트의 경로입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">ddim_steps</span></code>
-  is the number of sampling steps </li>
+샘플링 구간의 개수입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">ddim_eta</span></code>
-  is the <a href="../sampler/ddim.html">DDIM sampling</a> <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">η</span></span></span></span></span> constant</li></ul>
+는 <a href="../sampler/ddim.html">DDIM 샘플링</a> <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">η</span></span></span></span></span> 상수입니다.</li></ul>
 
         </div>
         <div class='code'>
@@ -133,7 +133,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Load <a href="../latent_diffusion.html">latent diffusion model</a> </p>
+            <p><a href="../latent_diffusion.html">latent diffusion model</a>를 로드하기</p>
 
         </div>
         <div class='code'>
@@ -145,7 +145,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>Get device </p>
+            <p>device 가져오기 </p>
 
         </div>
         <div class='code'>
@@ -157,7 +157,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Move the model to device </p>
+            <p>device에 모델 올리기 </p>
 
         </div>
         <div class='code'>
@@ -169,7 +169,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Initialize <a href="../sampler/ddim.html">DDIM sampler</a> </p>
+            <p> <a href="../sampler/ddim.html">DDIM 샘플러</a> 초기화</p>
 
         </div>
         <div class='code'>
@@ -184,17 +184,18 @@
                 <a href='#section-8'>#</a>
             </div>
             <ul><li><code  class="highlight"><span></span><span class="n">dest_path</span></code>
-  is the path to store the generated images </li>
+    는 생성된 이미지를 저장하는 경로입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">orig_img</span></code>
-  is the image to transform </li>
+변형을 적용할 이미지입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">strength</span></code>
-  specifies how much of the original image should not be preserved </li>
+는 원본 이미지가 보존되지 않아야 하는 비율을 지정합니다. </li>
 <li><code  class="highlight"><span></span><span class="n">batch_size</span></code>
-  is the number of images to generate in a batch </li>
+는 일괄 생성할 이미지의 개수입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">prompt</span></code>
-  is the prompt to generate images with </li>
+는 이미지를 생성하기 위한 프롬프트입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">uncond_scale</span></code>
-  is the unconditional guidance scale <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">s</span></span></span></span></span></span>. This is used for  <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">s</span></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord text mtight"><span class="mord mtight">cond</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">s</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqc" style=""><span class="mord" style="">1</span></span><span class="mclose">)</span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord text mtight"><span class="mord mtight">cond</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></li></ul>
+  는 unconditional한 지침 척도 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">s</span></span></span></span></span></span>입니다. 
+ 이것은 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">s</span></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord text mtight"><span class="mord mtight">cond</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord coloredeq eqd" style=""><span class="mord mathnormal" style="">s</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord coloredeq eqc" style=""><span class="mord" style="">1</span></span><span class="mclose">)</span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord text mtight"><span class="mord mtight">cond</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></li></ul> 이 수식에서 사용됩니다.
 
         </div>
         <div class='code'>
@@ -214,7 +215,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>Make a batch of prompts </p>
+            <p>프롬프트의 배치를 만들기 </p>
 
         </div>
         <div class='code'>
@@ -226,7 +227,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Load image </p>
+            <p>이미지 로드하기 </p>
 
         </div>
         <div class='code'>
@@ -238,8 +239,8 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Encode the image in the latent space and make <code  class="highlight"><span></span><span class="n">batch_size</span></code>
- copies of it </p>
+            <p>잠재 공간에서 이미지를 인코딩하고 <code  class="highlight"><span></span><span class="n">batch_size</span></code>
+만큼의 복사본을 만듭니다.</p>
 
         </div>
         <div class='code'>
@@ -251,7 +252,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Get the number of steps to diffuse the original </p>
+            <p>원본으로부터 확산할 단계 수를 구합니다.</p>
 
         </div>
         <div class='code'>
@@ -264,7 +265,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>AMP auto casting </p>
+            <p>AMP 자동 캐스팅</p>
 
         </div>
         <div class='code'>
@@ -276,7 +277,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>In unconditional scaling is not <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqc" style=""><span class="mord" style="">1</span></span></span></span></span></span> get the embeddings for empty prompts (no conditioning). </p>
+            <p>조건없는 스케일링이 <span ><span class="katex"><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord coloredeq eqc" style=""><span class="mord" style="">1</span></span></span></span></span></span>이 아닌 경우 빈 프롬르트에서 임베딩을 얻습니다. </p>
 
         </div>
         <div class='code'>
@@ -291,7 +292,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Get the prompt embeddings </p>
+            <p>프롬프트 임베딩 가져오기 </p>
 
         </div>
         <div class='code'>
@@ -303,7 +304,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Add noise to the original image </p>
+            <p>원본 이미지에 노이즈를 추가하기 </p>
 
         </div>
         <div class='code'>
@@ -315,7 +316,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Reconstruct from the noisy image </p>
+            <p>노이지 이미지로부터 재건축하기 </p>
 
         </div>
         <div class='code'>
@@ -329,7 +330,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Decode the image from the <a href="../model/autoencoder.html">autoencoder</a> </p>
+            <p><a href="../model/autoencoder.html">autoencoder</a>로 부터 decode하기</p>
 
         </div>
         <div class='code'>
@@ -341,7 +342,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Save images </p>
+            <p>이미지 저장하기 </p>
 
         </div>
         <div class='code'>
