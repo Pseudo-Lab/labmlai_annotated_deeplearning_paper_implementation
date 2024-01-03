@@ -3,24 +3,24 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Generate Text with GPT-NeoX using LLM.int8() quantization"/>
+    <meta name="description" content="LLM.int8() 양자화를 이용한 GPT-NeoX로 글 생성하기"/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Generate Text with GPT-NeoX using LLM.int8() quantization"/>
-    <meta name="twitter:description" content="Generate Text with GPT-NeoX using LLM.int8() quantization"/>
+    <meta name="twitter:title" content="LLM.int8() 양자화를 이용한 GPT-NeoX로 글 생성하기"/>
+    <meta name="twitter:description" content="LLM.int8() 양자화를 이용한 GPT-NeoX로 글 생성하기"/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/neox/samples/llm_int8.html"/>
-    <meta property="og:title" content="Generate Text with GPT-NeoX using LLM.int8() quantization"/>
+    <meta property="og:title" content="LLM.int8() 양자화를 이용한 GPT-NeoX로 글 생성하기"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Generate Text with GPT-NeoX using LLM.int8() quantization"/>
+    <meta property="og:site_name" content="LLM.int8() 양자화를 이용한 GPT-NeoX로 글 생성하기"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Generate Text with GPT-NeoX using LLM.int8() quantization"/>
-    <meta property="og:description" content="Generate Text with GPT-NeoX using LLM.int8() quantization"/>
+    <meta property="og:title" content="LLM.int8() 양자화를 이용한 GPT-NeoX로 글 생성하기"/>
+    <meta property="og:description" content="LLM.int8() 양자화를 이용한 GPT-NeoX로 글 생성하기"/>
 
-    <title>Generate Text with GPT-NeoX using LLM.int8() quantization</title>
+    <title>LLM.int8() 양자화를 이용한 GPT-NeoX로 글 생성하기</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/neox/samples/llm_int8.html"/>
@@ -62,7 +62,7 @@
             </p>
             <p>
                 <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations/tree/master/labml_nn/neox/samples/llm_int8.py" target="_blank">
-                    View code on Github</a>
+                    깃헙에서 코드보기</a>
             </p>
         </div>
     </div>
@@ -71,9 +71,9 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Generate Text with GPT-NeoX using LLM.int8() quantization</h1>
-<p>This shows how to generate text from GPT-NeoX using <a href="../utils/llm_int8.html">LLM.int8() quantization</a>.</p>
-<p>This needs a GPU with 24GB memory.</p>
+            <h1>LLM.int8() 양자화를 이용한 GPT-NeoX로 글 생성하기</h1>
+<p> <a href="../utils/llm_int8.html">LLM.int8() 양자화</a>를 사용하여 GPT-NeoX에서 글을 생성하는 방법을 보여줍니다.</p>
+<p>24GB 메모리가 있는 GPU가 필요합니다. </p>
 
         </div>
         <div class='code'>
@@ -92,7 +92,7 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>Generate text</h2>
+            <h2>글 생성하기</h2>
 
         </div>
         <div class='code'>
@@ -104,7 +104,7 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <p>Setup <a href="../utils/cache.html">cache</a> to cache intermediate key/value pairs for faster generation </p>
+            <p> <a href="../utils/cache.html">캐시</a> 를 설정하여 중간 단계의 키/값 쌍을 캐시하여 보다 빠른 생성을 가능하게 합니다.  </p>
 
         </div>
         <div class='code'>
@@ -117,7 +117,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <p>Device </p>
+            <p>디바이스를 설정합니다 </p>
 
         </div>
         <div class='code'>
@@ -129,7 +129,7 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <p>Load layers in float16 into CPU. We convert the layers to int8 later, because doing that on the fly after loading layers to GPU causes CUDA memory fragmentation (about 3GB memory can get lost due to fragmentation). </p>
+            <p>float 16의 레이어를 CPU에 불러오기 합니다. 추후에 레이어를 int8로 변환합니다. 이렇게 하는 이유는 GPU에 레이어를 불러온 후 즉시 이를 수행하면 CUDA 메모리 조각화(약 3GB 메모리가 조각화로 인해 손실될 수 있음)가 발생하기 때문입니다. </p>
 
         </div>
         <div class='code'>
@@ -146,7 +146,7 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <p>This reduces CUDA memory fragmentation </p>
+            <p>이를 통해 CUDA 메모리 조각화를 줄일 수 있습니다. </p>
 
         </div>
         <div class='code'>
@@ -164,8 +164,8 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Create <code  class="highlight"><span></span><span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span></code>
- model </p>
+            <p> <code  class="highlight"><span></span><span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span></code>
+ 모델을 생성합니다 </p>
 
         </div>
         <div class='code'>
@@ -177,7 +177,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Clear cache and print memory summary for debugging </p>
+            <p>디버깅을 위해 캐시를 삭제하고 메모리 요약을 출력합니다. </p>
 
         </div>
         <div class='code'>
@@ -190,7 +190,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Get token ids </p>
+            <p>토큰 인덱스를 가져옵니다. </p>
 
         </div>
         <div class='code'>
@@ -202,9 +202,9 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <p>Run the model. We use the <a href="generate.html"><code  class="highlight"><span></span><span class="n">infer</span></code>
-</a> function defined in <a href="generate.html"><code  class="highlight"><span></span><span class="n">generate</span><span class="o">.</span><span class="n">py</span></code>
-</a> </p>
+            <p>모델을 실행합니다.  <a href="generate.html"><code  class="highlight"><span></span><span class="n">generate</span><span class="o">.</span><span class="n">py</span></code>
+</a> 에 정의된  <a href="generate.html"><code  class="highlight"><span></span><span class="n">infer</span></code>
+</a> 함수를 사용합니다.</p>
 
         </div>
         <div class='code'>
@@ -218,7 +218,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Append the predicted token </p>
+            <p>예측된 토큰을 추가합니다. </p>
 
         </div>
         <div class='code'>
@@ -230,7 +230,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Predict 100 tokens </p>
+            <p>100개 토큰을 예측합니다. </p>
 
         </div>
         <div class='code'>
@@ -242,7 +242,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Set the state to use cached activations </p>
+            <p>캐시된 활성화 함수를 사용하기 위해 상태를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -254,7 +254,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>Get next token. Note that we only feed the last token to the model because we cache the key/value pairs of previous tokens. </p>
+            <p>다음 토큰을 가져옵니다. 이전 토큰의 키/값 쌍을 캐시하기 때문에 모델에 마지막 토큰만 제공합니다. </p>
 
         </div>
         <div class='code'>
@@ -267,7 +267,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>Append the predicted token </p>
+            <p>예측된 토큰을 추가합니다. </p>
 
         </div>
         <div class='code'>
@@ -279,7 +279,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Print </p>
+            <p>토큰을 출력합니다. </p>
 
         </div>
         <div class='code'>

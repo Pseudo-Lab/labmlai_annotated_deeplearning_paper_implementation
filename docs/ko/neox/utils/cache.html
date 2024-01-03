@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Cache for intermediate activations for faster inference."/>
+    <meta name="description" content="더 빠른 추론을 위한 중간 활성화를 위한 캐시."/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Cache for Intermediate Activations"/>
-    <meta name="twitter:description" content="Cache for intermediate activations for faster inference."/>
+    <meta name="twitter:title" content="중간 활성화를 위한 캐시"/>
+    <meta name="twitter:description" content="더 빠른 추론을 위한 중간 활성화를 위한 캐시."/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/neox/utils/cache.html"/>
-    <meta property="og:title" content="Cache for Intermediate Activations"/>
+    <meta property="og:title" content="중간 활성화를 위한 캐시"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Cache for Intermediate Activations"/>
+    <meta property="og:site_name" content="중간 활성화를 위한 캐시"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Cache for Intermediate Activations"/>
-    <meta property="og:description" content="Cache for intermediate activations for faster inference."/>
+    <meta property="og:title" content="중간 활성화를 위한 캐시"/>
+    <meta property="og:description" content="더 빠른 추론을 위한 중간 활성화를 위한 캐시."/>
 
-    <title>Cache for Intermediate Activations</title>
+    <title>중간 활성화를 위한 캐시</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/neox/utils/cache.html"/>
@@ -62,7 +62,7 @@
             </p>
             <p>
                 <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations/tree/master/labml_nn/neox/utils/cache.py" target="_blank">
-                    View code on Github</a>
+                    깃헙에서 코드보기</a>
             </p>
         </div>
     </div>
@@ -71,8 +71,8 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Cache for Intermediate Activations</h1>
-<p>During inference the model outputs token by token. We use this simple cache to store key&#x27;s and value&#x27;s attention layers, so that we don&#x27;t have to recompute them for previous tokens.</p>
+            <h1>중간 활성화를 위한 캐시</h1>
+<p>추론하는 동안 모델은 토큰별로 토큰을 출력합니다. 이 간단한 캐시를 사용하여 키 및 값의 어텐션 레이어를 저장하므로 이전 토큰에 대해 다시 계산할 필요가 없습니다.</p>
 
         </div>
         <div class='code'>
@@ -84,8 +84,8 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <h2>Cache</h2>
-<p>This maintains a key-value cache and queues push values and pop them in the same order. The queues are useful since we have multiple attention layers.</p>
+            <h2>캐시</h2>
+<p>이는 키-값 캐시를 유지하고 추가(push) 값이 대기열에 추가되고 동일한 순서로 삭제(pop)됩니다. 이는 여러 어텐션 레이어가 있기 때문에 유용합니다.</p>
 
         </div>
         <div class='code'>
@@ -109,7 +109,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <h3>Clear cache</h3>
+            <h3>캐시 지우기</h3>
 
         </div>
         <div class='code'>
@@ -132,11 +132,11 @@
             <div class='section-link'>
                 <a href='#section-5'>#</a>
             </div>
-            <h3>Push a value to a queue</h3>
+            <h3>값을 큐(queue)에 추가하기</h3>
 <ul><li><code  class="highlight"><span></span><span class="n">name</span></code>
-  is the name of the queue </li>
+  은 큐(queue)의 이름입니다.</li>
 <li><code  class="highlight"><span></span><span class="n">value</span></code>
-  is the value to be pushed</li></ul>
+  은 추가될 값입니다. </li></ul>
 
         </div>
         <div class='code'>
@@ -148,7 +148,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Create an empty queue if it&#x27;s not present </p>
+            <p>큐(queue)가 없으면 빈 큐를 생성합니다.  </p>
 
         </div>
         <div class='code'>
@@ -161,7 +161,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Push to the queue </p>
+            <p>값을 큐에 추가합니다. </p>
 
         </div>
         <div class='code'>
@@ -173,10 +173,10 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <h3>Return the size of the queue</h3>
+            <h3>큐 크기 반환하기</h3>
 <ul><li><code  class="highlight"><span></span><span class="n">name</span></code>
-  is the name of the queue </li>
-<p><em>Returns</em>  size of the queue if exists else None</p></ul>
+  은 큐의 이름입니다. </li>
+<p>이름이 존재하면 큐의 크기를 이름이 존재하지 않으면 None을 <em>반환합니다.</em></p></ul>
 
         </div>
         <div class='code'>
@@ -205,10 +205,10 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <h3>Pop from a queue</h3>
+            <h3>큐에서 값 꺼내기</h3>
 <ul><li><code  class="highlight"><span></span><span class="n">name</span></code>
-  is the name of the queue </li>
-<p><em>Returns</em>  the value</p></ul>
+ 은 큐의 이름입니다. </li>
+<p>값을 <em>반환합니다</em> </p></ul>
 
         </div>
         <div class='code'>
@@ -231,11 +231,11 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <h3>Cache a value</h3>
+            <h3>값을 캐시하기</h3>
 <ul><li><code  class="highlight"><span></span><span class="n">key</span></code>
-  is the name of the value to be cached </li>
+  는 캐시할 값의 이름입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">value</span></code>
-  is the value</li></ul>
+  는 값입니다.</li></ul>
 
         </div>
         <div class='code'>
@@ -258,12 +258,12 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <h3>Retrieve a value from cache</h3>
+            <h3>캐시에서 값 검색하기</h3>
 <ul><li><code  class="highlight"><span></span><span class="n">key</span></code>
-  is the name used when caching </li>
+  는 캐싱할 때 사용되는 이름입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">default</span></code>
-  is the default value if the cache is empty </li>
-<p><em>Returns</em>  the cached value</p></ul>
+  는 캐시가 비어있는 경우 사용됩니다. </li>
+<p>캐시된 값을 <em>반환합니다</em></p></ul>
 
         </div>
         <div class='code'>
@@ -286,9 +286,9 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <h3>Clear a cache value</h3>
+            <h3>캐시 값 지우기</h3>
 <ul><li><code  class="highlight"><span></span><span class="n">key</span></code>
-  is the name used when caching</li></ul>
+ 는 캐시할 때 사용하는 이름입니다</li></ul>
 
         </div>
         <div class='code'>
@@ -311,7 +311,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Singleton for cache </p>
+            <p>캐시를 위한 싱글톤(Singleton)패턴 입니다</p>
 
         </div>
         <div class='code'>
@@ -323,8 +323,8 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <h3>Get the cache instance</h3>
-<ul><p><em>Returns</em>  the cache instance</p></ul>
+            <h3>캐시 인스턴스를 가져오기</h3>
+<ul><p>캐시 인스턴스를 <em>반환합니다</em></p></ul>
 
         </div>
         <div class='code'>
