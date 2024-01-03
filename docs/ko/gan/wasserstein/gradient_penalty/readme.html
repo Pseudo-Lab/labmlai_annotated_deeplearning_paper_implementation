@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
 
-    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:card" content="요약"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Gradient Penalty for Wasserstein GAN (WGAN-GP)"/>
+    <meta name="twitter:title" content="Wasserstein GAN(WGAN-GP)에 대한 GAN 패널티"/>
     <meta name="twitter:description" content=""/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/gan/wasserstein/gradient_penalty/readme.html"/>
-    <meta property="og:title" content="Gradient Penalty for Wasserstein GAN (WGAN-GP)"/>
+    <meta property="og:title" content="Wasserstein GAN(WGAN-GP)에 대한 GAN 패널티"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Gradient Penalty for Wasserstein GAN (WGAN-GP)"/>
+    <meta property="og:site_name" content="Wasserstein GAN(WGAN-GP)에 대한 GAN 패널티"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Gradient Penalty for Wasserstein GAN (WGAN-GP)"/>
+    <meta property="og:title" content="Wasserstein GAN(WGAN-GP)에 대한 GAN 패널티"/>
     <meta property="og:description" content=""/>
 
-    <title>Gradient Penalty for Wasserstein GAN (WGAN-GP)</title>
+    <title>Wasserstein GAN(WGAN-GP)에 대한 GAN 패널티</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/gan/wasserstein/gradient_penalty/readme.html"/>
@@ -72,11 +72,11 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1><a href="https://nn.labml.ai/gan/wasserstein/gradient_penalty/index.html">Gradient Penalty for Wasserstein GAN (WGAN-GP)</a></h1>
-<p>This is an implementation of <a href="https://papers.labml.ai/paper/1704.00028">Improved Training of Wasserstein GANs</a>.</p>
-<p><a href="https://nn.labml.ai/gan/wasserstein/index.html">WGAN</a> suggests clipping weights to enforce Lipschitz constraint on the discriminator network (critic). This and other weight constraints like L2 norm clipping, weight normalization, L1, L2 weight decay have problems:</p>
-<p>1. Limiting the capacity of the discriminator 2. Exploding and vanishing gradients (without <a href="https://nn.labml.ai/normalization/batch_norm/index.html">Batch Normalization</a>).</p>
-<p>The paper <a href="https://papers.labml.ai/paper/1704.00028">Improved Training of Wasserstein GANs</a> proposal a better way to improve Lipschitz constraint, a gradient penalty. </p>
+            <h1><a href="https://nn.labml.ai/gan/wasserstein/gradient_penalty/index.html">Wasserstein GAN(WGAN-GP)에 대한 GAN 패널티</a></h1>
+<p>This is an implementation of <a href="https://papers.labml.ai/paper/1704.00028">Wasserstein GANs의 향상된 훈련 방법</a> 논문에 대한 구현입니다.</p>
+<p><a href="https://nn.labml.ai/gan/wasserstein/index.html">WGAN</a> 는 판별기 네트워크(critic)에서 립시츠 제약을 적용하기 위해 가중치를 클리핑할것을 제안합니다. 이와 L2 정규 클리핑, 가중치 정규화, L1, L2 가중치 감소와 같은 다른 가중치 제약은 문제가 있습니다 : </p>
+<p>1. 판별기의 용량 제한 2. 그래디언트의 폭발 및 소멸 (<a href="https://nn.labml.ai/normalization/batch_norm/index.html">배치 정규화</a>없이).</p>
+<p> <a href="https://papers.labml.ai/paper/1704.00028">Wasserstein GANs의 향상된 훈련 방법 </a> 논문은 기울기 패널티인 립시츠 제약을 개선하는 더 나은 방법을 제안합니다. </p>
 
         </div>
         <div class='code'>

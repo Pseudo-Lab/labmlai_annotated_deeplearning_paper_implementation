@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Generate Text with GPT-NeoX"/>
+    <meta name="description" content="GPT-NeoX로 글 생성하기"/>
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta name="twitter:title" content="Generate Text with GPT-NeoX"/>
-    <meta name="twitter:description" content="Generate Text with GPT-NeoX"/>
+    <meta name="twitter:title" content="GPT-NeoX로 글 생성하기"/>
+    <meta name="twitter:description" content="GPT-NeoX로 글 생성하기"/>
     <meta name="twitter:site" content="@labmlai"/>
     <meta name="twitter:creator" content="@labmlai"/>
 
     <meta property="og:url" content="https://nn.labml.ai/neox/samples/generate.html"/>
-    <meta property="og:title" content="Generate Text with GPT-NeoX"/>
+    <meta property="og:title" content="GPT-NeoX로 글 생성하기"/>
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/64068543?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="Generate Text with GPT-NeoX"/>
+    <meta property="og:site_name" content="GPT-NeoX로 글 생성하기"/>
     <meta property="og:type" content="object"/>
-    <meta property="og:title" content="Generate Text with GPT-NeoX"/>
-    <meta property="og:description" content="Generate Text with GPT-NeoX"/>
+    <meta property="og:title" content="GPT-NeoX로 글 생성하기"/>
+    <meta property="og:description" content="GPT-NeoX로 글 생성하기"/>
 
-    <title>Generate Text with GPT-NeoX</title>
+    <title>GPT-NeoX로 글 생성하기</title>
     <link rel="shortcut icon" href="/icon.png"/>
     <link rel="stylesheet" href="../../pylit.css?v=1">
     <link rel="canonical" href="https://nn.labml.ai/neox/samples/generate.html"/>
@@ -62,7 +62,7 @@
             </p>
             <p>
                 <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations/tree/master/labml_nn/neox/samples/generate.py" target="_blank">
-                    View code on Github</a>
+                깃헙에서 코드 보기 </a>
             </p>
         </div>
     </div>
@@ -71,9 +71,9 @@
             <div class='section-link'>
                 <a href='#section-0'>#</a>
             </div>
-            <h1>Generate Text with GPT-NeoX</h1>
-<p>This shows how to generate text from GPT-NeoX with a single GPU.</p>
-<p>This needs a GPU with more than 45GB memory.</p>
+            <h1>GPT-NeoX로 글 생성하기</h1>
+<p> GPT-NeoX를 한 개의 GPU를 사용해서 글을 생성하는 방법에 대한 글입니다.</p>
+<p> 45GB 이상의 메모리를 가진 GPU가 필요합니다. </p>
 
         </div>
         <div class='code'>
@@ -85,7 +85,7 @@
             <div class='section-link'>
                 <a href='#section-1'>#</a>
             </div>
-            <p>Imports </p>
+            <p>다음을 불러옵니다. </p>
 
         </div>
         <div class='code'>
@@ -105,8 +105,8 @@
             <div class='section-link'>
                 <a href='#section-2'>#</a>
             </div>
-            <p>List of layers to load. This is used for testing. You can assign a subset of layers like <code  class="highlight"><span></span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span></code>
- so that it only loads the first to transformer layers. </p>
+            <p>불러오기 위한 레이어 목록입니다. 이는 테스트를 위해 사용됩니다. You can assign a subset of layers like <code  class="highlight"><span></span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span></code>
+ 따라서 트렌스포머 레이어의 첫번째 만 불러옵니다. so that it only loads the first to transformer layers. </p>
 
         </div>
         <div class='code'>
@@ -118,7 +118,7 @@
             <div class='section-link'>
                 <a href='#section-3'>#</a>
             </div>
-            <p>Prompt to complete </p>
+            <p>완성하기 위한 프롬프트 입니다.  </p>
 
         </div>
         <div class='code'>
@@ -130,13 +130,13 @@
             <div class='section-link'>
                 <a href='#section-4'>#</a>
             </div>
-            <h3>Predict the next token</h3>
+            <h3>다음 토큰 예상하기</h3>
 <ul><li><code  class="highlight"><span></span><span class="n">model</span></code>
-  is the model </li>
+  은 모델입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">ids</span></code>
-  are the input token ids </li>
+  은 입력값 토큰의 인덱스입니다. </li>
 <li><code  class="highlight"><span></span><span class="n">device</span></code>
-  is the device of the model</li></ul>
+  은 모델의 디바이스 입니다. </li></ul>
 
         </div>
         <div class='code'>
@@ -159,7 +159,7 @@
             <div class='section-link'>
                 <a href='#section-6'>#</a>
             </div>
-            <p>Get the tokens </p>
+            <p>토큰을 구합니다 </p>
 
         </div>
         <div class='code'>
@@ -171,7 +171,7 @@
             <div class='section-link'>
                 <a href='#section-7'>#</a>
             </div>
-            <p>Eval model </p>
+            <p>모델을 평가합니다 </p>
 
         </div>
         <div class='code'>
@@ -183,7 +183,7 @@
             <div class='section-link'>
                 <a href='#section-8'>#</a>
             </div>
-            <p>Return predicted token </p>
+            <p>예측한 토큰을 반환합니다. </p>
 
         </div>
         <div class='code'>
@@ -195,7 +195,7 @@
             <div class='section-link'>
                 <a href='#section-9'>#</a>
             </div>
-            <h2>Generate text</h2>
+            <h2>글 생성하기</h2>
 
         </div>
         <div class='code'>
@@ -207,7 +207,7 @@
             <div class='section-link'>
                 <a href='#section-10'>#</a>
             </div>
-            <p>Setup <a href="../utils/cache.html">cache</a> to cache intermediate key/value pairs for faster generation </p>
+            <p> 더 빠른 생성을 위해 중간단계의 키/값 pair를 cahce 하는 <a href="../utils/cache.html">캐시</a>를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -220,7 +220,7 @@
             <div class='section-link'>
                 <a href='#section-11'>#</a>
             </div>
-            <p>Device </p>
+            <p>디바이스를 설정합니다 </p>
 
         </div>
         <div class='code'>
@@ -232,7 +232,7 @@
             <div class='section-link'>
                 <a href='#section-12'>#</a>
             </div>
-            <p>Load layers </p>
+            <p>레이어를 불러옵니다 </p>
 
         </div>
         <div class='code'>
@@ -250,7 +250,7 @@
             <div class='section-link'>
                 <a href='#section-13'>#</a>
             </div>
-            <p>Get token ids </p>
+            <p>토큰 인덱스를 구합니다. </p>
 
         </div>
         <div class='code'>
@@ -262,7 +262,7 @@
             <div class='section-link'>
                 <a href='#section-14'>#</a>
             </div>
-            <p>Run the model </p>
+            <p>모델을 실행합니다. </p>
 
         </div>
         <div class='code'>
@@ -276,7 +276,7 @@
             <div class='section-link'>
                 <a href='#section-15'>#</a>
             </div>
-            <p>Append the predicted token </p>
+            <p>예측된 토큰을 추가합니다. </p>
 
         </div>
         <div class='code'>
@@ -288,7 +288,7 @@
             <div class='section-link'>
                 <a href='#section-16'>#</a>
             </div>
-            <p>Predict 100 tokens </p>
+            <p>100개의 토큰을 예측합니다 </p>
 
         </div>
         <div class='code'>
@@ -300,7 +300,7 @@
             <div class='section-link'>
                 <a href='#section-17'>#</a>
             </div>
-            <p>Set the state to use cached activations </p>
+            <p>캐시된 활성화 함수를 사용하기 위해 상태를 설정합니다. </p>
 
         </div>
         <div class='code'>
@@ -312,7 +312,7 @@
             <div class='section-link'>
                 <a href='#section-18'>#</a>
             </div>
-            <p>Get next token. Note that we only feed the last token to the model because we cache the key/value pairs of previous tokens. </p>
+            <p>다음 토큰을 구합니다. 마지막 토큰만 모델에게 주는 것을 잊지 마세요. 그 이유는 그 전의 키/값 페어를 임시로 복사(cache 캐시)하기 때문입니다.</p>
 
         </div>
         <div class='code'>
@@ -325,7 +325,7 @@
             <div class='section-link'>
                 <a href='#section-19'>#</a>
             </div>
-            <p>Append the predicted token </p>
+            <p>예측된 토큰을 추가합니다.</p>
 
         </div>
         <div class='code'>
@@ -337,7 +337,7 @@
             <div class='section-link'>
                 <a href='#section-20'>#</a>
             </div>
-            <p>Print </p>
+            <p>토큰을 출력합니다.  </p>
 
         </div>
         <div class='code'>
